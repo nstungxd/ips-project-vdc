@@ -1,0 +1,9 @@
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data.SqlCe\obj\Debug\IPS.Data.SqlCe.csprojResolveAssemblyReference.cache
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data.SqlCe\bin\Debug\IPS.Data.SqlCe.dll
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data.SqlCe\bin\Debug\IPS.Data.SqlCe.pdb
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data.SqlCe\bin\Debug\IPS.Data.dll
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data.SqlCe\bin\Debug\IPS.Model.dll
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data.SqlCe\bin\Debug\IPS.Data.pdb
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data.SqlCe\bin\Debug\IPS.Model.pdb
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data.SqlCe\obj\Debug\IPS.Data.SqlCe.dll
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data.SqlCe\obj\Debug\IPS.Data.SqlCe.pdb
