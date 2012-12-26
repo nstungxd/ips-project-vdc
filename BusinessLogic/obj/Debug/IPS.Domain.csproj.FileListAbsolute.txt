@@ -1,0 +1,4 @@
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\BusinessLogic\bin\BusinessLogic.dll
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\BusinessLogic\bin\BusinessLogic.pdb
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\BusinessLogic\obj\Debug\BusinessLogic.pdb

@@ -1,0 +1,4 @@
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Model\bin\Debug\IPS.Model.dll
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Model\bin\Debug\IPS.Model.pdb
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Model\obj\Debug\IPS.Model.dll
+C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Model\obj\Debug\IPS.Model.pdb

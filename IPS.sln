@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataTier", "DataTier", "{B9C84F64-DBF2-4CF8-9E7F-0ACF5BA161FF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{119A6DF6-B399-4C83-8CEC-2334A608E589}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Web", "IPS.Web\IPS.Web.csproj", "{FC2549F6-1E63-4344-8A88-AE167D4D92F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Data", "IPS.Data\IPS.Data.csproj", "{78C85876-7DC6-465C-91D0-E96258DAF44A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Model", "IPS.Model\IPS.Model.csproj", "{12BA37DC-9FBC-42AA-9774-A1388B0D3254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Data.SqlCe", "IPS.Data.SqlCe\IPS.Data.SqlCe.csproj", "{81E31FCD-FBC1-4D83-81F9-CA3431C5816B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Domain", "BusinessLogic\IPS.Domain.csproj", "{6E29F3D3-E841-4902-912E-7344E253AAD7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC2549F6-1E63-4344-8A88-AE167D4D92F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC2549F6-1E63-4344-8A88-AE167D4D92F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC2549F6-1E63-4344-8A88-AE167D4D92F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC2549F6-1E63-4344-8A88-AE167D4D92F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{78C85876-7DC6-465C-91D0-E96258DAF44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{78C85876-7DC6-465C-91D0-E96258DAF44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{78C85876-7DC6-465C-91D0-E96258DAF44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{78C85876-7DC6-465C-91D0-E96258DAF44A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12BA37DC-9FBC-42AA-9774-A1388B0D3254}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12BA37DC-9FBC-42AA-9774-A1388B0D3254}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12BA37DC-9FBC-42AA-9774-A1388B0D3254}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12BA37DC-9FBC-42AA-9774-A1388B0D3254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{81E31FCD-FBC1-4D83-81F9-CA3431C5816B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81E31FCD-FBC1-4D83-81F9-CA3431C5816B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81E31FCD-FBC1-4D83-81F9-CA3431C5816B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81E31FCD-FBC1-4D83-81F9-CA3431C5816B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E29F3D3-E841-4902-912E-7344E253AAD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E29F3D3-E841-4902-912E-7344E253AAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E29F3D3-E841-4902-912E-7344E253AAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E29F3D3-E841-4902-912E-7344E253AAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{78C85876-7DC6-465C-91D0-E96258DAF44A} = {B9C84F64-DBF2-4CF8-9E7F-0ACF5BA161FF}
+		{12BA37DC-9FBC-42AA-9774-A1388B0D3254} = {B9C84F64-DBF2-4CF8-9E7F-0ACF5BA161FF}
+		{81E31FCD-FBC1-4D83-81F9-CA3431C5816B} = {B9C84F64-DBF2-4CF8-9E7F-0ACF5BA161FF}
+		{6E29F3D3-E841-4902-912E-7344E253AAD7} = {119A6DF6-B399-4C83-8CEC-2334A608E589}
+	EndGlobalSection
+EndGlobal
