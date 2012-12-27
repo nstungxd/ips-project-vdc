@@ -2,3 +2,8 @@ C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\BusinessLogic\bin\
 C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\BusinessLogic\bin\BusinessLogic.pdb
 C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\BusinessLogic\obj\Debug\BusinessLogic.pdb
+D:\VDC\IPS\Source\IPS_source\IPS\BusinessLogic\bin\BusinessLogic.dll
+D:\VDC\IPS\Source\IPS_source\IPS\BusinessLogic\bin\BusinessLogic.pdb
+D:\VDC\IPS\Source\IPS_source\IPS\BusinessLogic\obj\Debug\IPS.Domain.csprojResolveAssemblyReference.cache
+D:\VDC\IPS\Source\IPS_source\IPS\BusinessLogic\obj\Debug\BusinessLogic.dll
+D:\VDC\IPS\Source\IPS_source\IPS\BusinessLogic\obj\Debug\BusinessLogic.pdb

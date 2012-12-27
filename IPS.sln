@@ -5,8 +5,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataTier", "DataTier", "{B9
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "BusinessLogic", "BusinessLogic", "{119A6DF6-B399-4C83-8CEC-2334A608E589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Web", "IPS.Web\IPS.Web.csproj", "{FC2549F6-1E63-4344-8A88-AE167D4D92F4}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Data", "IPS.Data\IPS.Data.csproj", "{78C85876-7DC6-465C-91D0-E96258DAF44A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Model", "IPS.Model\IPS.Model.csproj", "{12BA37DC-9FBC-42AA-9774-A1388B0D3254}"
@@ -15,16 +13,14 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Data.SqlCe", "IPS.Data.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Domain", "BusinessLogic\IPS.Domain.csproj", "{6E29F3D3-E841-4902-912E-7344E253AAD7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Web", "IPS.Web\IPS.Web.csproj", "{3A332EE7-54BE-42B2-84F9-3893081843AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FC2549F6-1E63-4344-8A88-AE167D4D92F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FC2549F6-1E63-4344-8A88-AE167D4D92F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FC2549F6-1E63-4344-8A88-AE167D4D92F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FC2549F6-1E63-4344-8A88-AE167D4D92F4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{78C85876-7DC6-465C-91D0-E96258DAF44A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{78C85876-7DC6-465C-91D0-E96258DAF44A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78C85876-7DC6-465C-91D0-E96258DAF44A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -41,6 +37,10 @@ Global
 		{6E29F3D3-E841-4902-912E-7344E253AAD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E29F3D3-E841-4902-912E-7344E253AAD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E29F3D3-E841-4902-912E-7344E253AAD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A332EE7-54BE-42B2-84F9-3893081843AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A332EE7-54BE-42B2-84F9-3893081843AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A332EE7-54BE-42B2-84F9-3893081843AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A332EE7-54BE-42B2-84F9-3893081843AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

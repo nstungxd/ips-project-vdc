@@ -2,3 +2,8 @@ C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Model\bin\Debu
 C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Model\bin\Debug\IPS.Model.pdb
 C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Model\obj\Debug\IPS.Model.dll
 C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Model\obj\Debug\IPS.Model.pdb
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Model\bin\Debug\IPS.Model.dll
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Model\bin\Debug\IPS.Model.pdb
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Model\obj\Debug\IPS.Model.csprojResolveAssemblyReference.cache
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Model\obj\Debug\IPS.Model.dll
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Model\obj\Debug\IPS.Model.pdb
