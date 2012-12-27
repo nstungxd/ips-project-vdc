@@ -2,3 +2,7 @@ C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data\bin\Debug
 C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data\bin\Debug\IPS.Data.pdb
 C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data\obj\Debug\IPS.Data.dll
 C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Data\obj\Debug\IPS.Data.pdb
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Data\bin\Debug\IPS.Data.dll
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Data\bin\Debug\IPS.Data.pdb
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Data\obj\Debug\IPS.Data.dll
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Data\obj\Debug\IPS.Data.pdb

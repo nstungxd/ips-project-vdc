@@ -1,4 +1,5 @@
-C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Web\bin\Debug\IPS.Web.dll
-C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Web\bin\Debug\IPS.Web.pdb
-C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Web\obj\Debug\IPS.Web.dll
-C:\Users\thanhphong\Documents\Visual Studio 2012\Projects\IPS\IPS.Web\obj\Debug\IPS.Web.pdb
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Web\bin\IPS.Web.dll
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Web\bin\IPS.Web.pdb
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Web\obj\Debug\IPS.Web.csprojResolveAssemblyReference.cache
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Web\obj\Debug\IPS.Web.dll
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Web\obj\Debug\IPS.Web.pdb
