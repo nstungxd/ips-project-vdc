@@ -39,12 +39,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBaoCaoDataTier.cs" />
     <Compile Include="IDongBoDataTier.cs" />
     <Compile Include="IGiamSatDataTier.cs" />
     <Compile Include="IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\IPS.Model\IPS.Model.csproj">
+      <Project>{12BA37DC-9FBC-42AA-9774-A1388B0D3254}</Project>
+      <Name>IPS.Model</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UnitSettingLibrary\UnitSettingLibrary.csproj">
       <Project>{290ff5e1-7424-4c80-9bd9-443bb20ed1bb}</Project>
       <Name>UnitSettingLibrary</Name>
