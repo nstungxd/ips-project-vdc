@@ -3,16 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using IPS.Model;
+using UnitSettingLibrary;
 
 namespace IPS.Data.SqlCe.Repositories
 {
-    public class UserRepository :IUser
+    public class DongBoRepository : IDongBoDataTier
     {
-        public IEnumerable<IUser> GetAll()
+        public ChangeResultSettings DongBoDBDauTu()
         {
-            var listUser = new List<IUser>();
-            return listUser;
+            throw new NotImplementedException();
         }
     }
 }

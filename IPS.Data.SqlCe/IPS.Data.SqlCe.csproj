@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Oracle.DataAccess">
+      <HintPath>..\Libs\Oracle.DataAccess.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -39,20 +42,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Initializers\ConnectDB.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DongBoRepository.cs" />
+    <Compile Include="Repositories\GiamSatRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Initializers\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\IPS.Data\IPS.Data.csproj">
-      <Project>{78c85876-7dc6-465c-91d0-e96258daf44a}</Project>
+      <Project>{78C85876-7DC6-465C-91D0-E96258DAF44A}</Project>
       <Name>IPS.Data</Name>
     </ProjectReference>
     <ProjectReference Include="..\IPS.Model\IPS.Model.csproj">
-      <Project>{12ba37dc-9fbc-42aa-9774-a1388b0d3254}</Project>
+      <Project>{12BA37DC-9FBC-42AA-9774-A1388B0D3254}</Project>
       <Name>IPS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitSettingLibrary\UnitSettingLibrary.csproj">
+      <Project>{290ff5e1-7424-4c80-9bd9-443bb20ed1bb}</Project>
+      <Name>UnitSettingLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

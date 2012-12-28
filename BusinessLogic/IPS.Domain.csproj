@@ -63,6 +63,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IDongBoDBServices.cs" />
+    <Compile Include="Interfaces\IGiamSatServices.cs" />
+    <Compile Include="Services\DongBoDBServices.cs" />
+    <Compile Include="Services\GiamSatServices.cs" />
     <Compile Include="Services\Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
@@ -79,6 +83,24 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IPS.Data.SqlCe\IPS.Data.SqlCe.csproj">
+      <Project>{81E31FCD-FBC1-4D83-81F9-CA3431C5816B}</Project>
+      <Name>IPS.Data.SqlCe</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPS.Data\IPS.Data.csproj">
+      <Project>{78C85876-7DC6-465C-91D0-E96258DAF44A}</Project>
+      <Name>IPS.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPS.Model\IPS.Model.csproj">
+      <Project>{12BA37DC-9FBC-42AA-9774-A1388B0D3254}</Project>
+      <Name>IPS.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UnitSettingLibrary\UnitSettingLibrary.csproj">
+      <Project>{290ff5e1-7424-4c80-9bd9-443bb20ed1bb}</Project>
+      <Name>UnitSettingLibrary</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
