@@ -63,8 +63,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IBaoCaoServices.cs" />
     <Compile Include="Interfaces\IDongBoDBServices.cs" />
     <Compile Include="Interfaces\IGiamSatServices.cs" />
+    <Compile Include="Services\BaoCaoServices.cs" />
     <Compile Include="Services\DongBoDBServices.cs" />
     <Compile Include="Services\GiamSatServices.cs" />
     <Compile Include="Services\Service1.svc.cs">
