@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaoCaoModels.cs" />
     <Compile Include="DongBoModels.cs" />
     <Compile Include="GiamSatModels.cs" />
     <Compile Include="User.cs" />
