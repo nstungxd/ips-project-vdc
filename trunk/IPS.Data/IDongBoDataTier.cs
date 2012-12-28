@@ -10,6 +10,10 @@ namespace IPS.Data
 {
     public interface IDongBoDataTier
     {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
         ChangeResultSettings DongBoDBDauTu();        
     }
 }
