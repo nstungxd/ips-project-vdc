@@ -12,6 +12,7 @@ namespace BusinessLogic.Services
 {
     public class GiamSatServices : IGiamSatServices
     {
+        private const int PageSize = 20;
 
         public DataTable ChiTietKeHoachVon(string maDonVi, long namKHV, long idDuAn)
         {
@@ -101,7 +102,7 @@ namespace BusinessLogic.Services
             var mdv = "";
             var nsd = "";
             var pas = "";
-            var objData = giamSatDataTier.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, pageIndex);
+            var objData = giamSatDataTier.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, pageIndex, PageSize);
             return objData;
         }
 
@@ -111,7 +112,7 @@ namespace BusinessLogic.Services
             var mdv = "";
             var nsd = "";
             var pas = "";
-            var objData = giamSatDataTier.DanhSachDuAn(mdv, nsd, pas, pageIndex);
+            var objData = giamSatDataTier.DanhSachDuAn(mdv, nsd, pas, pageIndex, PageSize);
             return objData;
         }
 
@@ -122,11 +123,8 @@ namespace BusinessLogic.Services
             var mdv = "";
             var nsd = "";
             var pas = "";
-            var objData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);
-            if (objData != null)
-            {
-                sReturn += objData[0] + "-" + objData[1] + "-" + Common.ConvertTableToJsonString(objData[2] as DataTable);                
-            }
+            var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);
+            sReturn = Common.ConvertTableToJsonString(tableData);                            
             return sReturn;
         }
 
@@ -137,10 +135,15 @@ namespace BusinessLogic.Services
             var mdv = "";
             var nsd = "";
             var pas = "";
-            var objData = giamSatDataTier.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, pageIndex);
+            var objData = giamSatDataTier.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, pageIndex, PageSize);
             if (objData != null)
             {
-                sReturn += objData[0] + "-" + objData[1] + "-" + Common.ConvertTableToJsonString(objData[2] as DataTable);
+                var pageSetting = new PaginationSetting
+                {
+                    PageSize = PageSize,
+                    TotalRecords = Convert.ToInt64(objData[1])
+                };
+                sReturn += pageSetting.TotalRecords + "-" + pageSetting.TotalPage + "-" + Common.ConvertTableToJsonString(objData[0] as DataTable);
             }
             return sReturn;
         }
@@ -152,10 +155,15 @@ namespace BusinessLogic.Services
             var mdv = "";
             var nsd = "";
             var pas = "";
-            var objData = giamSatDataTier.DanhSachHopDong(mdv, nsd, pas, maDonVi, idGoiThau, pageIndex);
+            var objData = giamSatDataTier.DanhSachHopDong(mdv, nsd, pas, maDonVi, idGoiThau, pageIndex, PageSize);
             if (objData != null)
             {
-                sReturn += objData[0] + "-" + objData[1] + "-" + Common.ConvertTableToJsonString(objData[2] as DataTable);
+                var pageSetting = new PaginationSetting
+                {
+                    PageSize = PageSize,
+                    TotalRecords = Convert.ToInt64(objData[1])
+                };
+                sReturn += pageSetting.TotalRecords + "-" + pageSetting.TotalPage + "-" + Common.ConvertTableToJsonString(objData[0] as DataTable);
             }
             return sReturn;
         }
@@ -178,6 +186,6 @@ namespace BusinessLogic.Services
             var pas = "";
             var objData = giamSatDataTier.GiamSat(mdv, nsd, pas, loaiGiamSat, listGiamSat);
             return objData;
-        }
+        }        
     }
 }
