@@ -1,1 +1,1 @@
-﻿<%@ ServiceHost Language="C#" Debug="true" Service="BusinessLogic.BaoCaoServices" CodeBehind="BaoCaoServices.svc.cs" %>
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="BusinessLogic.Services.BaoCaoServices" CodeBehind="BaoCaoServices.svc.cs" %>

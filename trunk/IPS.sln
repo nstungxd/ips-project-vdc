@@ -14,6 +14,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Domain", "BusinessLogic\IPS.Domain.csproj", "{6E29F3D3-E841-4902-912E-7344E253AAD7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPS.Web", "IPS.Web\IPS.Web.csproj", "{3A332EE7-54BE-42B2-84F9-3893081843AB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6E29F3D3-E841-4902-912E-7344E253AAD7} = {6E29F3D3-E841-4902-912E-7344E253AAD7}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitLibrary", "UnitLibrary", "{81BD91F6-E8F7-4AD4-8863-36C76710F419}"
 EndProject
