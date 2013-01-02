@@ -11,9 +11,11 @@ namespace IPS.Web
 {
     public partial class ThongTinChiTietDuAn : VdcInc.vdcAJAXPage
     {
+        GiamSatServiceReference.GiamSatServicesClient giamsatService = new GiamSatServiceReference.GiamSatServicesClient();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsCallback) {
+                loadGrid();
                 Hashtable ht = GetEnumForBind(typeof(LoaiNguonVon));
                 ddlLoaiNguonVon.DataSource = ht;
                 ddlLoaiNguonVon.DataTextField = "value";
@@ -36,6 +38,10 @@ namespace IPS.Web
         public string CapNhatLoaiNguonVon(string text, string value)
         {
             return text + "#####" + value;
+        }
+        public void loadGrid()
+        {
+            string result = giamsatService.ChiTietDuAnReturnString("29", 20120925648670);
         }
     }
 }
