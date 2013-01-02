@@ -1,5 +1,4 @@
-﻿using BusinessLogic.Interfaces;
-using IPS.Data.SqlCe.Repositories;
+﻿using IPS.Data.SqlCe.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data;

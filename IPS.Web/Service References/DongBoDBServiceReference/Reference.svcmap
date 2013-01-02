@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e4093b99-7206-4289-8279-a719c778e2df" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:24166/Services/DongBoDBServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="DongBoDBServices1.xsd" MetadataType="Schema" ID="24f1de16-eeb0-4bfd-8147-5b200ed003bc" SourceId="1" SourceUrl="http://localhost:24166/Services/DongBoDBServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="DongBoDBServices.disco" MetadataType="Disco" ID="66961634-b7db-4d38-b91b-ab4c30fd89fb" SourceId="1" SourceUrl="http://localhost:24166/Services/DongBoDBServices.svc?disco" />
+    <MetadataFile FileName="DongBoDBServices.xsd" MetadataType="Schema" ID="ecceb0f4-fec7-44eb-a0bd-954e2007c760" SourceId="1" SourceUrl="http://localhost:24166/Services/DongBoDBServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="DongBoDBServices11.xsd" MetadataType="Schema" ID="cc423ac0-894e-48be-8753-793731400935" SourceId="1" SourceUrl="http://localhost:24166/Services/DongBoDBServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="DongBoDBServices.wsdl" MetadataType="Wsdl" ID="fae41e4a-ac85-40c9-a3b8-26616d414613" SourceId="1" SourceUrl="http://localhost:24166/Services/DongBoDBServices.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

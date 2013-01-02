@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="SearchProjectSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LoaiDuAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoaiNguonVon" type="xs:long" />
+      <xs:element minOccurs="0" name="MaDonViQuanLy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaDonViThucHien" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaDuAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NamBatDau" type="xs:long" />
+      <xs:element minOccurs="0" name="NamBatDauToanTu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NamKetThuc" type="xs:long" />
+      <xs:element minOccurs="0" name="NamKetThucToanTu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NhomDuAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="PhanCap" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TongVonDauTu" type="xs:long" />
+      <xs:element minOccurs="0" name="TongVonDauTuToanTu" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchProjectSetting" nillable="true" type="tns:SearchProjectSetting" />
+  <xs:complexType name="ChangeResultSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeResult" type="tns:ChangeResult" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeResultSettings" nillable="true" type="tns:ChangeResultSettings" />
+  <xs:simpleType name="ChangeResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ThatBai" />
+      <xs:enumeration value="ThanhCong" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ChangeResult" nillable="true" type="tns:ChangeResult" />
+  <xs:complexType name="ArrayOfGiamSatSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GiamSatSetting" nillable="true" type="tns:GiamSatSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGiamSatSetting" nillable="true" type="tns:ArrayOfGiamSatSetting" />
+  <xs:complexType name="GiamSatSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DotKHV" type="xs:long" />
+      <xs:element minOccurs="0" name="DuAnID" type="xs:long" />
+      <xs:element minOccurs="0" name="GhiChu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GiaiDoanChonNhaThau" type="xs:long" />
+      <xs:element minOccurs="0" name="GiaiDoanKHV" type="xs:long" />
+      <xs:element minOccurs="0" name="GiamSatID" type="xs:long" />
+      <xs:element minOccurs="0" name="GoiThauID" type="xs:long" />
+      <xs:element minOccurs="0" name="HopDongID" type="xs:long" />
+      <xs:element minOccurs="0" name="KeHoachVonID" type="xs:long" />
+      <xs:element minOccurs="0" name="KetQuaGiamSat" type="xs:long" />
+      <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaNguoiNhap" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NamKHV" type="xs:long" />
+      <xs:element minOccurs="0" name="SoQD" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GiamSatSetting" nillable="true" type="tns:GiamSatSetting" />
+</xs:schema>

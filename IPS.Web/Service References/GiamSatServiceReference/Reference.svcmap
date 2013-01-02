@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2cba755e-357b-4441-932b-a3f7ee0a57c8" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:24166/Services/GiamSatServices.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GiamSatServices.xsd" MetadataType="Schema" ID="509ef7ca-a06b-47ae-83a2-ac959e8812ca" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd4" />
+    <MetadataFile FileName="GiamSatServices1.xsd" MetadataType="Schema" ID="f4c70b43-cd68-4bf4-b5bd-6cd47f69d789" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd3" />
+    <MetadataFile FileName="GiamSatServices2.xsd" MetadataType="Schema" ID="1365a619-83d8-4124-967a-614e4544aefe" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="GiamSatServices.disco" MetadataType="Disco" ID="1cad8cd7-0d27-4f32-aab2-af13c0eebd75" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?disco" />
+    <MetadataFile FileName="GiamSatServices3.xsd" MetadataType="Schema" ID="94f6fff0-5bd6-4644-a7d6-17fdf4104794" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="GiamSatServices.wsdl" MetadataType="Wsdl" ID="e7d04f5a-f70c-4188-b3c6-f371e90c9b0d" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?wsdl" />
+    <MetadataFile FileName="GiamSatServices4.xsd" MetadataType="Schema" ID="483503de-5f0d-444d-bc9c-daa7088768ab" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd0" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
