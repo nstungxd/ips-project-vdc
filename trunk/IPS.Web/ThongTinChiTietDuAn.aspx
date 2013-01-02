@@ -14,9 +14,9 @@
             var value = ddlLoaiNguonVon._value;
             ob_post.AddParam('text', text);
             ob_post.AddParam('value', value);
-            ob_post.post(null, "CapNhatLoaiNguonVon", ResultComputeAge);
+            ob_post.post(null, "CapNhatLoaiNguonVon", ResultCapNhat);
         }
-        function ResultComputeAge(result, ex) {
+        function ResultCapNhat(result, ex) {
             alert(result);
         }
     </script>
