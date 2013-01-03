@@ -40,13 +40,13 @@ namespace UnitSettingLibrary
             return sb.ToString();
         }
 
-        public static List<string> ToanTuSoSanh()
+        public static Dictionary<int,string> ToanTuSoSanh()
         {
-            var list = new List<string>();
-            list.Add("--Chon gia tri--");
-            list.Add(">");
-            list.Add("<");
-            list.Add("=");
+            var list = new Dictionary<int,string>();
+            list.Add(-1,"--Chon gia tri--");
+            list.Add(0,">");
+            list.Add(1,"<");
+            list.Add(2,"=");
             return list;
         }
     }
