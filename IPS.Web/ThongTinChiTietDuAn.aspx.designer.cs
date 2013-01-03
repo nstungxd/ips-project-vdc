@@ -119,5 +119,23 @@ namespace IPS.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Vdc.Interface.VdcButton VdcButton1;
+        
+        /// <summary>
+        /// hfMaDonVi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfMaDonVi;
+        
+        /// <summary>
+        /// hfSoIdDonVi control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField hfSoIdDonVi;
     }
 }
