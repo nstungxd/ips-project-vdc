@@ -7,3 +7,4 @@ D:\VDC\IPS\Source\IPS_source\IPS\IPS.Web\bin\vdc_Interface.dll
 D:\VDC\IPS\Source\IPS_source\IPS\IPS.Web\bin\UnitSettingLibrary.dll
 D:\VDC\IPS\Source\IPS_source\IPS\IPS.Web\bin\UnitSettingLibrary.pdb
 D:\VDC\IPS\Source\IPS_source\IPS\IPS.Web\bin\vdc_AJAXPage.dll
+D:\VDC\IPS\Source\IPS_source\IPS\IPS.Web\bin\vdc_Grid_NET.dll
