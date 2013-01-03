@@ -75,7 +75,7 @@ namespace BusinessLogic.Services
         /// <param name="idDuAn"></param>
         /// <returns></returns>
         [OperationContract]
-        DataTable ChiTietDuAn(string maDonVi, long idDuAn);
+        string ChiTietDuAnReturnString(string maDonVi, long idDuAn);
 
         /// <summary>
         /// 

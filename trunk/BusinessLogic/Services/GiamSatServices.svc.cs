@@ -83,14 +83,19 @@ namespace BusinessLogic.Services
             return sReturn;
         }
 
-        public DataTable ChiTietDuAn(string maDonVi, long idDuAn)
-        {            
+        public string ChiTietDuAnReturnString(string maDonVi, long idDuAn)
+        {
+            var sReturn = "";
             var giamSatDataTier = new GiamSatRepository();
             var mdv = "";
             var nsd = "";
             var pas = "";
             var tableData = giamSatDataTier.ChiTietDuAn(mdv, nsd, pas, maDonVi, idDuAn);
-            return tableData;
+            if (tableData != null && tableData.Rows.Count > 0)
+            {
+                sReturn = Common.ConvertTableToJsonString(tableData);
+            }
+            return sReturn;
         }
 
         public object[] TimKiemDuAn(SearchProjectSetting searchProjectSetting, int pageIndex = 1)
@@ -120,7 +125,30 @@ namespace BusinessLogic.Services
             var mdv = "";
             var nsd = "";
             var pas = "";
-            var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);
+            var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);            
+            // them cot the hien trang thai thuc hien ke hoach von
+            tableData.Columns.Add("TrangThaiThucHien", typeof (String));
+            if(tableData.Rows.Count>0)
+            {
+                for (int i = 0; i < tableData.Rows.Count; i++)
+                {
+                    // da duoc phe duyet
+                    if(tableData.Rows[i]["so_qd"].ToString()!=" ")
+                    {
+                        tableData.Rows[i]["TrangThaiThucHien"] = "PD";
+                    }
+                    // da duoc tham dinh
+                    else if (tableData.Rows[i]["td_ngoai"].ToString() != "" || tableData.Rows[i]["td_noi"].ToString() != "")
+                    {
+                        tableData.Rows[i]["TrangThaiThucHien"] = "TD";
+                    }
+                    // da dang ky
+                    else
+                    {
+                        tableData.Rows[i]["TrangThaiThucHien"] = "DK";
+                    }
+                }
+            }
             sReturn = Common.ConvertTableToJsonString(tableData);
             return sReturn;
         }
