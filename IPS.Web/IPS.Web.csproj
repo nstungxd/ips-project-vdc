@@ -61,6 +61,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\protect dll\Protected\vdc_AJAXPage.dll</HintPath>
     </Reference>
+    <Reference Include="vdc_Grid_NET, Version=1.0.0.2, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\protect dll\Protected\vdc_Grid_NET.dll</HintPath>
+    </Reference>
     <Reference Include="vdc_Interface, Version=1.0.0.2, Culture=neutral, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\..\..\protect dll\Protected\vdc_Interface.dll</HintPath>

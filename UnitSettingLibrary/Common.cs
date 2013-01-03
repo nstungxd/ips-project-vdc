@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
@@ -48,6 +49,18 @@ namespace UnitSettingLibrary
             list.Add(1,"<");
             list.Add(2,"=");
             return list;
+        }
+
+        public static Hashtable GetEnumForBind(Type enumeration)
+        {
+            string[] names = Enum.GetNames(enumeration);
+            Array values = Enum.GetValues(enumeration);
+            Hashtable ht = new Hashtable();
+            for (int i = 0; i < names.Length; i++)
+            {
+                ht.Add(Convert.ToInt32(values.GetValue(i)).ToString(), names[i]);
+            }
+            return ht;
         }
     }
 }

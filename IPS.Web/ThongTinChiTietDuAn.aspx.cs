@@ -13,8 +13,6 @@ namespace IPS.Web
 {
     public partial class ThongTinChiTietDuAn : VdcInc.vdcAJAXPage
     {
-        public string Ma_dvi = "";
-        public Int64 SoID_dvi = 0;
         GiamSatServiceReference.GiamSatServicesClient giamsatService = new GiamSatServiceReference.GiamSatServicesClient();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,20 +21,8 @@ namespace IPS.Web
 
             }
         }
-        public Hashtable GetEnumForBind(Type enumeration)
-        {
-            string[] names = Enum.GetNames(enumeration);
-            Array values = Enum.GetValues(enumeration);
-            Hashtable ht = new Hashtable();
-            for (int i = 0; i < names.Length; i++)
-            {
-                ht.Add(Convert.ToInt32(values.GetValue(i)).ToString(), names[i]);
-            }
-            return ht;
-        }
         public string CapNhatLoaiNguonVon(string ma_don_vi, string so_id_don_vi, string trang_thai)
         {
-            //return ma_don_vi + "#####" + so_id_don_vi + "####" + trang_thai;
             ChangeResultSettings result = giamsatService.CapNhatLoaiNguonVon(ma_don_vi, Int64.Parse(so_id_don_vi), Int64.Parse(trang_thai));
 
             if (result.ChangeResult.ToString() == "ThanhCong")
@@ -66,7 +52,7 @@ namespace IPS.Web
             lbThoiGianPhatSinh.InnerText = (string)d[0]["NAM_BD"];
             lbThoiGianKetThuc.InnerText = (string)d[0]["NAM_KT"];
 
-            Hashtable ht = GetEnumForBind(typeof(LoaiNguonVon));
+            Hashtable ht = Common.GetEnumForBind(typeof(LoaiNguonVon));
             ddlLoaiNguonVon.DataSource = ht;
             ddlLoaiNguonVon.DataTextField = "value";
             ddlLoaiNguonVon.DataValueField = "key";
