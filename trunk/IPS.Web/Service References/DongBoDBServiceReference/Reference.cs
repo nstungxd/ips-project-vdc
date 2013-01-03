@@ -9,91 +9,17 @@
 //------------------------------------------------------------------------------
 
 namespace IPS.Web.DongBoDBServiceReference {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ChangeResultSettings", Namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary")]
-    [System.SerializableAttribute()]
-    public partial class ChangeResultSettings : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private IPS.Web.DongBoDBServiceReference.ChangeResult ChangeResultField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MessageField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public IPS.Web.DongBoDBServiceReference.ChangeResult ChangeResult {
-            get {
-                return this.ChangeResultField;
-            }
-            set {
-                if ((this.ChangeResultField.Equals(value) != true)) {
-                    this.ChangeResultField = value;
-                    this.RaisePropertyChanged("ChangeResult");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Message {
-            get {
-                return this.MessageField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
-                    this.MessageField = value;
-                    this.RaisePropertyChanged("Message");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ChangeResult", Namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary")]
-    public enum ChangeResult : int {
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ThatBai = 0,
-        
-        [System.Runtime.Serialization.EnumMemberAttribute()]
-        ThanhCong = 1,
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="DongBoDBServiceReference.IDongBoDBServices")]
     public interface IDongBoDBServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDongBoDBServices/DongBoDBDauTu", ReplyAction="http://tempuri.org/IDongBoDBServices/DongBoDBDauTuResponse")]
-        IPS.Web.DongBoDBServiceReference.ChangeResultSettings DongBoDBDauTu();
+        UnitSettingLibrary.ChangeResultSettings DongBoDBDauTu();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDongBoDBServices/DongBoDBDauTu", ReplyAction="http://tempuri.org/IDongBoDBServices/DongBoDBDauTuResponse")]
-        System.Threading.Tasks.Task<IPS.Web.DongBoDBServiceReference.ChangeResultSettings> DongBoDBDauTuAsync();
+        System.Threading.Tasks.Task<UnitSettingLibrary.ChangeResultSettings> DongBoDBDauTuAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -123,11 +49,11 @@ namespace IPS.Web.DongBoDBServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public IPS.Web.DongBoDBServiceReference.ChangeResultSettings DongBoDBDauTu() {
+        public UnitSettingLibrary.ChangeResultSettings DongBoDBDauTu() {
             return base.Channel.DongBoDBDauTu();
         }
         
-        public System.Threading.Tasks.Task<IPS.Web.DongBoDBServiceReference.ChangeResultSettings> DongBoDBDauTuAsync() {
+        public System.Threading.Tasks.Task<UnitSettingLibrary.ChangeResultSettings> DongBoDBDauTuAsync() {
             return base.Channel.DongBoDBDauTuAsync();
         }
     }

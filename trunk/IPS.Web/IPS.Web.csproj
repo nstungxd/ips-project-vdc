@@ -67,7 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DanhSachDuAn.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <Content Include="Properties\DataSources\UnitSettingLibrary.ChangeResultSettings.datasource" />
     <None Include="Service References\BaoCaoServiceReference\BaoCaoServices.disco" />
     <None Include="Service References\BaoCaoServiceReference\configuration91.svcinfo" />
     <None Include="Service References\BaoCaoServiceReference\configuration.svcinfo" />
@@ -79,9 +81,6 @@
     <None Include="Service References\DongBoDBServiceReference\configuration91.svcinfo" />
     <None Include="Service References\DongBoDBServiceReference\configuration.svcinfo" />
     <Content Include="Script\jquery-1.8.2.min.js" />
-    <Content Include="Service References\DongBoDBServiceReference\IPS.Web.DongBoDBServiceReference.ChangeResultSettings.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\DongBoDBServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -89,9 +88,6 @@
     <None Include="Service References\GiamSatServiceReference\GiamSatServices.disco" />
     <None Include="Service References\GiamSatServiceReference\configuration91.svcinfo" />
     <None Include="Service References\GiamSatServiceReference\configuration.svcinfo" />
-    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ChangeResultSettings.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Service References\GiamSatServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -100,6 +96,13 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DanhSachDuAn.aspx.cs">
+      <DependentUpon>DanhSachDuAn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DanhSachDuAn.aspx.designer.cs">
+      <DependentUpon>DanhSachDuAn.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\BaoCaoServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>

@@ -10,10 +10,12 @@
             //var text = dropdown.text();
             //var value = dropdown.val();
             var drop = ddlLoaiNguonVon;
-            var text = ddlLoaiNguonVon._text;
             var value = ddlLoaiNguonVon._value;
-            ob_post.AddParam('text', text);
-            ob_post.AddParam('value', value);
+            var hfMadv = $("input[id$='hfMaDonVi']").val();
+            var hfSoIdDv = $("input[id$='hfSoIdDonVi']").val();
+            ob_post.AddParam('ma_don_vi', hfMadv);
+            ob_post.AddParam('so_id_don_vi', hfSoIdDv);
+            ob_post.AddParam('trang_thai', value);
             ob_post.post(null, "CapNhatLoaiNguonVon", ResultCapNhat);
         }
         function ResultCapNhat(result, ex) {
@@ -78,7 +80,10 @@
                     </tr>
                     <tr>
                         <td><cc1:VdcButton ID="VdcButton1" runat="server" Text="Cập nhật" OnClientClick="CapNhatLoaiNguonVon(); return false;"></cc1:VdcButton></td>
-                        <td></td>
+                        <td>
+                            <asp:HiddenField ID="hfMaDonVi" runat="server"/>
+                            <asp:HiddenField ID="hfSoIdDonVi" runat="server"/>
+                        </td>
                     </tr>
                 </table>
             </td>
