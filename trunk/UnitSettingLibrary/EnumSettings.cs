@@ -1,5 +1,5 @@
 ﻿namespace UnitSettingLibrary
-{
+{    
     public enum NameDatabase
     {
         GiamSat = 0,
@@ -10,7 +10,7 @@
     {
         ThatBai = 0,
         ThanhCong = 1
-    }
+    }   
 
     public enum LoaiGiamSat
     {
