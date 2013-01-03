@@ -83,19 +83,14 @@ namespace BusinessLogic.Services
             return sReturn;
         }
 
-        public string ChiTietDuAnReturnString(string maDonVi, long idDuAn)
-        {
-            var sReturn = "";
+        public DataTable ChiTietDuAn(string maDonVi, long idDuAn)
+        {            
             var giamSatDataTier = new GiamSatRepository();
             var mdv = "";
             var nsd = "";
             var pas = "";
             var tableData = giamSatDataTier.ChiTietDuAn(mdv, nsd, pas, maDonVi, idDuAn);
-            if (tableData != null && tableData.Rows.Count > 0)
-            {
-                sReturn = Common.ConvertTableToJsonString(tableData);
-            }
-            return sReturn;
+            return tableData;
         }
 
         public object[] TimKiemDuAn(SearchProjectSetting searchProjectSetting, int pageIndex = 1)
