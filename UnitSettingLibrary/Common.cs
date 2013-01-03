@@ -39,5 +39,15 @@ namespace UnitSettingLibrary
             sb.Append("]");
             return sb.ToString();
         }
+
+        public static List<string> ToanTuSoSanh()
+        {
+            var list = new List<string>();
+            list.Add("--Chon gia tri--");
+            list.Add(">");
+            list.Add("<");
+            list.Add("=");
+            return list;
+        }
     }
 }
