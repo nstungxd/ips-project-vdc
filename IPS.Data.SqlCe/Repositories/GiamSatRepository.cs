@@ -534,5 +534,33 @@ namespace IPS.Data.SqlCe.Repositories
             }
             return result;
         }
+
+        public DataTable DanhSachDonVi()
+        {
+            try
+            {
+                ConnectDB.CloseConnection(_connectGs);
+                _connectGs = new OracleConnection();
+                _connectGs = ConnectDB.GetOracleConnection(_connectGs);
+                var cm = _connectGs.CreateCommand();
+                cm.CommandText = "usp_DanhSach_DonVi";
+                cm.CommandType = CommandType.StoredProcedure;              
+                cm.Parameters.Add(new OracleParameter("cs_lke", OracleDbType.RefCursor)).Direction =
+                    ParameterDirection.Output;
+
+                var tableGs = new DataTable();
+                _oracleAdapter = new OracleDataAdapter(cm);
+                _oracleAdapter.Fill(tableGs);
+                return tableGs;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                ConnectDB.CloseConnection(_connectGs);
+            }
+        }
     }
 }
