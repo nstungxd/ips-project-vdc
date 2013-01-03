@@ -9,7 +9,13 @@ using UnitSettingLibrary;
 namespace IPS.Data
 {
     public interface IGiamSatDataTier
-    {        
+    {
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        DataTable DanhSachDonVi();
+
         /// <summary>
         /// 
         /// </summary>
