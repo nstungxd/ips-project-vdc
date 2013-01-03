@@ -25,7 +25,7 @@ namespace IPS.Web
         {
             ChangeResultSettings result = giamsatService.CapNhatLoaiNguonVon(ma_don_vi, Int64.Parse(so_id_don_vi), Int64.Parse(trang_thai));
 
-            if (result.ChangeResult.ToString() == "ThanhCong")
+            if (result.ChangeResult == ChangeResult.ThanhCong)
             {
                 return "Cập nhật thành công";
             }
