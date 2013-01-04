@@ -14,7 +14,7 @@ namespace IPS.Data
         /// 
         /// </summary>
         /// <returns></returns>
-        DataTable DanhSachDonVi();
+        DataTable DanhSachDonVi(string mdv, string nsd, string pas);
 
         /// <summary>
         /// 
