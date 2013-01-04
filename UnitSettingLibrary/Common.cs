@@ -1,11 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace UnitSettingLibrary
 {
@@ -44,23 +40,11 @@ namespace UnitSettingLibrary
         public static Dictionary<int,string> ToanTuSoSanh()
         {
             var list = new Dictionary<int,string>();
-            list.Add(-1,"--Chon gia tri--");
+            list.Add(-1,"--Chọn giá trị--");
             list.Add(0,">");
             list.Add(1,"<");
             list.Add(2,"=");
             return list;
-        }
-
-        public static Hashtable GetEnumForBind(Type enumeration)
-        {
-            string[] names = Enum.GetNames(enumeration);
-            Array values = Enum.GetValues(enumeration);
-            Hashtable ht = new Hashtable();
-            for (int i = 0; i < names.Length; i++)
-            {
-                ht.Add(Convert.ToInt32(values.GetValue(i)).ToString(), names[i]);
-            }
-            return ht;
-        }
-    }
+        }       
+    }    
 }

@@ -1,5 +1,49 @@
-﻿namespace UnitSettingLibrary
-{    
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Globalization;
+using System.Linq;
+using System.Reflection;
+namespace UnitSettingLibrary
+{
+    public class EnumHelper
+    {
+        public static string GetDescription<TEnum>(TEnum value)
+        {
+            FieldInfo fi = value.GetType().GetField(value.ToString());
+            var attributes = (DescriptionAttribute[])fi.GetCustomAttributes(typeof(DescriptionAttribute), false);
+
+            return (attributes.Length > 0) ? attributes[0].Description : value.ToString();
+        }
+
+        public static Hashtable GetEnumForBind(Type enumeration)
+        {
+            string[] names = Enum.GetNames(enumeration);
+            Array values = Enum.GetValues(enumeration);
+            var ht = new Hashtable();
+            for (int i = 0; i < names.Length; i++)
+            {
+                ht.Add(Convert.ToInt32(values.GetValue(i)).ToString(CultureInfo.InvariantCulture), names[i]);
+            }
+            return ht;
+        }
+
+        public static IEnumerable<UnitShortModel> GetDescriptionForBind<TEnum>(TEnum enumValue)
+        {
+            if (!typeof(TEnum).IsEnum) return null;
+
+            var a = (from TEnum e in Enum.GetValues(typeof(TEnum))
+                     select new UnitShortModel()
+                     {
+                         Name = e.ToString(),
+                         ValueInt = Convert.ToInt32(e),
+                         ValueString = GetDescription(e)
+                     }).OrderBy(x => x.ValueInt);
+            return a;
+        }
+    }
+
     public enum NameDatabase
     {
         GiamSat = 0,
@@ -38,29 +82,41 @@
 
     public enum LoaiDuAn
     {
+        [Description("--Chọn giá trị--")]
         KhongXacDinh = -1
     }
 
     public enum LoaiNguonVon
     {
+        [Description("--Chọn giá trị--")]
         KhongXacDinh = -1,
+        [Description("Chưa cập nhật loại nguồn vốn")]
         ChuaCapNhat = 0,
+        [Description("Trên 30% vốn nhà nước")]
         VonNhaNuoc30 = 1,
+        [Description("Vốn khác")]
         VonKhac = 2
     }
 
     public enum NhomDuAn
     {
+        [Description("--Chọn giá trị--")]
         KhongXacDinh = -1,
+        [Description("Nhóm A")]
         NhomA = 0,
+        [Description("Nhóm B")]
         NhomB = 1,
+        [Description("Nhóm C")]
         NhomC = 2
     }
 
     public enum LoaiPhanCap
     {
+        [Description("--Chọn giá trị--")]
         KhongXacDinh = -1,
+        [Description("Dự án phân cấp")]
         PhanCap = 0,
+        [Description("Dự án tập trung")]
         TapTrung = 1
     }
 
@@ -76,9 +132,12 @@
 
     public enum KetQuaGiamSat
     {
+        [Description("--Chọn giá trị--")]
         KhongXacDinh = -1,
 
+        [Description("Vi phạm thủ tục quy hoạch")]
         VpThuTucQuyHoach = 0,
+        [Description("Vi phạm thẩm quyền phê duyệt")]
         VpThuTucThamQuyenPheDuyet = 1,
         VpThuTucTrinhTuThamDinh = 2,
         VpQuanLyChatLuong = 3,
