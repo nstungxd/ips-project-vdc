@@ -39,8 +39,7 @@ namespace UnitSettingLibrary
 
         public static Dictionary<int,string> ToanTuSoSanh()
         {
-            var list = new Dictionary<int,string>();
-            list.Add(-1,"--Chọn giá trị--");
+            var list = new Dictionary<int,string>();           
             list.Add(0,">");
             list.Add(1,"<");
             list.Add(2,"=");
