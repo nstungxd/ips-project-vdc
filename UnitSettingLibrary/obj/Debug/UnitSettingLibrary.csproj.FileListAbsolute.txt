@@ -1,5 +1,0 @@
-D:\VDC\IPS\Source\IPS_source\IPS\UnitSettingLibrary\bin\Debug\UnitSettingLibrary.dll
-D:\VDC\IPS\Source\IPS_source\IPS\UnitSettingLibrary\bin\Debug\UnitSettingLibrary.pdb
-D:\VDC\IPS\Source\IPS_source\IPS\UnitSettingLibrary\obj\Debug\UnitSettingLibrary.dll
-D:\VDC\IPS\Source\IPS_source\IPS\UnitSettingLibrary\obj\Debug\UnitSettingLibrary.pdb
-D:\VDC\IPS\Source\IPS_source\IPS\UnitSettingLibrary\obj\Debug\UnitSettingLibrary.csprojResolveAssemblyReference.cache
