@@ -55,24 +55,31 @@ namespace IPS.Web
             ddlDonViQuanLyDT.DataValueField = "MaDonVi";
             ddlDonViQuanLyDT.DataBind(); 
 
-            //load dropdownlist toán tử
-            var dicToanTu = Common.ToanTuSoSanh();
-            ddlTTTongVonDT.DataSource = dicToanTu;
-            ddlTTTongVonDT.DataTextField = "Value";
-            ddlTTTongVonDT.DataValueField = "Key";
-            ddlTTTongVonDT.DataBind();
+            ////load dropdownlist toán tử
+            //var dicToanTu = Common.ToanTuSoSanh();
+            //ddlTTTongVonDT.DataSource = dicToanTu;
+            //ddlTTTongVonDT.DataTextField = "Value";
+            //ddlTTTongVonDT.DataValueField = "Key";
+            //ddlTTTongVonDT.DataBind();
 
-            ddlTTThoiGianPhatSinh.DataSource = dicToanTu;
-            ddlTTThoiGianPhatSinh.DataTextField = "Value";
-            ddlTTThoiGianPhatSinh.DataValueField = "Key";
-            ddlTTThoiGianPhatSinh.DataBind();
+            //ddlTTThoiGianPhatSinh.DataSource = dicToanTu;
+            //ddlTTThoiGianPhatSinh.DataTextField = "Value";
+            //ddlTTThoiGianPhatSinh.DataValueField = "Key";
+            //ddlTTThoiGianPhatSinh.DataBind();
 
-            ddlTTThoiGianKetThuc.DataSource = dicToanTu;
-            ddlTTThoiGianKetThuc.DataTextField = "Value";
-            ddlTTThoiGianKetThuc.DataValueField = "Key";
-            ddlTTThoiGianKetThuc.DataBind();
+            //ddlTTThoiGianKetThuc.DataSource = dicToanTu;
+            //ddlTTThoiGianKetThuc.DataTextField = "Value";
+            //ddlTTThoiGianKetThuc.DataValueField = "Key";
+            //ddlTTThoiGianKetThuc.DataBind();
 
-
+            // hoathan
+            var listToanTu = Common.ToanTuSoSanh();
+            foreach (string name in listToanTu)
+            {
+                ddlTTTongVonDT.Items.Add(new ListItem(name));
+                ddlTTThoiGianPhatSinh.Items.Add(new ListItem(name));
+                ddlTTThoiGianKetThuc.Items.Add(new ListItem(name));
+            }
             
         }
         public void LoadGrid()
@@ -97,7 +104,7 @@ namespace IPS.Web
                 sps.NamBatDau = Int64.Parse(txtThoiGianPhatSinh.Text == "" ? "0" : txtThoiGianPhatSinh.Text);
                 sps.NamKetThucToanTu = ddlTTThoiGianKetThuc.SelectedValue;
                 sps.NamKetThuc = Int64.Parse(txtThoiGianKetThuc.Text == "" ? "0" : txtThoiGianKetThuc.Text);
-                H result =  giamsatService.TimKiemDuAn("", "", "", sps, 1);
+                var result =  giamsatService.TimKiemDuAn("", "", "", sps, 1);
             }
         }
         public bool Validate() {
