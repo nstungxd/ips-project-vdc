@@ -11,7 +11,7 @@ namespace BusinessLogic.Models
     public class DuAnShortModel
     {
         [DataMember]
-        public string MaDonVi { get; set; }
+        public string MaDonVi { get; set; }        
 
         [DataMember]
         public long IdDuAn { get; set; }
@@ -38,7 +38,18 @@ namespace BusinessLogic.Models
         public long NamKetThuc { get; set; }
 
         [DataMember]
-        public long TongVonDauTu { get; set; }       
+        public long TongVonDauTu { get; set; }  
+     
+        
+        // extend properties for detail
+        [DataMember]
+        public string TenDonViThucHien { get; set; }
+
+        [DataMember]
+        public string TenDonViQuanLy { get; set; }
+
+        [DataMember]
+        public string SoQuyetDinh { get; set; }
     }
 
     [DataContract]
