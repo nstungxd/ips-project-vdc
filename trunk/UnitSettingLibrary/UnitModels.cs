@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -15,5 +16,14 @@ namespace UnitSettingLibrary
         {
             ChangeResult = ChangeResult.ThanhCong;
         }
+    }
+
+    public class UnitShortModel
+    {        
+        public string Name { get; set; }
+      
+        public string ValueString { get; set; }
+
+        public int ValueInt { get; set; }
     }
 }
