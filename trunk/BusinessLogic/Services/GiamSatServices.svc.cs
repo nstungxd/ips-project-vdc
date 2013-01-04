@@ -78,19 +78,96 @@ namespace BusinessLogic.Services
             return sReturn;
         }
 
-        public H TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1)
+        public ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1)
         {
-            var giamSatDataTier = new GiamSatRepository();           
-            var objData = giamSatDataTier.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, pageIndex, PageSize);
-            var abc = new H { Table = objData[0] as DataTable,Total= Convert.ToInt32(objData[1]) };
-            return abc;
+            try
+            {
+                var listDuAn = new ListDuAnModelGridView();
+                var giamSatDataTier = new GiamSatRepository();
+                var objData = giamSatDataTier.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, PageSize, pageIndex);
+                if (objData != null)
+                {
+                    var list = new List<DuAnShortModel>();
+                    var pageSetting = new PaginationSetting
+                                          {
+                                              PageSize = PageSize,
+                                              TotalRecords = Convert.ToInt64(objData[1])
+                                          };
+                    listDuAn.TotalPage = pageSetting.TotalPage;
+                    listDuAn.TotalRecords = pageSetting.TotalRecords;
+                    var table = objData[0] as DataTable;
+                    if (table != null && table.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in table.Rows)
+                        {
+                            var duan = new DuAnShortModel();
+                            duan.IdDuAn = Convert.ToInt64(dr["so_id"]);
+                            duan.LoaiNguonVon = Convert.ToInt64(dr["loai_nguon_von"]);
+                            duan.LoaiPhanCap = dr["phancap"].ToString();
+                            duan.MaDonVi = dr["ma_dvi"].ToString();
+                            duan.MaDuAn = dr["ma"].ToString();
+                            duan.NamBatDau = Convert.ToInt64(dr["nambd"]);
+                            duan.NamKetThuc = Convert.ToInt64(dr["namkt"]);
+                            duan.NhomDuAn = dr["nhom_da"].ToString();
+                            duan.TenDuAn = dr["ten"].ToString();
+                            duan.TongVonDauTu = Convert.ToInt64(dr["tienqd"]);
+                            list.Add(duan);
+                        }
+                        listDuAn.DuAnModelsGridView = list;
+                    }
+                }
+                return listDuAn;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
-        public object[] DanhSachDuAn(string mdv, string nsd, string pas, int pageIndex = 1)
+        public ListDuAnModelGridView DanhSachDuAn(string mdv, string nsd, string pas, int pageIndex = 1)
         {
-            var giamSatDataTier = new GiamSatRepository();           
-            var objData = giamSatDataTier.DanhSachDuAn(mdv, nsd, pas, pageIndex, PageSize);            
-            return objData;
+            try
+            {
+                var listDuAn = new ListDuAnModelGridView();
+                var giamSatDataTier = new GiamSatRepository();
+                var objData = giamSatDataTier.DanhSachDuAn(mdv, nsd, pas, PageSize, pageIndex);
+                if (objData != null)
+                {
+                    var list = new List<DuAnShortModel>();
+                    var pageSetting = new PaginationSetting
+                    {
+                        PageSize = PageSize,
+                        TotalRecords = Convert.ToInt64(objData[1])
+                    };
+                    listDuAn.TotalPage = pageSetting.TotalPage;
+                    listDuAn.TotalRecords = pageSetting.TotalRecords;
+                    var table = objData[0] as DataTable;
+                    if (table != null && table.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in table.Rows)
+                        {
+                            var duan = new DuAnShortModel();
+                            duan.IdDuAn = Convert.ToInt64(dr["so_id"]);
+                            duan.LoaiNguonVon = Convert.ToInt64(dr["loai_nguon_von"]);
+                            duan.LoaiPhanCap = dr["phancap"].ToString();
+                            duan.MaDonVi = dr["ma_dvi"].ToString();
+                            duan.MaDuAn = dr["ma"].ToString();
+                            duan.NamBatDau = Convert.ToInt64(dr["nambd"]);
+                            duan.NamKetThuc = Convert.ToInt64(dr["namkt"]);
+                            duan.NhomDuAn = dr["nhom_da"].ToString();
+                            duan.TenDuAn = dr["ten"].ToString();
+                            duan.TongVonDauTu = Convert.ToInt64(dr["tienqd"]);
+                            list.Add(duan);
+                        }
+                        listDuAn.DuAnModelsGridView = list;
+                    }
+                }
+                return listDuAn;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public string DanhSachGiaiDoanKHVReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long nam)
@@ -127,8 +204,8 @@ namespace BusinessLogic.Services
         public string DanhSachGoiThauReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageIndex = 1)
         {
             var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();            
-            var objData = giamSatDataTier.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, pageIndex, PageSize);
+            var giamSatDataTier = new GiamSatRepository();
+            var objData = giamSatDataTier.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, PageSize, pageIndex);
             if (objData != null)
             {
                 var pageSetting = new PaginationSetting
@@ -144,8 +221,8 @@ namespace BusinessLogic.Services
         public string DanhSachHopDongReturnString(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageIndex = 1)
         {
             var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();           
-            var objData = giamSatDataTier.DanhSachHopDong(mdv, nsd, pas, maDonVi, idGoiThau, pageIndex, PageSize);
+            var giamSatDataTier = new GiamSatRepository();
+            var objData = giamSatDataTier.DanhSachHopDong(mdv, nsd, pas, maDonVi, idGoiThau, PageSize, pageIndex);
             if (objData != null)
             {
                 var pageSetting = new PaginationSetting

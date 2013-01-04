@@ -8,7 +8,7 @@ using UnitSettingLibrary;
 namespace BusinessLogic.Models
 {
     [DataContract]
-    public class DuAnModelGridView
+    public class DuAnShortModel
     {
         [DataMember]
         public string MaDonVi { get; set; }
@@ -23,13 +23,13 @@ namespace BusinessLogic.Models
         public string TenDuAn { get; set; }
 
         [DataMember]
-        public LoaiNguonVon LoaiNguonVon { get; set; }
+        public long LoaiNguonVon { get; set; }
 
         [DataMember]
-        public LoaiPhanCap LoaiPhanCap { get; set; }
+        public string LoaiPhanCap { get; set; }        
 
         [DataMember]
-        public NhomDuAn NhomDuAn { get; set; }
+        public string NhomDuAn { get; set; }           
 
         [DataMember]
         public long NamBatDau { get; set; }
@@ -38,21 +38,14 @@ namespace BusinessLogic.Models
         public long NamKetThuc { get; set; }
 
         [DataMember]
-        public long TongVonDauTu { get; set; }
-
-        public DuAnModelGridView()
-        {
-            LoaiNguonVon = LoaiNguonVon.KhongXacDinh;
-            LoaiPhanCap = LoaiPhanCap.KhongXacDinh;
-            NhomDuAn = NhomDuAn.KhongXacDinh;
-        }
+        public long TongVonDauTu { get; set; }       
     }
 
     [DataContract]
     public class ListDuAnModelGridView
     {
         [DataMember]
-        public List<DuAnModelGridView> DuAnModelGridView { get; set; }
+        public List<DuAnShortModel> DuAnModelsGridView { get; set; }
 
         [DataMember]
         public long TotalRecords { get; set; }
