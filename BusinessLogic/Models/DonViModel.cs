@@ -7,7 +7,7 @@ using System.Web;
 namespace BusinessLogic.Models
 {
     [DataContract]
-    public class DonViShortModel
+    public class DonViModelDrop
     {
         [DataMember]
         public string MaDonVi { get; set; }
