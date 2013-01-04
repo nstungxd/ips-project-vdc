@@ -180,11 +180,12 @@ namespace BusinessLogic.Services
             var tableData = giamSatDataTier.DanhSachDonVi(mdv, nsd, pas);
             var donvi = new DonViShortModel();
             donvi.TenDonVi = "--Chọn tất cả--";
-            donvi.MaDonVi = "";
+            donvi.MaDonVi = "-1";
             if (tableData != null && tableData.Rows.Count>0)
             {                
                 foreach (DataRow dr in tableData.Rows)
                 {
+                    donvi = new DonViShortModel();
                     donvi.MaDonVi = dr["ma"].ToString();
                     donvi.TenDonVi = dr["ten"].ToString();
                     listDonVi.Add(donvi);
