@@ -197,7 +197,7 @@ namespace BusinessLogic.Services
             var tableData = giamSatDataTier.DanhSachDonVi(mdv, nsd, pas);
             var donvi = new DonViShortModel();
             donvi.TenDonVi = "--Chọn giá trị--";
-            donvi.MaDonVi = "-1";
+            donvi.MaDonVi = "";
             listDonVi.Add(donvi);
             if (tableData != null && tableData.Rows.Count>0)
             {                
