@@ -78,11 +78,12 @@ namespace BusinessLogic.Services
             return sReturn;
         }
 
-        public object[] TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1)
+        public H TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1)
         {
             var giamSatDataTier = new GiamSatRepository();           
-            var objData = giamSatDataTier.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, pageIndex, PageSize);            
-            return objData;
+            var objData = giamSatDataTier.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, pageIndex, PageSize);
+            var abc = new H { Table = objData[0] as DataTable,Total= Convert.ToInt32(objData[1]) };
+            return abc;
         }
 
         public object[] DanhSachDuAn(string mdv, string nsd, string pas, int pageIndex = 1)

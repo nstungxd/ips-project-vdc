@@ -92,6 +92,18 @@
     <None Include="Service References\GiamSatServiceReference\GiamSatServices.disco" />
     <None Include="Service References\GiamSatServiceReference\configuration91.svcinfo" />
     <None Include="Service References\GiamSatServiceReference\configuration.svcinfo" />
+    <None Include="Service References\GiamSatServiceReference\GiamSatServices5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.DonViShortModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\GiamSatServiceReference\GiamSatServices6.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.H.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\GiamSatServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

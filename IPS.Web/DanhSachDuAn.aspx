@@ -50,13 +50,13 @@
                 <table>
                     <tr>
                         <td><b>Đơn vị quản lý ĐT</b></td>
-                        <td><cc2:VdcDropDownList ID="ddlDonViQuanLyDT" runat="server">
+                        <td><cc2:VdcDropDownList ID="ddlDonViQuanLyDT" runat="server" Height="150">
                             </cc2:VdcDropDownList>
                         </td>
                     </tr>
                     <tr>
                         <td><b>Đơn vị chủ đầu tư</b></td>
-                        <td><cc2:VdcDropDownList ID="ddlDonViChuDT" runat="server">
+                        <td><cc2:VdcDropDownList ID="ddlDonViChuDT" runat="server" Height="150">
                             </cc2:VdcDropDownList>
                         </td>
                     </tr>
@@ -109,7 +109,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <cc2:VdcButton ID="btTimKiem" runat="server" Text="Tìm kiếm"></cc2:VdcButton>
+                            <cc2:VdcButton ID="btTimKiem" runat="server" Text="Tìm kiếm" OnClick="btTimKiem_Click"></cc2:VdcButton>
                         </td>
                     </tr>
                 </table>
