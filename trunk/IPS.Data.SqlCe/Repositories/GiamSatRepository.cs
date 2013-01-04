@@ -535,7 +535,7 @@ namespace IPS.Data.SqlCe.Repositories
             return result;
         }
 
-        public DataTable DanhSachDonVi()
+        public DataTable DanhSachDonVi(string mdv, string nsd, string pas)
         {
             try
             {
@@ -544,7 +544,10 @@ namespace IPS.Data.SqlCe.Repositories
                 _connectGs = ConnectDB.GetOracleConnection(_connectGs);
                 var cm = _connectGs.CreateCommand();
                 cm.CommandText = "usp_DanhSach_DonVi";
-                cm.CommandType = CommandType.StoredProcedure;              
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
+                cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "";
+                cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("cs_lke", OracleDbType.RefCursor)).Direction =
                     ParameterDirection.Output;
 
