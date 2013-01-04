@@ -82,6 +82,15 @@ namespace BusinessLogic.Services
         {
             var giamSatDataTier = new GiamSatRepository();           
             var objData = giamSatDataTier.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, pageIndex, PageSize);
+            if (objData != null)
+            {
+                var pageSetting = new PaginationSetting
+                {
+                    PageSize = PageSize,
+                    TotalRecords = Convert.ToInt64(objData[1])
+                };
+                objData[2] = pageSetting.TotalPage;
+            }
             return objData;
         }
 
@@ -89,12 +98,20 @@ namespace BusinessLogic.Services
         {
             var giamSatDataTier = new GiamSatRepository();           
             var objData = giamSatDataTier.DanhSachDuAn(mdv, nsd, pas, pageIndex, PageSize);
+            if (objData != null)
+            {
+                var pageSetting = new PaginationSetting
+                {
+                    PageSize = PageSize,
+                    TotalRecords = Convert.ToInt64(objData[1])
+                };
+                objData[2] = pageSetting.TotalPage;
+            }
             return objData;
         }
 
         public string DanhSachGiaiDoanKHVReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long nam)
         {
-            var sReturn = "";
             var giamSatDataTier = new GiamSatRepository();           
             var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);            
             // them cot the hien trang thai thuc hien ke hoach von
@@ -120,7 +137,7 @@ namespace BusinessLogic.Services
                     }
                 }
             }
-            sReturn = Common.ConvertTableToJsonString(tableData);
+            string sReturn = Common.ConvertTableToJsonString(tableData);
             return sReturn;
         }
 
