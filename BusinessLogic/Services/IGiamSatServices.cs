@@ -13,7 +13,7 @@ namespace BusinessLogic.Services
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IGiamSatServices" in both code and config file together.
     [ServiceContract]
     public interface IGiamSatServices
-    {        
+    {
         /// <summary>
         /// lay chi tiet ke hoach von
         /// </summary>
@@ -109,7 +109,7 @@ namespace BusinessLogic.Services
         /// <param name="pageIndex">trang du lieu can lay</param> 
         /// <returns>object[0]: danh sach, object[1]:tong so ban ghi, object[2]: tong so trang</returns>
         [OperationContract]
-        H TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1);
+        ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1);
 
         /// <summary>
         /// lay danh sach du an
@@ -120,7 +120,7 @@ namespace BusinessLogic.Services
         /// <param name="pageIndex">trang du lieu can lay</param> 
         /// <returns>object[0]: danh sach, object[1]:tong so ban ghi, object[2]: tong so trang</returns>
         [OperationContract]
-        object[] DanhSachDuAn(string mdv, string nsd, string pas, int pageIndex = 1);
+        ListDuAnModelGridView DanhSachDuAn(string mdv, string nsd, string pas, int pageIndex = 1);
 
         /// <summary>
         /// lay danh sach cac giai doan cua 1 ke hoach von
@@ -146,7 +146,8 @@ namespace BusinessLogic.Services
         /// <param name="pageIndex">trang du lieu can lay</param> 
         /// <returns>danh sach goi thau kieu json</returns>
         [OperationContract]
-        string DanhSachGoiThauReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageIndex = 1);
+        string DanhSachGoiThauReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn,
+                                           int pageIndex = 1);
 
         /// <summary>
         /// lay sanh sach cac hop dong thuoc 1 goi thau
@@ -159,7 +160,8 @@ namespace BusinessLogic.Services
         /// <param name="pageIndex">trang du lieu can lay</param>
         /// <returns>danh sach hop dong kieu json</returns>
         [OperationContract]
-        string DanhSachHopDongReturnString(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageIndex = 1);
+        string DanhSachHopDongReturnString(string mdv, string nsd, string pas, string maDonVi, long idGoiThau,
+                                           int pageIndex = 1);
 
         /// <summary>
         /// cap nhat loai nguon von du an
@@ -172,7 +174,8 @@ namespace BusinessLogic.Services
         /// <param name="loaiNguonVon">loai nguon von</param>
         /// <returns>ChangeResultSettings</returns>
         [OperationContract]
-        ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long loaiNguonVon);
+        ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn,
+                                                 long loaiNguonVon);
 
         /// <summary>
         /// thuc hien thao tac giam sat
@@ -184,7 +187,8 @@ namespace BusinessLogic.Services
         /// <param name="listGiamSat">danh sach object giam sat</param>
         /// <returns></returns>
         [OperationContract]
-        ChangeResultSettings GiamSat(string mdv, string nsd, string pas,long loaiGiamSat, List<GiamSatSetting> listGiamSat = null);
+        ChangeResultSettings GiamSat(string mdv, string nsd, string pas, long loaiGiamSat,
+                                     List<GiamSatSetting> listGiamSat = null);
 
         /// <summary>
         /// lay danh sach don vi de fill du lieu vao dropdownlist
@@ -194,13 +198,4 @@ namespace BusinessLogic.Services
         List<DonViShortModel> DanhSachDonVi(string mdv, string nsd, string pas);
     }
 
-    [DataContract]
-    public class H
-    {
-        [DataMember]
-        public int Total { get; set; }
-        [DataMember]
-        public DataTable Table { get; set; }
-
-    }
 }
