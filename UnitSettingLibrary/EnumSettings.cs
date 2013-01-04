@@ -103,11 +103,11 @@ namespace UnitSettingLibrary
         [Description("--Chọn giá trị--")]
         KhongXacDinh = -1,
         [Description("Nhóm A")]
-        NhomA = 0,
+        A = 0,
         [Description("Nhóm B")]
-        NhomB = 1,
+        B = 1,
         [Description("Nhóm C")]
-        NhomC = 2
+        C = 2
     }
 
     public enum LoaiPhanCap
@@ -115,9 +115,9 @@ namespace UnitSettingLibrary
         [Description("--Chọn giá trị--")]
         KhongXacDinh = -1,
         [Description("Dự án phân cấp")]
-        PhanCap = 0,
+        P = 0,
         [Description("Dự án tập trung")]
-        TapTrung = 1
+        T = 1
     }
 
     public enum TinhTrangGiamSat
