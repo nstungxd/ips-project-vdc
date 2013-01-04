@@ -181,6 +181,7 @@ namespace BusinessLogic.Services
             var donvi = new DonViShortModel();
             donvi.TenDonVi = "--Chọn tất cả--";
             donvi.MaDonVi = "-1";
+            listDonVi.Add(donvi);
             if (tableData != null && tableData.Rows.Count>0)
             {                
                 foreach (DataRow dr in tableData.Rows)
