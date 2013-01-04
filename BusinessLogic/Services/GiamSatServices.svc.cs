@@ -1,4 +1,5 @@
-﻿using IPS.Data.SqlCe.Repositories;
+﻿using BusinessLogic.Models;
+using IPS.Data.SqlCe.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,50 +17,35 @@ namespace BusinessLogic.Services
     {
         private const int PageSize = 20;
 
-        public DataTable ChiTietKeHoachVon(string maDonVi, long namKHV, long idDuAn)
+        public DataTable ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long namKHV, long idDuAn)
         {
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();           
             return giamSatDataTier.ChiTietKeHoachVon(mdv, nsd, pas, maDonVi, namKHV, idDuAn);
         }
 
-        public DataTable ChiTietMoiThau(string maDonVi, long idGoiThau)
+        public DataTable ChiTietMoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
         {
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();           
             return giamSatDataTier.ChiTietMoiThau(mdv, nsd, pas, maDonVi, idGoiThau);
         }
 
-        public DataTable ChiTietMoThau(string maDonVi, long idGoiThau)
+        public DataTable ChiTietMoThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
         {
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();           
             return giamSatDataTier.ChiTietMoThau(mdv, nsd, pas, maDonVi, idGoiThau);
         }
 
-        public DataTable ChiTietXetThau(string maDonVi, long idGoiThau)
+        public DataTable ChiTietXetThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
         {
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();            
             return giamSatDataTier.ChiTietXetThau(mdv, nsd, pas, maDonVi, idGoiThau);
         }
 
 
-        public string ChiTietGoiThauReturnString(string maDonVi, long idGoiThau)
+        public string ChiTietGoiThauReturnString(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
         {
             var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();            
             var tableData = giamSatDataTier.ChiTietGoiThau(mdv, nsd, pas, maDonVi, idGoiThau);
             if (tableData != null && tableData.Rows.Count > 0)
             {
@@ -68,13 +54,10 @@ namespace BusinessLogic.Services
             return sReturn;
         }
 
-        public string ChiTietHopDongReturnString(string maDonVi, long idHopDong)
+        public string ChiTietHopDongReturnString(string mdv, string nsd, string pas, string maDonVi, long idHopDong)
         {
             var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();            
             var tableData = giamSatDataTier.ChiTietHopDong(mdv, nsd, pas, maDonVi, idHopDong);
             if (tableData != null && tableData.Rows.Count > 0)
             {
@@ -83,13 +66,10 @@ namespace BusinessLogic.Services
             return sReturn;
         }
 
-        public string ChiTietDuAnReturnString(string maDonVi, long idDuAn)
+        public string ChiTietDuAnReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn)
         {
             var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();           
             var tableData = giamSatDataTier.ChiTietDuAn(mdv, nsd, pas, maDonVi, idDuAn);
             if (tableData != null && tableData.Rows.Count > 0)
             {
@@ -98,33 +78,24 @@ namespace BusinessLogic.Services
             return sReturn;
         }
 
-        public object[] TimKiemDuAn(SearchProjectSetting searchProjectSetting, int pageIndex = 1)
+        public object[] TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1)
         {
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();           
             var objData = giamSatDataTier.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, pageIndex, PageSize);
             return objData;
         }
 
-        public object[] DanhSachDuAn(int pageIndex = 1)
+        public object[] DanhSachDuAn(string mdv, string nsd, string pas, int pageIndex = 1)
         {
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();           
             var objData = giamSatDataTier.DanhSachDuAn(mdv, nsd, pas, pageIndex, PageSize);
             return objData;
         }
 
-        public string DanhSachGiaiDoanKHVReturnString(string maDonVi, long idDuAn, long nam)
+        public string DanhSachGiaiDoanKHVReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long nam)
         {
             var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();           
             var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);            
             // them cot the hien trang thai thuc hien ke hoach von
             tableData.Columns.Add("TrangThaiThucHien", typeof (String));
@@ -153,13 +124,10 @@ namespace BusinessLogic.Services
             return sReturn;
         }
 
-        public string DanhSachGoiThauReturnString(string maDonVi, long idDuAn, int pageIndex = 1)
+        public string DanhSachGoiThauReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageIndex = 1)
         {
             var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();            
             var objData = giamSatDataTier.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, pageIndex, PageSize);
             if (objData != null)
             {
@@ -173,13 +141,10 @@ namespace BusinessLogic.Services
             return sReturn;
         }
 
-        public string DanhSachHopDongReturnString(string maDonVi, long idGoiThau, int pageIndex = 1)
+        public string DanhSachHopDongReturnString(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageIndex = 1)
         {
             var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();           
             var objData = giamSatDataTier.DanhSachHopDong(mdv, nsd, pas, maDonVi, idGoiThau, pageIndex, PageSize);
             if (objData != null)
             {
@@ -193,24 +158,39 @@ namespace BusinessLogic.Services
             return sReturn;
         }
 
-        public ChangeResultSettings CapNhatLoaiNguonVon(string maDonVi, long idDuAn, long loaiNguonVon)
+        public ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long loaiNguonVon)
         {
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();          
             var objData = giamSatDataTier.CapNhatLoaiNguonVon(mdv, nsd, pas, maDonVi, idDuAn, loaiNguonVon);
             return objData;
         }
 
-        public ChangeResultSettings GiamSat(long loaiGiamSat, List<GiamSatSetting> listGiamSat = null)
+        public ChangeResultSettings GiamSat(string mdv, string nsd, string pas, long loaiGiamSat, List<GiamSatSetting> listGiamSat = null)
         {
-            var giamSatDataTier = new GiamSatRepository();
-            var mdv = "";
-            var nsd = "";
-            var pas = "";
+            var giamSatDataTier = new GiamSatRepository();           
             var objData = giamSatDataTier.GiamSat(mdv, nsd, pas, loaiGiamSat, listGiamSat);
             return objData;
-        }       
+        }
+
+
+        public List<DonViShortModel> DanhSachDonVi(string mdv, string nsd, string pas)
+        {
+            var listDonVi = new List<DonViShortModel>();
+            var giamSatDataTier = new GiamSatRepository();            
+            var tableData = giamSatDataTier.DanhSachDonVi(mdv, nsd, pas);
+            var donvi = new DonViShortModel();
+            donvi.TenDonVi = "--Chọn tất cả--";
+            donvi.MaDonVi = "";
+            if (tableData != null && tableData.Rows.Count>0)
+            {                
+                foreach (DataRow dr in tableData.Rows)
+                {
+                    donvi.MaDonVi = dr["ma"].ToString();
+                    donvi.TenDonVi = dr["ten"].ToString();
+                    listDonVi.Add(donvi);
+                }
+            }
+            return listDonVi;
+        }
     }
 }
