@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" />
-  <xs:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Services" />
+  <xs:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" />
   <xs:element name="ChiTietKeHoachVon">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="namKHV" type="xs:long" />
         <xs:element minOccurs="0" name="idDuAn" type="xs:long" />
@@ -33,6 +38,9 @@
   <xs:element name="ChiTietMoiThau">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idGoiThau" type="xs:long" />
       </xs:sequence>
@@ -60,6 +68,9 @@
   <xs:element name="ChiTietMoThau">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idGoiThau" type="xs:long" />
       </xs:sequence>
@@ -87,6 +98,9 @@
   <xs:element name="ChiTietXetThau">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idGoiThau" type="xs:long" />
       </xs:sequence>
@@ -114,6 +128,9 @@
   <xs:element name="ChiTietGoiThauReturnString">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idGoiThau" type="xs:long" />
       </xs:sequence>
@@ -129,6 +146,9 @@
   <xs:element name="ChiTietHopDongReturnString">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idHopDong" type="xs:long" />
       </xs:sequence>
@@ -144,6 +164,9 @@
   <xs:element name="ChiTietDuAnReturnString">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idDuAn" type="xs:long" />
       </xs:sequence>
@@ -159,6 +182,9 @@
   <xs:element name="TimKiemDuAn">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="searchProjectSetting" nillable="true" type="q1:SearchProjectSetting" />
         <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
       </xs:sequence>
@@ -167,13 +193,16 @@
   <xs:element name="TimKiemDuAnResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="TimKiemDuAnResult" nillable="true" type="q2:ArrayOfanyType" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/BusinessLogic.Services" minOccurs="0" name="TimKiemDuAnResult" nillable="true" type="q2:H" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DanhSachDuAn">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -188,6 +217,9 @@
   <xs:element name="DanhSachGiaiDoanKHVReturnString">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idDuAn" type="xs:long" />
         <xs:element minOccurs="0" name="nam" type="xs:long" />
@@ -204,6 +236,9 @@
   <xs:element name="DanhSachGoiThauReturnString">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idDuAn" type="xs:long" />
         <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
@@ -220,6 +255,9 @@
   <xs:element name="DanhSachHopDongReturnString">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idGoiThau" type="xs:long" />
         <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
@@ -236,6 +274,9 @@
   <xs:element name="CapNhatLoaiNguonVon">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="idDuAn" type="xs:long" />
         <xs:element minOccurs="0" name="loaiNguonVon" type="xs:long" />
@@ -252,6 +293,9 @@
   <xs:element name="GiamSat">
     <xs:complexType>
       <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="loaiGiamSat" type="xs:long" />
         <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="listGiamSat" nillable="true" type="q5:ArrayOfGiamSatSetting" />
       </xs:sequence>
@@ -261,6 +305,22 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="GiamSatResult" nillable="true" type="q6:ChangeResultSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DanhSachDonVi">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DanhSachDonViResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachDonViResult" nillable="true" type="q7:ArrayOfDonViShortModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

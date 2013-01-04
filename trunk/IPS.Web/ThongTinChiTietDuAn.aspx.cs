@@ -23,7 +23,7 @@ namespace IPS.Web
         }
         public string CapNhatLoaiNguonVon(string ma_don_vi, string so_id_don_vi, string trang_thai)
         {
-            ChangeResultSettings result = giamsatService.CapNhatLoaiNguonVon(ma_don_vi, Int64.Parse(so_id_don_vi), Int64.Parse(trang_thai));
+            ChangeResultSettings result = giamsatService.CapNhatLoaiNguonVon("","","",ma_don_vi, Int64.Parse(so_id_don_vi), Int64.Parse(trang_thai));
 
             if (result.ChangeResult == ChangeResult.ThanhCong)
             {
@@ -35,7 +35,7 @@ namespace IPS.Web
         }
         public void loadGrid()
         {
-            string result = giamsatService.ChiTietDuAnReturnString("29", 20120925648670);
+            string result = giamsatService.ChiTietDuAnReturnString("","","","29", 20120925648670);
             hfMaDonVi.Value = "29";
             hfSoIdDonVi.Value = "20120925648670";
             
@@ -52,10 +52,11 @@ namespace IPS.Web
             lbThoiGianPhatSinh.InnerText = (string)d[0]["NAM_BD"];
             lbThoiGianKetThuc.InnerText = (string)d[0]["NAM_KT"];
 
-            Hashtable ht = Common.GetEnumForBind(typeof(LoaiNguonVon));
-            ddlLoaiNguonVon.DataSource = ht;
-            ddlLoaiNguonVon.DataTextField = "value";
-            ddlLoaiNguonVon.DataValueField = "key";
+
+            var loainv = EnumHelper.GetDescriptionForBind(LoaiNguonVon.KhongXacDinh);
+            ddlLoaiNguonVon.DataSource = loainv;
+            ddlLoaiNguonVon.DataTextField = "ValueString";
+            ddlLoaiNguonVon.DataValueField = "ValueInt";
             ddlLoaiNguonVon.SelectedValue = (string)d[0]["LOAI_NGUON_VON"];
             ddlLoaiNguonVon.DataBind();
 

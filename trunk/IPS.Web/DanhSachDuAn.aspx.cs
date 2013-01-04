@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IPS.Web.GiamSatServiceReference;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,40 +12,48 @@ namespace IPS.Web
 {
     public partial class DanhSachDuAn : System.Web.UI.Page
     {
+        GiamSatServiceReference.GiamSatServicesClient giamsatService = new GiamSatServiceReference.GiamSatServicesClient();
         protected void Page_Load(object sender, EventArgs e)
         {
 
-            loadGrid();
+            LoadDropDownList();
 
         }
-        public void loadGrid()
+        public void LoadDropDownList()
         {
-
-            Hashtable loaida = Common.GetEnumForBind(typeof(LoaiDuAn));
+            var loaida = EnumHelper.GetDescriptionForBind(LoaiDuAn.KhongXacDinh);
             ddlLoaiDuAn.DataSource = loaida;
-            ddlLoaiDuAn.DataTextField = "value";
-            ddlLoaiDuAn.DataValueField = "key";
+            ddlLoaiDuAn.DataTextField = "ValueString";
+            ddlLoaiDuAn.DataValueField = "name";
             ddlLoaiDuAn.DataBind();
 
-            Hashtable nhomda = Common.GetEnumForBind(typeof(NhomDuAn));
+            var nhomda = EnumHelper.GetDescriptionForBind(NhomDuAn.KhongXacDinh);
             ddlNhomDuAn.DataSource = nhomda;
-            ddlNhomDuAn.DataTextField = "value";
-            ddlNhomDuAn.DataValueField = "key";
+            ddlNhomDuAn.DataTextField = "ValueString";
+            ddlNhomDuAn.DataValueField = "name";
             ddlNhomDuAn.DataBind();
 
-            Hashtable loainv = Common.GetEnumForBind(typeof(LoaiNguonVon));
+            var loainv = EnumHelper.GetDescriptionForBind(LoaiNguonVon.KhongXacDinh);
             ddlLoaiNguonVon.DataSource = loainv;
-            ddlLoaiNguonVon.DataTextField = "value";
-            ddlLoaiNguonVon.DataValueField = "key";
+            ddlLoaiNguonVon.DataTextField = "ValueString";
+            ddlLoaiNguonVon.DataValueField = "ValueInt";
             ddlLoaiNguonVon.DataBind();
 
-            Hashtable phancap = Common.GetEnumForBind(typeof(LoaiPhanCap));
+            var phancap = EnumHelper.GetDescriptionForBind(LoaiPhanCap.KhongXacDinh);
             ddlPhanCap.DataSource = phancap;
-            ddlPhanCap.DataTextField = "value";
-            ddlPhanCap.DataValueField = "key";
+            ddlPhanCap.DataTextField = "ValueString";
+            ddlPhanCap.DataValueField = "name";
             ddlPhanCap.DataBind();
 
+            ddlDonViChuDT.DataSource = giamsatService.DanhSachDonVi("", "", ""); ;
+            ddlDonViChuDT.DataTextField = "TenDonVi";
+            ddlDonViChuDT.DataValueField = "MaDonVi";
+            ddlDonViChuDT.DataBind();
 
+            ddlDonViQuanLyDT.DataSource = giamsatService.DanhSachDonVi("", "", "");
+            ddlDonViQuanLyDT.DataTextField = "TenDonVi";
+            ddlDonViQuanLyDT.DataValueField = "MaDonVi";
+            ddlDonViQuanLyDT.DataBind(); 
 
             //load dropdownlist toán tử
             var dicToanTu = Common.ToanTuSoSanh();
@@ -65,6 +74,34 @@ namespace IPS.Web
 
 
             
+        }
+        public void LoadGrid()
+        { 
+        }
+
+        protected void btTimKiem_Click(object sender, EventArgs e)
+        {
+            if (Validate())
+            {
+                SearchProjectSetting sps = new SearchProjectSetting();
+                sps.MaDuAn = txtMaDuAn.Text;
+                sps.LoaiDuAn = ddlLoaiDuAn.SelectedValue == LoaiDuAn.KhongXacDinh.ToString() ? "" : ddlLoaiDuAn.SelectedValue;
+                sps.NhomDuAn = ddlNhomDuAn.SelectedValue == NhomDuAn.KhongXacDinh.ToString() ? "" : ddlNhomDuAn.SelectedValue;
+                sps.LoaiNguonVon = Int64.Parse(ddlLoaiNguonVon.SelectedValue);
+                sps.PhanCap = ddlPhanCap.SelectedValue == LoaiPhanCap.KhongXacDinh.ToString() ? "" : ddlPhanCap.SelectedValue;
+                sps.MaDonViQuanLy = ddlDonViQuanLyDT.SelectedValue;
+                sps.MaDonViThucHien = ddlDonViChuDT.SelectedValue;
+                sps.TongVonDauTuToanTu = ddlTTTongVonDT.SelectedValue;
+                sps.TongVonDauTu = Int64.Parse(txtTongVonDT.Text == "" ? "0" : txtTongVonDT.Text);
+                sps.NamBatDauToanTu = ddlTTThoiGianPhatSinh.SelectedValue;
+                sps.NamBatDau = Int64.Parse(txtThoiGianPhatSinh.Text == "" ? "0" : txtThoiGianPhatSinh.Text);
+                sps.NamKetThucToanTu = ddlTTThoiGianKetThuc.SelectedValue;
+                sps.NamKetThuc = Int64.Parse(txtThoiGianKetThuc.Text == "" ? "0" : txtThoiGianKetThuc.Text);
+                H result =  giamsatService.TimKiemDuAn("", "", "", sps, 1);
+            }
+        }
+        public bool Validate() {
+            return true;
         }
     }
 }

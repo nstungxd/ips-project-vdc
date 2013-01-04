@@ -109,7 +109,7 @@ namespace BusinessLogic.Services
         /// <param name="pageIndex">trang du lieu can lay</param> 
         /// <returns>object[0]: danh sach, object[1]:tong so ban ghi, object[2]: tong so trang</returns>
         [OperationContract]
-        object[] TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1);
+        H TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1);
 
         /// <summary>
         /// lay danh sach du an
@@ -192,5 +192,15 @@ namespace BusinessLogic.Services
         /// <returns>danh sach don vi gom ma,ten</returns>
         [OperationContract]
         List<DonViShortModel> DanhSachDonVi(string mdv, string nsd, string pas);
+    }
+
+    [DataContract]
+    public class H
+    {
+        [DataMember]
+        public int Total { get; set; }
+        [DataMember]
+        public DataTable Table { get; set; }
+
     }
 }

@@ -6,7 +6,9 @@
       <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
       <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" />
-      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Services" />
+      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IGiamSatServices_ChiTietKeHoachVon_InputMessage">
@@ -93,6 +95,12 @@
   <wsdl:message name="IGiamSatServices_GiamSat_OutputMessage">
     <wsdl:part name="parameters" element="tns:GiamSatResponse" />
   </wsdl:message>
+  <wsdl:message name="IGiamSatServices_DanhSachDonVi_InputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachDonVi" />
+  </wsdl:message>
+  <wsdl:message name="IGiamSatServices_DanhSachDonVi_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachDonViResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGiamSatServices">
     <wsdl:operation name="ChiTietKeHoachVon">
       <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietKeHoachVon" message="tns:IGiamSatServices_ChiTietKeHoachVon_InputMessage" />
@@ -149,6 +157,10 @@
     <wsdl:operation name="GiamSat">
       <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/GiamSat" message="tns:IGiamSatServices_GiamSat_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/GiamSatResponse" message="tns:IGiamSatServices_GiamSat_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DanhSachDonVi">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachDonVi" message="tns:IGiamSatServices_DanhSachDonVi_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachDonViResponse" message="tns:IGiamSatServices_DanhSachDonVi_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGiamSatServices" type="tns:IGiamSatServices">
@@ -272,6 +284,15 @@
     </wsdl:operation>
     <wsdl:operation name="GiamSat">
       <soap:operation soapAction="http://tempuri.org/IGiamSatServices/GiamSat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DanhSachDonVi">
+      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/DanhSachDonVi" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
