@@ -54,8 +54,16 @@ namespace IPS.Web
             ddlDonViQuanLyDT.DataSource = giamsatService.DanhSachDonVi("", "", "");
             ddlDonViQuanLyDT.DataTextField = "TenDonVi";
             ddlDonViQuanLyDT.DataValueField = "MaDonVi";
-            ddlDonViQuanLyDT.DataBind(); 
+            ddlDonViQuanLyDT.DataBind();
 
+            var listNam = Common.DanhSachNam(1990,2020);
+            foreach (int nam in listNam)
+            {
+                ddlThoiGianKetThuc.Items.Add(new ListItem(nam.ToString()));
+                ddlThoiGianPhatSinh.Items.Add(new ListItem(nam.ToString()));
+            }
+            ddlThoiGianKetThuc.SelectedValue = DateTime.Now.Year.ToString();
+            ddlThoiGianPhatSinh.SelectedValue = DateTime.Now.Year.ToString();
             ////load dropdownlist toán tử
             //var dicToanTu = Common.ToanTuSoSanh();
             //ddlTTTongVonDT.DataSource = dicToanTu;
@@ -102,9 +110,9 @@ namespace IPS.Web
                 sps.TongVonDauTuToanTu = ddlTTTongVonDT.SelectedValue;
                 sps.TongVonDauTu = Int64.Parse(txtTongVonDT.Text == "" ? "0" : txtTongVonDT.Text);
                 sps.NamBatDauToanTu = ddlTTThoiGianPhatSinh.SelectedValue;
-                sps.NamBatDau = Int32.Parse(txtThoiGianPhatSinh.Text == "" ? "0" : txtThoiGianPhatSinh.Text);
+                sps.NamBatDau = Int32.Parse(ddlThoiGianPhatSinh.SelectedValue);// Int32.Parse(txtThoiGianPhatSinh.Text == "" ? "0" : txtThoiGianPhatSinh.Text);
                 sps.NamKetThucToanTu = ddlTTThoiGianKetThuc.SelectedValue;
-                sps.NamKetThuc = Int32.Parse(txtThoiGianKetThuc.Text == "" ? "0" : txtThoiGianKetThuc.Text);
+                sps.NamKetThuc = Int32.Parse(ddlThoiGianKetThuc.SelectedValue);
                 ListDuAnModelGridView result =  giamsatService.TimKiemDuAn("", "", "", sps, 1);
                 Grid1.DataSource = result.DuAnModelsGridView;
                 Grid1.DataBind();

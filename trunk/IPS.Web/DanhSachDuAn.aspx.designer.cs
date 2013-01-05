@@ -103,13 +103,13 @@ namespace IPS.Web {
         protected global::Vdc.Interface.VdcDropDownList ddlTTThoiGianPhatSinh;
         
         /// <summary>
-        /// txtThoiGianPhatSinh control.
+        /// ddlThoiGianPhatSinh control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Interface.VdcTextBox txtThoiGianPhatSinh;
+        protected global::Vdc.Interface.VdcDropDownList ddlThoiGianPhatSinh;
         
         /// <summary>
         /// ddlTTThoiGianKetThuc control.
@@ -121,13 +121,13 @@ namespace IPS.Web {
         protected global::Vdc.Interface.VdcDropDownList ddlTTThoiGianKetThuc;
         
         /// <summary>
-        /// txtThoiGianKetThuc control.
+        /// ddlThoiGianKetThuc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Interface.VdcTextBox txtThoiGianKetThuc;
+        protected global::Vdc.Interface.VdcDropDownList ddlThoiGianKetThuc;
         
         /// <summary>
         /// btTimKiem control.
@@ -146,5 +146,14 @@ namespace IPS.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Vdc.Grid.Grid Grid1;
+        
+        /// <summary>
+        /// GiamSatTinhTrang control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate GiamSatTinhTrang;
     }
 }
