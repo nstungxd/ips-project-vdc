@@ -188,7 +188,7 @@ namespace IPS.Data.SqlCe.Repositories
                 var totalRecord = cm.Parameters["total_record"].Value.ToString();
                 var arrObject = new object[2];               
                 arrObject[0] = tableGs;
-                arrObject[1] = totalRecord;                
+                arrObject[1] = totalRecord;
                 return arrObject;
             }
             catch (Exception ex)
