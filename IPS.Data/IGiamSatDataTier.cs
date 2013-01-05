@@ -127,7 +127,7 @@ namespace IPS.Data
         /// <param name="idDuAn"></param>
         /// <param name="nam"></param>
         /// <returns></returns>
-        DataTable DanhSachGiaiDoanKHV(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long nam);
+        DataTable DanhSachGiaiDoanKHV(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int nam);
 
         /// <summary>
         /// 
