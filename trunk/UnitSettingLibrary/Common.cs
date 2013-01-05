@@ -44,6 +44,23 @@ namespace UnitSettingLibrary
             list.Add("<");
             list.Add("=");
             return list;
-        }       
+        }
+
+        /// <summary>
+        /// lay danh sach cac nam de load dropdownlist
+        /// </summary>
+        /// <param name="nambd">nam bat dau</param>
+        /// <param name="namkt">nam ket thuc</param>
+        /// <returns></returns>
+        public static List<int> DanhSachNam(int nambd,int namkt)
+        {
+            if (namkt < nambd) return null;
+            var list = new List<int>();
+            for (int i = nambd; i <= namkt;i++)
+            {
+                list.Add(i);
+            }
+            return list;
+        }   
     }    
 }
