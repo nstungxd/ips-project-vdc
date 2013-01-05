@@ -67,6 +67,19 @@ namespace BusinessLogic.Models
 
         [DataMember]
         public string SoQuyetDinh { get; set; }
+
+        public DuAnShortModel()
+        {
+            var enumValue = EnumHelper.GetDescriptionForBind(UnitSettingLibrary.LoaiNguonVon.KhongXacDinh);
+            foreach (var e in enumValue)
+            {
+                if (LoaiNguonVon == e.ValueInt)
+                {
+                    LoaiNguonVonValue = e.ValueString;
+                    break;
+                }
+            }            
+        }
     }
 
     [DataContract]
