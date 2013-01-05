@@ -131,9 +131,9 @@ namespace BusinessLogic.Services
         /// <param name="maDonVi">ma don vi thuc hien du an</param>
         /// <param name="idDuAn">id du an</param>
         /// <param name="nam">nam ke hoach</param>
-        /// <returns>danh sach cac giai doan von kieu json</returns>
+        /// <returns>danh sach cac giai doan von</returns>
         [OperationContract]
-        string DanhSachGiaiDoanKHVReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long nam);
+        List<KeHoachVonShortModel> DanhSachGiaiDoanKHV(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int nam);
 
         /// <summary>
         /// lay danh sach cac goi thau thuoc 1 du an

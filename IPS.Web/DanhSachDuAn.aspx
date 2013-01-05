@@ -126,7 +126,7 @@
 <ScrollingSettings FixedColumnsPosition="Left"></ScrollingSettings>
                     <Columns>
                         <cc1:Column DataField="TenDuAn" HeaderText="Tên dự án" />
-                        <cc1:Column DataField="LoaiNguonVon" HeaderText="Loại nguồn vốn" />
+                        <cc1:Column DataField="LoaiNguonVonValue" HeaderText="Loại nguồn vốn" />
                         <cc1:Column DataField="LoaiPhanCap" HeaderText="Phân cấp" />
                         <cc1:Column DataField="NhomDuAn" HeaderText="Nhóm" />
                         <cc1:Column DataField="NamBatDau" HeaderText="Ngày phát sinh" />

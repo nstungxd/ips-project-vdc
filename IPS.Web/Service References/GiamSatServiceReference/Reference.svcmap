@@ -22,8 +22,6 @@
     <MetadataSource Address="http://localhost:24166/Services/GiamSatServices.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="GiamSatServices6.xsd" MetadataType="Schema" ID="ac515815-0a75-4ba2-8dcf-2015d9fba9ce" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd6" />
-    <MetadataFile FileName="GiamSatServices5.xsd" MetadataType="Schema" ID="c8e2b9bb-2ea7-4ede-914e-7c2c99aab104" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd5" />
     <MetadataFile FileName="GiamSatServices.xsd" MetadataType="Schema" ID="509ef7ca-a06b-47ae-83a2-ac959e8812ca" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd4" />
     <MetadataFile FileName="GiamSatServices1.xsd" MetadataType="Schema" ID="f4c70b43-cd68-4bf4-b5bd-6cd47f69d789" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd3" />
     <MetadataFile FileName="GiamSatServices2.xsd" MetadataType="Schema" ID="1365a619-83d8-4124-967a-614e4544aefe" SourceId="1" SourceUrl="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd1" />

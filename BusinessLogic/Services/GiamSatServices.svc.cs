@@ -170,35 +170,69 @@ namespace BusinessLogic.Services
             }
         }
 
-        public string DanhSachGiaiDoanKHVReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long nam)
+        public List<KeHoachVonShortModel> DanhSachGiaiDoanKHV(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int nam)
         {
-            var giamSatDataTier = new GiamSatRepository();           
-            var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);            
-            // them cot the hien trang thai thuc hien ke hoach von
-            tableData.Columns.Add("TrangThaiThucHien", typeof (String));
-            if(tableData.Rows.Count>0)
-            {
-                for (int i = 0; i < tableData.Rows.Count; i++)
-                {
-                    // da duoc phe duyet
-                    if(tableData.Rows[i]["so_qd"].ToString()!=" ")
-                    {
-                        tableData.Rows[i]["TrangThaiThucHien"] = "PD";
-                    }
-                    // da duoc tham dinh
-                    else if (tableData.Rows[i]["td_ngoai"].ToString() != "" || tableData.Rows[i]["td_noi"].ToString() != "")
-                    {
-                        tableData.Rows[i]["TrangThaiThucHien"] = "TD";
-                    }
-                    // da dang ky
-                    else
-                    {
-                        tableData.Rows[i]["TrangThaiThucHien"] = "DK";
-                    }
-                }
-            }
-            string sReturn = Common.ConvertTableToJsonString(tableData);
-            return sReturn;
+            return null;
+            // try
+            //{
+            //var giamSatDataTier = new GiamSatRepository();           
+            //var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);            
+            //// them cot the hien trang thai thuc hien ke hoach von
+            //tableData.Columns.Add("TrangThaiThucHien", typeof (String));
+            //if(tableData.Rows.Count>0)
+            //{
+            //    for (int i = 0; i < tableData.Rows.Count; i++)
+            //    {
+            //        // da duoc phe duyet
+            //        if(tableData.Rows[i]["so_qd"].ToString()!=" ")
+            //        {
+            //            tableData.Rows[i]["TrangThaiThucHien"] = "PD";
+            //        }
+            //        // da duoc tham dinh
+            //        else if (tableData.Rows[i]["td_ngoai"].ToString() != "" || tableData.Rows[i]["td_noi"].ToString() != "")
+            //        {
+            //            tableData.Rows[i]["TrangThaiThucHien"] = "TD";
+            //        }
+            //        // da dang ky
+            //        else
+            //        {
+            //            tableData.Rows[i]["TrangThaiThucHien"] = "DK";
+            //        }
+            //    }
+            //}
+
+
+
+            //if (tableData.Rows.Count > 0)
+            //    {
+            //        foreach (DataRow dr in tableData.Rows)
+            //        {
+            //            var khv = new KeHoachVonShortModel();
+            //            khv.MaDonVi = maDonVi;
+            //            khv.IdDuAn = idDuAn;
+            //            khv.NamKHV = nam;
+            //            khv.Dot = 
+
+            //            duan.IdDuAn = Convert.ToInt64(dr["so_id"]);
+            //            duan.LoaiNguonVon = Convert.ToInt32(dr["loai_nguon_von"]);
+            //            duan.LoaiPhanCap = dr["phancap"].ToString();
+            //            duan.MaDonVi = dr["ma_dvi"].ToString();
+            //            duan.MaDuAn = dr["ma"].ToString();
+            //            duan.NamBatDau = Convert.ToInt32(dr["nambd"]);
+            //            duan.NamKetThuc = Convert.ToInt32(dr["namkt"]);
+            //            duan.NhomDuAn = dr["nhom_da"].ToString();
+            //            duan.TenDuAn = dr["ten"].ToString();
+            //            duan.TongVonDauTu = Convert.ToInt64(dr["tienqd"]);
+
+            //        }
+
+            //    }
+
+            //}
+            // catch (Exception)
+            // {
+            //     return null;
+            //}
         }
 
         public string DanhSachGoiThauReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageIndex = 1)

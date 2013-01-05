@@ -6,9 +6,7 @@
       <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
       <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" />
-      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Services" />
-      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd5" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
-      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" />
+      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IGiamSatServices_ChiTietKeHoachVon_InputMessage">
@@ -65,11 +63,11 @@
   <wsdl:message name="IGiamSatServices_DanhSachDuAn_OutputMessage">
     <wsdl:part name="parameters" element="tns:DanhSachDuAnResponse" />
   </wsdl:message>
-  <wsdl:message name="IGiamSatServices_DanhSachGiaiDoanKHVReturnString_InputMessage">
-    <wsdl:part name="parameters" element="tns:DanhSachGiaiDoanKHVReturnString" />
+  <wsdl:message name="IGiamSatServices_DanhSachGiaiDoanKHV_InputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachGiaiDoanKHV" />
   </wsdl:message>
-  <wsdl:message name="IGiamSatServices_DanhSachGiaiDoanKHVReturnString_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DanhSachGiaiDoanKHVReturnStringResponse" />
+  <wsdl:message name="IGiamSatServices_DanhSachGiaiDoanKHV_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachGiaiDoanKHVResponse" />
   </wsdl:message>
   <wsdl:message name="IGiamSatServices_DanhSachGoiThauReturnString_InputMessage">
     <wsdl:part name="parameters" element="tns:DanhSachGoiThauReturnString" />
@@ -138,9 +136,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachDuAn" message="tns:IGiamSatServices_DanhSachDuAn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachDuAnResponse" message="tns:IGiamSatServices_DanhSachDuAn_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DanhSachGiaiDoanKHVReturnString">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHVReturnString" message="tns:IGiamSatServices_DanhSachGiaiDoanKHVReturnString_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHVReturnStringResponse" message="tns:IGiamSatServices_DanhSachGiaiDoanKHVReturnString_OutputMessage" />
+    <wsdl:operation name="DanhSachGiaiDoanKHV">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHV" message="tns:IGiamSatServices_DanhSachGiaiDoanKHV_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHVResponse" message="tns:IGiamSatServices_DanhSachGiaiDoanKHV_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="DanhSachGoiThauReturnString">
       <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGoiThauReturnString" message="tns:IGiamSatServices_DanhSachGoiThauReturnString_InputMessage" />
@@ -246,8 +244,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DanhSachGiaiDoanKHVReturnString">
-      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHVReturnString" style="document" />
+    <wsdl:operation name="DanhSachGiaiDoanKHV">
+      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHV" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
