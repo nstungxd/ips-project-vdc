@@ -117,18 +117,22 @@
         </tr>
         <tr>
             <td colspan="2">
-                <cc1:Grid ID="Grid1" runat="server" AllowAddingRecords="False" AllowPageSizeSelection="False" AllowRecordSelection="False" AllowSorting="False">
+                <cc1:Grid ID="Grid1" runat="server" Serialize="false" AllowAddingRecords="False" AllowPageSizeSelection="False" AllowRecordSelection="False" AllowSorting="False" AutoGenerateColumns="false">
 <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
-
 <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
-
 <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
-
 <MasterDetailSettings LoadingMode="OnCallback" State="Collapsed"></MasterDetailSettings>
-
 <PagingSettings PageSizeSelectorPosition="Bottom" Position="Bottom" ShowRecordsCount="False"></PagingSettings>
-
 <ScrollingSettings FixedColumnsPosition="Left"></ScrollingSettings>
+                    <Columns>
+                        <cc1:Column DataField="TenDuAn" HeaderText="Tên dự án" />
+                        <cc1:Column DataField="LoaiNguonVon" HeaderText="Loại nguồn vốn" />
+                        <cc1:Column DataField="LoaiPhanCap" HeaderText="Phân cấp" />
+                        <cc1:Column DataField="NhomDuAn" HeaderText="Nhóm" />
+                        <cc1:Column DataField="NamBatDau" HeaderText="Ngày phát sinh" />
+                        <cc1:Column DataField="NamKetThuc" HeaderText="Ngày kết thúc" />
+                        <cc1:Column DataField="TongVonDauTu" HeaderText="Tổng vốn đầu tư" />
+                    </Columns>
                 </cc1:Grid>
             </td>
         </tr>
