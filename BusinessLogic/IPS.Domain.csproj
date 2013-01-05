@@ -88,6 +88,9 @@
   <ItemGroup>
     <Compile Include="Models\DonViModel.cs" />
     <Compile Include="Models\DuAnModel.cs" />
+    <Compile Include="Models\GoiThauModel.cs" />
+    <Compile Include="Models\HopDongModel.cs" />
+    <Compile Include="Models\KeHoachVonModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaoCaoServices.svc.cs">
       <DependentUpon>BaoCaoServices.svc</DependentUpon>
