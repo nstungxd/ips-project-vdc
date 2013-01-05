@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
+using UnitSettingLibrary;
 
 namespace BusinessLogic.Models
 {
@@ -29,6 +30,9 @@ namespace BusinessLogic.Models
 
         [DataMember]
         public long ThamDinhNgoai { get; set; }
+
+        [DataMember]
+        public GiaiDoanKHV GiaiDoanKHV { get; set; }
 
         [DataMember]
         public int TinhTrangXoa { get; set; }
