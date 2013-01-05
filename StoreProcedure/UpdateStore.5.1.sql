@@ -61,10 +61,12 @@ begin
   end if;
   sql_total := sql_total || ')';
   sql_search := sql_search || ') where rownumber > ' || ((page_index-1) * page_size) || ' and rownumber < ' || ((page_index * page_size) + 1);  
-  insert into H(H1) values (sql_search);
-  --open cs_lke for sql_search;
-  open cs_lke for select * from hoa_ma;
-  --EXECUTE IMMEDIATE sql_total into total_record;
+  
+  --insert into H(H1) values (sql_search);
+  
+  open cs_lke for sql_search;
+  
+  EXECUTE IMMEDIATE sql_total into total_record;
   
   exception when others then raise_application_error(-20105,b_loi);
 end usp_TimKiem_DuAn;
