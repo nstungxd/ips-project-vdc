@@ -241,7 +241,7 @@ namespace IPS.Data.SqlCe.Repositories
             }
         }
 
-        public DataTable DanhSachGiaiDoanKHV(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long nam)
+        public DataTable DanhSachGiaiDoanKHV(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int nam)
         {
             try
             {
