@@ -23,7 +23,24 @@ namespace BusinessLogic.Models
         public string TenDuAn { get; set; }
 
         [DataMember]
-        public long LoaiNguonVon { get; set; }
+        public int LoaiNguonVon { get; set; }
+
+        [DataMember]
+        public string LoaiNguonVonValue { get; set; }
+        //{
+        //    get
+        //    {
+        //        var enumValue = EnumHelper.GetDescriptionForBind(UnitSettingLibrary.LoaiNguonVon.KhongXacDinh);
+        //        foreach (var e in enumValue)
+        //        {
+        //            if (LoaiNguonVon == e.ValueInt)
+        //            {
+        //                return e.ValueString;
+        //            }
+        //        }
+        //        return "";
+        //    }
+        //}
 
         [DataMember]
         public string LoaiPhanCap { get; set; }        
@@ -32,10 +49,10 @@ namespace BusinessLogic.Models
         public string NhomDuAn { get; set; }           
 
         [DataMember]
-        public long NamBatDau { get; set; }
+        public int NamBatDau { get; set; }
 
         [DataMember]
-        public long NamKetThuc { get; set; }
+        public int NamKetThuc { get; set; }
 
         [DataMember]
         public long TongVonDauTu { get; set; }  
