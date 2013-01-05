@@ -35,9 +35,12 @@ namespace IPS.Web
         }
         public void loadGrid()
         {
-            string result = giamsatService.ChiTietDuAnReturnString("","","","29", 20120925648670);
-            hfMaDonVi.Value = "29";
-            hfSoIdDonVi.Value = "20120925648670";
+
+            string madonvi = Request.QueryString["madonvi"];
+            long idduan = Int64.Parse(Request.QueryString["idduan"]);
+            string result = giamsatService.ChiTietDuAnReturnString("", "", "", madonvi, idduan);
+            hfMaDonVi.Value = madonvi;
+            hfSoIdDonVi.Value = idduan.ToString();
             
             JavaScriptSerializer jss = new JavaScriptSerializer();
             var d = jss.Deserialize<dynamic>(result);

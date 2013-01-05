@@ -85,8 +85,10 @@
                                         </cc2:VdcDropDownList>
                                     </td>
                                     <td>
-                                        <cc2:VdcTextBox ID="txtThoiGianPhatSinh" runat="server">
-                                        </cc2:VdcTextBox>
+                                        <%--<cc2:VdcTextBox ID="txtThoiGianPhatSinh" runat="server">
+                                        </cc2:VdcTextBox>--%>
+                                        <cc2:VdcDropDownList ID="ddlThoiGianPhatSinh" runat="server">
+                                        </cc2:VdcDropDownList>
                                     </td>
                                 </tr>
                             </table>
@@ -100,8 +102,8 @@
                                         </cc2:VdcDropDownList>
                                     </td>
                                     <td>
-                                        <cc2:VdcTextBox ID="txtThoiGianKetThuc" runat="server">
-                                        </cc2:VdcTextBox>
+                                        <cc2:VdcDropDownList ID="ddlThoiGianKetThuc" runat="server">
+                                        </cc2:VdcDropDownList>
                                     </td>
                                 </tr>
                             </table></td>
@@ -125,6 +127,8 @@
 <PagingSettings PageSizeSelectorPosition="Bottom" Position="Bottom" ShowRecordsCount="False"></PagingSettings>
 <ScrollingSettings FixedColumnsPosition="Left"></ScrollingSettings>
                     <Columns>
+                        <cc1:Column DataField="MaDonVi" Visible="false" />
+                        <cc1:Column DataField="IdDuAn" Visible="false" />
                         <cc1:Column DataField="TenDuAn" HeaderText="Tên dự án" />
                         <cc1:Column DataField="LoaiNguonVonValue" HeaderText="Loại nguồn vốn" />
                         <cc1:Column DataField="LoaiPhanCap" HeaderText="Phân cấp" />
@@ -132,7 +136,17 @@
                         <cc1:Column DataField="NamBatDau" HeaderText="Ngày phát sinh" />
                         <cc1:Column DataField="NamKetThuc" HeaderText="Ngày kết thúc" />
                         <cc1:Column DataField="TongVonDauTu" HeaderText="Tổng vốn đầu tư" />
+                        <cc1:Column HeaderText="Giám sát tình trạng">
+                            <TemplateSettings TemplateId="GiamSatTinhTrang" />
+                        </cc1:Column>
                     </Columns>
+                    <Templates>
+                        <cc1:GridTemplate runat="server" ID="GiamSatTinhTrang">
+                            <Template>
+                                <a href="ThongTinChiTietDuAn.aspx?madonvi=<%# Container.DataItem["MaDonVi"] %>&idduan=<%# Container.DataItem["IdDuAn"] %>">Thông tin chi tiết</a>
+                            </Template>
+                        </cc1:GridTemplate>
+                    </Templates>
                 </cc1:Grid>
             </td>
         </tr>
