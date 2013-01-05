@@ -102,12 +102,12 @@ namespace BusinessLogic.Services
                         {
                             var duan = new DuAnShortModel();
                             duan.IdDuAn = Convert.ToInt64(dr["so_id"]);
-                            duan.LoaiNguonVon = Convert.ToInt64(dr["loai_nguon_von"]);
+                            duan.LoaiNguonVon = Convert.ToInt32(dr["loai_nguon_von"]);
                             duan.LoaiPhanCap = dr["phancap"].ToString();
                             duan.MaDonVi = dr["ma_dvi"].ToString();
                             duan.MaDuAn = dr["ma"].ToString();
-                            duan.NamBatDau = Convert.ToInt64(dr["nambd"]);
-                            duan.NamKetThuc = Convert.ToInt64(dr["namkt"]);
+                            duan.NamBatDau = Convert.ToInt32(dr["nambd"]);
+                            duan.NamKetThuc = Convert.ToInt32(dr["namkt"]);
                             duan.NhomDuAn = dr["nhom_da"].ToString();
                             duan.TenDuAn = dr["ten"].ToString();
                             duan.TongVonDauTu = Convert.ToInt64(dr["tienqd"]);
@@ -148,12 +148,12 @@ namespace BusinessLogic.Services
                         {
                             var duan = new DuAnShortModel();
                             duan.IdDuAn = Convert.ToInt64(dr["so_id"]);
-                            duan.LoaiNguonVon = Convert.ToInt64(dr["loai_nguon_von"]);
+                            duan.LoaiNguonVon = Convert.ToInt32(dr["loai_nguon_von"]);
                             duan.LoaiPhanCap = dr["phancap"].ToString();
                             duan.MaDonVi = dr["ma_dvi"].ToString();
                             duan.MaDuAn = dr["ma"].ToString();
-                            duan.NamBatDau = Convert.ToInt64(dr["nambd"]);
-                            duan.NamKetThuc = Convert.ToInt64(dr["namkt"]);
+                            duan.NamBatDau = Convert.ToInt32(dr["nambd"]);
+                            duan.NamKetThuc = Convert.ToInt32(dr["namkt"]);
                             duan.NhomDuAn = dr["nhom_da"].ToString();
                             duan.TenDuAn = dr["ten"].ToString();
                             duan.TongVonDauTu = Convert.ToInt64(dr["tienqd"]);
