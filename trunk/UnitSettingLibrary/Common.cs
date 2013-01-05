@@ -37,12 +37,12 @@ namespace UnitSettingLibrary
             return sb.ToString();
         }
 
-        public static Dictionary<int,string> ToanTuSoSanh()
+        public static List<string> ToanTuSoSanh()
         {
-            var list = new Dictionary<int,string>();           
-            list.Add(0,">");
-            list.Add(1,"<");
-            list.Add(2,"=");
+            var list = new List<string>();
+            list.Add(">");
+            list.Add("<");
+            list.Add("=");
             return list;
         }       
     }    
