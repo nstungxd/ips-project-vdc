@@ -14,7 +14,7 @@ namespace UnitSettingLibrary
         [DataMember]
         public string NhomDuAn { get; set; }
         [DataMember]
-        public long LoaiNguonVon { get; set; }
+        public int LoaiNguonVon { get; set; }
         [DataMember]
         public string PhanCap { get; set; }
         [DataMember]
@@ -24,11 +24,11 @@ namespace UnitSettingLibrary
         [DataMember]
         public string TongVonDauTuToanTu { get; set; }
         [DataMember]
-        public long NamBatDau { get; set; }
+        public int NamBatDau { get; set; }
         [DataMember]
         public string NamBatDauToanTu { get; set; }
         [DataMember]
-        public long NamKetThuc { get; set; }
+        public int NamKetThuc { get; set; }
         [DataMember]
         public string NamKetThucToanTu { get; set; }
     }
