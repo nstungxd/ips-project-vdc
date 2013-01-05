@@ -32,7 +32,7 @@ namespace BusinessLogic.Models
         public long ThamDinhNgoai { get; set; }
 
         [DataMember]
-        public GiaiDoanKHV GiaiDoanKHV { get; set; }
+        public string TrangThaiThucHien { get; set; }
 
         [DataMember]
         public int TinhTrangXoa { get; set; }
@@ -41,12 +41,16 @@ namespace BusinessLogic.Models
         public long IdGiamSat { get; set; }
 
         [DataMember]
-        public int GiaiDoanGiamSat { get; set; }  
+        public int GiaiDoanKHV { get; set; }
+
+        [DataMember]
+        public string GiaiDoanKHVValue { get; set; }      
 
         [DataMember]
         public int KetQuaGiamSat { get; set; }
 
         [DataMember]
-        public string GhiChuGiamSat { get; set; }  
+        public string GhiChuGiamSat { get; set; }
+       
     }
 }

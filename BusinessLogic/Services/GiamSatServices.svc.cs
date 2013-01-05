@@ -172,67 +172,52 @@ namespace BusinessLogic.Services
 
         public List<KeHoachVonShortModel> DanhSachGiaiDoanKHV(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int nam)
         {
-            return null;
-            // try
-            //{
-            //var giamSatDataTier = new GiamSatRepository();           
-            //var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);            
-            //// them cot the hien trang thai thuc hien ke hoach von
-            //tableData.Columns.Add("TrangThaiThucHien", typeof (String));
-            //if(tableData.Rows.Count>0)
-            //{
-            //    for (int i = 0; i < tableData.Rows.Count; i++)
-            //    {
-            //        // da duoc phe duyet
-            //        if(tableData.Rows[i]["so_qd"].ToString()!=" ")
-            //        {
-            //            tableData.Rows[i]["TrangThaiThucHien"] = "PD";
-            //        }
-            //        // da duoc tham dinh
-            //        else if (tableData.Rows[i]["td_ngoai"].ToString() != "" || tableData.Rows[i]["td_noi"].ToString() != "")
-            //        {
-            //            tableData.Rows[i]["TrangThaiThucHien"] = "TD";
-            //        }
-            //        // da dang ky
-            //        else
-            //        {
-            //            tableData.Rows[i]["TrangThaiThucHien"] = "DK";
-            //        }
-            //    }
-            //}
+            try
+            {
+                var listKeHoachVon = new List<KeHoachVonShortModel>();
+                var giamSatDataTier = new GiamSatRepository();
+                var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);                    
 
+                if (tableData.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in tableData.Rows)
+                    {
+                        var khv = new KeHoachVonShortModel();
+                        khv.MaDonVi = maDonVi;
+                        khv.IdDuAn = idDuAn;
+                        khv.NamKHV = nam;
+                        khv.Dot = Convert.ToInt32(dr["dot"]);
+                        khv.SoQuyetDinh = dr["so_qd"].ToString();
+                        khv.ThamDinhNoi = Convert.ToInt64(dr["td_noi"]);
+                        khv.ThamDinhNgoai = Convert.ToInt64(dr["td_ngoai"]);
+                        khv.TinhTrangXoa = Convert.ToInt32(dr["khv_xoa"]);
+                        // kiem tra tinh trang thuc hien cua ke hoach von
+                            // da phe duyet ke hoach von
+                        if (khv.SoQuyetDinh != " ")
+                            khv.TrangThaiThucHien = "pd";
+                            // da tham dinh ke hoach von
+                        else if (khv.ThamDinhNoi != 0 || khv.ThamDinhNgoai != 0)
+                            khv.TrangThaiThucHien = "td";
+                            // da dang ky ke hoach von
+                        else khv.TrangThaiThucHien = "dk";
 
-
-            //if (tableData.Rows.Count > 0)
-            //    {
-            //        foreach (DataRow dr in tableData.Rows)
-            //        {
-            //            var khv = new KeHoachVonShortModel();
-            //            khv.MaDonVi = maDonVi;
-            //            khv.IdDuAn = idDuAn;
-            //            khv.NamKHV = nam;
-            //            khv.Dot = 
-
-            //            duan.IdDuAn = Convert.ToInt64(dr["so_id"]);
-            //            duan.LoaiNguonVon = Convert.ToInt32(dr["loai_nguon_von"]);
-            //            duan.LoaiPhanCap = dr["phancap"].ToString();
-            //            duan.MaDonVi = dr["ma_dvi"].ToString();
-            //            duan.MaDuAn = dr["ma"].ToString();
-            //            duan.NamBatDau = Convert.ToInt32(dr["nambd"]);
-            //            duan.NamKetThuc = Convert.ToInt32(dr["namkt"]);
-            //            duan.NhomDuAn = dr["nhom_da"].ToString();
-            //            duan.TenDuAn = dr["ten"].ToString();
-            //            duan.TongVonDauTu = Convert.ToInt64(dr["tienqd"]);
-
-            //        }
-
-            //    }
-
-            //}
-            // catch (Exception)
-            // {
-            //     return null;
-            //}
+                        // check giai doan von da duoc giam sat chua
+                        if (!dr.IsNull("giamsat_id"))
+                        {
+                            khv.IdGiamSat = Convert.ToInt64(dr["giamsat_id"]);
+                            khv.GiaiDoanKHV = Convert.ToInt32(dr["ma_gd_khv"]);
+                            khv.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
+                            khv.GhiChuGiamSat = dr["ghi_chu"].ToString();
+                        }
+                        listKeHoachVon.Add(khv);
+                    }
+                }
+                return listKeHoachVon;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public string DanhSachGoiThauReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageIndex = 1)
