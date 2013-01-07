@@ -12,7 +12,7 @@
                 <table>
                     <tr>
                         <td><b>Mã dự án</b></td>
-                        <td><cc2:VdcTextBox ID="txtMaDuAn" runat="server">
+                        <td><cc2:VdcTextBox ID="txtMaDuAn" runat="server" FolderStyle="btstyles/premiere_blue/VdcTextBox">
                             </cc2:VdcTextBox>
                         </td>
                     </tr>
@@ -111,7 +111,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <cc2:VdcButton ID="btTimKiem" runat="server" Text="Tìm kiếm" OnClick="btTimKiem_Click"></cc2:VdcButton>
+                            <cc2:VdcButton ID="btTimKiem" runat="server" Text="Tìm kiếm" OnClick="btTimKiem_Click" FolderStyle="btstyles/premiere_blue/VdcButton"></cc2:VdcButton>
                         </td>
                     </tr>
                 </table>
@@ -119,7 +119,15 @@
         </tr>
         <tr>
             <td colspan="2">
-                <cc1:Grid ID="Grid1" runat="server" Serialize="false" AllowAddingRecords="False" AllowPageSizeSelection="False" AllowRecordSelection="False" AllowSorting="False" AutoGenerateColumns="false">
+                <cc1:Grid ID="Grid1" runat="server" 
+                    CallbackMode="false" 
+                    Serialize="false" 
+                    AllowAddingRecords="False" 
+                    AllowPageSizeSelection="False" 
+                    AllowRecordSelection="False" 
+                    AllowSorting="False" 
+                    AutoGenerateColumns="false" 
+                    FolderStyle="styles/premiere_blue">
 <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
 <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
 <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
