@@ -15,7 +15,7 @@ namespace BusinessLogic.Services
     // NOTE: In order to launch WCF Test Client for testing this service, please select GiamSatServices.svc or GiamSatServices.svc.cs at the Solution Explorer and start debugging.
     public class GiamSatServices : IGiamSatServices
     {
-        private const int PageSize = 20;
+        private int PageSize = 20;
 
         public DataTable ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long namKHV, long idDuAn)
         {
@@ -222,6 +222,7 @@ namespace BusinessLogic.Services
         {
             try
             {
+                PageSize = 3;
                 var listGoiThau = new ListGoiThauModelGridView();
                 var giamSatDataTier = new GiamSatRepository();
                 var objData = giamSatDataTier.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, PageSize, pageIndex);
