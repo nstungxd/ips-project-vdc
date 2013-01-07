@@ -231,35 +231,84 @@ namespace BusinessLogic.Services
                     var list = new List<GoiThauShortModel>();
                     var pageSetting = new PaginationSetting
                                           {
-                                              PageSize = PageSize,
-                                              TotalRecords = Convert.ToInt64(objData[1])
+                                              // 1 ban ghi phan ra moi thau, mo thau, xet thau nen total reocord phai nhan voi 3
+                                              PageSize = PageSize*3,
+                                              TotalRecords = Convert.ToInt64(objData[1])*3
                                           };
                     listGoiThau.TotalPage = pageSetting.TotalPage;
                     listGoiThau.TotalRecords = pageSetting.TotalRecords;
                     var table = objData[0] as DataTable;
                     if (table != null && table.Rows.Count > 0)
                     {
+                        var listId = new List<long>();
                         foreach (DataRow dr in table.Rows)
                         {
+                            var id = Convert.ToInt64(dr["id_goithau"]);
+                            if (listId.Exists(element => element == id)) break;
+                            listId.Add(id);
+
+                            var hinhthuc = dr["hinhthuc_dauthau"].ToString();
+                            var xoa = Convert.ToInt32(dr["goithau_xoa"]);
+                            var ten = dr["ten_goithau"].ToString();
+
                             var goithau = new GoiThauShortModel();
                             goithau.IdDuAn = idDuAn;
                             goithau.MaDonVi = maDonVi;
-                            goithau.IdGoiThau = Convert.ToInt64(dr["id_goithau"]);
-                            goithau.HinhThucDauThau = dr["hinhthuc_dauthau"].ToString();
-                            goithau.TinhTrangXoa = Convert.ToInt32(dr["goithau_xoa"]);
+                            goithau.IdGoiThau = id;
+                            goithau.HinhThucDauThau = hinhthuc;
+                            goithau.TinhTrangXoa = xoa;
+                            goithau.TenGoiThau = ten;
+                            goithau.TenGiaiDoan = "Mời thầu";
+                            goithau.GiaiDoanDauThau = (int) GiaiDoanChonNhaThau.MoiThau;
+                            list.Add(goithau);
 
-                            // check giai doan von da duoc giam sat chua
-                            if (!dr.IsNull("id_giamsat"))
-                            {
-                                goithau.IdGiamSat = Convert.ToInt64(dr["id_giamsat"]);
-                                goithau.GiaiDoanDauThau = Convert.ToInt32(dr["ma_gd_gthau"]);
-                                goithau.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
-                                goithau.GhiChuGiamSat = dr["ghi_chu"].ToString();
-                            }
+                            goithau = new GoiThauShortModel();
+                            goithau.IdDuAn = idDuAn;
+                            goithau.MaDonVi = maDonVi;
+                            goithau.IdGoiThau = id;
+                            goithau.HinhThucDauThau = hinhthuc;
+                            goithau.TinhTrangXoa = xoa;
+                            goithau.TenGoiThau = ten;
+                            goithau.GiaiDoanDauThau = (int) GiaiDoanChonNhaThau.MoThau;
+                            goithau.TenGiaiDoan = "Mở thầu";
+                            list.Add(goithau);
+
+                            goithau = new GoiThauShortModel();
+                            goithau.IdDuAn = idDuAn;
+                            goithau.MaDonVi = maDonVi;
+                            goithau.IdGoiThau = id;
+                            goithau.HinhThucDauThau = hinhthuc;
+                            goithau.TinhTrangXoa = xoa;
+                            goithau.TenGoiThau = ten;
+                            goithau.GiaiDoanDauThau = (int) GiaiDoanChonNhaThau.XetThau;
+                            goithau.TenGiaiDoan = "Xét thầu";
                             list.Add(goithau);
                         }
-                        listGoiThau.GoiThauModelsGridView = list;
+                        foreach (var l in list)
+                        {
+                            foreach (DataRow dr in table.Rows)
+                            {
+                                if (l.IdGoiThau == Convert.ToInt64(dr["id_goithau"]))
+                                {
+                                    if (!dr.IsNull("id_giamsat"))
+                                    {
+                                        if (l.GiaiDoanDauThau == Convert.ToInt32(dr["ma_gd_gthau"]))
+                                        {
+                                            l.IdGiamSat = Convert.ToInt64(dr["id_giamsat"]);
+                                            l.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
+                                            l.GhiChuGiamSat = dr["ghi_chu"].ToString();
+                                            //todo: xac dinh trang thai lai
+                                            l.TrangThaiThucHien = "Hoàn thành";
+                                            break;  
+
+                                        }
+                                    }
+                                }
+                            }
+
+                        }
                     }
+                    listGoiThau.GoiThauModelsGridView = list;
                 }
                 return listGoiThau;
             }
