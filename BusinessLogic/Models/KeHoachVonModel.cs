@@ -23,13 +23,7 @@ namespace BusinessLogic.Models
         public int Dot { get; set; }
 
         [DataMember]
-        public string SoQuyetDinh { get; set; }
-
-        [DataMember]
-        public long ThamDinhNoi { get; set; }
-
-        [DataMember]
-        public long ThamDinhNgoai { get; set; }
+        public string SoQuyetDinh { get; set; }       
 
         [DataMember]
         public string TrangThaiThucHien { get; set; }

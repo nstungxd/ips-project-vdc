@@ -187,16 +187,14 @@ namespace BusinessLogic.Services
                         khv.IdDuAn = idDuAn;
                         khv.NamKHV = nam;
                         khv.Dot = Convert.ToInt32(dr["dot"]);
-                        khv.SoQuyetDinh = dr["so_qd"].ToString();
-                        khv.ThamDinhNoi = Convert.ToInt64(dr["td_noi"]);
-                        khv.ThamDinhNgoai = Convert.ToInt64(dr["td_ngoai"]);
+                        khv.SoQuyetDinh = dr["so_qd"].ToString();                   
                         khv.TinhTrangXoa = Convert.ToInt32(dr["khv_xoa"]);
                         // kiem tra tinh trang thuc hien cua ke hoach von
                             // da phe duyet ke hoach von
                         if (khv.SoQuyetDinh != " ")
                             khv.TrangThaiThucHien = "pd";
                             // da tham dinh ke hoach von
-                        else if (khv.ThamDinhNoi != 0 || khv.ThamDinhNgoai != 0)
+                        else if (dr["td_noi"].ToString() != "0" || dr["td_ngoai"].ToString() != "0")
                             khv.TrangThaiThucHien = "td";
                             // da dang ky ke hoach von
                         else khv.TrangThaiThucHien = "dk";
@@ -220,21 +218,54 @@ namespace BusinessLogic.Services
             }
         }
 
-        public string DanhSachGoiThauReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageIndex = 1)
+        public ListGoiThauModelGridView DanhSachGoiThau(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageIndex = 1)
         {
-            var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();
-            var objData = giamSatDataTier.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, PageSize, pageIndex);
-            if (objData != null)
+            try
             {
-                var pageSetting = new PaginationSetting
+                var listGoiThau = new ListGoiThauModelGridView();
+                var giamSatDataTier = new GiamSatRepository();
+                var objData = giamSatDataTier.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, PageSize, pageIndex);
+                if (objData != null)
                 {
-                    PageSize = PageSize,
-                    TotalRecords = Convert.ToInt64(objData[1])
-                };
-                sReturn += pageSetting.TotalRecords + "-" + pageSetting.TotalPage + "-" + Common.ConvertTableToJsonString(objData[0] as DataTable);
+                    var list = new List<GoiThauShortModel>();
+                    var pageSetting = new PaginationSetting
+                                          {
+                                              PageSize = PageSize,
+                                              TotalRecords = Convert.ToInt64(objData[1])
+                                          };
+                    listGoiThau.TotalPage = pageSetting.TotalPage;
+                    listGoiThau.TotalRecords = pageSetting.TotalRecords;
+                    var table = objData[0] as DataTable;
+                    if (table != null && table.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in table.Rows)
+                        {
+                            var goithau = new GoiThauShortModel();
+                            goithau.IdDuAn = idDuAn;
+                            goithau.MaDonVi = maDonVi;
+                            goithau.IdGoiThau = Convert.ToInt64(dr["id_goithau"]);
+                            goithau.HinhThucDauThau = dr["hinhthuc_dauthau"].ToString();
+                            goithau.TinhTrangXoa = Convert.ToInt32(dr["goithau_xoa"]);
+
+                            // check giai doan von da duoc giam sat chua
+                            if (!dr.IsNull("id_giamsat"))
+                            {
+                                goithau.IdGiamSat = Convert.ToInt64(dr["id_giamsat"]);
+                                goithau.GiaiDoanDauThau = Convert.ToInt32(dr["ma_gd_gthau"]);
+                                goithau.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
+                                goithau.GhiChuGiamSat = dr["ghi_chu"].ToString();
+                            }
+                            list.Add(goithau);
+                        }
+                        listGoiThau.GoiThauModelsGridView = list;
+                    }
+                }
+                return listGoiThau;
             }
-            return sReturn;
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public string DanhSachHopDongReturnString(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageIndex = 1)
