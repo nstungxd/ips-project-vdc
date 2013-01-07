@@ -158,9 +158,9 @@ namespace BusinessLogic.Services
         /// <param name="maDonVi">ma don vi thuc hien du an</param>
         /// <param name="idGoiThau">id goi thau</param>
         /// <param name="pageIndex">trang du lieu can lay</param>
-        /// <returns>danh sach hop dong kieu json</returns>
+        /// <returns>danh sach hop dong</returns>
         [OperationContract]
-        string DanhSachHopDongReturnString(string mdv, string nsd, string pas, string maDonVi, long idGoiThau,
+        ListHopDongModelGridView DanhSachHopDong(string mdv, string nsd, string pas, string maDonVi, long idGoiThau,
                                            int pageIndex = 1);
 
         /// <summary>

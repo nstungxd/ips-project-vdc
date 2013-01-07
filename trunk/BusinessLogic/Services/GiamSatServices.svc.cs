@@ -269,21 +269,60 @@ namespace BusinessLogic.Services
             }
         }
 
-        public string DanhSachHopDongReturnString(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageIndex = 1)
+        public ListHopDongModelGridView DanhSachHopDong(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageIndex = 1)
         {
-            var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();
-            var objData = giamSatDataTier.DanhSachHopDong(mdv, nsd, pas, maDonVi, idGoiThau, PageSize, pageIndex);
-            if (objData != null)
+            try
             {
-                var pageSetting = new PaginationSetting
+                var listHopDong = new ListHopDongModelGridView();
+                PageSize = 10;
+                var giamSatDataTier = new GiamSatRepository();
+                var objData = giamSatDataTier.DanhSachHopDong(mdv, nsd, pas, maDonVi, idGoiThau, PageSize, pageIndex);
+                if (objData != null)
                 {
-                    PageSize = PageSize,
-                    TotalRecords = Convert.ToInt64(objData[1])
-                };
-                sReturn += pageSetting.TotalRecords + "-" + pageSetting.TotalPage + "-" + Common.ConvertTableToJsonString(objData[0] as DataTable);
+                    var list = new List<HopDongShortModel>();
+                    var pageSetting = new PaginationSetting
+                                          {
+                                              PageSize = PageSize,
+                                              TotalRecords = Convert.ToInt64(objData[1])
+                                          };
+                    listHopDong.TotalPage = pageSetting.TotalPage;
+                    listHopDong.TotalRecords = pageSetting.TotalRecords;
+                    var table = objData[0] as DataTable;
+                    if (table != null && table.Rows.Count > 0)
+                    {
+                        foreach (DataRow dr in table.Rows)
+                        {
+                            var hopdong = new HopDongShortModel();
+                            hopdong.IdHopDong = Convert.ToInt64(dr["id_hopdong"]);
+                            ;
+                            hopdong.MaDonVi = maDonVi;
+                            hopdong.IdGoiThau = idGoiThau;
+                            hopdong.TenHopDong = dr["ten_hd"].ToString();
+                            hopdong.BenA = dr["ben_a"].ToString();
+                            hopdong.BenB = dr["ben_b"].ToString();
+                            hopdong.TienNoiTe = Convert.ToInt64(dr["tien_nt"]);
+                            hopdong.TienNgoaiTe = Convert.ToInt64(dr["id_hopdong"]);
+                            hopdong.TinhTrangHopDong = dr["tinhtrang_hdo"].ToString();
+                            hopdong.TinhTrangXoa = Convert.ToInt32(dr["tien_ngt"]);
+
+                            // check giai doan von da duoc giam sat chua
+                            if (!dr.IsNull("id_giamsat"))
+                            {
+                                hopdong.IdGiamSat = Convert.ToInt64(dr["id_giamsat"]);
+                                hopdong.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
+                                hopdong.GhiChuGiamSat = dr["ghi_chu"].ToString();
+                            }
+                            list.Add(hopdong);
+                        }
+                        listHopDong.HopDongModelsGridView = list;
+                    }
+                }
+                return listHopDong;
             }
-            return sReturn;
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long loaiNguonVon)
