@@ -32,7 +32,7 @@ begin
           where a.so_id in ( 
             select so_id from (select a.so_id,row_number() over (order by a.so_id) rownumber from bdt_qldt_gth_ct a
               where  a.xoa!=2 and a.ma_dvi = ma_donvi_thuchien and a.so_id_da = id_duan
-              ) where rownumber > ((1-1) * 3) and rownumber < ((1 * 3) +1))
+              ) where rownumber > ((page_index-1) * page_size) and rownumber < ((page_index * page_size) +1))
           order by a.so_id,c.ma_gd_gthau;
    
 exception when others then raise_application_error(-20105,b_loi);
