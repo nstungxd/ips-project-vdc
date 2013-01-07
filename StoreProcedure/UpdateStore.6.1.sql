@@ -24,7 +24,7 @@ begin
   
   -- danh sach goi thau
   open cs_lke for 
-    select a.so_id id_goithau,b.ten hinhthuc_dauthau,a.xoa goithau_xoa,c.so_id id_giamsat,c.ma_gd_gthau,c.ma_kq_gs,c.ghi_chu         
+    select a.so_id id_goithau,a.ten ten_goithau,b.ten hinhthuc_dauthau,a.xoa goithau_xoa,c.so_id id_giamsat,c.ma_gd_gthau,c.ma_kq_gs,c.ghi_chu         
           from bdt_qldt_gth_ct a
           inner join bdt_qldt_gth_ma_htt b on a.hthuc = b.ma 
           and (b.ma_dvi = '100' or a.ma_dvi = b.ma_dvi) -- can chu y dong code nay(check lai du lieu)
