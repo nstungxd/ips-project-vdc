@@ -565,5 +565,35 @@ namespace IPS.Data.SqlCe.Repositories
                 ConnectDB.CloseConnection(_connectGs);
             }
         }
+
+        public DataTable NamKeHoachVon(string maDonVi, long idDuAn)
+        {
+            try
+            {
+                ConnectDB.CloseConnection(_connectGs);
+                _connectGs = new OracleConnection();
+                _connectGs = ConnectDB.GetOracleConnection(_connectGs);
+                var cm = _connectGs.CreateCommand();
+                cm.CommandText = "usp_nam_kehoachvon";
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.Add(new OracleParameter("id_duan", OracleDbType.Long)).Value = idDuAn;
+                cm.Parameters.Add(new OracleParameter("ma_donvi_thuchien", OracleDbType.Varchar2)).Value = maDonVi;                
+                cm.Parameters.Add(new OracleParameter("cs_lke", OracleDbType.RefCursor)).Direction =
+                    ParameterDirection.Output;
+
+                var tableGs = new DataTable();
+                _oracleAdapter = new OracleDataAdapter(cm);
+                _oracleAdapter.Fill(tableGs);
+                return tableGs;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                ConnectDB.CloseConnection(_connectGs);
+            }
+        }
     }
 }
