@@ -19,7 +19,13 @@ namespace BusinessLogic.Models
         public long IdGoiThau { get; set; }
 
         [DataMember]
+        public string TenGoiThau { get; set; }
+
+        [DataMember]
         public string HinhThucDauThau { get; set; }
+
+        [DataMember]
+        public string TenGiaiDoan { get; set; }
 
         [DataMember]
         public string TrangThaiThucHien { get; set; }
