@@ -359,10 +359,10 @@ namespace IPS.Web.GiamSatServiceReference {
         private string GhiChuGiamSatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GiaiDoanGiamSatField;
+        private int GiaiDoanKHVField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private UnitSettingLibrary.GiaiDoanKHV GiaiDoanKHVField;
+        private string GiaiDoanKHVValueField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long IdDuAnField;
@@ -390,6 +390,9 @@ namespace IPS.Web.GiamSatServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TinhTrangXoaField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TrangThaiThucHienField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -428,20 +431,7 @@ namespace IPS.Web.GiamSatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GiaiDoanGiamSat {
-            get {
-                return this.GiaiDoanGiamSatField;
-            }
-            set {
-                if ((this.GiaiDoanGiamSatField.Equals(value) != true)) {
-                    this.GiaiDoanGiamSatField = value;
-                    this.RaisePropertyChanged("GiaiDoanGiamSat");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public UnitSettingLibrary.GiaiDoanKHV GiaiDoanKHV {
+        public int GiaiDoanKHV {
             get {
                 return this.GiaiDoanKHVField;
             }
@@ -449,6 +439,19 @@ namespace IPS.Web.GiamSatServiceReference {
                 if ((this.GiaiDoanKHVField.Equals(value) != true)) {
                     this.GiaiDoanKHVField = value;
                     this.RaisePropertyChanged("GiaiDoanKHV");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GiaiDoanKHVValue {
+            get {
+                return this.GiaiDoanKHVValueField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GiaiDoanKHVValueField, value) != true)) {
+                    this.GiaiDoanKHVValueField = value;
+                    this.RaisePropertyChanged("GiaiDoanKHVValue");
                 }
             }
         }
@@ -566,6 +569,19 @@ namespace IPS.Web.GiamSatServiceReference {
                 if ((this.TinhTrangXoaField.Equals(value) != true)) {
                     this.TinhTrangXoaField = value;
                     this.RaisePropertyChanged("TinhTrangXoa");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TrangThaiThucHien {
+            get {
+                return this.TrangThaiThucHienField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TrangThaiThucHienField, value) != true)) {
+                    this.TrangThaiThucHienField = value;
+                    this.RaisePropertyChanged("TrangThaiThucHien");
                 }
             }
         }

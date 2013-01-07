@@ -6,11 +6,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script language="JavaScript">
         function CapNhatLoaiNguonVon() {
-            //var dropdown = $("select[id$='ddlLoaiNguonVon'] option:selected");
-            //var text = dropdown.text();
-            //var value = dropdown.val();
-            var drop = ddlLoaiNguonVon;
-            var value = ddlLoaiNguonVon._value;
+            var value = $("input[id$='ddlLoaiNguonVon']").val();
             var hfMadv = $("input[id$='hfMaDonVi']").val();
             var hfSoIdDv = $("input[id$='hfSoIdDonVi']").val();
             ob_post.AddParam('ma_don_vi', hfMadv);

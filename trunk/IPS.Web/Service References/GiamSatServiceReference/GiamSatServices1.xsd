@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="SearchProjectSetting">
     <xs:sequence>
       <xs:element minOccurs="0" name="LoaiDuAn" nillable="true" type="xs:string" />
@@ -19,39 +18,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SearchProjectSetting" nillable="true" type="tns:SearchProjectSetting" />
-  <xs:simpleType name="GiaiDoanKHV">
-    <xs:restriction base="xs:string">
-      <xs:enumeration value="KhongXacDinh">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="DangKyKHV">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="ThamDinhKHV">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-      <xs:enumeration value="PheDuyetKHV">
-        <xs:annotation>
-          <xs:appinfo>
-            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
-          </xs:appinfo>
-        </xs:annotation>
-      </xs:enumeration>
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:element name="GiaiDoanKHV" nillable="true" type="tns:GiaiDoanKHV" />
   <xs:complexType name="ChangeResultSettings">
     <xs:sequence>
       <xs:element minOccurs="0" name="ChangeResult" type="tns:ChangeResult" />
@@ -74,19 +40,19 @@
   <xs:element name="ArrayOfGiamSatSetting" nillable="true" type="tns:ArrayOfGiamSatSetting" />
   <xs:complexType name="GiamSatSetting">
     <xs:sequence>
-      <xs:element minOccurs="0" name="DotKHV" type="xs:long" />
+      <xs:element minOccurs="0" name="DotKHV" type="xs:int" />
       <xs:element minOccurs="0" name="DuAnID" type="xs:long" />
       <xs:element minOccurs="0" name="GhiChu" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="GiaiDoanChonNhaThau" type="xs:long" />
-      <xs:element minOccurs="0" name="GiaiDoanKHV" type="xs:long" />
+      <xs:element minOccurs="0" name="GiaiDoanChonNhaThau" type="xs:int" />
+      <xs:element minOccurs="0" name="GiaiDoanKHV" type="xs:int" />
       <xs:element minOccurs="0" name="GiamSatID" type="xs:long" />
       <xs:element minOccurs="0" name="GoiThauID" type="xs:long" />
       <xs:element minOccurs="0" name="HopDongID" type="xs:long" />
       <xs:element minOccurs="0" name="KeHoachVonID" type="xs:long" />
-      <xs:element minOccurs="0" name="KetQuaGiamSat" type="xs:long" />
+      <xs:element minOccurs="0" name="KetQuaGiamSat" type="xs:int" />
       <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MaNguoiNhap" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="NamKHV" type="xs:long" />
+      <xs:element minOccurs="0" name="NamKHV" type="xs:int" />
       <xs:element minOccurs="0" name="SoQD" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
