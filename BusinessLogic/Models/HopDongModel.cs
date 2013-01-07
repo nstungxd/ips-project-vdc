@@ -48,4 +48,17 @@ namespace BusinessLogic.Models
         [DataMember]
         public string GhiChuGiamSat { get; set; } 
     }
+
+    [DataContract]
+    public class ListHopDongModelGridView
+    {
+        [DataMember]
+        public List<HopDongShortModel> HopDongModelsGridView { get; set; }
+
+        [DataMember]
+        public long TotalRecords { get; set; }
+
+        [DataMember]
+        public long TotalPage { get; set; }
+    }
 }
