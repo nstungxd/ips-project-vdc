@@ -410,5 +410,17 @@ namespace BusinessLogic.Services
             }
             return listDonVi;
         }
+
+        public List<int> NamKeHoachVon(string maDonVi, long idDuAn)
+        {
+            var listNam = new List<int>();
+            var giamSatDataTier = new GiamSatRepository();
+            var tableData = giamSatDataTier.NamKeHoachVon(maDonVi,idDuAn);           
+            if (tableData != null && tableData.Rows.Count > 0)
+            {
+                listNam.AddRange(from DataRow dr in tableData.Rows select Convert.ToInt32(dr["nam"]));
+            }
+            return listNam;
+        }
     }
 }

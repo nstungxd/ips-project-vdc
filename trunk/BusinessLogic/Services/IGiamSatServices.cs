@@ -123,6 +123,15 @@ namespace BusinessLogic.Services
         ListDuAnModelGridView DanhSachDuAn(string mdv, string nsd, string pas, int pageIndex = 1);
 
         /// <summary>
+        /// lay danh sach nam khv de bind for dropdownlist
+        /// </summary>
+        /// <param name="maDonVi"></param>
+        /// <param name="idDuAn"></param>
+        /// <returns></returns>
+        [OperationContract]
+        List<int> NamKeHoachVon(string maDonVi, long idDuAn);            
+
+            /// <summary>
         /// lay danh sach cac giai doan cua 1 ke hoach von
         /// </summary>
         /// <param name="mdv">ma don vi nguoi dang su dung</param>
