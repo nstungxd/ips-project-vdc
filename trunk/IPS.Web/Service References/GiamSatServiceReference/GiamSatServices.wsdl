@@ -4,9 +4,9 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
-      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/System.Data" />
+      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" />
       <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" />
-      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" />
+      <xsd:import schemaLocation="http://localhost:24166/Services/GiamSatServices.svc?xsd=xsd4" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IGiamSatServices_ChiTietKeHoachVon_InputMessage">
@@ -33,17 +33,17 @@
   <wsdl:message name="IGiamSatServices_ChiTietXetThau_OutputMessage">
     <wsdl:part name="parameters" element="tns:ChiTietXetThauResponse" />
   </wsdl:message>
-  <wsdl:message name="IGiamSatServices_ChiTietGoiThauReturnString_InputMessage">
-    <wsdl:part name="parameters" element="tns:ChiTietGoiThauReturnString" />
+  <wsdl:message name="IGiamSatServices_ChiTietGoiThau_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChiTietGoiThau" />
   </wsdl:message>
-  <wsdl:message name="IGiamSatServices_ChiTietGoiThauReturnString_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ChiTietGoiThauReturnStringResponse" />
+  <wsdl:message name="IGiamSatServices_ChiTietGoiThau_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChiTietGoiThauResponse" />
   </wsdl:message>
-  <wsdl:message name="IGiamSatServices_ChiTietHopDongReturnString_InputMessage">
-    <wsdl:part name="parameters" element="tns:ChiTietHopDongReturnString" />
+  <wsdl:message name="IGiamSatServices_ChiTietHopDong_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChiTietHopDong" />
   </wsdl:message>
-  <wsdl:message name="IGiamSatServices_ChiTietHopDongReturnString_OutputMessage">
-    <wsdl:part name="parameters" element="tns:ChiTietHopDongReturnStringResponse" />
+  <wsdl:message name="IGiamSatServices_ChiTietHopDong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChiTietHopDongResponse" />
   </wsdl:message>
   <wsdl:message name="IGiamSatServices_ChiTietDuAnReturnString_InputMessage">
     <wsdl:part name="parameters" element="tns:ChiTietDuAnReturnString" />
@@ -63,23 +63,29 @@
   <wsdl:message name="IGiamSatServices_DanhSachDuAn_OutputMessage">
     <wsdl:part name="parameters" element="tns:DanhSachDuAnResponse" />
   </wsdl:message>
+  <wsdl:message name="IGiamSatServices_NamKeHoachVon_InputMessage">
+    <wsdl:part name="parameters" element="tns:NamKeHoachVon" />
+  </wsdl:message>
+  <wsdl:message name="IGiamSatServices_NamKeHoachVon_OutputMessage">
+    <wsdl:part name="parameters" element="tns:NamKeHoachVonResponse" />
+  </wsdl:message>
   <wsdl:message name="IGiamSatServices_DanhSachGiaiDoanKHV_InputMessage">
     <wsdl:part name="parameters" element="tns:DanhSachGiaiDoanKHV" />
   </wsdl:message>
   <wsdl:message name="IGiamSatServices_DanhSachGiaiDoanKHV_OutputMessage">
     <wsdl:part name="parameters" element="tns:DanhSachGiaiDoanKHVResponse" />
   </wsdl:message>
-  <wsdl:message name="IGiamSatServices_DanhSachGoiThauReturnString_InputMessage">
-    <wsdl:part name="parameters" element="tns:DanhSachGoiThauReturnString" />
+  <wsdl:message name="IGiamSatServices_DanhSachGoiThau_InputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachGoiThau" />
   </wsdl:message>
-  <wsdl:message name="IGiamSatServices_DanhSachGoiThauReturnString_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DanhSachGoiThauReturnStringResponse" />
+  <wsdl:message name="IGiamSatServices_DanhSachGoiThau_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachGoiThauResponse" />
   </wsdl:message>
-  <wsdl:message name="IGiamSatServices_DanhSachHopDongReturnString_InputMessage">
-    <wsdl:part name="parameters" element="tns:DanhSachHopDongReturnString" />
+  <wsdl:message name="IGiamSatServices_DanhSachHopDong_InputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachHopDong" />
   </wsdl:message>
-  <wsdl:message name="IGiamSatServices_DanhSachHopDongReturnString_OutputMessage">
-    <wsdl:part name="parameters" element="tns:DanhSachHopDongReturnStringResponse" />
+  <wsdl:message name="IGiamSatServices_DanhSachHopDong_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachHopDongResponse" />
   </wsdl:message>
   <wsdl:message name="IGiamSatServices_CapNhatLoaiNguonVon_InputMessage">
     <wsdl:part name="parameters" element="tns:CapNhatLoaiNguonVon" />
@@ -116,13 +122,13 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietXetThau" message="tns:IGiamSatServices_ChiTietXetThau_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietXetThauResponse" message="tns:IGiamSatServices_ChiTietXetThau_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ChiTietGoiThauReturnString">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietGoiThauReturnString" message="tns:IGiamSatServices_ChiTietGoiThauReturnString_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietGoiThauReturnStringResponse" message="tns:IGiamSatServices_ChiTietGoiThauReturnString_OutputMessage" />
+    <wsdl:operation name="ChiTietGoiThau">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietGoiThau" message="tns:IGiamSatServices_ChiTietGoiThau_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietGoiThauResponse" message="tns:IGiamSatServices_ChiTietGoiThau_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="ChiTietHopDongReturnString">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietHopDongReturnString" message="tns:IGiamSatServices_ChiTietHopDongReturnString_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietHopDongReturnStringResponse" message="tns:IGiamSatServices_ChiTietHopDongReturnString_OutputMessage" />
+    <wsdl:operation name="ChiTietHopDong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietHopDong" message="tns:IGiamSatServices_ChiTietHopDong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietHopDongResponse" message="tns:IGiamSatServices_ChiTietHopDong_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="ChiTietDuAnReturnString">
       <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/ChiTietDuAnReturnString" message="tns:IGiamSatServices_ChiTietDuAnReturnString_InputMessage" />
@@ -136,17 +142,21 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachDuAn" message="tns:IGiamSatServices_DanhSachDuAn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachDuAnResponse" message="tns:IGiamSatServices_DanhSachDuAn_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="NamKeHoachVon">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/NamKeHoachVon" message="tns:IGiamSatServices_NamKeHoachVon_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/NamKeHoachVonResponse" message="tns:IGiamSatServices_NamKeHoachVon_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="DanhSachGiaiDoanKHV">
       <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHV" message="tns:IGiamSatServices_DanhSachGiaiDoanKHV_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHVResponse" message="tns:IGiamSatServices_DanhSachGiaiDoanKHV_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DanhSachGoiThauReturnString">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGoiThauReturnString" message="tns:IGiamSatServices_DanhSachGoiThauReturnString_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGoiThauReturnStringResponse" message="tns:IGiamSatServices_DanhSachGoiThauReturnString_OutputMessage" />
+    <wsdl:operation name="DanhSachGoiThau">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGoiThau" message="tns:IGiamSatServices_DanhSachGoiThau_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachGoiThauResponse" message="tns:IGiamSatServices_DanhSachGoiThau_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="DanhSachHopDongReturnString">
-      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachHopDongReturnString" message="tns:IGiamSatServices_DanhSachHopDongReturnString_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachHopDongReturnStringResponse" message="tns:IGiamSatServices_DanhSachHopDongReturnString_OutputMessage" />
+    <wsdl:operation name="DanhSachHopDong">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachHopDong" message="tns:IGiamSatServices_DanhSachHopDong_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGiamSatServices/DanhSachHopDongResponse" message="tns:IGiamSatServices_DanhSachHopDong_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="CapNhatLoaiNguonVon">
       <wsdl:input wsaw:Action="http://tempuri.org/IGiamSatServices/CapNhatLoaiNguonVon" message="tns:IGiamSatServices_CapNhatLoaiNguonVon_InputMessage" />
@@ -199,8 +209,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ChiTietGoiThauReturnString">
-      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/ChiTietGoiThauReturnString" style="document" />
+    <wsdl:operation name="ChiTietGoiThau">
+      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/ChiTietGoiThau" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -208,8 +218,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ChiTietHopDongReturnString">
-      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/ChiTietHopDongReturnString" style="document" />
+    <wsdl:operation name="ChiTietHopDong">
+      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/ChiTietHopDong" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -244,6 +254,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="NamKeHoachVon">
+      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/NamKeHoachVon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="DanhSachGiaiDoanKHV">
       <soap:operation soapAction="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHV" style="document" />
       <wsdl:input>
@@ -253,8 +272,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DanhSachGoiThauReturnString">
-      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/DanhSachGoiThauReturnString" style="document" />
+    <wsdl:operation name="DanhSachGoiThau">
+      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/DanhSachGoiThau" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -262,8 +281,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="DanhSachHopDongReturnString">
-      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/DanhSachHopDongReturnString" style="document" />
+    <wsdl:operation name="DanhSachHopDong">
+      <soap:operation soapAction="http://tempuri.org/IGiamSatServices/DanhSachHopDong" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
