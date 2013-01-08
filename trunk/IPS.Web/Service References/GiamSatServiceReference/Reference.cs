@@ -557,6 +557,9 @@ namespace IPS.Web.GiamSatServiceReference {
         private string TenGiaiDoanField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenKetQuaGiamSatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TinhTrangXoaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -698,6 +701,19 @@ namespace IPS.Web.GiamSatServiceReference {
                 if ((object.ReferenceEquals(this.TenGiaiDoanField, value) != true)) {
                     this.TenGiaiDoanField = value;
                     this.RaisePropertyChanged("TenGiaiDoan");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenKetQuaGiamSat {
+            get {
+                return this.TenKetQuaGiamSatField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenKetQuaGiamSatField, value) != true)) {
+                    this.TenKetQuaGiamSatField = value;
+                    this.RaisePropertyChanged("TenKetQuaGiamSat");
                 }
             }
         }
@@ -855,6 +871,9 @@ namespace IPS.Web.GiamSatServiceReference {
         private string TenGoiThauField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenKetQuaGiamSatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TinhTrangXoaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -996,6 +1015,19 @@ namespace IPS.Web.GiamSatServiceReference {
                 if ((object.ReferenceEquals(this.TenGoiThauField, value) != true)) {
                     this.TenGoiThauField = value;
                     this.RaisePropertyChanged("TenGoiThau");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenKetQuaGiamSat {
+            get {
+                return this.TenKetQuaGiamSatField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenKetQuaGiamSatField, value) != true)) {
+                    this.TenKetQuaGiamSatField = value;
+                    this.RaisePropertyChanged("TenKetQuaGiamSat");
                 }
             }
         }
@@ -1150,6 +1182,9 @@ namespace IPS.Web.GiamSatServiceReference {
         private string TenHopDongField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenKetQuaGiamSatField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long TienNgoaiTeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -1284,6 +1319,19 @@ namespace IPS.Web.GiamSatServiceReference {
                 if ((object.ReferenceEquals(this.TenHopDongField, value) != true)) {
                     this.TenHopDongField = value;
                     this.RaisePropertyChanged("TenHopDong");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenKetQuaGiamSat {
+            get {
+                return this.TenKetQuaGiamSatField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenKetQuaGiamSatField, value) != true)) {
+                    this.TenKetQuaGiamSatField = value;
+                    this.RaisePropertyChanged("TenKetQuaGiamSat");
                 }
             }
         }

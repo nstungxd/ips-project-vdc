@@ -75,6 +75,7 @@
       <xs:element minOccurs="0" name="NamKHV" type="xs:int" />
       <xs:element minOccurs="0" name="SoQuyetDinh" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TenGiaiDoan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenKetQuaGiamSat" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TinhTrangXoa" type="xs:int" />
       <xs:element minOccurs="0" name="TrangThaiThucHien" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -106,6 +107,7 @@
       <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TenGiaiDoan" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TenGoiThau" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenKetQuaGiamSat" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TinhTrangXoa" type="xs:int" />
       <xs:element minOccurs="0" name="TrangThaiThucHien" nillable="true" type="xs:string" />
     </xs:sequence>
@@ -136,6 +138,7 @@
       <xs:element minOccurs="0" name="KetQuaGiamSat" type="xs:int" />
       <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TenHopDong" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenKetQuaGiamSat" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TienNgoaiTe" type="xs:long" />
       <xs:element minOccurs="0" name="TienNoiTe" type="xs:long" />
       <xs:element minOccurs="0" name="TinhTrangHopDong" nillable="true" type="xs:string" />
