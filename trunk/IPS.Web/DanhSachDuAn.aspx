@@ -120,13 +120,13 @@
         <tr>
             <td colspan="2">
                 <cc1:Grid ID="Grid1" runat="server" 
-                    CallbackMode="false" 
-                    Serialize="false" 
+                    CallbackMode="True" 
+                    Serialize="True" 
                     AllowAddingRecords="False" 
                     AllowPageSizeSelection="False" 
                     AllowRecordSelection="False" 
                     AllowSorting="False" 
-                    AutoGenerateColumns="false" 
+                    AutoGenerateColumns="false"
                     FolderStyle="styles/premiere_blue">
 <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
 <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
