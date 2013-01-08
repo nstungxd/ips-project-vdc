@@ -192,10 +192,11 @@
     <Content Include="btstyles\premiere_blue\VdcTextBox\images\textbox.png" />
     <Content Include="btstyles\premiere_blue\VdcTextBox\style.css" />
     <Content Include="btstyles\premiere_blue\VdcTextBox\style_multiline.css" />
-    <Content Include="Content\CSS\excel-style.css" />
+    <Content Include="btstyles\Content\CSS\excel-style.css" />
     <Content Include="DanhSachDuAn.aspx" />
     <Content Include="GiamSat.aspx" />
     <Content Include="GiamSat1.aspx" />
+    <Content Include="GiamSatDuAn.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <Content Include="Properties\DataSources\UnitSettingLibrary.ChangeResultSettings.datasource" />
     <Content Include="btstyles\grand_gray\VdcButton\images\Thumbs.db" />
@@ -229,24 +230,6 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ListDuAnModelGridView.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.GoiThauModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.HopDongModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.KeHoachVonModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ThongTinMoiThauModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ThongTinMoThauModel.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ThongTinXetThauModel.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\GiamSatServiceReference\Reference.svcmap">
@@ -1575,6 +1558,13 @@
     </Compile>
     <Compile Include="GiamSat1.aspx.designer.cs">
       <DependentUpon>GiamSat1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GiamSatDuAn.aspx.cs">
+      <DependentUpon>GiamSatDuAn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GiamSatDuAn.aspx.designer.cs">
+      <DependentUpon>GiamSatDuAn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\BaoCaoServiceReference\Reference.cs">
