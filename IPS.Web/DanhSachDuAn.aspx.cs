@@ -99,7 +99,7 @@ namespace IPS.Web
         {
             if (Validate())
             {
-                SearchProjectSetting sps = new SearchProjectSetting();
+                var sps = new SearchProjectSetting();
                 sps.MaDuAn = txtMaDuAn.Text;
                 sps.LoaiDuAn = ddlLoaiDuAn.SelectedValue == LoaiDuAn.KhongXacDinh.ToString() ? "" : ddlLoaiDuAn.SelectedValue;
                 sps.NhomDuAn = ddlNhomDuAn.SelectedValue == NhomDuAn.KhongXacDinh.ToString() ? "" : ddlNhomDuAn.SelectedValue;
@@ -113,10 +113,10 @@ namespace IPS.Web
                 sps.NamBatDau = Int32.Parse(ddlThoiGianPhatSinh.SelectedValue);// Int32.Parse(txtThoiGianPhatSinh.Text == "" ? "0" : txtThoiGianPhatSinh.Text);
                 sps.NamKetThucToanTu = ddlTTThoiGianKetThuc.SelectedValue;
                 sps.NamKetThuc = Int32.Parse(ddlThoiGianKetThuc.SelectedValue);
-                ListDuAnModelGridView result =  giamsatService.TimKiemDuAn("", "", "", sps, 1);
+                ListDuAnModelGridView result = giamsatService.TimKiemDuAn("", "", "", sps, 1);
                 Grid1.DataSource = result.DuAnModelsGridView;
-                Grid1.DataBind();
-
+                Grid1.DataBind();                 
+                
             }
         }
         public bool Validate() {
