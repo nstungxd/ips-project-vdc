@@ -68,13 +68,13 @@
       <xs:element minOccurs="0" name="Dot" type="xs:int" />
       <xs:element minOccurs="0" name="GhiChuGiamSat" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="GiaiDoanKHV" type="xs:int" />
-      <xs:element minOccurs="0" name="GiaiDoanKHVValue" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="IdDuAn" type="xs:long" />
       <xs:element minOccurs="0" name="IdGiamSat" type="xs:long" />
       <xs:element minOccurs="0" name="KetQuaGiamSat" type="xs:int" />
       <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NamKHV" type="xs:int" />
       <xs:element minOccurs="0" name="SoQuyetDinh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenGiaiDoan" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TinhTrangXoa" type="xs:int" />
       <xs:element minOccurs="0" name="TrangThaiThucHien" nillable="true" type="xs:string" />
     </xs:sequence>

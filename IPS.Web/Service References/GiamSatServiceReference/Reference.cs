@@ -536,9 +536,6 @@ namespace IPS.Web.GiamSatServiceReference {
         private int GiaiDoanKHVField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string GiaiDoanKHVValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long IdDuAnField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -555,6 +552,9 @@ namespace IPS.Web.GiamSatServiceReference {
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string SoQuyetDinhField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenGiaiDoanField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int TinhTrangXoaField;
@@ -607,19 +607,6 @@ namespace IPS.Web.GiamSatServiceReference {
                 if ((this.GiaiDoanKHVField.Equals(value) != true)) {
                     this.GiaiDoanKHVField = value;
                     this.RaisePropertyChanged("GiaiDoanKHV");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string GiaiDoanKHVValue {
-            get {
-                return this.GiaiDoanKHVValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.GiaiDoanKHVValueField, value) != true)) {
-                    this.GiaiDoanKHVValueField = value;
-                    this.RaisePropertyChanged("GiaiDoanKHVValue");
                 }
             }
         }
@@ -698,6 +685,19 @@ namespace IPS.Web.GiamSatServiceReference {
                 if ((object.ReferenceEquals(this.SoQuyetDinhField, value) != true)) {
                     this.SoQuyetDinhField = value;
                     this.RaisePropertyChanged("SoQuyetDinh");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenGiaiDoan {
+            get {
+                return this.TenGiaiDoanField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenGiaiDoanField, value) != true)) {
+                    this.TenGiaiDoanField = value;
+                    this.RaisePropertyChanged("TenGiaiDoan");
                 }
             }
         }
