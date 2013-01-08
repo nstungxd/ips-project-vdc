@@ -1,0 +1,12 @@
+E:\NguyenHoa\svn\IPS.Data.SqlCe\bin\Debug\IPS.Data.SqlCe.dll
+E:\NguyenHoa\svn\IPS.Data.SqlCe\bin\Debug\IPS.Data.SqlCe.pdb
+E:\NguyenHoa\svn\IPS.Data.SqlCe\bin\Debug\IPS.Data.dll
+E:\NguyenHoa\svn\IPS.Data.SqlCe\bin\Debug\IPS.Model.dll
+E:\NguyenHoa\svn\IPS.Data.SqlCe\bin\Debug\Oracle.DataAccess.dll
+E:\NguyenHoa\svn\IPS.Data.SqlCe\bin\Debug\UnitSettingLibrary.dll
+E:\NguyenHoa\svn\IPS.Data.SqlCe\bin\Debug\IPS.Data.pdb
+E:\NguyenHoa\svn\IPS.Data.SqlCe\bin\Debug\IPS.Model.pdb
+E:\NguyenHoa\svn\IPS.Data.SqlCe\bin\Debug\UnitSettingLibrary.pdb
+E:\NguyenHoa\svn\IPS.Data.SqlCe\obj\Debug\IPS.Data.SqlCe.csprojResolveAssemblyReference.cache
+E:\NguyenHoa\svn\IPS.Data.SqlCe\obj\Debug\IPS.Data.SqlCe.dll
+E:\NguyenHoa\svn\IPS.Data.SqlCe\obj\Debug\IPS.Data.SqlCe.pdb
