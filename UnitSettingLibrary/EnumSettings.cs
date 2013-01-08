@@ -66,17 +66,25 @@ namespace UnitSettingLibrary
 
     public enum GiaiDoanKHV
     {
+        [Description("Không xác định")]
         KhongXacDinh = -1,
+        [Description("Đăng ký kế hoạch vốn")]
         DangKyKHV = 0,
+        [Description("Thẩm định kế hoạch")]
         ThamDinhKHV = 1,
+        [Description("Phê duyệt kế hoạch")]
         PheDuyetKHV = 2
     }
 
     public enum GiaiDoanChonNhaThau
     {
+        [Description("Không xác định")]
         KhongXacDinh = -1,
+        [Description("Mời thầu")]
         MoiThau = 0,
+        [Description("Mở thầu")]
         MoThau = 1,
+        [Description("Xét thầu")]
         XetThau = 2
     }    
 
@@ -135,13 +143,16 @@ namespace UnitSettingLibrary
         VpThuTucThamQuyenPheDuyet = 1,
         VpThuTucTrinhTuThamDinh = 2,
         VpQuanLyChatLuong = 3,
+        [Description("Vi phạm hợp đồng")]
         VpDauThau = 4,
+        [Description("Vi phạm ký hợp đồng")]
         VpKyHd = 5,
         VpQuanLyDauTu = 6,
         VpBaoVeMoiTruong = 7,
         VpSuDungDatDai = 8,
         VpQuanLyTaiNguyen = 9,
 
+        [Description("Chậm tiến độ do thủ tục")]
         ChamDoThuTuc = 100,
         ChamDoGPMB = 101,
         ChamDoNangLuc = 102,
