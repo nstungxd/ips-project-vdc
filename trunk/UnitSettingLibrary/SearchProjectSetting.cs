@@ -12,11 +12,11 @@ namespace UnitSettingLibrary
         [DataMember]
         public string LoaiDuAn { get; set; }
         [DataMember]
-        public string NhomDuAn { get; set; }
+        public NhomDuAn NhomDuAn { get; set; }
         [DataMember]
-        public int LoaiNguonVon { get; set; }
+        public LoaiNguonVon LoaiNguonVon { get; set; }
         [DataMember]
-        public string PhanCap { get; set; }
+        public LoaiPhanCap PhanCap { get; set; }
         [DataMember]
         public string MaDonViThucHien { get; set; }
         [DataMember]
@@ -31,5 +31,12 @@ namespace UnitSettingLibrary
         public int NamKetThuc { get; set; }
         [DataMember]
         public string NamKetThucToanTu { get; set; }
+
+        public SearchProjectSetting()
+        {
+            NhomDuAn = NhomDuAn.KhongXacDinh;
+            LoaiNguonVon = LoaiNguonVon.KhongXacDinh;
+            PhanCap = LoaiPhanCap.KhongXacDinh;
+        }
     }
 }
