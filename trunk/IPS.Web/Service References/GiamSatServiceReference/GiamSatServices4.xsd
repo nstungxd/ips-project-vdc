@@ -112,7 +112,7 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ChiTietDuAnReturnString">
+  <xs:element name="ChiTietDuAn">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
@@ -123,10 +123,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="ChiTietDuAnReturnStringResponse">
+  <xs:element name="ChiTietDuAnResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="ChiTietDuAnReturnStringResult" nillable="true" type="xs:string" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="ChiTietDuAnResult" nillable="true" type="q7:DuAnShortModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -136,7 +136,7 @@
         <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="searchProjectSetting" nillable="true" type="q7:SearchProjectSetting" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="searchProjectSetting" nillable="true" type="q8:SearchProjectSetting" />
         <xs:element minOccurs="0" name="pageIndex" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -144,7 +144,7 @@
   <xs:element name="TimKiemDuAnResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="TimKiemDuAnResult" nillable="true" type="q8:ListDuAnModelGridView" />
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="TimKiemDuAnResult" nillable="true" type="q9:ListDuAnModelGridView" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -161,7 +161,7 @@
   <xs:element name="DanhSachDuAnResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachDuAnResult" nillable="true" type="q9:ListDuAnModelGridView" />
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachDuAnResult" nillable="true" type="q10:ListDuAnModelGridView" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -176,7 +176,7 @@
   <xs:element name="NamKeHoachVonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NamKeHoachVonResult" nillable="true" type="q10:ArrayOfint" />
+        <xs:element xmlns:q11="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="NamKeHoachVonResult" nillable="true" type="q11:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -195,7 +195,7 @@
   <xs:element name="DanhSachGiaiDoanKHVResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachGiaiDoanKHVResult" nillable="true" type="q11:ArrayOfKeHoachVonShortModel" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachGiaiDoanKHVResult" nillable="true" type="q12:ArrayOfKeHoachVonShortModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -214,7 +214,7 @@
   <xs:element name="DanhSachGoiThauResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachGoiThauResult" nillable="true" type="q12:ListGoiThauModelGridView" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachGoiThauResult" nillable="true" type="q13:ListGoiThauModelGridView" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -233,7 +233,7 @@
   <xs:element name="DanhSachHopDongResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachHopDongResult" nillable="true" type="q13:ListHopDongModelGridView" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachHopDongResult" nillable="true" type="q14:ListHopDongModelGridView" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -252,7 +252,7 @@
   <xs:element name="CapNhatLoaiNguonVonResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="CapNhatLoaiNguonVonResult" nillable="true" type="q14:ChangeResultSettings" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="CapNhatLoaiNguonVonResult" nillable="true" type="q15:ChangeResultSettings" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -263,14 +263,14 @@
         <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="loaiGiamSat" type="xs:long" />
-        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="listGiamSat" nillable="true" type="q15:ArrayOfGiamSatSetting" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="listGiamSat" nillable="true" type="q16:ArrayOfGiamSatSetting" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="GiamSatResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="GiamSatResult" nillable="true" type="q16:ChangeResultSettings" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="GiamSatResult" nillable="true" type="q17:ChangeResultSettings" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -280,13 +280,28 @@
         <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="valueFirst" nillable="true" type="xs:string" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="DanhSachDonViResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachDonViResult" nillable="true" type="q17:ArrayOfDonViShortModel" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" minOccurs="0" name="DanhSachDonViResult" nillable="true" type="q18:ArrayOfDonViShortModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DanhSachLoaiDuAn">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="valueFirst" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DanhSachLoaiDuAnResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="DanhSachLoaiDuAnResult" nillable="true" type="q19:ArrayOfUnitShortModel" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

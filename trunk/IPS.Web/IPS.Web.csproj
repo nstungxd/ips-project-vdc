@@ -201,6 +201,7 @@
     <Content Include="Properties\DataSources\UnitSettingLibrary.ChangeResultSettings.datasource" />
     <Content Include="btstyles\grand_gray\VdcButton\images\Thumbs.db" />
     <Content Include="btstyles\grand_gray\VdcTextBox\images\Thumbs.db" />
+    <Content Include="Properties\DataSources\UnitSettingLibrary.UnitShortModel.datasource" />
     <None Include="Service References\BaoCaoServiceReference\BaoCaoServices.disco" />
     <None Include="Service References\BaoCaoServiceReference\configuration91.svcinfo" />
     <None Include="Service References\BaoCaoServiceReference\configuration.svcinfo" />
@@ -230,6 +231,33 @@
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ListDuAnModelGridView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.DuAnShortModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.GoiThauModel1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.HopDongModel1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.KeHoachVonModel1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ListGoiThauModelGridView1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ListHopDongModelGridView1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ThongTinMoiThauModel1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ThongTinMoThauModel1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ThongTinXetThauModel1.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Service References\GiamSatServiceReference\Reference.svcmap">

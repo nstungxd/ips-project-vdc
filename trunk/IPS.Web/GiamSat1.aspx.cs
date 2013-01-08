@@ -27,22 +27,23 @@ namespace IPS.Web
         }
         public ListDuAnModelGridView GetValueSPS()
         {
-            SearchProjectSetting sps = new SearchProjectSetting();
-            sps.MaDuAn = "";
-            sps.LoaiDuAn = "";
-            sps.NhomDuAn = "";
-            sps.LoaiNguonVon = -1;
-            sps.PhanCap = "";
-            sps.MaDonViQuanLy = "";
-            sps.MaDonViThucHien = "";
-            sps.TongVonDauTuToanTu = ">";
-            sps.TongVonDauTu = 0;
-            sps.NamBatDauToanTu = ">";
-            sps.NamBatDau = 2013;
-            sps.NamKetThucToanTu = ">";
-            sps.NamKetThuc = 2013;
-            ListDuAnModelGridView result = giamsatService.TimKiemDuAn("", "", "", sps, 1);
-            return result;
+            return new ListDuAnModelGridView();
+            //SearchProjectSetting sps = new SearchProjectSetting();
+            //sps.MaDuAn = "";
+            //sps.LoaiDuAn = "";
+            //sps.NhomDuAn = "";
+            //sps.LoaiNguonVon = -1;
+            //sps.PhanCap = "";
+            //sps.MaDonViQuanLy = "";
+            //sps.MaDonViThucHien = "";
+            //sps.TongVonDauTuToanTu = ">";
+            //sps.TongVonDauTu = 0;
+            //sps.NamBatDauToanTu = ">";
+            //sps.NamBatDau = 2013;
+            //sps.NamKetThucToanTu = ">";
+            //sps.NamKetThuc = 2013;
+            //ListDuAnModelGridView result = giamsatService.TimKiemDuAn("", "", "", sps, 1);
+            //return result;
         }
     }
 }

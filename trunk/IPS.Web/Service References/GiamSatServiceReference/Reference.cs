@@ -189,6 +189,323 @@ namespace IPS.Web.GiamSatServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DuAnShortModel", Namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models")]
+    [System.SerializableAttribute()]
+    public partial class DuAnShortModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long IdDuAnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UnitSettingLibrary.LoaiNguonVon LoaiNguonVonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UnitSettingLibrary.LoaiPhanCap LoaiPhanCapField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaDonViField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaDuAnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaLoaiDuAnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NamBatDauField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NamKetThucField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private UnitSettingLibrary.NhomDuAn NhomDuAnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string SoQuyetDinhField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenDonViQuanLyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenDonViThucHienField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenDuAnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenLoaiDuAnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenLoaiNguonVonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenLoaiPhanCapField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenNhomDuAnField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private long TongVonDauTuField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long IdDuAn {
+            get {
+                return this.IdDuAnField;
+            }
+            set {
+                if ((this.IdDuAnField.Equals(value) != true)) {
+                    this.IdDuAnField = value;
+                    this.RaisePropertyChanged("IdDuAn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UnitSettingLibrary.LoaiNguonVon LoaiNguonVon {
+            get {
+                return this.LoaiNguonVonField;
+            }
+            set {
+                if ((this.LoaiNguonVonField.Equals(value) != true)) {
+                    this.LoaiNguonVonField = value;
+                    this.RaisePropertyChanged("LoaiNguonVon");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UnitSettingLibrary.LoaiPhanCap LoaiPhanCap {
+            get {
+                return this.LoaiPhanCapField;
+            }
+            set {
+                if ((this.LoaiPhanCapField.Equals(value) != true)) {
+                    this.LoaiPhanCapField = value;
+                    this.RaisePropertyChanged("LoaiPhanCap");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaDonVi {
+            get {
+                return this.MaDonViField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaDonViField, value) != true)) {
+                    this.MaDonViField = value;
+                    this.RaisePropertyChanged("MaDonVi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaDuAn {
+            get {
+                return this.MaDuAnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaDuAnField, value) != true)) {
+                    this.MaDuAnField = value;
+                    this.RaisePropertyChanged("MaDuAn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaLoaiDuAn {
+            get {
+                return this.MaLoaiDuAnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaLoaiDuAnField, value) != true)) {
+                    this.MaLoaiDuAnField = value;
+                    this.RaisePropertyChanged("MaLoaiDuAn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NamBatDau {
+            get {
+                return this.NamBatDauField;
+            }
+            set {
+                if ((this.NamBatDauField.Equals(value) != true)) {
+                    this.NamBatDauField = value;
+                    this.RaisePropertyChanged("NamBatDau");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NamKetThuc {
+            get {
+                return this.NamKetThucField;
+            }
+            set {
+                if ((this.NamKetThucField.Equals(value) != true)) {
+                    this.NamKetThucField = value;
+                    this.RaisePropertyChanged("NamKetThuc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public UnitSettingLibrary.NhomDuAn NhomDuAn {
+            get {
+                return this.NhomDuAnField;
+            }
+            set {
+                if ((this.NhomDuAnField.Equals(value) != true)) {
+                    this.NhomDuAnField = value;
+                    this.RaisePropertyChanged("NhomDuAn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string SoQuyetDinh {
+            get {
+                return this.SoQuyetDinhField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.SoQuyetDinhField, value) != true)) {
+                    this.SoQuyetDinhField = value;
+                    this.RaisePropertyChanged("SoQuyetDinh");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenDonViQuanLy {
+            get {
+                return this.TenDonViQuanLyField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenDonViQuanLyField, value) != true)) {
+                    this.TenDonViQuanLyField = value;
+                    this.RaisePropertyChanged("TenDonViQuanLy");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenDonViThucHien {
+            get {
+                return this.TenDonViThucHienField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenDonViThucHienField, value) != true)) {
+                    this.TenDonViThucHienField = value;
+                    this.RaisePropertyChanged("TenDonViThucHien");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenDuAn {
+            get {
+                return this.TenDuAnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenDuAnField, value) != true)) {
+                    this.TenDuAnField = value;
+                    this.RaisePropertyChanged("TenDuAn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenLoaiDuAn {
+            get {
+                return this.TenLoaiDuAnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenLoaiDuAnField, value) != true)) {
+                    this.TenLoaiDuAnField = value;
+                    this.RaisePropertyChanged("TenLoaiDuAn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenLoaiNguonVon {
+            get {
+                return this.TenLoaiNguonVonField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenLoaiNguonVonField, value) != true)) {
+                    this.TenLoaiNguonVonField = value;
+                    this.RaisePropertyChanged("TenLoaiNguonVon");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenLoaiPhanCap {
+            get {
+                return this.TenLoaiPhanCapField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenLoaiPhanCapField, value) != true)) {
+                    this.TenLoaiPhanCapField = value;
+                    this.RaisePropertyChanged("TenLoaiPhanCap");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenNhomDuAn {
+            get {
+                return this.TenNhomDuAnField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenNhomDuAnField, value) != true)) {
+                    this.TenNhomDuAnField = value;
+                    this.RaisePropertyChanged("TenNhomDuAn");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public long TongVonDauTu {
+            get {
+                return this.TongVonDauTuField;
+            }
+            set {
+                if ((this.TongVonDauTuField.Equals(value) != true)) {
+                    this.TongVonDauTuField = value;
+                    this.RaisePropertyChanged("TongVonDauTu");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="ListDuAnModelGridView", Namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models")]
     [System.SerializableAttribute()]
     public partial class ListDuAnModelGridView : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -266,259 +583,6 @@ namespace IPS.Web.GiamSatServiceReference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="DuAnShortModel", Namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models")]
-    [System.SerializableAttribute()]
-    public partial class DuAnShortModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long IdDuAnField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int LoaiNguonVonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LoaiNguonVonValueField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string LoaiPhanCapField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MaDonViField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string MaDuAnField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NamBatDauField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int NamKetThucField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NhomDuAnField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string SoQuyetDinhField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TenDonViQuanLyField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TenDonViThucHienField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string TenDuAnField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private long TongVonDauTuField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long IdDuAn {
-            get {
-                return this.IdDuAnField;
-            }
-            set {
-                if ((this.IdDuAnField.Equals(value) != true)) {
-                    this.IdDuAnField = value;
-                    this.RaisePropertyChanged("IdDuAn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int LoaiNguonVon {
-            get {
-                return this.LoaiNguonVonField;
-            }
-            set {
-                if ((this.LoaiNguonVonField.Equals(value) != true)) {
-                    this.LoaiNguonVonField = value;
-                    this.RaisePropertyChanged("LoaiNguonVon");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LoaiNguonVonValue {
-            get {
-                return this.LoaiNguonVonValueField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LoaiNguonVonValueField, value) != true)) {
-                    this.LoaiNguonVonValueField = value;
-                    this.RaisePropertyChanged("LoaiNguonVonValue");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string LoaiPhanCap {
-            get {
-                return this.LoaiPhanCapField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.LoaiPhanCapField, value) != true)) {
-                    this.LoaiPhanCapField = value;
-                    this.RaisePropertyChanged("LoaiPhanCap");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MaDonVi {
-            get {
-                return this.MaDonViField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MaDonViField, value) != true)) {
-                    this.MaDonViField = value;
-                    this.RaisePropertyChanged("MaDonVi");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string MaDuAn {
-            get {
-                return this.MaDuAnField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.MaDuAnField, value) != true)) {
-                    this.MaDuAnField = value;
-                    this.RaisePropertyChanged("MaDuAn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NamBatDau {
-            get {
-                return this.NamBatDauField;
-            }
-            set {
-                if ((this.NamBatDauField.Equals(value) != true)) {
-                    this.NamBatDauField = value;
-                    this.RaisePropertyChanged("NamBatDau");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int NamKetThuc {
-            get {
-                return this.NamKetThucField;
-            }
-            set {
-                if ((this.NamKetThucField.Equals(value) != true)) {
-                    this.NamKetThucField = value;
-                    this.RaisePropertyChanged("NamKetThuc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string NhomDuAn {
-            get {
-                return this.NhomDuAnField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.NhomDuAnField, value) != true)) {
-                    this.NhomDuAnField = value;
-                    this.RaisePropertyChanged("NhomDuAn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string SoQuyetDinh {
-            get {
-                return this.SoQuyetDinhField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.SoQuyetDinhField, value) != true)) {
-                    this.SoQuyetDinhField = value;
-                    this.RaisePropertyChanged("SoQuyetDinh");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TenDonViQuanLy {
-            get {
-                return this.TenDonViQuanLyField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TenDonViQuanLyField, value) != true)) {
-                    this.TenDonViQuanLyField = value;
-                    this.RaisePropertyChanged("TenDonViQuanLy");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TenDonViThucHien {
-            get {
-                return this.TenDonViThucHienField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TenDonViThucHienField, value) != true)) {
-                    this.TenDonViThucHienField = value;
-                    this.RaisePropertyChanged("TenDonViThucHien");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string TenDuAn {
-            get {
-                return this.TenDuAnField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.TenDuAnField, value) != true)) {
-                    this.TenDuAnField = value;
-                    this.RaisePropertyChanged("TenDuAn");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public long TongVonDauTu {
-            get {
-                return this.TongVonDauTuField;
-            }
-            set {
-                if ((this.TongVonDauTuField.Equals(value) != true)) {
-                    this.TongVonDauTuField = value;
-                    this.RaisePropertyChanged("TongVonDauTu");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="KeHoachVonShortModel", Namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models")]
     [System.SerializableAttribute()]
     public partial class KeHoachVonShortModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -533,7 +597,7 @@ namespace IPS.Web.GiamSatServiceReference {
         private string GhiChuGiamSatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GiaiDoanKHVField;
+        private UnitSettingLibrary.GiaiDoanKHV GiaiDoanKHVField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private long IdDuAnField;
@@ -542,7 +606,7 @@ namespace IPS.Web.GiamSatServiceReference {
         private long IdGiamSatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int KetQuaGiamSatField;
+        private UnitSettingLibrary.KetQuaGiamSat KetQuaGiamSatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MaDonViField;
@@ -560,7 +624,7 @@ namespace IPS.Web.GiamSatServiceReference {
         private string TenKetQuaGiamSatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TinhTrangXoaField;
+        private UnitSettingLibrary.TinhTrangXoa TinhTrangXoaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TrangThaiThucHienField;
@@ -602,7 +666,7 @@ namespace IPS.Web.GiamSatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GiaiDoanKHV {
+        public UnitSettingLibrary.GiaiDoanKHV GiaiDoanKHV {
             get {
                 return this.GiaiDoanKHVField;
             }
@@ -641,7 +705,7 @@ namespace IPS.Web.GiamSatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int KetQuaGiamSat {
+        public UnitSettingLibrary.KetQuaGiamSat KetQuaGiamSat {
             get {
                 return this.KetQuaGiamSatField;
             }
@@ -719,7 +783,7 @@ namespace IPS.Web.GiamSatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TinhTrangXoa {
+        public UnitSettingLibrary.TinhTrangXoa TinhTrangXoa {
             get {
                 return this.TinhTrangXoaField;
             }
@@ -844,7 +908,7 @@ namespace IPS.Web.GiamSatServiceReference {
         private string GhiChuGiamSatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int GiaiDoanDauThauField;
+        private UnitSettingLibrary.GiaiDoanChonNhaThau GiaiDoanDauThauField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string HinhThucDauThauField;
@@ -859,7 +923,7 @@ namespace IPS.Web.GiamSatServiceReference {
         private long IdGoiThauField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int KetQuaGiamSatField;
+        private UnitSettingLibrary.KetQuaGiamSat KetQuaGiamSatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MaDonViField;
@@ -874,7 +938,7 @@ namespace IPS.Web.GiamSatServiceReference {
         private string TenKetQuaGiamSatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TinhTrangXoaField;
+        private UnitSettingLibrary.TinhTrangXoa TinhTrangXoaField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string TrangThaiThucHienField;
@@ -903,7 +967,7 @@ namespace IPS.Web.GiamSatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int GiaiDoanDauThau {
+        public UnitSettingLibrary.GiaiDoanChonNhaThau GiaiDoanDauThau {
             get {
                 return this.GiaiDoanDauThauField;
             }
@@ -968,7 +1032,7 @@ namespace IPS.Web.GiamSatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int KetQuaGiamSat {
+        public UnitSettingLibrary.KetQuaGiamSat KetQuaGiamSat {
             get {
                 return this.KetQuaGiamSatField;
             }
@@ -1033,7 +1097,7 @@ namespace IPS.Web.GiamSatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TinhTrangXoa {
+        public UnitSettingLibrary.TinhTrangXoa TinhTrangXoa {
             get {
                 return this.TinhTrangXoaField;
             }
@@ -1173,7 +1237,7 @@ namespace IPS.Web.GiamSatServiceReference {
         private long IdHopDongField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int KetQuaGiamSatField;
+        private UnitSettingLibrary.KetQuaGiamSat KetQuaGiamSatField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string MaDonViField;
@@ -1194,7 +1258,7 @@ namespace IPS.Web.GiamSatServiceReference {
         private string TinhTrangHopDongField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int TinhTrangXoaField;
+        private UnitSettingLibrary.TinhTrangXoa TinhTrangXoaField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -1285,7 +1349,7 @@ namespace IPS.Web.GiamSatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int KetQuaGiamSat {
+        public UnitSettingLibrary.KetQuaGiamSat KetQuaGiamSat {
             get {
                 return this.KetQuaGiamSatField;
             }
@@ -1376,7 +1440,7 @@ namespace IPS.Web.GiamSatServiceReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int TinhTrangXoa {
+        public UnitSettingLibrary.TinhTrangXoa TinhTrangXoa {
             get {
                 return this.TinhTrangXoaField;
             }
@@ -1499,11 +1563,11 @@ namespace IPS.Web.GiamSatServiceReference {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietHopDong", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietHopDongResponse")]
         System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.HopDongModel> ChiTietHopDongAsync(string mdv, string nsd, string pas, string maDonVi, long idHopDong);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietDuAnReturnString", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietDuAnReturnStringResponse")]
-        string ChiTietDuAnReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietDuAnResponse")]
+        IPS.Web.GiamSatServiceReference.DuAnShortModel ChiTietDuAn(string mdv, string nsd, string pas, string maDonVi, long idDuAn);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietDuAnReturnString", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietDuAnReturnStringResponse")]
-        System.Threading.Tasks.Task<string> ChiTietDuAnReturnStringAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietDuAnResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.DuAnShortModel> ChiTietDuAnAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/TimKiemDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/TimKiemDuAnResponse")]
         IPS.Web.GiamSatServiceReference.ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, UnitSettingLibrary.SearchProjectSetting searchProjectSetting, int pageIndex);
@@ -1554,10 +1618,16 @@ namespace IPS.Web.GiamSatServiceReference {
         System.Threading.Tasks.Task<UnitSettingLibrary.ChangeResultSettings> GiamSatAsync(string mdv, string nsd, string pas, long loaiGiamSat, UnitSettingLibrary.GiamSatSetting[] listGiamSat);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachDonVi", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachDonViResponse")]
-        IPS.Web.GiamSatServiceReference.DonViShortModel[] DanhSachDonVi(string mdv, string nsd, string pas);
+        IPS.Web.GiamSatServiceReference.DonViShortModel[] DanhSachDonVi(string mdv, string nsd, string pas, string valueFirst);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachDonVi", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachDonViResponse")]
-        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.DonViShortModel[]> DanhSachDonViAsync(string mdv, string nsd, string pas);
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.DonViShortModel[]> DanhSachDonViAsync(string mdv, string nsd, string pas, string valueFirst);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachLoaiDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachLoaiDuAnResponse")]
+        UnitSettingLibrary.UnitShortModel[] DanhSachLoaiDuAn(string valueFirst);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachLoaiDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachLoaiDuAnResponse")]
+        System.Threading.Tasks.Task<UnitSettingLibrary.UnitShortModel[]> DanhSachLoaiDuAnAsync(string valueFirst);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -1635,12 +1705,12 @@ namespace IPS.Web.GiamSatServiceReference {
             return base.Channel.ChiTietHopDongAsync(mdv, nsd, pas, maDonVi, idHopDong);
         }
         
-        public string ChiTietDuAnReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn) {
-            return base.Channel.ChiTietDuAnReturnString(mdv, nsd, pas, maDonVi, idDuAn);
+        public IPS.Web.GiamSatServiceReference.DuAnShortModel ChiTietDuAn(string mdv, string nsd, string pas, string maDonVi, long idDuAn) {
+            return base.Channel.ChiTietDuAn(mdv, nsd, pas, maDonVi, idDuAn);
         }
         
-        public System.Threading.Tasks.Task<string> ChiTietDuAnReturnStringAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn) {
-            return base.Channel.ChiTietDuAnReturnStringAsync(mdv, nsd, pas, maDonVi, idDuAn);
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.DuAnShortModel> ChiTietDuAnAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn) {
+            return base.Channel.ChiTietDuAnAsync(mdv, nsd, pas, maDonVi, idDuAn);
         }
         
         public IPS.Web.GiamSatServiceReference.ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, UnitSettingLibrary.SearchProjectSetting searchProjectSetting, int pageIndex) {
@@ -1707,12 +1777,20 @@ namespace IPS.Web.GiamSatServiceReference {
             return base.Channel.GiamSatAsync(mdv, nsd, pas, loaiGiamSat, listGiamSat);
         }
         
-        public IPS.Web.GiamSatServiceReference.DonViShortModel[] DanhSachDonVi(string mdv, string nsd, string pas) {
-            return base.Channel.DanhSachDonVi(mdv, nsd, pas);
+        public IPS.Web.GiamSatServiceReference.DonViShortModel[] DanhSachDonVi(string mdv, string nsd, string pas, string valueFirst) {
+            return base.Channel.DanhSachDonVi(mdv, nsd, pas, valueFirst);
         }
         
-        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.DonViShortModel[]> DanhSachDonViAsync(string mdv, string nsd, string pas) {
-            return base.Channel.DanhSachDonViAsync(mdv, nsd, pas);
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.DonViShortModel[]> DanhSachDonViAsync(string mdv, string nsd, string pas, string valueFirst) {
+            return base.Channel.DanhSachDonViAsync(mdv, nsd, pas, valueFirst);
+        }
+        
+        public UnitSettingLibrary.UnitShortModel[] DanhSachLoaiDuAn(string valueFirst) {
+            return base.Channel.DanhSachLoaiDuAn(valueFirst);
+        }
+        
+        public System.Threading.Tasks.Task<UnitSettingLibrary.UnitShortModel[]> DanhSachLoaiDuAnAsync(string valueFirst) {
+            return base.Channel.DanhSachLoaiDuAnAsync(valueFirst);
         }
     }
 }

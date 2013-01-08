@@ -65,9 +65,9 @@ namespace IPS.Web
             SearchProjectSetting sps = new SearchProjectSetting();
             sps.MaDuAn = "";
             sps.LoaiDuAn = "";
-            sps.NhomDuAn = "";
-            sps.LoaiNguonVon = -1;
-            sps.PhanCap = "";
+            sps.NhomDuAn = NhomDuAn.KhongXacDinh;
+            sps.LoaiNguonVon = LoaiNguonVon.KhongXacDinh;
+            sps.PhanCap = LoaiPhanCap.KhongXacDinh;
             sps.MaDonViQuanLy = "";
             sps.MaDonViThucHien = "";
             sps.TongVonDauTuToanTu = ">";

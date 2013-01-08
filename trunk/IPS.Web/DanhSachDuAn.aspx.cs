@@ -22,7 +22,7 @@ namespace IPS.Web
         }
         public void LoadDropDownList()
         {
-            var loaida = EnumHelper.GetDescriptionForBind(LoaiDuAn.KhongXacDinh);
+            var loaida = giamsatService.DanhSachLoaiDuAn("--Chọn giá trị--");
             ddlLoaiDuAn.DataSource = loaida;
             ddlLoaiDuAn.DataTextField = "ValueString";
             ddlLoaiDuAn.DataValueField = "name";
@@ -46,12 +46,12 @@ namespace IPS.Web
             ddlPhanCap.DataValueField = "name";
             ddlPhanCap.DataBind();
 
-            ddlDonViChuDT.DataSource = giamsatService.DanhSachDonVi("", "", ""); ;
+            ddlDonViChuDT.DataSource = giamsatService.DanhSachDonVi("", "", "","--Chọn giá trị--"); ;
             ddlDonViChuDT.DataTextField = "TenDonVi";
             ddlDonViChuDT.DataValueField = "MaDonVi";
             ddlDonViChuDT.DataBind();
 
-            ddlDonViQuanLyDT.DataSource = giamsatService.DanhSachDonVi("", "", "");
+            ddlDonViQuanLyDT.DataSource = giamsatService.DanhSachDonVi("", "", "", "--Chọn giá trị--");
             ddlDonViQuanLyDT.DataTextField = "TenDonVi";
             ddlDonViQuanLyDT.DataValueField = "MaDonVi";
             ddlDonViQuanLyDT.DataBind();
@@ -101,10 +101,10 @@ namespace IPS.Web
             {
                 var sps = new SearchProjectSetting();
                 sps.MaDuAn = txtMaDuAn.Text;
-                sps.LoaiDuAn = ddlLoaiDuAn.SelectedValue == LoaiDuAn.KhongXacDinh.ToString() ? "" : ddlLoaiDuAn.SelectedValue;
-                sps.NhomDuAn = ddlNhomDuAn.SelectedValue == NhomDuAn.KhongXacDinh.ToString() ? "" : ddlNhomDuAn.SelectedValue;
-                sps.LoaiNguonVon = Int32.Parse(ddlLoaiNguonVon.SelectedValue);
-                sps.PhanCap = ddlPhanCap.SelectedValue == LoaiPhanCap.KhongXacDinh.ToString() ? "" : ddlPhanCap.SelectedValue;
+                sps.LoaiDuAn = ddlLoaiDuAn.SelectedValue;
+                sps.NhomDuAn = (NhomDuAn)Enum.Parse(typeof(NhomDuAn), ddlNhomDuAn.SelectedValue);
+                sps.LoaiNguonVon = (LoaiNguonVon)Enum.Parse(typeof(LoaiNguonVon), ddlLoaiNguonVon.SelectedValue);
+                sps.PhanCap = (LoaiPhanCap)Enum.Parse(typeof(LoaiPhanCap), ddlPhanCap.SelectedValue);
                 sps.MaDonViQuanLy = ddlDonViQuanLyDT.SelectedValue;
                 sps.MaDonViThucHien = ddlDonViChuDT.SelectedValue;
                 sps.TongVonDauTuToanTu = ddlTTTongVonDT.SelectedValue;
@@ -115,7 +115,7 @@ namespace IPS.Web
                 sps.NamKetThuc = Int32.Parse(ddlThoiGianKetThuc.SelectedValue);
                 ListDuAnModelGridView result = giamsatService.TimKiemDuAn("", "", "", sps, 1);
                 Grid1.DataSource = result.DuAnModelsGridView;
-                Grid1.DataBind();                 
+                Grid1.DataBind();                      
                 
             }
         }
