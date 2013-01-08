@@ -231,6 +231,24 @@
     <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ListDuAnModelGridView.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.GoiThauModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.HopDongModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.KeHoachVonModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ThongTinMoiThauModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ThongTinMoThauModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatServiceReference\IPS.Web.GiamSatServiceReference.ThongTinXetThauModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\GiamSatServiceReference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
