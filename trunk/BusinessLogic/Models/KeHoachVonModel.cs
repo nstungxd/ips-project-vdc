@@ -7,6 +7,7 @@ using UnitSettingLibrary;
 
 namespace BusinessLogic.Models
 {
+    // dung cho grid view
     [DataContract]
     public class KeHoachVonShortModel
     {
@@ -47,4 +48,11 @@ namespace BusinessLogic.Models
         public string GhiChuGiamSat { get; set; }
        
     }
+
+    // dung cho cac trang chi tiet
+    [DataContract]
+    public class KeHoachVonModel
+    {
+    }
+
 }

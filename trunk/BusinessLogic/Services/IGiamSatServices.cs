@@ -25,7 +25,7 @@ namespace BusinessLogic.Services
         /// <param name="idDuAn">id du an</param>
         /// <returns>DataTable</returns>
         [OperationContract]
-        DataTable ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long namKHV, long idDuAn);
+        KeHoachVonModel ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long namKHV, long idDuAn);
 
         /// <summary>
         /// 
@@ -37,7 +37,7 @@ namespace BusinessLogic.Services
         /// <param name="idGoiThau"></param>
         /// <returns></returns>
         [OperationContract]
-        DataTable ChiTietMoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        ThongTinMoiThauModel ChiTietMoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
 
         /// <summary>
         /// 
@@ -49,7 +49,7 @@ namespace BusinessLogic.Services
         /// <param name="idGoiThau"></param>
         /// <returns></returns>
         [OperationContract]
-        DataTable ChiTietMoThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        ThongTinMoThauModel ChiTietMoThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
 
         /// <summary>
         /// 
@@ -61,7 +61,7 @@ namespace BusinessLogic.Services
         /// <param name="idGoiThau"></param>
         /// <returns></returns>
         [OperationContract]
-        DataTable ChiTietXetThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        ThongTinXetThauModel ChiTietXetThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
 
         /// <summary>
         /// 
@@ -73,7 +73,7 @@ namespace BusinessLogic.Services
         /// <param name="idGoiThau"></param>
         /// <returns></returns>
         [OperationContract]
-        string ChiTietGoiThauReturnString(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        GoiThauModel ChiTietGoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
 
         /// <summary>
         /// 
@@ -85,7 +85,7 @@ namespace BusinessLogic.Services
         /// <param name="idHopDong"></param>
         /// <returns></returns>
         [OperationContract]
-        string ChiTietHopDongReturnString(string mdv, string nsd, string pas, string maDonVi, long idHopDong);
+        HopDongModel ChiTietHopDong(string mdv, string nsd, string pas, string maDonVi, long idHopDong);
 
         /// <summary>
         /// 
