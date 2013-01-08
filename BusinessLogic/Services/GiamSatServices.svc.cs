@@ -170,38 +170,85 @@ namespace BusinessLogic.Services
             {
                 var listKeHoachVon = new List<KeHoachVonShortModel>();
                 var giamSatDataTier = new GiamSatRepository();
-                var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);                    
+                var tableData = giamSatDataTier.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);
 
-                if (tableData.Rows.Count > 0)
+                if (tableData != null && tableData.Rows.Count > 0)
                 {
+                    var listId = new List<int>();
                     foreach (DataRow dr in tableData.Rows)
                     {
-                        var khv = new KeHoachVonShortModel();
-                        khv.MaDonVi = maDonVi;
-                        khv.IdDuAn = idDuAn;
-                        khv.NamKHV = nam;
-                        khv.Dot = Convert.ToInt32(dr["dot"]);
-                        khv.SoQuyetDinh = dr["so_qd"].ToString();                   
-                        khv.TinhTrangXoa = Convert.ToInt32(dr["khv_xoa"]);
-                        // kiem tra tinh trang thuc hien cua ke hoach von
-                            // da phe duyet ke hoach von
-                        if (khv.SoQuyetDinh != " ")
-                            khv.TrangThaiThucHien = "pd";
+                        var id = Convert.ToInt32(dr["dot"]);
+                        if (listId.Exists(element => element == id)) break;
+                        listId.Add(id);
+
+                        var soQuyetDinh = dr["so_qd"].ToString();
+                        var trangThai = "dk";
+                        if (soQuyetDinh != " ")
+                            trangThai = "pd";
                             // da tham dinh ke hoach von
                         else if (dr["td_noi"].ToString() != "0" || dr["td_ngoai"].ToString() != "0")
-                            khv.TrangThaiThucHien = "td";
-                            // da dang ky ke hoach von
-                        else khv.TrangThaiThucHien = "dk";
+                            trangThai = "td";
 
-                        // check giai doan von da duoc giam sat chua
-                        if (!dr.IsNull("giamsat_id"))
-                        {
-                            khv.IdGiamSat = Convert.ToInt64(dr["giamsat_id"]);
-                            khv.GiaiDoanKHV = Convert.ToInt32(dr["ma_gd_khv"]);
-                            khv.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
-                            khv.GhiChuGiamSat = dr["ghi_chu"].ToString();
-                        }
+                        var xoa = Convert.ToInt32(dr["khv_xoa"]);
+
+                        var khv = new KeHoachVonShortModel();
+                        khv.IdDuAn = idDuAn;
+                        khv.MaDonVi = maDonVi;
+                        khv.NamKHV = nam;
+                        khv.Dot = id;
+                        khv.SoQuyetDinh = soQuyetDinh;
+                        khv.TenGiaiDoan = "Đăng ký kế hoạch vốn đợt " + id;
+                        khv.GiaiDoanKHV = (int) GiaiDoanKHV.DangKyKHV;
+                        khv.TinhTrangXoa = xoa;
+                        if (trangThai != "") khv.TrangThaiThucHien = "Hoàn thành";
+                        else khv.TrangThaiThucHien = "Chưa thực hiện";
                         listKeHoachVon.Add(khv);
+
+                        khv = new KeHoachVonShortModel();
+                        khv.IdDuAn = idDuAn;
+                        khv.MaDonVi = maDonVi;
+                        khv.NamKHV = nam;
+                        khv.Dot = id;
+                        khv.TenGiaiDoan = "Thẩm định kế hoạch vốn đợt " + id;
+                        khv.GiaiDoanKHV = (int) GiaiDoanKHV.ThamDinhKHV;
+                        khv.TinhTrangXoa = xoa;
+                        if (trangThai == "td" || trangThai == "pd") khv.TrangThaiThucHien = "Hoàn thành";
+                        else khv.TrangThaiThucHien = "Chưa thực hiện";
+                        listKeHoachVon.Add(khv);
+
+                        khv = new KeHoachVonShortModel();
+                        khv.IdDuAn = idDuAn;
+                        khv.MaDonVi = maDonVi;
+                        khv.NamKHV = nam;
+                        khv.Dot = id;
+                        khv.SoQuyetDinh = soQuyetDinh;
+                        khv.TenGiaiDoan = "Phê duyệt kế hoạch vốn đợt " + id;
+                        khv.GiaiDoanKHV = (int) GiaiDoanKHV.PheDuyetKHV;
+                        khv.TinhTrangXoa = xoa;
+                        if (trangThai == "pd") khv.TrangThaiThucHien = "Hoàn thành";
+                        else khv.TrangThaiThucHien = "Chưa thực hiện";
+                        listKeHoachVon.Add(khv);
+                    }
+                    foreach (var l in listKeHoachVon)
+                    {
+                        foreach (DataRow dr in tableData.Rows)
+                        {
+                            if (l.Dot == Convert.ToInt32(dr["dot"]))
+                            {
+                                if (!dr.IsNull("giamsat_id"))
+                                {
+                                    if (l.GiaiDoanKHV == Convert.ToInt32(dr["ma_gd_khv"]))
+                                    {
+                                        l.IdGiamSat = Convert.ToInt64(dr["giamsat_id"]);
+                                        l.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
+                                        l.GhiChuGiamSat = dr["ghi_chu"].ToString();
+                                        break;
+
+                                    }
+                                }
+                            }
+                        }
+
                     }
                 }
                 return listKeHoachVon;
@@ -254,6 +301,8 @@ namespace BusinessLogic.Services
                             goithau.TenGoiThau = ten;
                             goithau.TenGiaiDoan = "Mời thầu";
                             goithau.GiaiDoanDauThau = (int) GiaiDoanChonNhaThau.MoiThau;
+                             //todo: xac dinh trang thai lai
+                            goithau.TrangThaiThucHien = "Hoàn thành";
                             list.Add(goithau);
 
                             goithau = new GoiThauShortModel();
@@ -265,6 +314,8 @@ namespace BusinessLogic.Services
                             goithau.TenGoiThau = ten;
                             goithau.GiaiDoanDauThau = (int) GiaiDoanChonNhaThau.MoThau;
                             goithau.TenGiaiDoan = "Mở thầu";
+                             //todo: xac dinh trang thai lai
+                            goithau.TrangThaiThucHien = "Hoàn thành";
                             list.Add(goithau);
 
                             goithau = new GoiThauShortModel();
@@ -276,6 +327,8 @@ namespace BusinessLogic.Services
                             goithau.TenGoiThau = ten;
                             goithau.GiaiDoanDauThau = (int) GiaiDoanChonNhaThau.XetThau;
                             goithau.TenGiaiDoan = "Xét thầu";
+                             //todo: xac dinh trang thai lai
+                            goithau.TrangThaiThucHien = "Hoàn thành";
                             list.Add(goithau);
                         }
                         foreach (var l in list)
@@ -290,9 +343,7 @@ namespace BusinessLogic.Services
                                         {
                                             l.IdGiamSat = Convert.ToInt64(dr["id_giamsat"]);
                                             l.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
-                                            l.GhiChuGiamSat = dr["ghi_chu"].ToString();
-                                            //todo: xac dinh trang thai lai
-                                            l.TrangThaiThucHien = "Hoàn thành";
+                                            l.GhiChuGiamSat = dr["ghi_chu"].ToString();                                           
                                             break;
 
                                         }

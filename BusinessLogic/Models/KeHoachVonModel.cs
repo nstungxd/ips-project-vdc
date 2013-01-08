@@ -39,8 +39,8 @@ namespace BusinessLogic.Models
         public int GiaiDoanKHV { get; set; }
 
         [DataMember]
-        public string GiaiDoanKHVValue { get; set; }      
-
+        public string TenGiaiDoan { get; set; }
+       
         [DataMember]
         public int KetQuaGiamSat { get; set; }
 
