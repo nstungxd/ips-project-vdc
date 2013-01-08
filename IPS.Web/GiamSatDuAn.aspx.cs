@@ -39,19 +39,12 @@ namespace IPS.Web
                 result = giamsatService.DanhSachGiaiDoanKHV("", "", "", "56", 20111118624371, Int32.Parse(Nam));
             }
             if (result != null)
-            {
-                var listDes = EnumHelper.GetDescriptionForBind(KetQuaGiamSat.ChamDoGPMB);
+            {               
                 foreach (var item in result)
                 {
-                    foreach (var des in listDes)
-                    {
-                        if (item.KetQuaGiamSat == des.ValueInt)
-                        {
-                            item.TenKetQuaGiamSat = des.ValueString;
-                            break;
-                        }
-
-                    }
+                    item.TenKetQuaGiamSat = EnumHelper.GetDescription(item.KetQuaGiamSat);
+                    if (item.GiaiDoanKHV != GiaiDoanKHV.KhongXacDinh)
+                        item.TenGiaiDoan = EnumHelper.GetDescription(item.GiaiDoanKHV) + " đợt " + item.Dot;
 
                 }
             }
@@ -65,20 +58,11 @@ namespace IPS.Web
         {
             var result = giamsatService.DanhSachGoiThau("", "", "", "56", 20111118624371, 1);
             if (result.GoiThauModelsGridView != null)
-            {
-                var listDes = EnumHelper.GetDescriptionForBind(KetQuaGiamSat.ChamDoGPMB);
+            {                
                 foreach (var item in result.GoiThauModelsGridView)
                 {
-                    foreach (var des in listDes)
-                    {
-                        if (item.KetQuaGiamSat == des.ValueInt)
-                        {
-                            item.TenKetQuaGiamSat = des.ValueString;
-                            break;
-                        }
-
-                    }
-
+                    item.TenGiaiDoan = EnumHelper.GetDescription(item.GiaiDoanDauThau);
+                    item.TenKetQuaGiamSat = EnumHelper.GetDescription(item.KetQuaGiamSat);
                 }
             }
             Grid1.DataSource = result.GoiThauModelsGridView;
@@ -99,16 +83,7 @@ namespace IPS.Web
                     var listDes = EnumHelper.GetDescriptionForBind(KetQuaGiamSat.ChamDoGPMB);
                     foreach (var item in result.HopDongModelsGridView)
                     {
-                        foreach (var des in listDes)
-                        {
-                            if (item.KetQuaGiamSat == des.ValueInt)
-                            {
-                                item.TenKetQuaGiamSat = des.ValueString;
-                                break;
-                            }
-
-                        }
-
+                        item.TenKetQuaGiamSat = EnumHelper.GetDescription(item.KetQuaGiamSat);
                     }
                 }
                 Grid2.DataSource = result.HopDongModelsGridView;
