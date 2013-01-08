@@ -1,0 +1,7 @@
+E:\NguyenHoa\svn\IPS.Model\bin\Debug\IPS.Model.dll
+E:\NguyenHoa\svn\IPS.Model\bin\Debug\IPS.Model.pdb
+E:\NguyenHoa\svn\IPS.Model\bin\Debug\UnitSettingLibrary.dll
+E:\NguyenHoa\svn\IPS.Model\bin\Debug\UnitSettingLibrary.pdb
+E:\NguyenHoa\svn\IPS.Model\obj\Debug\IPS.Model.csprojResolveAssemblyReference.cache
+E:\NguyenHoa\svn\IPS.Model\obj\Debug\IPS.Model.dll
+E:\NguyenHoa\svn\IPS.Model\obj\Debug\IPS.Model.pdb
