@@ -58,4 +58,28 @@ namespace BusinessLogic.Models
         [DataMember]
         public long TotalPage { get; set; }
     }
+
+    // dung cho trang chi tiet
+    [DataContract]
+    public class GoiThauModel
+    {
+    }
+
+    // dung cho trang chi tiet
+    [DataContract]
+    public class ThongTinMoiThauModel
+    {
+    }
+
+    // dung cho trang chi tiet
+    [DataContract]
+    public class ThongTinMoThauModel
+    {
+    }
+
+    // dung cho trang chi tiet
+    [DataContract]
+    public class ThongTinXetThauModel
+    {
+    }
 }

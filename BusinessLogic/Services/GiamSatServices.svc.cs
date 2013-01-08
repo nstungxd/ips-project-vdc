@@ -17,53 +17,47 @@ namespace BusinessLogic.Services
     {
         private int PageSize = 20;
 
-        public DataTable ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long namKHV, long idDuAn)
+        public KeHoachVonModel ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long namKHV, long idDuAn)
         {
             var giamSatDataTier = new GiamSatRepository();           
-            return giamSatDataTier.ChiTietKeHoachVon(mdv, nsd, pas, maDonVi, namKHV, idDuAn);
+            var data = giamSatDataTier.ChiTietKeHoachVon(mdv, nsd, pas, maDonVi, namKHV, idDuAn);
+            return new KeHoachVonModel();
         }
 
-        public DataTable ChiTietMoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
+        public ThongTinMoiThauModel ChiTietMoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
         {
             var giamSatDataTier = new GiamSatRepository();           
-            return giamSatDataTier.ChiTietMoiThau(mdv, nsd, pas, maDonVi, idGoiThau);
+            var data = giamSatDataTier.ChiTietMoiThau(mdv, nsd, pas, maDonVi, idGoiThau);
+            return new ThongTinMoiThauModel();
         }
 
-        public DataTable ChiTietMoThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
+        public ThongTinMoThauModel ChiTietMoThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
         {
             var giamSatDataTier = new GiamSatRepository();           
-            return giamSatDataTier.ChiTietMoThau(mdv, nsd, pas, maDonVi, idGoiThau);
+            var data = giamSatDataTier.ChiTietMoThau(mdv, nsd, pas, maDonVi, idGoiThau);
+            return new ThongTinMoThauModel();
         }
 
-        public DataTable ChiTietXetThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
+        public ThongTinXetThauModel ChiTietXetThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
         {
             var giamSatDataTier = new GiamSatRepository();            
-            return giamSatDataTier.ChiTietXetThau(mdv, nsd, pas, maDonVi, idGoiThau);
+            var data = giamSatDataTier.ChiTietXetThau(mdv, nsd, pas, maDonVi, idGoiThau);
+            return new ThongTinXetThauModel();
         }
 
 
-        public string ChiTietGoiThauReturnString(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
-        {
-            var sReturn = "";
+        public GoiThauModel ChiTietGoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau)
+        {            
             var giamSatDataTier = new GiamSatRepository();            
             var tableData = giamSatDataTier.ChiTietGoiThau(mdv, nsd, pas, maDonVi, idGoiThau);
-            if (tableData != null && tableData.Rows.Count > 0)
-            {
-                sReturn = Common.ConvertTableToJsonString(tableData);
-            }
-            return sReturn;
+            return new GoiThauModel();
         }
 
-        public string ChiTietHopDongReturnString(string mdv, string nsd, string pas, string maDonVi, long idHopDong)
-        {
-            var sReturn = "";
+        public HopDongModel ChiTietHopDong(string mdv, string nsd, string pas, string maDonVi, long idHopDong)
+        {          
             var giamSatDataTier = new GiamSatRepository();            
             var tableData = giamSatDataTier.ChiTietHopDong(mdv, nsd, pas, maDonVi, idHopDong);
-            if (tableData != null && tableData.Rows.Count > 0)
-            {
-                sReturn = Common.ConvertTableToJsonString(tableData);
-            }
-            return sReturn;
+            return new HopDongModel();
         }
 
         public string ChiTietDuAnReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn)

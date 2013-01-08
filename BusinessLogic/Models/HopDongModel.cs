@@ -61,4 +61,10 @@ namespace BusinessLogic.Models
         [DataMember]
         public long TotalPage { get; set; }
     }
+
+    // dung cho trang chi tiet
+    [DataContract]
+    public class HopDongModel
+    {
+    }
 }
