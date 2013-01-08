@@ -23,30 +23,28 @@ namespace BusinessLogic.Models
         public string TenDuAn { get; set; }
 
         [DataMember]
-        public int LoaiNguonVon { get; set; }
+        public LoaiNguonVon LoaiNguonVon { get; set; }
 
         [DataMember]
-        public string LoaiNguonVonValue { get; set; }
-        //{
-        //    get
-        //    {
-        //        var enumValue = EnumHelper.GetDescriptionForBind(UnitSettingLibrary.LoaiNguonVon.KhongXacDinh);
-        //        foreach (var e in enumValue)
-        //        {
-        //            if (LoaiNguonVon == e.ValueInt)
-        //            {
-        //                return e.ValueString;
-        //            }
-        //        }
-        //        return "";
-        //    }
-        //}
+        public string TenLoaiNguonVon { get; set; }       
 
         [DataMember]
-        public string LoaiPhanCap { get; set; }        
+        public LoaiPhanCap LoaiPhanCap { get; set; }
 
         [DataMember]
-        public string NhomDuAn { get; set; }           
+        public string TenLoaiPhanCap { get; set; } 
+
+        [DataMember]
+        public NhomDuAn NhomDuAn { get; set; }
+
+        [DataMember]
+        public string TenNhomDuAn { get; set; } 
+
+        [DataMember]
+        public string MaLoaiDuAn { get; set; }
+
+        [DataMember]
+        public string TenLoaiDuAn { get; set; } 
 
         [DataMember]
         public int NamBatDau { get; set; }
@@ -69,16 +67,10 @@ namespace BusinessLogic.Models
         public string SoQuyetDinh { get; set; }
 
         public DuAnShortModel()
-        {
-            var enumValue = EnumHelper.GetDescriptionForBind(UnitSettingLibrary.LoaiNguonVon.KhongXacDinh);
-            foreach (var e in enumValue)
-            {
-                if (LoaiNguonVon == e.ValueInt)
-                {
-                    LoaiNguonVonValue = e.ValueString;
-                    break;
-                }
-            }            
+        {            
+            LoaiNguonVon = LoaiNguonVon.KhongXacDinh;
+            LoaiPhanCap = LoaiPhanCap.KhongXacDinh;           
+            NhomDuAn = NhomDuAn.KhongXacDinh;            
         }
     }
 
