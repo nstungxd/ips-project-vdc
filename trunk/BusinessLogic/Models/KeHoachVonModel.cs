@@ -49,6 +49,11 @@ namespace BusinessLogic.Models
 
         [DataMember]
         public string GhiChuGiamSat { get; set; }
+
+        public KeHoachVonShortModel()
+        {
+            KetQuaGiamSat = -1;           
+        }
        
     }
 

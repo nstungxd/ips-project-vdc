@@ -49,7 +49,12 @@ namespace BusinessLogic.Models
         public string TenKetQuaGiamSat { get; set; }
 
         [DataMember]
-        public string GhiChuGiamSat { get; set; } 
+        public string GhiChuGiamSat { get; set; }
+
+        public HopDongShortModel()
+        {
+            KetQuaGiamSat = -1;
+        }
     }
 
     [DataContract]
