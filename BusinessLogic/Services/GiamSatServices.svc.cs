@@ -299,7 +299,7 @@ namespace BusinessLogic.Services
                                             l.GhiChuGiamSat = dr["ghi_chu"].ToString();
                                             //todo: xac dinh trang thai lai
                                             l.TrangThaiThucHien = "Hoàn thành";
-                                            break;  
+                                            break;
 
                                         }
                                     }
