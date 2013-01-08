@@ -17,6 +17,12 @@ namespace IPS.Data
         DataTable DanhSachDonVi(string mdv, string nsd, string pas);
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        DataTable DanhSachLoaiDuAn();
+
+        /// <summary>
         /// lay danh sach nam ke hoach von de bind dropdownlist
         /// </summary>
         /// <returns></returns>
