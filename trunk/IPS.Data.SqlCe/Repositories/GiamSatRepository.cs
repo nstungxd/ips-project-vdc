@@ -153,11 +153,11 @@ namespace IPS.Data.SqlCe.Repositories
                 cm.Parameters.Add(new OracleParameter("loai_duan", OracleDbType.Varchar2)).Value =
                     searchProjectSetting.LoaiDuAn;
                 cm.Parameters.Add(new OracleParameter("nhom_duan", OracleDbType.Varchar2)).Value =
-                    searchProjectSetting.NhomDuAn;
-                cm.Parameters.Add(new OracleParameter("loai_nguonvon", OracleDbType.Long)).Value =
-                    searchProjectSetting.LoaiNguonVon;
+                    searchProjectSetting.NhomDuAn==NhomDuAn.KhongXacDinh?"":searchProjectSetting.NhomDuAn.ToString();
+                cm.Parameters.Add(new OracleParameter("loai_nguonvon", OracleDbType.Int32)).Value =
+                    searchProjectSetting.LoaiNguonVon == LoaiNguonVon.KhongXacDinh ? -1 : (int)searchProjectSetting.LoaiNguonVon;
                 cm.Parameters.Add(new OracleParameter("phancap", OracleDbType.Varchar2)).Value =
-                    searchProjectSetting.PhanCap;
+                    searchProjectSetting.PhanCap == LoaiPhanCap.KhongXacDinh ? "" : searchProjectSetting.PhanCap.ToString();
                 cm.Parameters.Add(new OracleParameter("ma_donvi_quanly", OracleDbType.Varchar2)).Value =
                     searchProjectSetting.MaDonViQuanLy;
                 cm.Parameters.Add(new OracleParameter("ma_donvi_thuchien", OracleDbType.Varchar2)).Value =
@@ -168,14 +168,14 @@ namespace IPS.Data.SqlCe.Repositories
                     searchProjectSetting.TongVonDauTu;
                 cm.Parameters.Add(new OracleParameter("toantu_nam_bd", OracleDbType.Varchar2)).Value =
                     searchProjectSetting.NamBatDauToanTu;
-                cm.Parameters.Add(new OracleParameter("nam_bd", OracleDbType.Long)).Value =
+                cm.Parameters.Add(new OracleParameter("nam_bd", OracleDbType.Int32)).Value =
                     searchProjectSetting.NamBatDau;
                 cm.Parameters.Add(new OracleParameter("toantu_nam_kt", OracleDbType.Varchar2)).Value =
                     searchProjectSetting.NamKetThucToanTu;
-                cm.Parameters.Add(new OracleParameter("nam_kt", OracleDbType.Long)).Value =
+                cm.Parameters.Add(new OracleParameter("nam_kt", OracleDbType.Int32)).Value =
                     searchProjectSetting.NamKetThuc;
-                cm.Parameters.Add(new OracleParameter("page_index", OracleDbType.Long)).Value = pageIndex;
-                cm.Parameters.Add(new OracleParameter("page_size", OracleDbType.Long)).Value = pageSize;
+                cm.Parameters.Add(new OracleParameter("page_index", OracleDbType.Int32)).Value = pageIndex;
+                cm.Parameters.Add(new OracleParameter("page_size", OracleDbType.Int32)).Value = pageSize;
                 var op = new OracleParameter("total_record", OracleDbType.Long, 15)
                              {Direction = ParameterDirection.Output};
                 cm.Parameters.Add(op);
@@ -214,8 +214,8 @@ namespace IPS.Data.SqlCe.Repositories
                 cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
-                cm.Parameters.Add(new OracleParameter("page_index", OracleDbType.Long)).Value = pageIndex;
-                cm.Parameters.Add(new OracleParameter("page_size", OracleDbType.Long)).Value = pageSize;
+                cm.Parameters.Add(new OracleParameter("page_index", OracleDbType.Int32)).Value = pageIndex;
+                cm.Parameters.Add(new OracleParameter("page_size", OracleDbType.Int32)).Value = pageSize;
                 var op = new OracleParameter("total_record", OracleDbType.Long, 15)
                              {Direction = ParameterDirection.Output};
                 cm.Parameters.Add(op);
@@ -548,6 +548,34 @@ namespace IPS.Data.SqlCe.Repositories
                 cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
+                cm.Parameters.Add(new OracleParameter("cs_lke", OracleDbType.RefCursor)).Direction =
+                    ParameterDirection.Output;
+
+                var tableGs = new DataTable();
+                _oracleAdapter = new OracleDataAdapter(cm);
+                _oracleAdapter.Fill(tableGs);
+                return tableGs;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+            finally
+            {
+                ConnectDB.CloseConnection(_connectGs);
+            }
+        }
+
+        public DataTable DanhSachLoaiDuAn()
+        {
+            try
+            {
+                ConnectDB.CloseConnection(_connectGs);
+                _connectGs = new OracleConnection();
+                _connectGs = ConnectDB.GetOracleConnection(_connectGs);
+                var cm = _connectGs.CreateCommand();
+                cm.CommandText = "usp_danhsach_loai_duan";
+                cm.CommandType = CommandType.StoredProcedure;               
                 cm.Parameters.Add(new OracleParameter("cs_lke", OracleDbType.RefCursor)).Direction =
                     ParameterDirection.Output;
 
