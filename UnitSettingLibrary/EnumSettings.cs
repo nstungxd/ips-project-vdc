@@ -78,13 +78,7 @@ namespace UnitSettingLibrary
         MoiThau = 0,
         MoThau = 1,
         XetThau = 2
-    }
-
-    public enum LoaiDuAn
-    {
-        [Description("--Chọn giá trị--")]
-        KhongXacDinh = -1
-    }
+    }    
 
     public enum LoaiNguonVon
     {
@@ -195,6 +189,7 @@ namespace UnitSettingLibrary
         // cac bang co key simple
         // danh sach bang ma
         TT_MA_NT,
+        BDT_QLDT_MA_LCTR,
         BDT_QLDT_MA_NGUON,
         BDT_QLDT_MA_NHTH,
         BDT_QLDT_MA_HT,
