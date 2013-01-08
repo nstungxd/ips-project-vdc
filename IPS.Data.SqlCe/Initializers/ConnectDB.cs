@@ -14,7 +14,7 @@ namespace IPS.Data.SqlCe.Initializers
     {       
         private const string OradbDt = "Data Source=123.30.171.20:1521/ORA;User ID=tqldt;Password=qldt123";
         //private const string OradbGs = "Data Source=TUNGNS-PC:1521/ORCL;User ID=dev_gs;Password=dev_gs";
-        private const string OradbGs = "Data Source=TUNGNS-PC:1521/ORCL;User ID=dev_gs;Password=dev_gs";
+        private const string OradbGs = "Data Source=203.162.130.201:1521/ORCL;User ID=dev_gs;Password=dev_gs";
 
         public static OracleConnection GetOracleConnection(OracleConnection connect, NameDatabase dbName = NameDatabase.GiamSat)
         {
