@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.Web;
+using UnitSettingLibrary;
 
 namespace BusinessLogic.Models
 {
@@ -37,13 +38,13 @@ namespace BusinessLogic.Models
         public string TinhTrangHopDong { get; set; }
 
         [DataMember]
-        public int TinhTrangXoa { get; set; }
+        public TinhTrangXoa TinhTrangXoa { get; set; }
 
         [DataMember]
         public long IdGiamSat { get; set; }
 
         [DataMember]
-        public int KetQuaGiamSat { get; set; }
+        public KetQuaGiamSat KetQuaGiamSat { get; set; }
 
         [DataMember]
         public string TenKetQuaGiamSat { get; set; }
@@ -53,7 +54,8 @@ namespace BusinessLogic.Models
 
         public HopDongShortModel()
         {
-            KetQuaGiamSat = -1;
+            KetQuaGiamSat = KetQuaGiamSat.KhongXacDinh;
+            TinhTrangXoa = TinhTrangXoa.ChuaXoa;            
         }
     }
 

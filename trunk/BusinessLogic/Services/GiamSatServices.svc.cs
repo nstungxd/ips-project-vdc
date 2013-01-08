@@ -60,16 +60,41 @@ namespace BusinessLogic.Services
             return new HopDongModel();
         }
 
-        public string ChiTietDuAnReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn)
+        public DuAnShortModel ChiTietDuAn(string mdv, string nsd, string pas, string maDonVi, long idDuAn)
         {
-            var sReturn = "";
-            var giamSatDataTier = new GiamSatRepository();           
-            var tableData = giamSatDataTier.ChiTietDuAn(mdv, nsd, pas, maDonVi, idDuAn);
-            if (tableData != null && tableData.Rows.Count > 0)
-            {
-                sReturn = Common.ConvertTableToJsonString(tableData);
+            try
+            {                
+                var giamSatDataTier = new GiamSatRepository();
+                var tableData = giamSatDataTier.ChiTietDuAn(mdv, nsd, pas, maDonVi, idDuAn);
+                if (tableData != null && tableData.Rows.Count > 0)
+                {
+                    var duAn = new DuAnShortModel();
+                    duAn.IdDuAn = idDuAn;
+                    duAn.MaDonVi = maDonVi;
+                    duAn.MaDuAn = tableData.Rows[0]["ma"].ToString();
+                    duAn.TenDuAn = tableData.Rows[0]["ten"].ToString();
+                    duAn.LoaiNguonVon = (LoaiNguonVon)Convert.ToInt32(tableData.Rows[0]["loai_nguon_von"]);
+                    duAn.LoaiPhanCap = (LoaiPhanCap)Enum.Parse(typeof(LoaiPhanCap), tableData.Rows[0]["phan_cap"].ToString());
+                    duAn.NhomDuAn = (NhomDuAn)Enum.Parse(typeof(NhomDuAn), tableData.Rows[0]["nhom_da"].ToString());
+                    duAn.MaLoaiDuAn = tableData.Rows[0]["loai"].ToString();
+                    duAn.TenLoaiDuAn = tableData.Rows[0]["ten_loai_duan"].ToString();
+                    duAn.NamBatDau = Convert.ToInt32(tableData.Rows[0]["nam_bd"]);
+                    duAn.NamKetThuc = Convert.ToInt32(tableData.Rows[0]["nam_kt"]);
+                    duAn.TongVonDauTu = Convert.ToInt64(tableData.Rows[0]["tien_qd"]);
+                    duAn.TenDonViThucHien = tableData.Rows[0]["ten_donvi_thuchien"].ToString();
+                    duAn.TenDonViQuanLy = tableData.Rows[0]["ten_donvi_quanly"].ToString();
+                    duAn.SoQuyetDinh = tableData.Rows[0]["so_qd"].ToString();
+                    duAn.TenLoaiNguonVon = EnumHelper.GetDescription(duAn.LoaiNguonVon);
+                    duAn.TenLoaiPhanCap = EnumHelper.GetDescription(duAn.LoaiPhanCap);
+                    duAn.TenNhomDuAn = EnumHelper.GetDescription(duAn.NhomDuAn);
+                    return duAn;
+                }
+                return null;                
             }
-            return sReturn;
+            catch (Exception ex)
+            {
+                return null;                
+            }           
         }
 
         public ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1)
@@ -96,15 +121,18 @@ namespace BusinessLogic.Services
                         {
                             var duan = new DuAnShortModel();
                             duan.IdDuAn = Convert.ToInt64(dr["so_id"]);
-                            duan.LoaiNguonVon = Convert.ToInt32(dr["loai_nguon_von"]);
-                            duan.LoaiPhanCap = dr["phancap"].ToString();
+                            duan.LoaiNguonVon = (LoaiNguonVon)Convert.ToInt32(dr["loai_nguon_von"]);
+                            duan.LoaiPhanCap = (LoaiPhanCap)Enum.Parse(typeof(LoaiPhanCap), dr["phancap"].ToString()); 
                             duan.MaDonVi = dr["ma_dvi"].ToString();
                             duan.MaDuAn = dr["ma"].ToString();
                             duan.NamBatDau = Convert.ToInt32(dr["nambd"]);
                             duan.NamKetThuc = Convert.ToInt32(dr["namkt"]);
-                            duan.NhomDuAn = dr["nhom_da"].ToString();
+                            duan.NhomDuAn = (NhomDuAn)Enum.Parse(typeof(NhomDuAn), dr["nhom_da"].ToString());
                             duan.TenDuAn = dr["ten"].ToString();
                             duan.TongVonDauTu = Convert.ToInt64(dr["tienqd"]);
+                            duan.TenLoaiNguonVon = EnumHelper.GetDescription(duan.LoaiNguonVon);
+                            duan.TenLoaiPhanCap = EnumHelper.GetDescription(duan.LoaiPhanCap);
+                            duan.TenNhomDuAn = EnumHelper.GetDescription(duan.NhomDuAn);
                             list.Add(duan);
                         }
                         listDuAn.DuAnModelsGridView = list;
@@ -142,13 +170,13 @@ namespace BusinessLogic.Services
                         {
                             var duan = new DuAnShortModel();
                             duan.IdDuAn = Convert.ToInt64(dr["so_id"]);
-                            duan.LoaiNguonVon = Convert.ToInt32(dr["loai_nguon_von"]);
-                            duan.LoaiPhanCap = dr["phancap"].ToString();
+                            duan.LoaiNguonVon = (LoaiNguonVon)Convert.ToInt32(dr["loai_nguon_von"]);
+                            duan.LoaiPhanCap = (LoaiPhanCap)Enum.Parse(typeof(LoaiPhanCap), dr["phancap"].ToString()); 
                             duan.MaDonVi = dr["ma_dvi"].ToString();
                             duan.MaDuAn = dr["ma"].ToString();
                             duan.NamBatDau = Convert.ToInt32(dr["nambd"]);
                             duan.NamKetThuc = Convert.ToInt32(dr["namkt"]);
-                            duan.NhomDuAn = dr["nhom_da"].ToString();
+                            duan.NhomDuAn = (NhomDuAn)Enum.Parse(typeof(NhomDuAn), dr["nhom_da"].ToString());
                             duan.TenDuAn = dr["ten"].ToString();
                             duan.TongVonDauTu = Convert.ToInt64(dr["tienqd"]);
                             list.Add(duan);
@@ -189,16 +217,15 @@ namespace BusinessLogic.Services
                         else if (dr["td_noi"].ToString() != "0" || dr["td_ngoai"].ToString() != "0")
                             trangThai = "td";
 
-                        var xoa = Convert.ToInt32(dr["khv_xoa"]);
+                        var xoa = (TinhTrangXoa)Convert.ToInt32(dr["khv_xoa"]);
 
                         var khv = new KeHoachVonShortModel();
                         khv.IdDuAn = idDuAn;
                         khv.MaDonVi = maDonVi;
                         khv.NamKHV = nam;
                         khv.Dot = id;
-                        khv.SoQuyetDinh = soQuyetDinh;
-                        khv.TenGiaiDoan = "Đăng ký kế hoạch vốn đợt " + id;
-                        khv.GiaiDoanKHV = (int) GiaiDoanKHV.DangKyKHV;
+                        khv.SoQuyetDinh = soQuyetDinh;                      
+                        khv.GiaiDoanKHV = GiaiDoanKHV.DangKyKHV;
                         khv.TinhTrangXoa = xoa;
                         if (trangThai != "") khv.TrangThaiThucHien = "Hoàn thành";
                         else khv.TrangThaiThucHien = "Chưa thực hiện";
@@ -208,9 +235,8 @@ namespace BusinessLogic.Services
                         khv.IdDuAn = idDuAn;
                         khv.MaDonVi = maDonVi;
                         khv.NamKHV = nam;
-                        khv.Dot = id;
-                        khv.TenGiaiDoan = "Thẩm định kế hoạch vốn đợt " + id;
-                        khv.GiaiDoanKHV = (int) GiaiDoanKHV.ThamDinhKHV;
+                        khv.Dot = id;                        
+                        khv.GiaiDoanKHV = GiaiDoanKHV.ThamDinhKHV;
                         khv.TinhTrangXoa = xoa;
                         if (trangThai == "td" || trangThai == "pd") khv.TrangThaiThucHien = "Hoàn thành";
                         else khv.TrangThaiThucHien = "Chưa thực hiện";
@@ -221,9 +247,8 @@ namespace BusinessLogic.Services
                         khv.MaDonVi = maDonVi;
                         khv.NamKHV = nam;
                         khv.Dot = id;
-                        khv.SoQuyetDinh = soQuyetDinh;
-                        khv.TenGiaiDoan = "Phê duyệt kế hoạch vốn đợt " + id;
-                        khv.GiaiDoanKHV = (int) GiaiDoanKHV.PheDuyetKHV;
+                        khv.SoQuyetDinh = soQuyetDinh;                       
+                        khv.GiaiDoanKHV = GiaiDoanKHV.PheDuyetKHV;
                         khv.TinhTrangXoa = xoa;
                         if (trangThai == "pd") khv.TrangThaiThucHien = "Hoàn thành";
                         else khv.TrangThaiThucHien = "Chưa thực hiện";
@@ -237,10 +262,10 @@ namespace BusinessLogic.Services
                             {
                                 if (!dr.IsNull("giamsat_id"))
                                 {
-                                    if (l.GiaiDoanKHV == Convert.ToInt32(dr["ma_gd_khv"]))
+                                    if (l.GiaiDoanKHV == (GiaiDoanKHV)Convert.ToInt32(dr["ma_gd_khv"]))
                                     {
                                         l.IdGiamSat = Convert.ToInt64(dr["giamsat_id"]);
-                                        l.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
+                                        l.KetQuaGiamSat = (KetQuaGiamSat)Convert.ToInt32(dr["ma_kq_gs"]);
                                         l.GhiChuGiamSat = dr["ghi_chu"].ToString();
                                         break;
 
@@ -289,7 +314,7 @@ namespace BusinessLogic.Services
                             listId.Add(id);
 
                             var hinhthuc = dr["hinhthuc_dauthau"].ToString();
-                            var xoa = Convert.ToInt32(dr["goithau_xoa"]);
+                            var xoa = (TinhTrangXoa)Convert.ToInt32(dr["goithau_xoa"]);
                             var ten = dr["ten_goithau"].ToString();
 
                             var goithau = new GoiThauShortModel();
@@ -312,8 +337,7 @@ namespace BusinessLogic.Services
                             goithau.HinhThucDauThau = hinhthuc;
                             goithau.TinhTrangXoa = xoa;
                             goithau.TenGoiThau = ten;
-                            goithau.GiaiDoanDauThau = (int) GiaiDoanChonNhaThau.MoThau;
-                            goithau.TenGiaiDoan = "Mở thầu";
+                            goithau.GiaiDoanDauThau = GiaiDoanChonNhaThau.MoThau;                           
                              //todo: xac dinh trang thai lai
                             goithau.TrangThaiThucHien = "Hoàn thành";
                             list.Add(goithau);
@@ -325,8 +349,7 @@ namespace BusinessLogic.Services
                             goithau.HinhThucDauThau = hinhthuc;
                             goithau.TinhTrangXoa = xoa;
                             goithau.TenGoiThau = ten;
-                            goithau.GiaiDoanDauThau = (int) GiaiDoanChonNhaThau.XetThau;
-                            goithau.TenGiaiDoan = "Xét thầu";
+                            goithau.GiaiDoanDauThau = GiaiDoanChonNhaThau.XetThau;                            
                              //todo: xac dinh trang thai lai
                             goithau.TrangThaiThucHien = "Hoàn thành";
                             list.Add(goithau);
@@ -339,10 +362,10 @@ namespace BusinessLogic.Services
                                 {
                                     if (!dr.IsNull("id_giamsat"))
                                     {
-                                        if (l.GiaiDoanDauThau == Convert.ToInt32(dr["ma_gd_gthau"]))
+                                        if (l.GiaiDoanDauThau == (GiaiDoanChonNhaThau)Convert.ToInt32(dr["ma_gd_gthau"]))
                                         {
                                             l.IdGiamSat = Convert.ToInt64(dr["id_giamsat"]);
-                                            l.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
+                                            l.KetQuaGiamSat = (KetQuaGiamSat)Convert.ToInt32(dr["ma_kq_gs"]);
                                             l.GhiChuGiamSat = dr["ghi_chu"].ToString();                                           
                                             break;
 
@@ -397,13 +420,13 @@ namespace BusinessLogic.Services
                             hopdong.TienNoiTe = Convert.ToInt64(dr["tien_nt"]);
                             hopdong.TienNgoaiTe = Convert.ToInt64(dr["id_hopdong"]);
                             hopdong.TinhTrangHopDong = dr["tinhtrang_hdo"].ToString();
-                            hopdong.TinhTrangXoa = Convert.ToInt32(dr["tien_ngt"]);
+                            hopdong.TinhTrangXoa = (TinhTrangXoa)Convert.ToInt32(dr["tien_ngt"]);
 
                             // check giai doan von da duoc giam sat chua
                             if (!dr.IsNull("id_giamsat"))
                             {
                                 hopdong.IdGiamSat = Convert.ToInt64(dr["id_giamsat"]);
-                                hopdong.KetQuaGiamSat = Convert.ToInt32(dr["ma_kq_gs"]);
+                                hopdong.KetQuaGiamSat = (KetQuaGiamSat)Convert.ToInt32(dr["ma_kq_gs"]);
                                 hopdong.GhiChuGiamSat = dr["ghi_chu"].ToString();
                             }
                             list.Add(hopdong);
@@ -434,26 +457,36 @@ namespace BusinessLogic.Services
         }
 
 
-        public List<DonViShortModel> DanhSachDonVi(string mdv, string nsd, string pas)
+        public List<DonViShortModel> DanhSachDonVi(string mdv, string nsd, string pas, string valueFirst = null)
         {
-            var listDonVi = new List<DonViShortModel>();
-            var giamSatDataTier = new GiamSatRepository();            
-            var tableData = giamSatDataTier.DanhSachDonVi(mdv, nsd, pas);
-            var donvi = new DonViShortModel();
-            donvi.TenDonVi = "--Chọn giá trị--";
-            donvi.MaDonVi = "";
-            listDonVi.Add(donvi);
-            if (tableData != null && tableData.Rows.Count>0)
-            {                
-                foreach (DataRow dr in tableData.Rows)
+            try
+            {
+                var listDonVi = new List<DonViShortModel>();
+                var giamSatDataTier = new GiamSatRepository();
+                var tableData = giamSatDataTier.DanhSachDonVi(mdv, nsd, pas);
+                var donvi = new DonViShortModel();
+                if (valueFirst != null)
                 {
-                    donvi = new DonViShortModel();
-                    donvi.MaDonVi = dr["ma"].ToString();
-                    donvi.TenDonVi = dr["ten"].ToString();
-                    listDonVi.Add(donvi);
+                    donvi.TenDonVi = valueFirst;
+                    donvi.MaDonVi = "";
                 }
+                listDonVi.Add(donvi);
+                if (tableData != null && tableData.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in tableData.Rows)
+                    {
+                        donvi = new DonViShortModel();
+                        donvi.MaDonVi = dr["ma"].ToString();
+                        donvi.TenDonVi = dr["ten"].ToString();
+                        listDonVi.Add(donvi);
+                    }
+                }
+                return listDonVi;
             }
-            return listDonVi;
+            catch (Exception)
+            {
+                return null;                
+            }            
         }
 
         public List<int> NamKeHoachVon(string maDonVi, long idDuAn)
@@ -466,6 +499,38 @@ namespace BusinessLogic.Services
                 listNam.AddRange(from DataRow dr in tableData.Rows select Convert.ToInt32(dr["nam"]));
             }
             return listNam;
+        }
+
+        public List<UnitShortModel> DanhSachLoaiDuAn(string valueFirst = null)
+        {
+            try
+            {
+                var listDonVi = new List<UnitShortModel>();
+                var giamSatDataTier = new GiamSatRepository();
+                var tableData = giamSatDataTier.DanhSachLoaiDuAn();
+                var model = new UnitShortModel();
+                if (valueFirst != null)
+                {
+                    model.ValueString =  valueFirst;
+                    model.Name = "";
+                }
+                listDonVi.Add(model);
+                if (tableData != null && tableData.Rows.Count > 0)
+                {
+                    foreach (DataRow dr in tableData.Rows)
+                    {
+                        model = new UnitShortModel();
+                        model.Name = dr["ma"].ToString();
+                        model.ValueString = dr["ten"].ToString();
+                        listDonVi.Add(model);
+                    }
+                }
+                return listDonVi;
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
         }
     }
 }

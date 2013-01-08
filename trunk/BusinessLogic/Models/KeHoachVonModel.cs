@@ -30,19 +30,19 @@ namespace BusinessLogic.Models
         public string TrangThaiThucHien { get; set; }
 
         [DataMember]
-        public int TinhTrangXoa { get; set; }
+        public TinhTrangXoa TinhTrangXoa { get; set; }
 
         [DataMember]
         public long IdGiamSat { get; set; }
 
         [DataMember]
-        public int GiaiDoanKHV { get; set; }
+        public GiaiDoanKHV GiaiDoanKHV { get; set; }
 
         [DataMember]
         public string TenGiaiDoan { get; set; }
        
         [DataMember]
-        public int KetQuaGiamSat { get; set; }
+        public KetQuaGiamSat KetQuaGiamSat { get; set; }
 
         [DataMember]
         public string TenKetQuaGiamSat { get; set; }
@@ -52,7 +52,9 @@ namespace BusinessLogic.Models
 
         public KeHoachVonShortModel()
         {
-            KetQuaGiamSat = -1;           
+            KetQuaGiamSat = KetQuaGiamSat.KhongXacDinh;   
+            TinhTrangXoa = TinhTrangXoa.ChuaXoa;
+            GiaiDoanKHV = GiaiDoanKHV.KhongXacDinh;            
         }
        
     }

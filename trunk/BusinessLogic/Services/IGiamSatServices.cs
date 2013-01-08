@@ -97,7 +97,7 @@ namespace BusinessLogic.Services
         /// <param name="idDuAn"></param>
         /// <returns></returns>
         [OperationContract]
-        string ChiTietDuAnReturnString(string mdv, string nsd, string pas, string maDonVi, long idDuAn);
+        DuAnShortModel ChiTietDuAn(string mdv, string nsd, string pas, string maDonVi, long idDuAn);
 
         /// <summary>
         /// 
@@ -204,7 +204,14 @@ namespace BusinessLogic.Services
         /// </summary>
         /// <returns>danh sach don vi gom ma,ten</returns>
         [OperationContract]
-        List<DonViShortModel> DanhSachDonVi(string mdv, string nsd, string pas);
+        List<DonViShortModel> DanhSachDonVi(string mdv, string nsd, string pas, string valueFirst = null);
+
+        /// <summary>
+        /// lay danh sach loai du an de fill du lieu cho dropdownlist
+        /// </summary>
+        /// <returns>UnitShortModel: name = ma loai, valuestring = ten loai</returns>
+        [OperationContract]
+        List<UnitShortModel> DanhSachLoaiDuAn(string valueFirst = null);
     }
 
 }
