@@ -43,6 +43,9 @@ namespace BusinessLogic.Models
         public int KetQuaGiamSat { get; set; }
 
         [DataMember]
+        public string TenKetQuaGiamSat { get; set; }
+
+        [DataMember]
         public string GhiChuGiamSat { get; set; }
     }
 
