@@ -137,5 +137,95 @@ namespace IPS.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField hfSoIdDonVi;
+        
+        /// <summary>
+        /// ddlNamKeHoach control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Interface.VdcDropDownList ddlNamKeHoach;
+        
+        /// <summary>
+        /// btCapNhatKHV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Interface.VdcButton btCapNhatKHV;
+        
+        /// <summary>
+        /// CallbackPanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::VdcInc.CallbackPanel CallbackPanel2;
+        
+        /// <summary>
+        /// gridNamKeHoach control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.Grid gridNamKeHoach;
+        
+        /// <summary>
+        /// btCapNhatNhaThau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Interface.VdcButton btCapNhatNhaThau;
+        
+        /// <summary>
+        /// gridNhaThau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.Grid gridNhaThau;
+        
+        /// <summary>
+        /// LinkTenGoiThau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate LinkTenGoiThau;
+        
+        /// <summary>
+        /// btCapNhatHopDong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Interface.VdcButton btCapNhatHopDong;
+        
+        /// <summary>
+        /// CallbackPanel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::VdcInc.CallbackPanel CallbackPanel1;
+        
+        /// <summary>
+        /// gridHopDong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.Grid gridHopDong;
     }
 }

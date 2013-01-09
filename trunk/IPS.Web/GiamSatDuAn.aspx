@@ -28,11 +28,12 @@
     <cc2:VdcDropDownList runat="server" ID="ddlNamKeHoach">
         <ClientSideEvents OnSelectedIndexChanged="ddlNamKeHoachOnChange" />
     </cc2:VdcDropDownList>
+    <cc2:VdcButton ID="btCapNhatKHV" runat="server" Text="Cập nhật"></cc2:VdcButton>
     <br />
     <br />
     <vajax:CallbackPanel ID="CallbackPanel2" runat="server">
         <Content>
-    <cc1:Grid ID="Grid3" runat="server" CallbackMode="true" Serialize="false"
+    <cc1:Grid ID="gridNamKeHoach" runat="server" CallbackMode="true" Serialize="false"
         AllowAddingRecords="False"
         AllowPageSizeSelection="False"
         AllowRecordSelection="False"
@@ -61,7 +62,7 @@
     <cc2:VdcButton ID="btCapNhatNhaThau" runat="server" Text="Cập nhật"></cc2:VdcButton>
     <br />
     <br />
-    <cc1:Grid ID="Grid1" runat="server" CallbackMode="true" Serialize="false"
+    <cc1:Grid ID="gridNhaThau" runat="server" CallbackMode="true" Serialize="false"
         AllowAddingRecords="False"
         AllowPageSizeSelection="False"
         AllowRecordSelection="false"
@@ -102,7 +103,7 @@
     <br />
     <vajax:CallbackPanel ID="CallbackPanel1" runat="server">
         <Content>
-    <cc1:Grid ID="Grid2" runat="server" CallbackMode="true" Serialize="false"
+    <cc1:Grid ID="gridHopDong" runat="server" CallbackMode="true" Serialize="false"
         AllowAddingRecords="False"
         AllowPageSizeSelection="False"
         AllowRecordSelection="False"
