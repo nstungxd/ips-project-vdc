@@ -15,7 +15,7 @@ namespace IPS.Data.SqlCe.Repositories
         private OracleConnection _connectGs;
         private OracleDataAdapter _oracleAdapter;
 
-        public DataTable ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long namKHV, long idDuAn)
+        public DataTable ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, int namKHV, long idDuAn)
         {
             throw new NotImplementedException();
         }
@@ -255,7 +255,7 @@ namespace IPS.Data.SqlCe.Repositories
                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("ma_donvi_thuchien", OracleDbType.Varchar2)).Value = maDonVi;
-                cm.Parameters.Add(new OracleParameter("nam_khv", OracleDbType.Long)).Value = nam;
+                cm.Parameters.Add(new OracleParameter("nam_khv", OracleDbType.Int32)).Value = nam;
                 cm.Parameters.Add(new OracleParameter("id_duan", OracleDbType.Long)).Value = idDuAn;
                 cm.Parameters.Add(new OracleParameter("cs_lke", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
 
@@ -354,7 +354,7 @@ namespace IPS.Data.SqlCe.Repositories
             }
         }
 
-        public ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long loaiNguonVon)
+        public ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int loaiNguonVon)
         {
             var result = new ChangeResultSettings();
             try
@@ -370,7 +370,7 @@ namespace IPS.Data.SqlCe.Repositories
                 cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("id_duan", OracleDbType.Long)).Value = idDuAn;
                 cm.Parameters.Add(new OracleParameter("ma_donvi_thuchien", OracleDbType.Varchar2)).Value = maDonVi;
-                cm.Parameters.Add(new OracleParameter("loai_nguonvon", OracleDbType.Long)).Value = loaiNguonVon;
+                cm.Parameters.Add(new OracleParameter("loai_nguonvon", OracleDbType.Int32)).Value = loaiNguonVon;
                 var op = new OracleParameter("row_updated", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
                 cm.Parameters.Add(op);
                 cm.ExecuteNonQuery();
@@ -387,7 +387,7 @@ namespace IPS.Data.SqlCe.Repositories
             return result;
         }
 
-        public ChangeResultSettings GiamSat(string mdv, string nsd, string pas, long loaiGiamSat, List<GiamSatSetting> listGiamSat = null)
+        public ChangeResultSettings GiamSat(string mdv, string nsd, string pas, int loaiGiamSat, List<GiamSatSetting> listGiamSat = null)
         {
             if (listGiamSat == null || listGiamSat.Count == 0) return null;
             var result = new ChangeResultSettings();
@@ -400,7 +400,7 @@ namespace IPS.Data.SqlCe.Repositories
                 cm.CommandType = CommandType.StoredProcedure;
                 switch (loaiGiamSat)
                 {
-                    case (long)LoaiGiamSat.GiamSatKHV:
+                    case (int)LoaiGiamSat.GiamSatKHV:
                         foreach (var gs in listGiamSat)
                         {
                             if (gs.GiamSatID == 0)
@@ -443,7 +443,7 @@ namespace IPS.Data.SqlCe.Repositories
                         }
                         break;
 
-                    case (long)LoaiGiamSat.GiamSatHopDong:
+                    case (int)LoaiGiamSat.GiamSatHopDong:
                         foreach (var gs in listGiamSat)
                         {
                             if (gs.GiamSatID == 0)
@@ -484,7 +484,7 @@ namespace IPS.Data.SqlCe.Repositories
                         }
                         break;
 
-                    case (long)LoaiGiamSat.GiamSatChonNhaThau:
+                    case (int)LoaiGiamSat.GiamSatChonNhaThau:
                         foreach (var gs in listGiamSat)
                         {
                             if (gs.GiamSatID == 0)
