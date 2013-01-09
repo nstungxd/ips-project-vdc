@@ -12,22 +12,16 @@
         public int DotKHV { get; set; }
         public int NamKHV { get; set; }
         public string SoQD { get; set; }
-        //public GiaiDoanKHV GiaiDoanKHV { get; set; }
-        //public KetQuaGiamSat KetQuaGiamSat { get; set; }
-        //public GiaiDoanChonNhaThau GiaiDoanChonNhaThau { get; set; }
-        public int GiaiDoanKHV { get; set; }
-        public int KetQuaGiamSat { get; set; }
-        public int GiaiDoanChonNhaThau { get; set; }
+        public GiaiDoanKHV GiaiDoanKHV { get; set; }
+        public KetQuaGiamSat KetQuaGiamSat { get; set; }
+        public GiaiDoanChonNhaThau GiaiDoanChonNhaThau { get; set; }
         public string GhiChu { get; set; }
 
         public GiamSatSetting()
         {
-            //GiaiDoanKHV = GiaiDoanKHV.KhongXacDinh;
-            //KetQuaGiamSat = KetQuaGiamSat.KhongXacDinh;
-            //GiaiDoanChonNhaThau = GiaiDoanChonNhaThau.KhongXacDinh; 
-            GiaiDoanKHV = -1;
-            KetQuaGiamSat = -1;
-            GiaiDoanChonNhaThau = -1;
+            GiaiDoanKHV = GiaiDoanKHV.KhongXacDinh;
+            KetQuaGiamSat = KetQuaGiamSat.KhongXacDinh;
+            GiaiDoanChonNhaThau = GiaiDoanChonNhaThau.KhongXacDinh;             
         }
     }
 }
