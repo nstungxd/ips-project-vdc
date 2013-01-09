@@ -412,8 +412,8 @@ namespace IPS.Data.SqlCe.Repositories
                                 cm.Parameters.Add(new OracleParameter("ma_donvi_thuchien", OracleDbType.Varchar2)).Value = gs.MaDonVi;
                                 cm.Parameters.Add(new OracleParameter("id_duan", OracleDbType.Long)).Value = gs.DuAnID;
                                 cm.Parameters.Add(new OracleParameter("nam_khv", OracleDbType.Int32)).Value = gs.NamKHV;
-                                cm.Parameters.Add(new OracleParameter("giaidoan_khv", OracleDbType.Int32)).Value = gs.GiaiDoanKHV;
-                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = gs.KetQuaGiamSat;
+                                cm.Parameters.Add(new OracleParameter("giaidoan_khv", OracleDbType.Int32)).Value = (int)gs.GiaiDoanKHV;
+                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = (int)gs.KetQuaGiamSat;
                                 cm.Parameters.Add(new OracleParameter("ghichu_giamsat", OracleDbType.NVarchar2)).Value = gs.GhiChu;
                                 cm.Parameters.Add(new OracleParameter("dot_khv", OracleDbType.Int32)).Value = gs.DotKHV;
                                 cm.Parameters.Add(new OracleParameter("so_quyetdinh", OracleDbType.Varchar2)).Value = gs.SoQD;
@@ -431,7 +431,7 @@ namespace IPS.Data.SqlCe.Repositories
                                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "hoa";
                                 cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
                                 cm.Parameters.Add(new OracleParameter("id_giamsat", OracleDbType.Long)).Value = gs.GiamSatID;
-                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = gs.KetQuaGiamSat;
+                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = (int)gs.KetQuaGiamSat;
                                 cm.Parameters.Add(new OracleParameter("ghichu_giamsat", OracleDbType.NVarchar2)).Value = gs.GhiChu;
                                 var op = new OracleParameter("row_updated", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
                                 cm.Parameters.Add(op);
@@ -456,7 +456,7 @@ namespace IPS.Data.SqlCe.Repositories
                                 cm.Parameters.Add(new OracleParameter("id_hopdong", OracleDbType.Long)).Value = gs.HopDongID;
                                 cm.Parameters.Add(new OracleParameter("id_duan", OracleDbType.Long)).Value = gs.DuAnID;
                                 cm.Parameters.Add(new OracleParameter("id_goithau", OracleDbType.Long)).Value = gs.GoiThauID;
-                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = gs.KetQuaGiamSat;
+                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = (int)gs.KetQuaGiamSat;
                                 cm.Parameters.Add(new OracleParameter("ghichu_giamsat", OracleDbType.NVarchar2)).Value = gs.GhiChu;
                                 var op = new OracleParameter("row_inserted", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
                                 cm.Parameters.Add(op);
@@ -472,7 +472,7 @@ namespace IPS.Data.SqlCe.Repositories
                                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "hoa";
                                 cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
                                 cm.Parameters.Add(new OracleParameter("id_giamsat", OracleDbType.Long)).Value = gs.GiamSatID;
-                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = gs.KetQuaGiamSat;
+                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = (int)gs.KetQuaGiamSat;
                                 cm.Parameters.Add(new OracleParameter("ghichu_giamsat", OracleDbType.NVarchar2)).Value = gs.GhiChu;
                                 var op = new OracleParameter("row_updated", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
                                 cm.Parameters.Add(op);
@@ -495,9 +495,9 @@ namespace IPS.Data.SqlCe.Repositories
                                 cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
                                 cm.Parameters.Add(new OracleParameter("ma_donvi_thuchien", OracleDbType.Varchar2)).Value = gs.MaDonVi;
                                 cm.Parameters.Add(new OracleParameter("id_goithau", OracleDbType.Long)).Value = gs.GoiThauID;
-                                cm.Parameters.Add(new OracleParameter("giaidoan_goithau", OracleDbType.Int32)).Value = gs.GiaiDoanChonNhaThau;
+                                cm.Parameters.Add(new OracleParameter("giaidoan_goithau", OracleDbType.Int32)).Value = (int)gs.GiaiDoanChonNhaThau;
                                 cm.Parameters.Add(new OracleParameter("id_duan", OracleDbType.Long)).Value = gs.DuAnID;
-                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = gs.KetQuaGiamSat;
+                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = (int)gs.KetQuaGiamSat;
                                 cm.Parameters.Add(new OracleParameter("ghichu_giamsat", OracleDbType.NVarchar2)).Value = gs.GhiChu;
                                 var op = new OracleParameter("row_inserted", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
                                 cm.Parameters.Add(op);
@@ -513,7 +513,7 @@ namespace IPS.Data.SqlCe.Repositories
                                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "hoa";
                                 cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
                                 cm.Parameters.Add(new OracleParameter("id_giamsat", OracleDbType.Long)).Value = gs.GiamSatID;
-                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = gs.KetQuaGiamSat;
+                                cm.Parameters.Add(new OracleParameter("kq_giamsat", OracleDbType.Int32)).Value = (int)gs.KetQuaGiamSat;
                                 cm.Parameters.Add(new OracleParameter("ghichu_giamsat", OracleDbType.NVarchar2)).Value = gs.GhiChu;
                                 var op = new OracleParameter("row_updated", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
                                 cm.Parameters.Add(op);

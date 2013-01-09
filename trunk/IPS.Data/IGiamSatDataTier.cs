@@ -200,5 +200,6 @@ namespace IPS.Data
         /// <param name="listGiamSat"></param>
         /// <returns></returns>
         ChangeResultSettings GiamSat(string mdv, string nsd, string pas, int loaiGiamSat, List<GiamSatSetting> listGiamSat = null);
+        
     }
 }
