@@ -13,20 +13,31 @@ namespace IPS.Data
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="mdv"></param>
+        /// <param name="nsd"></param>
+        /// <param name="pas"></param>
         /// <returns></returns>
         DataTable DanhSachDonVi(string mdv, string nsd, string pas);
 
         /// <summary>
         /// 
         /// </summary>
+        /// <param name="mdv"></param>
+        /// <param name="nsd"></param>
+        /// <param name="pas"></param>
         /// <returns></returns>
-        DataTable DanhSachLoaiDuAn();
+        DataTable DanhSachLoaiDuAn(string mdv, string nsd, string pas);
 
         /// <summary>
         /// lay danh sach nam ke hoach von de bind dropdownlist
         /// </summary>
+        /// <param name="mdv"></param>
+        /// <param name="nsd"></param>
+        /// <param name="pas"></param>
+        /// <param name="maDonVi"></param>
+        /// <param name="idDuAn"></param>
         /// <returns></returns>
-        DataTable NamKeHoachVon(string maDonVi, long idDuAn);   
+        DataTable NamKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn);   
 
         /// <summary>
         /// 

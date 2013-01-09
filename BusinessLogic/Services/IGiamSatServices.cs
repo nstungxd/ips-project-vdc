@@ -107,9 +107,10 @@ namespace BusinessLogic.Services
         /// <param name="pas">mat khau nguoi su dung</param>
         /// <param name="searchProjectSetting">object chua cac tham so search</param>
         /// <param name="pageIndex">trang du lieu can lay</param> 
+        /// <param name="pageSize"></param> 
         /// <returns>object[0]: danh sach, object[1]:tong so ban ghi, object[2]: tong so trang</returns>
         [OperationContract]
-        ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1);
+        ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageSize, int pageIndex = 1);
 
         /// <summary>
         /// lay danh sach du an
@@ -118,18 +119,22 @@ namespace BusinessLogic.Services
         /// <param name="nsd">ma nguoi su dung</param>
         /// <param name="pas">mat khau nguoi su dung</param>
         /// <param name="pageIndex">trang du lieu can lay</param> 
+        /// <param name="pageSize"></param> 
         /// <returns>object[0]: danh sach, object[1]:tong so ban ghi, object[2]: tong so trang</returns>
         [OperationContract]
-        ListDuAnModelGridView DanhSachDuAn(string mdv, string nsd, string pas, int pageIndex = 1);
+        ListDuAnModelGridView DanhSachDuAn(string mdv, string nsd, string pas,int pageSize, int pageIndex = 1);
 
         /// <summary>
         /// lay danh sach nam khv de bind for dropdownlist
         /// </summary>
+        /// <param name="mdv"></param>
+        /// <param name="nsd"></param>
+        /// <param name="pas"></param>
         /// <param name="maDonVi"></param>
         /// <param name="idDuAn"></param>
         /// <returns></returns>
         [OperationContract]
-        List<int> NamKeHoachVon(string maDonVi, long idDuAn);            
+        List<int> NamKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn);            
 
             /// <summary>
         /// lay danh sach cac giai doan cua 1 ke hoach von
@@ -153,9 +158,10 @@ namespace BusinessLogic.Services
         /// <param name="maDonVi">ma don vi thuc hien du an</param>
         /// <param name="idDuAn">id du an</param>
         /// <param name="pageIndex">trang du lieu can lay</param> 
+        /// <param name="pageSize">so ban ghi 1 trang</param>
         /// <returns>danh sach goi thau</returns>
         [OperationContract]
-        ListGoiThauModelGridView DanhSachGoiThau(string mdv, string nsd, string pas, string maDonVi, long idDuAn,
+        ListGoiThauModelGridView DanhSachGoiThau(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageSize,
                                            int pageIndex = 1);
 
         /// <summary>
@@ -167,9 +173,10 @@ namespace BusinessLogic.Services
         /// <param name="maDonVi">ma don vi thuc hien du an</param>
         /// <param name="idGoiThau">id goi thau</param>
         /// <param name="pageIndex">trang du lieu can lay</param>
+        /// <param name="pageSize">so ban ghi 1 trang</param>
         /// <returns>danh sach hop dong</returns>
         [OperationContract]
-        ListHopDongModelGridView DanhSachHopDong(string mdv, string nsd, string pas, string maDonVi, long idGoiThau,
+        ListHopDongModelGridView DanhSachHopDong(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageSize,
                                            int pageIndex = 1);
 
         /// <summary>
@@ -205,13 +212,17 @@ namespace BusinessLogic.Services
         /// <returns>danh sach don vi gom ma,ten</returns>
         [OperationContract]
         List<DonViShortModel> DanhSachDonVi(string mdv, string nsd, string pas, string valueFirst = null);
-
-        /// <summary>
+        
+        /// <summary>        
         /// lay danh sach loai du an de fill du lieu cho dropdownlist
         /// </summary>
+        /// <param name="mdv"></param>
+        /// <param name="nsd"></param>
+        /// <param name="pas"></param>
+        /// <param name="valueFirst"></param>
         /// <returns>UnitShortModel: name = ma loai, valuestring = ten loai</returns>
         [OperationContract]
-        List<UnitShortModel> DanhSachLoaiDuAn(string valueFirst = null);
+        List<UnitShortModel> DanhSachLoaiDuAn(string mdv, string nsd, string pas, string valueFirst = null);
     }
 
 }
