@@ -289,8 +289,8 @@ namespace IPS.Data.SqlCe.Repositories
                 cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("ma_donvi_thuchien", OracleDbType.Varchar2)).Value = maDonVi;
                 cm.Parameters.Add(new OracleParameter("id_duan", OracleDbType.Long)).Value = idDuAn;
-                cm.Parameters.Add(new OracleParameter("page_index", OracleDbType.Long)).Value = pageIndex;
-                cm.Parameters.Add(new OracleParameter("page_size", OracleDbType.Long)).Value = pageSize;
+                cm.Parameters.Add(new OracleParameter("page_index", OracleDbType.Int32)).Value = pageIndex;
+                cm.Parameters.Add(new OracleParameter("page_size", OracleDbType.Int32)).Value = pageSize;
                 var op = new OracleParameter("total_record", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
                 cm.Parameters.Add(op);
                 cm.Parameters.Add(new OracleParameter("cs_lke", OracleDbType.RefCursor)).Direction = ParameterDirection.Output;
