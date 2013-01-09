@@ -1461,4 +1461,336 @@ namespace IPS.Web.GiamSatServiceReference {
             }
         }
     }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DonViShortModel", Namespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models")]
+    [System.SerializableAttribute()]
+    public partial class DonViShortModel : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MaDonViField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TenDonViField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MaDonVi {
+            get {
+                return this.MaDonViField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MaDonViField, value) != true)) {
+                    this.MaDonViField = value;
+                    this.RaisePropertyChanged("MaDonVi");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string TenDonVi {
+            get {
+                return this.TenDonViField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TenDonViField, value) != true)) {
+                    this.TenDonViField = value;
+                    this.RaisePropertyChanged("TenDonVi");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="GiamSatServiceReference.IGiamSatServices")]
+    public interface IGiamSatServices {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietKeHoachVon", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietKeHoachVonResponse")]
+        IPS.Web.GiamSatServiceReference.KeHoachVonModel ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, int namKHV, long idDuAn);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietKeHoachVon", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietKeHoachVonResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.KeHoachVonModel> ChiTietKeHoachVonAsync(string mdv, string nsd, string pas, string maDonVi, int namKHV, long idDuAn);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietMoiThau", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietMoiThauResponse")]
+        IPS.Web.GiamSatServiceReference.ThongTinMoiThauModel ChiTietMoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietMoiThau", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietMoiThauResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ThongTinMoiThauModel> ChiTietMoiThauAsync(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietMoThau", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietMoThauResponse")]
+        IPS.Web.GiamSatServiceReference.ThongTinMoThauModel ChiTietMoThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietMoThau", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietMoThauResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ThongTinMoThauModel> ChiTietMoThauAsync(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietXetThau", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietXetThauResponse")]
+        IPS.Web.GiamSatServiceReference.ThongTinXetThauModel ChiTietXetThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietXetThau", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietXetThauResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ThongTinXetThauModel> ChiTietXetThauAsync(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietGoiThau", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietGoiThauResponse")]
+        IPS.Web.GiamSatServiceReference.GoiThauModel ChiTietGoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietGoiThau", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietGoiThauResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.GoiThauModel> ChiTietGoiThauAsync(string mdv, string nsd, string pas, string maDonVi, long idGoiThau);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietHopDong", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietHopDongResponse")]
+        IPS.Web.GiamSatServiceReference.HopDongModel ChiTietHopDong(string mdv, string nsd, string pas, string maDonVi, long idHopDong);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietHopDong", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietHopDongResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.HopDongModel> ChiTietHopDongAsync(string mdv, string nsd, string pas, string maDonVi, long idHopDong);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietDuAnResponse")]
+        IPS.Web.GiamSatServiceReference.DuAnShortModel ChiTietDuAn(string mdv, string nsd, string pas, string maDonVi, long idDuAn);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/ChiTietDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/ChiTietDuAnResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.DuAnShortModel> ChiTietDuAnAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/TimKiemDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/TimKiemDuAnResponse")]
+        IPS.Web.GiamSatServiceReference.ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, UnitSettingLibrary.SearchProjectSetting searchProjectSetting, int pageSize, int pageIndex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/TimKiemDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/TimKiemDuAnResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ListDuAnModelGridView> TimKiemDuAnAsync(string mdv, string nsd, string pas, UnitSettingLibrary.SearchProjectSetting searchProjectSetting, int pageSize, int pageIndex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachDuAnResponse")]
+        IPS.Web.GiamSatServiceReference.ListDuAnModelGridView DanhSachDuAn(string mdv, string nsd, string pas, int pageSize, int pageIndex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachDuAnResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ListDuAnModelGridView> DanhSachDuAnAsync(string mdv, string nsd, string pas, int pageSize, int pageIndex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/NamKeHoachVon", ReplyAction="http://tempuri.org/IGiamSatServices/NamKeHoachVonResponse")]
+        int[] NamKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/NamKeHoachVon", ReplyAction="http://tempuri.org/IGiamSatServices/NamKeHoachVonResponse")]
+        System.Threading.Tasks.Task<int[]> NamKeHoachVonAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHV", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHVResponse")]
+        IPS.Web.GiamSatServiceReference.KeHoachVonShortModel[] DanhSachGiaiDoanKHV(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int nam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHV", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachGiaiDoanKHVResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.KeHoachVonShortModel[]> DanhSachGiaiDoanKHVAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int nam);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachGoiThau", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachGoiThauResponse")]
+        IPS.Web.GiamSatServiceReference.ListGoiThauModelGridView DanhSachGoiThau(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageSize, int pageIndex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachGoiThau", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachGoiThauResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ListGoiThauModelGridView> DanhSachGoiThauAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageSize, int pageIndex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachHopDong", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachHopDongResponse")]
+        IPS.Web.GiamSatServiceReference.ListHopDongModelGridView DanhSachHopDong(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageSize, int pageIndex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachHopDong", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachHopDongResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ListHopDongModelGridView> DanhSachHopDongAsync(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageSize, int pageIndex);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/CapNhatLoaiNguonVon", ReplyAction="http://tempuri.org/IGiamSatServices/CapNhatLoaiNguonVonResponse")]
+        UnitSettingLibrary.ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int loaiNguonVon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/CapNhatLoaiNguonVon", ReplyAction="http://tempuri.org/IGiamSatServices/CapNhatLoaiNguonVonResponse")]
+        System.Threading.Tasks.Task<UnitSettingLibrary.ChangeResultSettings> CapNhatLoaiNguonVonAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int loaiNguonVon);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/GiamSat", ReplyAction="http://tempuri.org/IGiamSatServices/GiamSatResponse")]
+        UnitSettingLibrary.ChangeResultSettings GiamSat(string mdv, string nsd, string pas, int loaiGiamSat, UnitSettingLibrary.GiamSatSetting[] listGiamSat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/GiamSat", ReplyAction="http://tempuri.org/IGiamSatServices/GiamSatResponse")]
+        System.Threading.Tasks.Task<UnitSettingLibrary.ChangeResultSettings> GiamSatAsync(string mdv, string nsd, string pas, int loaiGiamSat, UnitSettingLibrary.GiamSatSetting[] listGiamSat);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachDonVi", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachDonViResponse")]
+        IPS.Web.GiamSatServiceReference.DonViShortModel[] DanhSachDonVi(string mdv, string nsd, string pas, string valueFirst);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachDonVi", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachDonViResponse")]
+        System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.DonViShortModel[]> DanhSachDonViAsync(string mdv, string nsd, string pas, string valueFirst);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachLoaiDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachLoaiDuAnResponse")]
+        UnitSettingLibrary.UnitShortModel[] DanhSachLoaiDuAn(string mdv, string nsd, string pas, string valueFirst);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGiamSatServices/DanhSachLoaiDuAn", ReplyAction="http://tempuri.org/IGiamSatServices/DanhSachLoaiDuAnResponse")]
+        System.Threading.Tasks.Task<UnitSettingLibrary.UnitShortModel[]> DanhSachLoaiDuAnAsync(string mdv, string nsd, string pas, string valueFirst);
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public interface IGiamSatServicesChannel : IPS.Web.GiamSatServiceReference.IGiamSatServices, System.ServiceModel.IClientChannel {
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    public partial class GiamSatServicesClient : System.ServiceModel.ClientBase<IPS.Web.GiamSatServiceReference.IGiamSatServices>, IPS.Web.GiamSatServiceReference.IGiamSatServices {
+        
+        public GiamSatServicesClient() {
+        }
+        
+        public GiamSatServicesClient(string endpointConfigurationName) : 
+                base(endpointConfigurationName) {
+        }
+        
+        public GiamSatServicesClient(string endpointConfigurationName, string remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public GiamSatServicesClient(string endpointConfigurationName, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(endpointConfigurationName, remoteAddress) {
+        }
+        
+        public GiamSatServicesClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
+                base(binding, remoteAddress) {
+        }
+        
+        public IPS.Web.GiamSatServiceReference.KeHoachVonModel ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, int namKHV, long idDuAn) {
+            return base.Channel.ChiTietKeHoachVon(mdv, nsd, pas, maDonVi, namKHV, idDuAn);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.KeHoachVonModel> ChiTietKeHoachVonAsync(string mdv, string nsd, string pas, string maDonVi, int namKHV, long idDuAn) {
+            return base.Channel.ChiTietKeHoachVonAsync(mdv, nsd, pas, maDonVi, namKHV, idDuAn);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.ThongTinMoiThauModel ChiTietMoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau) {
+            return base.Channel.ChiTietMoiThau(mdv, nsd, pas, maDonVi, idGoiThau);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ThongTinMoiThauModel> ChiTietMoiThauAsync(string mdv, string nsd, string pas, string maDonVi, long idGoiThau) {
+            return base.Channel.ChiTietMoiThauAsync(mdv, nsd, pas, maDonVi, idGoiThau);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.ThongTinMoThauModel ChiTietMoThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau) {
+            return base.Channel.ChiTietMoThau(mdv, nsd, pas, maDonVi, idGoiThau);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ThongTinMoThauModel> ChiTietMoThauAsync(string mdv, string nsd, string pas, string maDonVi, long idGoiThau) {
+            return base.Channel.ChiTietMoThauAsync(mdv, nsd, pas, maDonVi, idGoiThau);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.ThongTinXetThauModel ChiTietXetThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau) {
+            return base.Channel.ChiTietXetThau(mdv, nsd, pas, maDonVi, idGoiThau);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ThongTinXetThauModel> ChiTietXetThauAsync(string mdv, string nsd, string pas, string maDonVi, long idGoiThau) {
+            return base.Channel.ChiTietXetThauAsync(mdv, nsd, pas, maDonVi, idGoiThau);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.GoiThauModel ChiTietGoiThau(string mdv, string nsd, string pas, string maDonVi, long idGoiThau) {
+            return base.Channel.ChiTietGoiThau(mdv, nsd, pas, maDonVi, idGoiThau);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.GoiThauModel> ChiTietGoiThauAsync(string mdv, string nsd, string pas, string maDonVi, long idGoiThau) {
+            return base.Channel.ChiTietGoiThauAsync(mdv, nsd, pas, maDonVi, idGoiThau);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.HopDongModel ChiTietHopDong(string mdv, string nsd, string pas, string maDonVi, long idHopDong) {
+            return base.Channel.ChiTietHopDong(mdv, nsd, pas, maDonVi, idHopDong);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.HopDongModel> ChiTietHopDongAsync(string mdv, string nsd, string pas, string maDonVi, long idHopDong) {
+            return base.Channel.ChiTietHopDongAsync(mdv, nsd, pas, maDonVi, idHopDong);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.DuAnShortModel ChiTietDuAn(string mdv, string nsd, string pas, string maDonVi, long idDuAn) {
+            return base.Channel.ChiTietDuAn(mdv, nsd, pas, maDonVi, idDuAn);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.DuAnShortModel> ChiTietDuAnAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn) {
+            return base.Channel.ChiTietDuAnAsync(mdv, nsd, pas, maDonVi, idDuAn);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, UnitSettingLibrary.SearchProjectSetting searchProjectSetting, int pageSize, int pageIndex) {
+            return base.Channel.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, pageSize, pageIndex);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ListDuAnModelGridView> TimKiemDuAnAsync(string mdv, string nsd, string pas, UnitSettingLibrary.SearchProjectSetting searchProjectSetting, int pageSize, int pageIndex) {
+            return base.Channel.TimKiemDuAnAsync(mdv, nsd, pas, searchProjectSetting, pageSize, pageIndex);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.ListDuAnModelGridView DanhSachDuAn(string mdv, string nsd, string pas, int pageSize, int pageIndex) {
+            return base.Channel.DanhSachDuAn(mdv, nsd, pas, pageSize, pageIndex);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ListDuAnModelGridView> DanhSachDuAnAsync(string mdv, string nsd, string pas, int pageSize, int pageIndex) {
+            return base.Channel.DanhSachDuAnAsync(mdv, nsd, pas, pageSize, pageIndex);
+        }
+        
+        public int[] NamKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn) {
+            return base.Channel.NamKeHoachVon(mdv, nsd, pas, maDonVi, idDuAn);
+        }
+        
+        public System.Threading.Tasks.Task<int[]> NamKeHoachVonAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn) {
+            return base.Channel.NamKeHoachVonAsync(mdv, nsd, pas, maDonVi, idDuAn);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.KeHoachVonShortModel[] DanhSachGiaiDoanKHV(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int nam) {
+            return base.Channel.DanhSachGiaiDoanKHV(mdv, nsd, pas, maDonVi, idDuAn, nam);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.KeHoachVonShortModel[]> DanhSachGiaiDoanKHVAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int nam) {
+            return base.Channel.DanhSachGiaiDoanKHVAsync(mdv, nsd, pas, maDonVi, idDuAn, nam);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.ListGoiThauModelGridView DanhSachGoiThau(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageSize, int pageIndex) {
+            return base.Channel.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, pageSize, pageIndex);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ListGoiThauModelGridView> DanhSachGoiThauAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageSize, int pageIndex) {
+            return base.Channel.DanhSachGoiThauAsync(mdv, nsd, pas, maDonVi, idDuAn, pageSize, pageIndex);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.ListHopDongModelGridView DanhSachHopDong(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageSize, int pageIndex) {
+            return base.Channel.DanhSachHopDong(mdv, nsd, pas, maDonVi, idGoiThau, pageSize, pageIndex);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.ListHopDongModelGridView> DanhSachHopDongAsync(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageSize, int pageIndex) {
+            return base.Channel.DanhSachHopDongAsync(mdv, nsd, pas, maDonVi, idGoiThau, pageSize, pageIndex);
+        }
+        
+        public UnitSettingLibrary.ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int loaiNguonVon) {
+            return base.Channel.CapNhatLoaiNguonVon(mdv, nsd, pas, maDonVi, idDuAn, loaiNguonVon);
+        }
+        
+        public System.Threading.Tasks.Task<UnitSettingLibrary.ChangeResultSettings> CapNhatLoaiNguonVonAsync(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int loaiNguonVon) {
+            return base.Channel.CapNhatLoaiNguonVonAsync(mdv, nsd, pas, maDonVi, idDuAn, loaiNguonVon);
+        }
+        
+        public UnitSettingLibrary.ChangeResultSettings GiamSat(string mdv, string nsd, string pas, int loaiGiamSat, UnitSettingLibrary.GiamSatSetting[] listGiamSat) {
+            return base.Channel.GiamSat(mdv, nsd, pas, loaiGiamSat, listGiamSat);
+        }
+        
+        public System.Threading.Tasks.Task<UnitSettingLibrary.ChangeResultSettings> GiamSatAsync(string mdv, string nsd, string pas, int loaiGiamSat, UnitSettingLibrary.GiamSatSetting[] listGiamSat) {
+            return base.Channel.GiamSatAsync(mdv, nsd, pas, loaiGiamSat, listGiamSat);
+        }
+        
+        public IPS.Web.GiamSatServiceReference.DonViShortModel[] DanhSachDonVi(string mdv, string nsd, string pas, string valueFirst) {
+            return base.Channel.DanhSachDonVi(mdv, nsd, pas, valueFirst);
+        }
+        
+        public System.Threading.Tasks.Task<IPS.Web.GiamSatServiceReference.DonViShortModel[]> DanhSachDonViAsync(string mdv, string nsd, string pas, string valueFirst) {
+            return base.Channel.DanhSachDonViAsync(mdv, nsd, pas, valueFirst);
+        }
+        
+        public UnitSettingLibrary.UnitShortModel[] DanhSachLoaiDuAn(string mdv, string nsd, string pas, string valueFirst) {
+            return base.Channel.DanhSachLoaiDuAn(mdv, nsd, pas, valueFirst);
+        }
+        
+        public System.Threading.Tasks.Task<UnitSettingLibrary.UnitShortModel[]> DanhSachLoaiDuAnAsync(string mdv, string nsd, string pas, string valueFirst) {
+            return base.Channel.DanhSachLoaiDuAnAsync(mdv, nsd, pas, valueFirst);
+        }
+    }
 }
