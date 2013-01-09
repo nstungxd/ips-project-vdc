@@ -14,9 +14,7 @@ namespace BusinessLogic.Services
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "GiamSatServices" in code, svc and config file together.
     // NOTE: In order to launch WCF Test Client for testing this service, please select GiamSatServices.svc or GiamSatServices.svc.cs at the Solution Explorer and start debugging.
     public class GiamSatServices : IGiamSatServices
-    {
-        private int PageSize = 20;
-
+    {        
         public KeHoachVonModel ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, int namKHV, long idDuAn)
         {
             var giamSatDataTier = new GiamSatRepository();           
@@ -97,19 +95,19 @@ namespace BusinessLogic.Services
             }           
         }
 
-        public ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageIndex = 1)
+        public ListDuAnModelGridView TimKiemDuAn(string mdv, string nsd, string pas, SearchProjectSetting searchProjectSetting, int pageSize, int pageIndex = 1)
         {
             try
             {
                 var listDuAn = new ListDuAnModelGridView();
                 var giamSatDataTier = new GiamSatRepository();
-                var objData = giamSatDataTier.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, PageSize, pageIndex);
+                var objData = giamSatDataTier.TimKiemDuAn(mdv, nsd, pas, searchProjectSetting, pageSize, pageIndex);
                 if (objData != null)
                 {
                     var list = new List<DuAnShortModel>();
                     var pageSetting = new PaginationSetting
                                           {
-                                              PageSize = PageSize,
+                                              PageSize = pageSize,
                                               TotalRecords = Convert.ToInt64(objData[1])
                                           };
                     listDuAn.TotalPage = pageSetting.TotalPage;
@@ -146,19 +144,19 @@ namespace BusinessLogic.Services
             }
         }
 
-        public ListDuAnModelGridView DanhSachDuAn(string mdv, string nsd, string pas, int pageIndex = 1)
+        public ListDuAnModelGridView DanhSachDuAn(string mdv, string nsd, string pas,int pageSize, int pageIndex = 1)
         {
             try
             {
                 var listDuAn = new ListDuAnModelGridView();
                 var giamSatDataTier = new GiamSatRepository();
-                var objData = giamSatDataTier.DanhSachDuAn(mdv, nsd, pas, PageSize, pageIndex);
+                var objData = giamSatDataTier.DanhSachDuAn(mdv, nsd, pas, pageSize, pageIndex);
                 if (objData != null)
                 {
                     var list = new List<DuAnShortModel>();
                     var pageSetting = new PaginationSetting
                     {
-                        PageSize = PageSize,
+                        PageSize = pageSize,
                         TotalRecords = Convert.ToInt64(objData[1])
                     };
                     listDuAn.TotalPage = pageSetting.TotalPage;
@@ -284,21 +282,20 @@ namespace BusinessLogic.Services
             }
         }
 
-        public ListGoiThauModelGridView DanhSachGoiThau(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageIndex = 1)
+        public ListGoiThauModelGridView DanhSachGoiThau(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int pageSize, int pageIndex = 1)
         {
             try
-            {
-                PageSize = 3;
+            {                
                 var listGoiThau = new ListGoiThauModelGridView();
                 var giamSatDataTier = new GiamSatRepository();
-                var objData = giamSatDataTier.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, PageSize, pageIndex);
+                var objData = giamSatDataTier.DanhSachGoiThau(mdv, nsd, pas, maDonVi, idDuAn, pageSize, pageIndex);
                 if (objData != null)
                 {
                     var list = new List<GoiThauShortModel>();
                     var pageSetting = new PaginationSetting
                                           {
                                               // 1 ban ghi phan ra moi thau, mo thau, xet thau nen total reocord phai nhan voi 3
-                                              PageSize = PageSize*3,
+                                              PageSize = pageSize*3,
                                               TotalRecords = Convert.ToInt64(objData[1])*3
                                           };
                     listGoiThau.TotalPage = pageSetting.TotalPage;
@@ -386,20 +383,19 @@ namespace BusinessLogic.Services
             }
         }
 
-        public ListHopDongModelGridView DanhSachHopDong(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageIndex = 1)
+        public ListHopDongModelGridView DanhSachHopDong(string mdv, string nsd, string pas, string maDonVi, long idGoiThau, int pageSize, int pageIndex = 1)
         {
             try
-            {
-                var listHopDong = new ListHopDongModelGridView();
-                PageSize = 10;
+            {                
+                var listHopDong = new ListHopDongModelGridView();                
                 var giamSatDataTier = new GiamSatRepository();
-                var objData = giamSatDataTier.DanhSachHopDong(mdv, nsd, pas, maDonVi, idGoiThau, PageSize, pageIndex);
+                var objData = giamSatDataTier.DanhSachHopDong(mdv, nsd, pas, maDonVi, idGoiThau, pageSize, pageIndex);
                 if (objData != null)
                 {
                     var list = new List<HopDongShortModel>();
                     var pageSetting = new PaginationSetting
                                           {
-                                              PageSize = PageSize,
+                                              PageSize = pageSize,
                                               TotalRecords = Convert.ToInt64(objData[1])
                                           };
                     listHopDong.TotalPage = pageSetting.TotalPage;
@@ -488,11 +484,11 @@ namespace BusinessLogic.Services
             }            
         }
 
-        public List<int> NamKeHoachVon(string maDonVi, long idDuAn)
+        public List<int> NamKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn)
         {
             var listNam = new List<int>();
             var giamSatDataTier = new GiamSatRepository();
-            var tableData = giamSatDataTier.NamKeHoachVon(maDonVi,idDuAn);           
+            var tableData = giamSatDataTier.NamKeHoachVon(mdv, nsd, pas, maDonVi, idDuAn);           
             if (tableData != null && tableData.Rows.Count > 0)
             {
                 listNam.AddRange(from DataRow dr in tableData.Rows select Convert.ToInt32(dr["nam"]));
@@ -500,13 +496,13 @@ namespace BusinessLogic.Services
             return listNam;
         }
 
-        public List<UnitShortModel> DanhSachLoaiDuAn(string valueFirst = null)
+        public List<UnitShortModel> DanhSachLoaiDuAn(string mdv, string nsd, string pas, string valueFirst = null)
         {
             try
             {
                 var listDonVi = new List<UnitShortModel>();
                 var giamSatDataTier = new GiamSatRepository();
-                var tableData = giamSatDataTier.DanhSachLoaiDuAn();
+                var tableData = giamSatDataTier.DanhSachLoaiDuAn(mdv, nsd, pas);
                 var model = new UnitShortModel();
                 if (valueFirst != null)
                 {

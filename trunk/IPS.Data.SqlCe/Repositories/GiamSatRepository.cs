@@ -566,7 +566,7 @@ namespace IPS.Data.SqlCe.Repositories
             }
         }
 
-        public DataTable DanhSachLoaiDuAn()
+        public DataTable DanhSachLoaiDuAn(string mdv, string nsd, string pas)
         {
             try
             {
@@ -575,7 +575,10 @@ namespace IPS.Data.SqlCe.Repositories
                 _connectGs = ConnectDB.GetOracleConnection(_connectGs);
                 var cm = _connectGs.CreateCommand();
                 cm.CommandText = "usp_danhsach_loai_duan";
-                cm.CommandType = CommandType.StoredProcedure;               
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
+                cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "";
+                cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("cs_lke", OracleDbType.RefCursor)).Direction =
                     ParameterDirection.Output;
 
@@ -594,7 +597,7 @@ namespace IPS.Data.SqlCe.Repositories
             }
         }
 
-        public DataTable NamKeHoachVon(string maDonVi, long idDuAn)
+        public DataTable NamKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn)
         {
             try
             {
@@ -604,6 +607,9 @@ namespace IPS.Data.SqlCe.Repositories
                 var cm = _connectGs.CreateCommand();
                 cm.CommandText = "usp_nam_kehoachvon";
                 cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
+                cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "";
+                cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
                 cm.Parameters.Add(new OracleParameter("id_duan", OracleDbType.Long)).Value = idDuAn;
                 cm.Parameters.Add(new OracleParameter("ma_donvi_thuchien", OracleDbType.Varchar2)).Value = maDonVi;                
                 cm.Parameters.Add(new OracleParameter("cs_lke", OracleDbType.RefCursor)).Direction =
