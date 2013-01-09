@@ -21,7 +21,7 @@ namespace IPS.Web
         }
         public void LoadddlKeHoachVon()
         {
-            var namKHV = giamsatService.NamKeHoachVon("56", 20111118624371);
+            var namKHV = giamsatService.NamKeHoachVon("", "", "", "56", 20111118624371);
             if (namKHV != null && namKHV.Any())
             {
                 ddlNamKeHoach.DataSource = namKHV;
@@ -31,7 +31,7 @@ namespace IPS.Web
         public void LoadKeHoachVon()
         {
             string Nam = (string)Session["Nam"];
-            var namKHV = giamsatService.NamKeHoachVon("56", 20111118624371);
+            var namKHV = giamsatService.NamKeHoachVon("", "", "", "56", 20111118624371);
             var namInt = namKHV.First();
             if (Nam != null) namInt = Int32.Parse(Nam);
             var result = giamsatService.DanhSachGiaiDoanKHV("", "", "", "56", 20111118624371, namInt);
@@ -57,7 +57,7 @@ namespace IPS.Web
         }
         public void LoadGridNhaThau()
         {
-            var result = giamsatService.DanhSachGoiThau("", "", "", "56", 20111118624371, 1);
+            var result = giamsatService.DanhSachGoiThau("", "", "", "56", 20111118624371,200, 1);
             if (result.GoiThauModelsGridView != null)
             {                
                 foreach (var item in result.GoiThauModelsGridView)
@@ -77,7 +77,7 @@ namespace IPS.Web
 
             if (MaDonVi != null && SoIdGoiThau != null)
             {
-                var result = giamsatService.DanhSachHopDong("", "", "", MaDonVi, Int64.Parse(SoIdGoiThau), 1);
+                var result = giamsatService.DanhSachHopDong("", "", "", MaDonVi, Int64.Parse(SoIdGoiThau), 200,1);
                 // var result = giamsatService.DanhSachHopDong("", "", "", "51", 20120921644556, 1);
                 if (result.HopDongModelsGridView != null)
                 {

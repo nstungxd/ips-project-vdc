@@ -152,7 +152,7 @@
         AllowRecordSelection="false"
         AllowSorting="False"
         AutoGenerateColumns="false"
-        FolderStyle="styles/premiere_blue" PageSize="7" AllowMultiRecordSelection="False">
+        FolderStyle="styles/premiere_blue" PageSize="9" AllowMultiRecordSelection="False">
         <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
         <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
         <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
@@ -193,7 +193,7 @@
         AllowRecordSelection="False"
         AllowSorting="False"
         AutoGenerateColumns="false"
-        FolderStyle="styles/premiere_blue" PageSize="7">
+        FolderStyle="styles/premiere_blue" PageSize="9">
         <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
         <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
         <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>

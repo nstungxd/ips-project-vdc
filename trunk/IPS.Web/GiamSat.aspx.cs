@@ -76,7 +76,7 @@ namespace IPS.Web
             sps.NamBatDau = 2013;
             sps.NamKetThucToanTu = ">";
             sps.NamKetThuc = 2013;
-            ListDuAnModelGridView result = giamsatService.TimKiemDuAn("", "", "", sps, 1);
+            ListDuAnModelGridView result = giamsatService.TimKiemDuAn("", "", "", sps, 200,1);
             return result;
         }
     }

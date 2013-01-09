@@ -73,7 +73,7 @@ namespace IPS.Web
 
             string madonvi = Request.QueryString["madonvi"];
             long idduan = Int64.Parse(Request.QueryString["idduan"]);
-            var namKHV = giamsatService.NamKeHoachVon(madonvi, idduan);
+            var namKHV = giamsatService.NamKeHoachVon("", "", "", madonvi, idduan);
             //var namKHV = giamsatService.NamKeHoachVon("56", 20111118624371);
             if (namKHV != null && namKHV.Any())
             {
@@ -86,7 +86,7 @@ namespace IPS.Web
             string madonvi = Request.QueryString["madonvi"];
             long idduan = Int64.Parse(Request.QueryString["idduan"]);
             string Nam = (string)Session["Nam"];
-            var namKHV = giamsatService.NamKeHoachVon(madonvi, idduan);
+            var namKHV = giamsatService.NamKeHoachVon("", "", "", madonvi, idduan);
 
             //var namKHV = giamsatService.NamKeHoachVon("56", 20111118624371);
             var namInt = namKHV.First();
@@ -114,7 +114,7 @@ namespace IPS.Web
         {
             string madonvi = Request.QueryString["madonvi"];
             long idduan = Int64.Parse(Request.QueryString["idduan"]);
-            var result = giamsatService.DanhSachGoiThau("", "", "", madonvi, idduan, 1);
+            var result = giamsatService.DanhSachGoiThau("", "", "", madonvi, idduan, 200,1);
             //var result = giamsatService.DanhSachGoiThau("", "", "", "56", 20111118624371, 1);
             if (result.GoiThauModelsGridView != null)
             {
@@ -135,7 +135,7 @@ namespace IPS.Web
 
             if (MaDonVi != null && SoIdGoiThau != null)
             {
-                var result = giamsatService.DanhSachHopDong("", "", "", MaDonVi, Int64.Parse(SoIdGoiThau), 1);
+                var result = giamsatService.DanhSachHopDong("", "", "", MaDonVi, Int64.Parse(SoIdGoiThau),200, 1);
                 // var result = giamsatService.DanhSachHopDong("", "", "", "51", 20120921644556, 1);
                 if (result.HopDongModelsGridView != null)
                 {

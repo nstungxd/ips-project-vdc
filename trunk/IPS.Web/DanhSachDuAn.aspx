@@ -12,7 +12,7 @@
                 <table>
                     <tr>
                         <td><b>Mã dự án</b></td>
-                        <td><cc2:VdcTextBox ID="txtMaDuAn" runat="server" FolderStyle="btstyles/premiere_blue/VdcTextBox">
+                        <td><cc2:VdcTextBox ID="txtMaDuAn" runat="server">
                             </cc2:VdcTextBox>
                         </td>
                     </tr>
@@ -111,7 +111,7 @@
                     <tr>
                         <td></td>
                         <td>
-                            <cc2:VdcButton ID="btTimKiem" runat="server" Text="Tìm kiếm" OnClick="btTimKiem_Click" FolderStyle="btstyles/premiere_blue/VdcButton"></cc2:VdcButton>
+                            <cc2:VdcButton ID="btTimKiem" runat="server" Text="Tìm kiếm" OnClick="btTimKiem_Click"></cc2:VdcButton>
                         </td>
                     </tr>
                 </table>

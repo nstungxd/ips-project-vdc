@@ -13,12 +13,156 @@ namespace IPS.Web {
     public partial class GiamSat1 {
         
         /// <summary>
-        /// Grid1 control.
+        /// btCapNhatKHV control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.Grid Grid1;
+        protected global::Vdc.Interface.VdcButton btCapNhatKHV;
+        
+        /// <summary>
+        /// gridNamKeHoachExcelDeletedIds control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField gridNamKeHoachExcelDeletedIds;
+        
+        /// <summary>
+        /// gridNamKeHoachExcelData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField gridNamKeHoachExcelData;
+        
+        /// <summary>
+        /// gridNamKeHoach control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.Grid gridNamKeHoach;
+        
+        /// <summary>
+        /// ReadOnlyTemplateGrid1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate ReadOnlyTemplateGrid1;
+        
+        /// <summary>
+        /// MultiLineTextBoxEditTemplateGrid1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate MultiLineTextBoxEditTemplateGrid1;
+        
+        /// <summary>
+        /// ComboBoxEditTemplateGrid1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate ComboBoxEditTemplateGrid1;
+        
+        /// <summary>
+        /// gridNhaThau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.Grid gridNhaThau;
+        
+        /// <summary>
+        /// LinkTenGoiThau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate LinkTenGoiThau;
+        
+        /// <summary>
+        /// gridHopDongExcelDeletedIds control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField gridHopDongExcelDeletedIds;
+        
+        /// <summary>
+        /// gridHopDongExcelData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField gridHopDongExcelData;
+        
+        /// <summary>
+        /// gridHopDong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.Grid gridHopDong;
+        
+        /// <summary>
+        /// ReadOnlyTemplateGrid3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate ReadOnlyTemplateGrid3;
+        
+        /// <summary>
+        /// MultiLineTextBoxEditTemplateGrid3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate MultiLineTextBoxEditTemplateGrid3;
+        
+        /// <summary>
+        /// ComboBoxEditTemplateGrid3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate ComboBoxEditTemplateGrid3;
+        
+        /// <summary>
+        /// MultiLineTextBoxEditor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Interface.VdcTextBox MultiLineTextBoxEditor;
+        
+        /// <summary>
+        /// ComboBoxEditor control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.ComboBox.ComboBox ComboBoxEditor;
     }
 }
