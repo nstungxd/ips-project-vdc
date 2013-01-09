@@ -83,6 +83,7 @@
     <Content Include="Services\BaoCaoServices.svc" />
     <Content Include="Services\DongBoDBServices.svc" />
     <Content Include="Services\GiamSatServices.svc" />
+    <Content Include="Services\UserServices.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +92,7 @@
     <Compile Include="Models\GoiThauModel.cs" />
     <Compile Include="Models\HopDongModel.cs" />
     <Compile Include="Models\KeHoachVonModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\BaoCaoServices.svc.cs">
       <DependentUpon>BaoCaoServices.svc</DependentUpon>
@@ -104,6 +106,10 @@
     <Compile Include="Services\IBaoCaoServices.cs" />
     <Compile Include="Services\IDongBoDBServices.cs" />
     <Compile Include="Services\IGiamSatServices.cs" />
+    <Compile Include="Services\IUserServices.cs" />
+    <Compile Include="Services\UserServices.svc.cs">
+      <DependentUpon>UserServices.svc</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
