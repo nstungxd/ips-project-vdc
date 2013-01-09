@@ -27,7 +27,7 @@ namespace IPS.Web
         }
         public string CapNhatLoaiNguonVon(string ma_don_vi, string so_id_don_vi, string trang_thai)
         {
-            ChangeResultSettings result = giamsatService.CapNhatLoaiNguonVon("","","",ma_don_vi, Int64.Parse(so_id_don_vi), Int64.Parse(trang_thai));
+            ChangeResultSettings result = giamsatService.CapNhatLoaiNguonVon("","","",ma_don_vi, Int64.Parse(so_id_don_vi), Int32.Parse(trang_thai));
 
             if (result.ChangeResult == ChangeResult.ThanhCong)
             {
