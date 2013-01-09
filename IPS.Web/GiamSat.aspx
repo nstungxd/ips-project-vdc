@@ -280,5 +280,5 @@
                 </cc3:ComboBox>
             </div>
     </div>
-    <script src="Script/excel-style2.js" type="text/javascript"></script>
+    <script src="Script/excel-style.js" type="text/javascript"></script>
 </asp:Content>

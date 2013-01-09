@@ -16,13 +16,15 @@ namespace IPS.Web
         GiamSatServiceReference.GiamSatServicesClient giamsatService = new GiamSatServiceReference.GiamSatServicesClient();
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            LoadDropDownList();
+            if (!IsPostBack)
+            {
+                LoadDropDownList();
+            }
 
         }
         public void LoadDropDownList()
         {
-            var loaida = giamsatService.DanhSachLoaiDuAn("--Chọn giá trị--");
+            var loaida = giamsatService.DanhSachLoaiDuAn("","","","--Chọn giá trị--");
             ddlLoaiDuAn.DataSource = loaida;
             ddlLoaiDuAn.DataTextField = "ValueString";
             ddlLoaiDuAn.DataValueField = "name";
@@ -99,6 +101,7 @@ namespace IPS.Web
         {
             if (Validate())
             {
+                var pageSize = 200;
                 var sps = new SearchProjectSetting();
                 sps.MaDuAn = txtMaDuAn.Text;
                 sps.LoaiDuAn = ddlLoaiDuAn.SelectedValue;
@@ -113,7 +116,7 @@ namespace IPS.Web
                 sps.NamBatDau = Int32.Parse(ddlThoiGianPhatSinh.SelectedValue);// Int32.Parse(txtThoiGianPhatSinh.Text == "" ? "0" : txtThoiGianPhatSinh.Text);
                 sps.NamKetThucToanTu = ddlTTThoiGianKetThuc.SelectedValue;
                 sps.NamKetThuc = Int32.Parse(ddlThoiGianKetThuc.SelectedValue);
-                ListDuAnModelGridView result = giamsatService.TimKiemDuAn("", "", "", sps, 1);
+                ListDuAnModelGridView result = giamsatService.TimKiemDuAn("", "", "", sps, pageSize, 1);
                 Grid1.DataSource = result.DuAnModelsGridView;
                 Grid1.DataBind();                      
                 
