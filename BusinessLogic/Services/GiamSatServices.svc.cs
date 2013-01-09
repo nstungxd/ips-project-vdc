@@ -17,7 +17,7 @@ namespace BusinessLogic.Services
     {
         private int PageSize = 20;
 
-        public KeHoachVonModel ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long namKHV, long idDuAn)
+        public KeHoachVonModel ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, int namKHV, long idDuAn)
         {
             var giamSatDataTier = new GiamSatRepository();           
             var data = giamSatDataTier.ChiTietKeHoachVon(mdv, nsd, pas, maDonVi, namKHV, idDuAn);
@@ -410,17 +410,16 @@ namespace BusinessLogic.Services
                         foreach (DataRow dr in table.Rows)
                         {
                             var hopdong = new HopDongShortModel();
-                            hopdong.IdHopDong = Convert.ToInt64(dr["id_hopdong"]);
-                            ;
+                            hopdong.IdHopDong = Convert.ToInt64(dr["id_hopdong"]);                            
                             hopdong.MaDonVi = maDonVi;
                             hopdong.IdGoiThau = idGoiThau;
                             hopdong.TenHopDong = dr["ten_hd"].ToString();
                             hopdong.BenA = dr["ben_a"].ToString();
                             hopdong.BenB = dr["ben_b"].ToString();
                             hopdong.TienNoiTe = Convert.ToInt64(dr["tien_nt"]);
-                            hopdong.TienNgoaiTe = Convert.ToInt64(dr["id_hopdong"]);
+                            hopdong.TienNgoaiTe = Convert.ToInt64(dr["tien_ngt"]);
                             hopdong.TinhTrangHopDong = dr["tinhtrang_hdo"].ToString();
-                            hopdong.TinhTrangXoa = (TinhTrangXoa)Convert.ToInt32(dr["tien_ngt"]);
+                            hopdong.TinhTrangXoa = (TinhTrangXoa)Convert.ToInt32(dr["hdo_xoa"]);
 
                             // check giai doan von da duoc giam sat chua
                             if (!dr.IsNull("id_giamsat"))
@@ -442,14 +441,14 @@ namespace BusinessLogic.Services
             }
         }
 
-        public ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long loaiNguonVon)
+        public ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int loaiNguonVon)
         {
             var giamSatDataTier = new GiamSatRepository();          
             var objData = giamSatDataTier.CapNhatLoaiNguonVon(mdv, nsd, pas, maDonVi, idDuAn, loaiNguonVon);
             return objData;
         }
 
-        public ChangeResultSettings GiamSat(string mdv, string nsd, string pas, long loaiGiamSat, List<GiamSatSetting> listGiamSat = null)
+        public ChangeResultSettings GiamSat(string mdv, string nsd, string pas, int loaiGiamSat, List<GiamSatSetting> listGiamSat = null)
         {
             var giamSatDataTier = new GiamSatRepository();           
             var objData = giamSatDataTier.GiamSat(mdv, nsd, pas, loaiGiamSat, listGiamSat);
