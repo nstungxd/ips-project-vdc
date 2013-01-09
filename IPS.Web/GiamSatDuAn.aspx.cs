@@ -26,18 +26,19 @@ namespace IPS.Web
             {
                 ddlNamKeHoach.DataSource = namKHV;
                 ddlNamKeHoach.DataBind();
-
             }
         }
         public void LoadKeHoachVon()
         {
             string Nam = (string)Session["Nam"];
             var namKHV = giamsatService.NamKeHoachVon("56", 20111118624371);
-            var result = giamsatService.DanhSachGiaiDoanKHV("", "", "", "56", 20111118624371, namKHV.First());
-            if (Nam != null)
-            {
-                result = giamsatService.DanhSachGiaiDoanKHV("", "", "", "56", 20111118624371, Int32.Parse(Nam));
-            }
+            var namInt = namKHV.First();
+            if (Nam != null) namInt = Int32.Parse(Nam);
+            var result = giamsatService.DanhSachGiaiDoanKHV("", "", "", "56", 20111118624371, namInt);
+            //if (Nam != null)
+            //{
+            //    result = giamsatService.DanhSachGiaiDoanKHV("", "", "", "56", 20111118624371, Int32.Parse(Nam));
+            //}
             if (result != null)
             {               
                 foreach (var item in result)
@@ -48,8 +49,8 @@ namespace IPS.Web
 
                 }
             }
-            Grid3.DataSource = result;
-            Grid3.DataBind();
+            gridNamKeHoach.DataSource = result;
+            gridNamKeHoach.DataBind();
             UpdatePanel("CallbackPanel2");
             Session["Nam"] = null;
 
@@ -65,8 +66,8 @@ namespace IPS.Web
                     item.TenKetQuaGiamSat = EnumHelper.GetDescription(item.KetQuaGiamSat);
                 }
             }
-            Grid1.DataSource = result.GoiThauModelsGridView;
-            Grid1.DataBind();
+            gridNhaThau.DataSource = result.GoiThauModelsGridView;
+            gridNhaThau.DataBind();
         }
 
         public void LoadGridHopDong()
@@ -86,13 +87,13 @@ namespace IPS.Web
                         item.TenKetQuaGiamSat = EnumHelper.GetDescription(item.KetQuaGiamSat);
                     }
                 }
-                Grid2.DataSource = result.HopDongModelsGridView;
-                Grid2.DataBind();
+                gridHopDong.DataSource = result.HopDongModelsGridView;
+                gridHopDong.DataBind();
             }
             else
             {
-                Grid2.DataSource = null;
-                Grid2.DataBind();
+                gridHopDong.DataSource = null;
+                gridHopDong.DataBind();
             }
             UpdatePanel("CallbackPanel1");
             Session["MaDonVi"] = null;

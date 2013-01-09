@@ -22,6 +22,15 @@ namespace IPS.Web {
         protected global::Vdc.Interface.VdcDropDownList ddlNamKeHoach;
         
         /// <summary>
+        /// btCapNhatKHV control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Interface.VdcButton btCapNhatKHV;
+        
+        /// <summary>
         /// CallbackPanel2 control.
         /// </summary>
         /// <remarks>
@@ -31,13 +40,13 @@ namespace IPS.Web {
         protected global::VdcInc.CallbackPanel CallbackPanel2;
         
         /// <summary>
-        /// Grid3 control.
+        /// gridNamKeHoach control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.Grid Grid3;
+        protected global::Vdc.Grid.Grid gridNamKeHoach;
         
         /// <summary>
         /// btCapNhatNhaThau control.
@@ -49,13 +58,13 @@ namespace IPS.Web {
         protected global::Vdc.Interface.VdcButton btCapNhatNhaThau;
         
         /// <summary>
-        /// Grid1 control.
+        /// gridNhaThau control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.Grid Grid1;
+        protected global::Vdc.Grid.Grid gridNhaThau;
         
         /// <summary>
         /// LinkTenGoiThau control.
@@ -85,12 +94,12 @@ namespace IPS.Web {
         protected global::VdcInc.CallbackPanel CallbackPanel1;
         
         /// <summary>
-        /// Grid2 control.
+        /// gridHopDong control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.Grid Grid2;
+        protected global::Vdc.Grid.Grid gridHopDong;
     }
 }
