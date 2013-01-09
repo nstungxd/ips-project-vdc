@@ -25,7 +25,7 @@ namespace BusinessLogic.Services
         /// <param name="idDuAn">id du an</param>
         /// <returns>DataTable</returns>
         [OperationContract]
-        KeHoachVonModel ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long namKHV, long idDuAn);
+        KeHoachVonModel ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, int namKHV, long idDuAn);
 
         /// <summary>
         /// 
@@ -184,7 +184,7 @@ namespace BusinessLogic.Services
         /// <returns>ChangeResultSettings</returns>
         [OperationContract]
         ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn,
-                                                 long loaiNguonVon);
+                                                 int loaiNguonVon);
 
         /// <summary>
         /// thuc hien thao tac giam sat
@@ -196,7 +196,7 @@ namespace BusinessLogic.Services
         /// <param name="listGiamSat">danh sach object giam sat</param>
         /// <returns></returns>
         [OperationContract]
-        ChangeResultSettings GiamSat(string mdv, string nsd, string pas, long loaiGiamSat,
+        ChangeResultSettings GiamSat(string mdv, string nsd, string pas, int loaiGiamSat,
                                      List<GiamSatSetting> listGiamSat = null);
 
         /// <summary>
