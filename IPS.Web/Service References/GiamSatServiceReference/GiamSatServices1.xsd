@@ -341,13 +341,13 @@
       <xs:element minOccurs="0" name="DotKHV" type="xs:int" />
       <xs:element minOccurs="0" name="DuAnID" type="xs:long" />
       <xs:element minOccurs="0" name="GhiChu" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="GiaiDoanChonNhaThau" type="xs:int" />
-      <xs:element minOccurs="0" name="GiaiDoanKHV" type="xs:int" />
+      <xs:element minOccurs="0" name="GiaiDoanChonNhaThau" type="tns:GiaiDoanChonNhaThau" />
+      <xs:element minOccurs="0" name="GiaiDoanKHV" type="tns:GiaiDoanKHV" />
       <xs:element minOccurs="0" name="GiamSatID" type="xs:long" />
       <xs:element minOccurs="0" name="GoiThauID" type="xs:long" />
       <xs:element minOccurs="0" name="HopDongID" type="xs:long" />
       <xs:element minOccurs="0" name="KeHoachVonID" type="xs:long" />
-      <xs:element minOccurs="0" name="KetQuaGiamSat" type="xs:int" />
+      <xs:element minOccurs="0" name="KetQuaGiamSat" type="tns:KetQuaGiamSat" />
       <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="MaNguoiNhap" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="NamKHV" type="xs:int" />
