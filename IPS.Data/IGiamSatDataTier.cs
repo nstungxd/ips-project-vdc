@@ -38,7 +38,7 @@ namespace IPS.Data
         /// <param name="namKHV"></param>
         /// <param name="idDuAn"></param>
         /// <returns></returns>
-        DataTable ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, long namKHV, long idDuAn);
+        DataTable ChiTietKeHoachVon(string mdv, string nsd, string pas, string maDonVi, int namKHV, long idDuAn);
 
         /// <summary>
         /// 
@@ -177,7 +177,7 @@ namespace IPS.Data
         /// <param name="idDuAn"></param>
         /// <param name="loaiNguonVon"></param>
         /// <returns></returns>
-        ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, long loaiNguonVon);
+        ChangeResultSettings CapNhatLoaiNguonVon(string mdv, string nsd, string pas, string maDonVi, long idDuAn, int loaiNguonVon);
 
         /// <summary>
         /// 
@@ -188,6 +188,6 @@ namespace IPS.Data
         /// <param name="loaiGiamSat"></param>
         /// <param name="listGiamSat"></param>
         /// <returns></returns>
-        ChangeResultSettings GiamSat(string mdv, string nsd, string pas, long loaiGiamSat, List<GiamSatSetting> listGiamSat = null);
+        ChangeResultSettings GiamSat(string mdv, string nsd, string pas, int loaiGiamSat, List<GiamSatSetting> listGiamSat = null);
     }
 }
