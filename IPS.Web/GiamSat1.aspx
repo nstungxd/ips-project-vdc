@@ -35,8 +35,14 @@
         function saveGridNhaThau() {
             gridNhaThau.saveExcelNhaThauChanges('<%=gridNhaThauExcelData.ClientID %>');
         }
-        function ddlNamKeHoachOnChange(sender, index) {
-            ob_post.AddParam('Nam', sender.options[index].text);
+        //function ddlNamKeHoachOnChange(sender, index) {
+        //    ob_post.AddParam('Nam', sender.options[index].text);
+        //    ob_post.post(null, "AddKeHoachVon", EndLoadKHV);
+        //}
+        function ddlNamKeHoachOnChange(ddlId) {
+            var ControlName = document.getElementById(ddlId.id);
+
+            ob_post.AddParam('Nam', ControlName.value);
             ob_post.post(null, "AddKeHoachVon", EndLoadKHV);
         }
 
@@ -73,22 +79,8 @@
         function ResultCapNhatNhaThau(result, ex) {
             alert(result);
         }
-        function persistFieldValue(field) {
-            if (focusedGrid != null && focusedGrid._lastEditedField != null) {
-                if (focusedGrid._lastEditedFieldEditor.type == 'text' || focusedGrid._lastEditedFieldEditor.type == 'textarea') {
-                    focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.value;
-                } else {
-                    focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.checked ? 'yes' : 'no';
-
-                }
-                var a = document.getElementById(focusedGrid._editorid + 'Container');
-                var b = document.getElementById('FieldEditorsContainer');
-                b.appendChild(a);
-                focusedGrid._lastEditedField.style.display = '';
-
-                focusedGrid._lastEditedField = null;
-                focusedGrid._lastEditedFieldEditor = null;
-            }
+        function ComboBox_Open(sender) {
+            focusedGrid._keyNavigationIsEnabled = false;
         }
         function navigateThroughCells(sender, key, forced) {
             if (forced && focusedGrid != null) {
@@ -166,8 +158,22 @@
 
             return true;
         }
-        function ComboBox_Open(sender) {
-            focusedGrid._keyNavigationIsEnabled = false;
+        function persistFieldValue(field) {
+            if (focusedGrid != null && focusedGrid._lastEditedField != null) {
+                if (focusedGrid._lastEditedFieldEditor.type == 'text' || focusedGrid._lastEditedFieldEditor.type == 'textarea') {
+                    focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.value;
+                } else {
+                    focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.checked ? 'yes' : 'no';
+
+                }
+                var a = document.getElementById(focusedGrid._editorid + 'Container');
+                var b = document.getElementById('FieldEditorsContainer');
+                b.appendChild(a);
+                focusedGrid._lastEditedField.style.display = '';
+
+                focusedGrid._lastEditedField = null;
+                focusedGrid._lastEditedFieldEditor = null;
+            }
         }
         //function CapNhatLoaiNguonVon() {
         //    var value = $("input[id$='ddlLoaiNguonVon']").val();
@@ -196,9 +202,10 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Content/CSS/excel-style.css" type="text/css" rel="Stylesheet" />
-    <cc2:VdcDropDownList runat="server" ID="ddlNamKeHoach">
+    <%--<cc2:VdcDropDownList runat="server" ID="ddlNamKeHoach">
         <ClientSideEvents OnSelectedIndexChanged="ddlNamKeHoachOnChange" />
-    </cc2:VdcDropDownList>
+    </cc2:VdcDropDownList>--%>
+    <asp:DropDownList runat="server" ID="ddlNamKeHoach" onchange="ddlNamKeHoachOnChange(this);"></asp:DropDownList>
     <cc2:VdcButton ID="btCapNhatKHV" runat="server" OnClientClick="saveGridKHV();CapNhatGridKHV(); return false;" Text="Cập nhật"></cc2:VdcButton>
     <asp:HiddenField runat="server" ID="gridNamKeHoachExcelDeletedIds" />
     <asp:HiddenField runat="server" ID="gridNamKeHoachExcelData" />
@@ -421,9 +428,9 @@
             </cc2:VdcTextBox>
         </div>
         <div id="ComboBoxEditorContainer" style="width: 100%">
-            <cc3:ComboBox runat="server" ID="ComboBoxEditor" Width="100%" Height="150" MenuWidth="175" AllowEdit="false" OpenOnFocus="false">
-                <ClientSideEvents OnBlur="persistFieldValue" OnOpen="ComboBox_Open" />
-            </cc3:ComboBox>
+            <cc3:ComboBox runat="server" ID="ComboBoxEditor" Width="100%" Height="150" MenuWidth="175" AllowEdit = "false" OpenOnFocus="false">
+                    <ClientSideEvents OnBlur="persistFieldValue" OnOpen="ComboBox_Open" />    
+                </cc3:ComboBox>
         </div>
     </div>
     <script src="Script/excel3.js" type="text/javascript"></script>
