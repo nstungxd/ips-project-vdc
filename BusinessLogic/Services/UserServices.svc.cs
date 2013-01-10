@@ -82,5 +82,24 @@ namespace BusinessLogic.Services
                            };                
             }
         }
+
+
+        public ChangeResultSettings IsExistsEmail(string email)
+        {
+            try
+            {
+                var userDataTier = new UserRepository();
+                var resultlogin = userDataTier.IsExistsEmail(email);
+                return resultlogin;
+            }
+            catch (Exception)
+            {
+                return new ChangeResultSettings()
+                {
+                    ChangeResult = ChangeResult.ThatBai,
+                    Message = "Có lỗi trong quá trình kiểm tra. Vui lòng thử lại!"
+                };
+            }
+        }
     }
 }

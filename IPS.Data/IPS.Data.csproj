@@ -42,7 +42,7 @@
     <Compile Include="IBaoCaoDataTier.cs" />
     <Compile Include="IDongBoDataTier.cs" />
     <Compile Include="IGiamSatDataTier.cs" />
-    <Compile Include="IUser.cs" />
+    <Compile Include="IUserDataTier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
