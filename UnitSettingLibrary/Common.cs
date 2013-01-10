@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Globalization;
 using System.Text;
@@ -61,6 +62,16 @@ namespace UnitSettingLibrary
                 list.Add(i);
             }
             return list;
-        }   
+        }
+
+        public static string Md5Encrypte(string inputString)
+        {
+            var u = new System.Text.UTF32Encoding();
+            byte[] bytes = u.GetBytes(inputString); 
+            System.Security.Cryptography.MD5 md = new System.Security.Cryptography.MD5CryptoServiceProvider();
+          
+            byte[] result = md.ComputeHash(bytes);
+            return Convert.ToBase64String(result);
+        }
     }    
 }

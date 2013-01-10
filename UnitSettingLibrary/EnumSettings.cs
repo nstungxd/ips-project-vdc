@@ -52,7 +52,9 @@ namespace UnitSettingLibrary
 
     public enum ChangeResult
     {
+        // the hien truong hop that bai, hoac sai
         ThatBai = 0,
+        // the hien truong hop thanh cong hoac dung
         ThanhCong = 1
     }   
 

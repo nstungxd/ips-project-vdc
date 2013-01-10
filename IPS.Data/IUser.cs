@@ -112,5 +112,7 @@ namespace IPS.Data
         /// <param name="tenNhom"></param>
         /// <returns></returns>       
         ChangeResultSettings IsExistsUserGroupName(int moduleId, string maDonVi, string tenNhom);
+
+        ChangeResultSettings Login(string maDonVi, string userName, string pass);
     }
 }
