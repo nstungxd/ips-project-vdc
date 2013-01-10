@@ -1,0 +1,523 @@
+﻿@charset "utf-8";
+*
+{ padding:0;
+  margin:0;
+    }
+/* CSS Document */
+html, body {
+	margin:0;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	color:#3a3a3a;
+}
+.left,.right{float:left;margin-top:7px;text-align:left;}
+.left{ width:33%;  margin-right:7px;}
+.right{ width:66%;}
+a:hover { text-decoration:none;}
+#container {
+	min-height:100%;
+	position:relative;
+ 
+}
+#header {
+	background:url(../images/banner_bg.jpg) repeat-x top left;
+	height:111px;
+}
+.banner {
+	width:1000px;
+	position:relative;
+	margin:0 auto; 
+	background:url(../images/header_vnpt.jpg) no-repeat top left;
+	height:111px;
+}
+.banner h2 {
+	margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:22px;
+	color:#FFFFFF;
+	position:absolute;
+	top:48px;
+	left:93px;
+	font-weight:normal;
+}
+#nav {
+	width:100%;
+	float:left;
+	background:url(../images/menu_bg.jpg) repeat-x top left;
+	height:27px;
+	overflow:hidden;
+}
+.menu_area, .function {
+	width:1000px;
+	position:relative;
+	margin:0 auto;
+}
+input.light_blue_butt {
+	background:url(../images/menu_butt.png) no-repeat;
+	width:136px;
+	height:25px;
+	border:none;
+	color:#0e4e9b;
+	font-weight:bold;
+	text-align:center;
+	cursor:pointer;
+	padding-bottom:4px;
+}
+.butt_menu {
+	width:30%;
+	float:left;
+}
+.menu {
+	width:70%;
+	float:right;
+	text-align:right;
+	height:27px;
+}
+.menu ul {
+	margin:0;
+	padding:0;
+	height:27px;
+}
+.menu ul li {
+	display:inline;
+	list-style-type:none;
+	padding:0px 15px;
+	line-height:27px;
+	background:url(../images/menu_split.jpg) no-repeat center right;
+}
+.menu ul li.last {
+	background:none;
+}
+.menu ul li a, .menu ul li a:hover, .menu ul li a:link, .menu ul li a:visited, .menu ul li a:active {
+	color:#0e4e9b;
+	font-weight:bold;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:12px;
+	text-decoration:none;
+}
+#wrap {
+	width:100%;
+	float:left;
+}
+.main {
+	width:1000px;
+	margin:0 auto;
+	position: relative;
+}
+.data_tbl {
+	background:url(../images/container_head_bg.jpg) repeat-x top left;
+	border:1px solid #cbcbcb;
+	-moz-border-radius: 5px;
+     border-radius: 5px;
+	padding-bottom:5px;
+	margin-bottom:10px;
+}
+h3.tbl_title {
+	font-size:13px;
+	color:#09499a;
+	font-weight:bold;
+	margin:0;
+	font-family:Tahoma,Arial, Helvetica, sans-serif;
+}
+input.css_txt {
+	border:1px solid #b9b9b9;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	padding:2px 0;
+}
+.f5 {
+	position:absolute;
+	top:5px;
+	right:10px;
+}
+.search {
+	
+	padding:5px 0px 5px 0px;
+	background-color:#f5f5f5;
+	border:1px solid #d3d3d3;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	margin:5px 5px;
+	text-align:left;
+}
+.css_drop {
+	height:22px;
+	border:1px solid #b9b9b9;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+}
+input.light_blue_butt_s {
+	background:url(../images/light_blue_butt.png) no-repeat top left;
+	width:77px;
+	height:29px;
+	text-align:center;
+	color:#0d4c99;
+	border:none;
+}
+#pages {
+	width:25%;
+	text-align:right;
+	padding-top:5px;
+	padding-left:700px;
+}
+#footer 
+{
+	width:100%;
+	background: url(../images/footer_bg.jpg) repeat-x top left;
+	height:28px;
+	color:#FFFFFF;
+	float:left;
+}
+.end {
+	width:1000px;
+	position:relative;
+	margin:0 auto;
+	text-align:left;
+	padding-top:5px;
+}
+/*Form thông tin chi tiết sự cố*/
+.C_out {
+	border:1px solid #cbcbcb;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	padding:2px;
+	width:99%;
+	height:auto;
+}
+.C_in {
+	background-color:#f2f2f2;
+	padding:5px;
+}
+h3.C_in_title {
+	margin:0;
+	font-size:12px;
+	font-weight:bold;
+	color:#00509F;
+	font-family:Tahoma;
+}
+h3.C_in_title_2
+{
+    font-size:12px;
+    font-weight:bold;
+    font-family:Arial;
+    color:#333333;
+}
+.css_nd{
+	border:1px solid #b9b9b9;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	}
+.CT_out
+{
+    border:1px dashed #0C78B2;
+    padding:3px;
+    background-color:#EDF9FF;
+    }
+.CT_in
+{
+    background-color:#DBF3FF;
+    border:1px solid #B8E5FC; 
+    -moz-border-radius-topleft:3px;
+    -moz-border-radius-topright:3px;
+    padding:3px;
+    }
+ul.V_menu
+{
+    margin:0;
+    padding:0;
+    background-color:#FBFBFB;
+    }
+ul.V_menu li
+{
+    list-style:none;
+    font-family:Tahoma;
+    font-size:12px; 
+    }
+li.V_sel_tab
+{
+    border-bottom:1px solid #DFEDF6;
+    border-top:1px solid #DFEDF6;
+    padding:7px;
+    color:#000000;
+    background-color:#FFFFFF;
+    }
+li.V_def_tab
+{
+     border-right:1px solid #DFEDF6;
+     border-bottom:1px solid #DFEDF6;
+     color:#0F82CB;
+     background-color:#FBFBFB;
+     padding:7px;
+    }
+ .V_tab_nd
+ {
+     padding-left:10px;
+     border-right:1px solid #DFEDF6;
+     border-top:1px solid #DFEDF6;
+     border-bottom:1px solid #DFEDF6;
+     
+     }
+.under_tab
+{
+    border-right:1px solid #DFEDF6;
+     border-left:1px solid #DFEDF6;
+     border-bottom:1px solid #DFEDF6;
+    background-color:#FFFFFF;
+    }
+.tab_bg
+{
+     border-left:1px solid #DFEDF6;
+     border-bottom:1px solid #DFEDF6;
+     background-color:#FBFBFB;
+    }
+/*=========HRM_new===========*/
+.HRM_main
+{
+    width:1000px;
+    margin:0 auto;
+    position:relative;
+    text-align:left;
+    }
+.HRM_content, .box_pre_tc
+{  
+    /*margin:10px auto; 
+    position:relative;*/ 
+    border:1px solid #CCCCCC; 
+    display:inline-block; 
+    background-color:#FFFFFF; 
+    border-radius: 5px 5px 5px 5px; 
+    /*min-height:480px;*/
+    text-align:left;
+    padding:7px;
+    margin-bottom:7px;
+    width:96%;
+    }
+h3.module_title{ background: url(../images/title_bg.jpg) repeat-x 0px 34px; font-size:18px; color:#0041a6; font-family:Tahoma; padding-bottom:20px;}
+ol.dsvb
+{
+    color:#ff8800 ;
+    padding: 0 0 0 4px;
+    font-family:Georgia;
+    font-weight:bold;
+    font-size:13px;
+    margin:8px 0;
+    }
+ol.dsvb li{ line-height:18px; list-style-position:inside; padding:5px;}
+ol.dsvb li a, ol.dsvb li a:hover, ol.dsvb li a:active, ol.dsvb li a:visited{ font-family: Arial; color:#008ad2; font-weight:normal;}
+ol.dsvb li:nth-child(2n+1){ background-color:#ddeaff;}
+ol.dsvb li a span{ padding-left:5px;}
+.module{ width:139px; float:left; margin:5px 10px 5px 5px;}
+.module a p,.module a:hover p, .module a:active p, .module a:visited p { color:#1f6ed4; font-weight:bold; text-align:center; text-decoration:none;}
+.HRM_content_premaster, .HRM_content, .IPS_wrap{ width:1000px; position:relative; margin:0 auto; text-align:left; margin-bottom:45px;}
+.HRM_content, .IPS_wrap_content { margin:7px 0;}
+.IPS_wrap_content
+{
+    background:#FFFFFF;
+    width:1000px;
+    margin:8px 0;
+    text-align:left;
+    box-shadow: 2px 2px 5px #1e1e1e;
+    -moz-border-radius: 10px;
+     border-radius: 10px;
+}
+ .tbl_ns_ico
+ {
+     padding:45px;
+     font-size:14px;
+     font-weight:bold;
+     color:#003b82;
+     }
+  .tbl_ns_ico a img{ border:none;}
+   .tbl_ns_ico a,  .tbl_ns_ico a:visited,  .tbl_ns_ico a:active { color:#003b82; text-decoration:none;}
+    .tbl_ns_ico a:hover{ text-decoration:underline; color:#d85600;}
+ /*======================Cây tổ chức================*/
+ .searchbox
+        {
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            border: 1px solid #b9b9b9;
+            font-family: arial;
+            font-size: 12px;
+            color: #000000;
+            padding: 3px 5px;
+            background:url(../../images/search_ico.png) no-repeat right center;
+            width:150px;
+            }
+        .sdnodeclass
+        {
+            /*border-width: 1px;
+            border-style: solid;
+            border-color: #006699;*/
+            color:#5e5e5e;
+            font-family:Arial;
+            font-size:12px;
+            text-align:center;
+            width: 250px;
+            height: 28px;
+            vertical-align: top;
+            border:1px solid #CCCCCC;
+            /*background: url(../../images/tc_sub.jpg) repeat-x top left;*/
+            background:url(../images/container_head_bg.jpg) repeat-x top left;
+	border:1px solid #cbcbcb;
+	-moz-border-radius: 5px;
+     border-radius: 5px;
+        }
+        .sdnodeclass a{font-size:12px;font-family:Arial;}
+        .search_area
+        {
+            padding:5px;
+            }
+        .sdrootnode
+        {
+           
+           width:100%;
+           height:95px;
+           border:none;  
+        }
+        .sdchildnodeheader
+        {
+            font-weight: bold;
+            font-family:Arial;
+            font-size:14px;
+            color:#FFFFFF;
+            background: url(../images/tc_sub.jpg) repeat-x top left;
+            height:28px;
+            -moz-border-radius: 5px;
+           border-radius: 5px;
+        }
+        .sdnodecontent
+        {
+            height: 300px;
+            overflow: auto;
+            font-size:11px;
+            font-family:Arial;
+            line-height:18px;
+        }
+        .sddonvi
+        {
+            text-align: left;
+        }
+        .sddonvi:hover
+        {
+            background-color: #CAE4F1;
+            cursor: default;
+        }
+        .left_block_title
+        {
+            padding:5px;
+            border-top:1px solid #cdcdcd;
+            border-left:1px solid #cdcdcd;
+            border-right:1px solid #cdcdcd;
+            font-style:italic;
+            font-weight:bold;
+            background-color:#FFFFFF;
+            min-width:300px;
+            max-width:450px;
+            position:relative;
+            border-top-right-radius:10px;
+            -moz-border-radius-topright:10px;
+            }
+        .block_title
+        {
+            width:100%;
+            border-bottom:1px solid #cdcdcd;
+            }
+        .detail_box{ border:1px dotted #cdcdcd; line-height:20px; background-color:#FFFFFF;}
+        .detail_box td{ border-bottom:1px dashed #cdcdcd;}
+        .label_info{ color:#09499a;}
+/*=====Gioi thieu phan mem===========*/
+ul.ds_mt
+{
+    
+    }
+ul.ds_mt li
+{
+    line-height:20px;
+    }
+/*===== Trang chu lanh dao ===========*/
+
+ul.listtin_ld
+{
+    list-style: none outside none;
+    padding: 0 0 0 4px;
+    
+    }
+ul.listtin_ld li{ line-height:18px; list-style-position:inside; padding:5px;}
+ul.listtin_ld a ul.listtin_ld li a:hover, ul.listtin_ld li a:active, ul.listtin_ld li a:visited{ font-family: Arial; color:#008ad2; font-weight:normal;}
+ul.listtin_ld li:nth-child(2n+1){ background-color:#ddeaff;}
+ul.listtin_ld li a span{ padding-left:5px;}
+ul.listtin_ld li a { padding-left:8px;}
+.bieudo{
+    float: left;
+    margin: 5px 0px 5px 5px;
+    width: 308px;}
+.bieudo a p,.module a:hover p, .module a:active p, .module a:visited p { color:#1f6ed4; font-weight:bold; text-align:center; text-decoration:none;}
+.module_ld
+{
+    float:left;
+    width: 582px;
+    height:177px;
+    background-color:#e6effa;
+    padding-left:53px;
+    }
+.module_2
+{
+    
+    float: left;
+    margin: 20px 10px 20px 5px;
+    width: 116px;}
+.module_2 a p,.module a:hover p, .module a:active p, .module a:visited p { color:#1f6ed4; font-weight:bold; text-align:center; text-decoration:none;}
+.pos_div{position:absolute; top:0; left:0;}
+
+        .pager_style
+        {
+            border: 1px solid #C0C0C0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+/*IPS content*/
+.IPS_content
+{
+    width: 100%;
+    background: #bfbfbf url(../images/wrap_bg.jpg) repeat-x top left;
+    min-height:400px;
+    border-bottom:1px solid #FFFFFF;
+    margin-bottom:20px;
+}
+.slide
+{
+    height:300px;
+}
+.function ul
+{
+    padding:0;
+    margin:0 0 0 104px;
+}
+.function ul li
+{
+    list-style:none;
+    line-height:20px;
+    font-size:18px;
+    color:#061d47;
+    list-style-image:url(../images/ds_def.png);
+    padding:3px 5px 3px 10px;
+}
+    .function ul li.ls_selected, function ul li a:hover
+    {
+     list-style-image:url(../images/ds_sel.png);
+    }
+function ul li a, function ul li a:hover, function ul li a:visited, function ul li a:active
+{
+    color:inherit;
+    text-decoration:none;
+}
+    function ul li a:hover
+    {
+
+    }

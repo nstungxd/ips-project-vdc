@@ -1,0 +1,1297 @@
+﻿/*update padding cho cac textbox, text area, chiều cao cho drop down list - ngay 30/3/2011*/
+/*update style moi cho grid, fontsize leen 13px - 31/3/2011*/
+/*update color cua button 4.4.2011*/
+/*DN chung cho các thẻ hay dùng*/
+/*10-4-2011-update radius cho dao_dat, dao_ma, lket_dat*/
+/*Cập nhật style cho các bảng đa cấp - CRM : 25.4.2011*/
+/*cap nhat khoi tao padding, margin 27.4.2011*/
+/*19.7.2011-cập nhật banner, menu như quản lý sự cố của TTĐHVT*/
+/*18.6.2012 cap nhat style grid view*/
+/*
+{
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+}*/
+html,body {
+   margin:0;
+   padding:0;
+   height:100%;
+   font: 13px arial, helvetica, clean, sans-serif;
+   color: #000000;
+}
+#header
+{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+}
+#body {
+   padding:10px;
+   padding-bottom:60px;/* Height of the footer */
+}
+#container {
+   min-height:100%;
+   position:relative;
+   height:100%
+}
+#footer {
+   position:absolute;
+   bottom:0px;
+   width:100%;
+   height:auto;
+   left: 0px;
+}
+a img
+{
+    border: 0;
+}
+p, h1, h2, h3, h4, h5, h6
+{
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    font-weight: normal;
+}
+a, a:active, a:visited
+{
+    color: inherit;
+    text-decoration: none;
+}
+a:hover
+{
+    text-decoration: underline;
+}
+.png
+{
+    behavior: url("iepngfix.htc");
+}
+.css_panel
+{
+    background-color: #DFDFDF;
+    text-align: center;
+    vertical-align: middle;
+}
+.css_tieude
+{
+    color: #00509F;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: 2px;
+    padding-top: 5px;
+    text-align: left;
+}
+.css_phude
+{
+    color: #00509F;
+    font-family: Tahoma, Geneva, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: Transparent;
+    text-align: center;
+}
+.css_button
+{
+    background: url(../images/butt_bg.jpg) repeat-x;
+    padding: 1px 7px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #b9b9b9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    color: #5e5e5e;
+    cursor: pointer;
+    height: 26px;
+}
+.css_button_l
+{
+    background: url(../images/butt_bg.jpg) repeat-x;
+    padding: 1px 7px;
+    -moz-border-radius: 5px;
+    border: 1px solid #b9b9b9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+    color: #5e5e5e;
+}
+.css_slide
+{
+    background: url(../images/butt_bg.jpg) repeat-x;
+    padding: 1px 7px;
+    -moz-border-radius: 5px;
+    border: 1px solid #b9b9b9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    height: 25px;
+    text-align: center;
+    vertical-align: middle;
+    color: #5e5e5e;
+}
+.css_dao_dat
+{
+    font-family: Courier New;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    -moz-border-radius: 3px;
+    border: 1px solid #b9b9b9;
+}
+.css_dao_xem
+{
+    font-family: Courier New;
+    font-size: 15px;
+    text-align: center;
+    vertical-align: middle;
+    -moz-border-radius: 3px;
+    border: 1px solid #b9b9b9;
+}
+.css_lket_dat
+{
+    font-family: arial;
+    font-size: 12px;
+    font-weight: bold;
+    color: Blue;
+    text-align: center;
+    cursor: pointer;
+    -moz-border-radius: 3px;
+    border: 1px solid #b9b9b9;
+}
+.css_lket_xem
+{
+    font-family: arial;
+    font-size: 12px;
+    font-weight: bold;
+    color: Blue;
+    text-align: center;
+    -moz-border-radius: 3px;
+}
+.css_ma
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    padding: 3px 5px;
+}
+.css_ma_c
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    padding: 3px 5px;
+    text-align: center;
+}
+.css_ma_r
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    padding: 3px 5px;
+    text-align: right;
+}
+.css_tong
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+	font-family:Courier New;
+	font-size:14px;
+	height:19px;
+	color:Blue;
+	background-color:#fff5df;
+	text-align:left;
+	padding:1px 0;
+}
+.css_tong_c
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+	font-family:Courier New;
+	font-size:14px;
+	height:19px;
+	color:Blue;
+	background-color:#fff5df;
+	text-align:center;
+	padding:1px 0;
+}
+.css_tong_r
+{
+    border: 1px solid #b9b9b9;
+	font-family:Courier New;
+	font-size:14px;
+	height:19px;
+	color:Blue;
+	background-color:#fff5df;
+	text-align:right;
+	padding:1px 0;
+	-moz-border-radius: 3px;
+}
+.css_so
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    padding: 3px 5px;
+    text-align: right;
+}
+.css_so_l
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    padding: 3px 5px;
+    text-align: left;
+}
+.css_so_c
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    padding: 3px 5px;
+    text-align: center;
+}
+/*=============thay đổi ngày 13/03/2011===============*/
+.css_drop_nen
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    font-family: arial;
+    font-size: 13px;
+    background-color: #E6FFFF;
+    color: #000000;
+    text-align: left;
+    height: 23px;
+}
+.css_drop_chon
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    font-family: arial;
+    font-size: 13px;
+    background-color: #FFFFD5;
+    color: #000000;
+    text-align: left;
+    height: 23px;
+}
+.css_drop
+{
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    font-family: arial;
+    font-size: 13px;
+    text-align: left;
+    color: #000000;
+    height: 23px;
+}
+/*=============================================*/
+.css_nd
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    padding: 3px 5px;
+    text-align: left;
+}
+.css_nd_c
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    padding: 3px 5px;
+    text-align: center;
+}
+.css_nd_r
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #b9b9b9;
+    padding: 3px 5px;
+    text-align: right;
+}
+/*?*/
+.css_tbao
+{
+    font-family: arial;
+    font-size: 12px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #FFFFD5;
+}
+.css_gchu
+{
+    padding-right: 10px;
+    padding-left: 7px;
+    color: #000000;
+    text-align: left;
+    font-family: arial;
+    font-size: 12px;
+    background-color: Transparent;
+    width: auto;
+    text-align: left;
+}
+.css_gchu_nr
+{
+    padding-left: 7px;
+    color: #000000;
+    text-align: left;
+    font-family: arial;
+    font-size: 12px;
+    background-color: Transparent;
+    width: auto;
+    text-align: left;
+    }
+.css_gchu_c
+{
+    padding-right: 10px;
+    padding-left: 7px;
+    color: #000000;
+    text-align: left;
+    font-family: arial;
+    font-size: 12px;
+    background-color: Transparent;
+    width: auto;
+    text-align: center;
+}
+.css_gchu_r
+{
+    padding-right: 10px;
+    padding-left: 7px;
+    color: #000000;
+    text-align: left;
+    font-family: arial;
+    font-size: 12px;
+    background-color: Transparent;
+    width: auto;
+    text-align: right;
+}
+.css_gchu_e
+{
+    padding-right: 10px;
+    padding-left: 7px;
+    font-family: arial;
+    font-size: 12px;
+    background-color: Transparent;
+    color: Red;
+    width: auto;
+    text-align: center;
+}
+.css_gchu_a
+{
+    color: #000000;
+    text-align: left;
+    font-family: arial;
+    font-size: 12px;
+    background-color: Transparent;
+    width: auto;
+    text-align: left;
+}
+/*?*/
+.css_be
+{
+    font-family: arial;
+    font-size: 8px;
+    text-align: center;
+}
+.css_batbuoc
+{
+    font-family: arial;
+    font-size: 13px;
+    text-align: left;
+    color: Red;
+}
+/*tooltip*/
+.css_goiy
+{
+    font-family: arial;
+    font-size: 11px;
+    text-align: left;
+    color: #5e5e5e;
+}
+/*Vertical-tab selected*/
+.css_tab_doc_ac
+{
+    background-color: #FFFFFF;
+    border-right: 2px solid #FA9B00;
+    border-top: 1px solid #b9b9b9;
+    border-bottom: 1px solid #b9b9b9;
+    font-weight: bold;
+    font-family: arial;
+    font-size: 13px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: #0000DD;
+    cursor: pointer;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+}
+/*Vertical tab default*/
+.css_tab_doc_de
+{
+    background-color: #BFFFFF;
+    border-top: 1px solid #b9b9b9;
+    font-weight: bold;
+    font-family: arial;
+    font-size: 13px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: #0000DD;
+    cursor: pointer;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomright: 5px;
+}
+/*Horizontal tab selected*/
+.css_tab_ngang_ac
+{
+    background-color: #FFFFFF;
+    border-left: 1px solid #b9b9b9;
+    border-right: 1px solid #b9b9b9;
+    border-top: 2px solid #FA9B00;
+    font-weight: bold;
+    font-family: arial;
+    font-size: 13px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: #0000DD;
+    cursor: pointer;
+    padding-top: 2px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-topleft: 5px;
+}
+/*Horizontal tab default*/
+.css_tab_ngang_de
+{
+    background-color: #e8e8e8;
+    border-left: 1px solid #b9b9b9;
+    border-right: 1px solid #b9b9b9;
+    border-top: 1px solid #b9b9b9;
+    font-weight: bold;
+    font-family: arial;
+    font-size: 13px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: #3a3a3a;
+    cursor: pointer;
+    padding-top: 2px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+}
+.tab_content {border-left:1px solid #b9b9b9; border-right:1px solid #b9b9b9; border-bottom:1px solid #b9b9b9; padding:5px; background:#FFFFFF;}
+/*bang chua tab*/
+.productinfo_tbl
+{
+    float: left;
+    padding-top: 10px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+.productinfo_tbl td
+{
+    padding: 5px;
+}
+.tabnoidung
+{
+    border-bottom: 1px solid #b9b9b9;
+    border-left: 1px solid #b9b9b9;
+    border-right: 1px solid #b9b9b9;
+    background-color: #FFFFFF;
+    text-align: left;
+    padding: 5px;
+}
+/*---------------------------------*/
+.css_link_nhom
+{
+    height: 19px;
+    font-family: Times New Roman;
+    font-size: 14px;
+    text-align: center;
+    vertical-align: middle;
+    color: white;
+    background-color: #5078B3;
+}
+.css_link_X
+{
+    height: 19px;
+    font-family: arial;
+    font-size: 12px;
+    text-decoration: none;
+    font-weight:bold;
+    text-align: Left;
+    vertical-align: middle;
+    cursor: pointer;
+    color: #3a3a3a;
+    border-bottom: solid #D9D9D9 1px;
+    background-color: #f6f6f6;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left:5px;
+    padding-right:5px;
+}
+.css_link_L
+{
+    height: 19px;
+    font-family: arial;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: Blue;
+    border-bottom: solid #FFFFFF 1px;
+    background-color: #CCFFFF;
+}
+.css_link_D
+{
+    height: 19px;
+    font-family: arial;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: Blue;
+    border-bottom: solid #FFFFFF 1px;
+    background-color: #FFC0CB;
+}
+.css_link_V
+{
+    height: 19px;
+    font-family: arial;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: Blue;
+    border-bottom: solid #FFFFFF 1px;
+    background-color: #FFFFE0;
+}
+.css_link_T
+{
+    height: 19px;
+    font-family: arial;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: center;
+    vertical-align: middle;
+    color: Blue;
+    border-bottom: solid #FFFFFF 1px;
+    background-color: #FFFFFF;
+}
+.css_ttrang_X
+{
+    font-family: arial;
+    font-size: 15px;
+    text-align: left;
+    color: Blue;
+    background-color: #E0FFFF;
+}
+.css_ttrang_D
+{
+    font-family: arial;
+    font-size: 15px;
+    text-align: left;
+    color: Blue;
+    background-color: #FFC0CB;
+}
+.css_menu_login
+{
+    font-family: Arial;
+    font-size: 12px;
+    text-align: left;
+    color: #FFFFFF;
+    background-color: #ef7600;
+    cursor: default;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 5px;
+}
+.css_menu_bar
+{
+    height: 19px;
+    font-family: arial;
+    font-size: 12px;
+    text-decoration: none;
+    text-align: left;
+    vertical-align: middle;
+    color: Blue;
+    background-color: #E0FFFF;
+}
+/*menu*/
+/*check lai xem co can dat them z-index cho luoi tren trang chu ko- jong vn2*/
+.menu_wrap1
+{
+    z-index: 3000;
+}
+.css_menu_table0
+{
+    border: 5px solid #E8EBEC;
+}
+.css_menu_nhom
+{
+    font-family: Arial;
+    font-size: 12px;
+    text-align: left;
+    vertical-align: middle;
+    color: #000000;
+    background-color: #f6f6f6;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+}
+.css_menu_nhom_pan
+{
+    font-family: Arial;
+    font-size: 12px;
+    color: #000000;
+    background-color: #f6f6f6;
+    border-color: #FFFFFF #D9D9D9 #D9D9D9;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    text-decoration: none;
+}
+.css_menu_nhom_pan:hover
+{
+    background-color: #eeeeee;
+}
+.css_menu_item
+{
+    font-family: Arial;
+    font-size: 12px;
+    text-align: left;
+    vertical-align: middle;
+    color: #000000;
+    background-color: #F6F6F6;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 5px;
+}
+.css_menu_item_pan
+{
+    font-family: Arial;
+    font-size: 12px;
+    color: white;
+    background-color: #f6f6f6;
+    border-color: #FFFFFF #D9D9D9 #D9D9D9;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    text-decoration: none;
+}
+.css_menu_col
+{
+    font-family: Arial;
+    font-size: 12px;
+    color: white;
+    background-color: #EF7600;
+    border-bottom: solid 1px silver;
+    text-decoration: none;
+}
+.css_menu_col_item
+{
+    font-family: Arial;
+    font-size: 12px;
+    text-align: left;
+    color: white;
+    background-color: Teal;
+    border: solid Teal;
+    cursor: default;
+    text-decoration: none;
+}
+.table_style0
+{
+    border: 5px solid #E8EBEC;
+}
+/*Tieu de cua form*/
+.fr_title
+{
+    background: #DFDFDF url(images/title_gr.jpg) repeat-y scroll left top;
+    height: 28px;
+    -moz-border-radius-topleft: 10px;
+    -moz-border-radius-topright: 10px;
+}
+/*Input_ form*/
+.input_form
+{
+    
+}
+/*============sửa 13/03/2011==================*/
+.input_form td
+{
+    padding: 1px;
+}
+/*===========================================*/
+.input_form td td
+{
+    padding: 0;
+    border: none;
+}
+/*Lớp lastline để định nghĩa cho dòng cuối cùng của form input không có border */
+.input_form td.lastline
+{
+    border: 0;
+}
+.input_form td td.lastline
+{
+    border: 0;
+}
+/*style cho note của form*/
+.form_note
+{
+    background-color: #DFF2FF;
+    -moz-border-radius: 3px 3px 3px 3px;
+    margin-bottom: 10px;
+    color: #004287;
+}
+.css_gchu2
+{
+    font-weight: normal;
+    font-family: Arial;
+    font-size: 13px;
+    color: #000000;
+    padding: 0 5px; /*update 29.3.2011*/
+    background-color:#ddeaf3;
+    border:1px dashed #8acfff;
+    width:100%;
+    padding:5px;
+}
+/*div chứa button*/
+.butt_container
+{
+    padding: 0 5px;
+    float: left;
+}
+/*form*/
+/*form chi tiet*/
+.detail_form
+{
+    background-color: #CFE9FF;
+    border: 1px solid #9FD4FF;
+}
+.detail_form table td
+{
+    padding-bottom: 3px;
+}
+/*tên trường của form chi tiết*/
+.field_td_detail
+{
+    color: #FFFFFF;
+    font-weight: bold;
+    padding-right: 10px;
+    padding-left: 7px;
+    text-align: left;
+}
+/*form kết quả*/
+.result_form
+{
+    background-color: #F1F8FE;
+    padding: 5px;
+}
+/*bảng chứa form*/
+.tbl_form
+{
+    -moz-border-radius: 10px 10px 10px 10px;
+    border: 1px solid #b9b9b9;
+    padding: 5px;
+}
+/*Grid*/
+.grid_container
+{
+    padding: 5px;
+}
+.css_ma_grid
+{
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+}
+.css_ma_grid_c
+{
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    text-align: center;
+}
+.css_ma_grid_r
+{
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    text-align: right;
+}
+.css_so_grid
+{
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    text-align: right;
+}
+.css_so_grid_l
+{
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    text-align: left;
+}
+.css_so_grid_c
+{
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    text-align: center;
+}
+.css_nd_grid
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: left;
+}
+.css_nd_grid_c
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: center;
+}
+.css_nd_grid_r
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    text-align: right;
+}
+.css_ma_grid_h
+{
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    cursor:pointer;
+}
+.css_ngay_grid_h
+{
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    text-align: center;
+    cursor:pointer;
+}
+.css_so_grid_h
+{
+    font-family: Courier New;
+    font-size: 13px;
+    color: #000000;
+    text-align: right;
+    cursor:pointer;
+}
+/*Grid view_18.6.2012*/
+
+.grid_head
+{
+    background-color:#9fc54e;
+    font-family:Arial;
+    font-size:12px;
+    font-weight:bold;
+    height:22px;
+    padding-left:5px;
+    border:1px solid #CCCCCC;
+    }
+.Grid_row
+{
+    border-color: #FFFFFF #D9D9D9 #D9D9D9;
+    border-style: solid;
+    border-width: 1px 1px 1px 0;
+    color:#5e5e5e;
+    background-color: #F6F6F6;
+    }
+.Cell_style
+{
+    border:1px solid #CCCCCC;
+    color:#5e5e5e;
+    padding-left:5px;
+    }
+/*update 22-03-2011*/
+.grid_header
+{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #000000;
+}
+/*fieldset cap nhat 24-03-2011*/
+fieldset legend
+{
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: bold;
+    color: #5e5e5e;
+}
+/*Dùng cho các bảng đa cấp*/
+.tbl_tk
+{
+    background-color: #FFFFFF;
+    -moz-border-radius: 5px;
+    border: 1px solid #b9b9b9;
+    padding: 5px;
+    font-family: Arial;
+    font-size: 12px;
+}
+.tbl_lv1
+{
+    background-color: #DFDFDF;
+    color: #00509F;
+    font-size: 13px;
+    font-family: Tahoma;
+    font-weight: bold;
+    padding: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+}
+.tbl_lv2
+{
+    background-color: #E2E2E2;
+    font-family: Tahoma;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    color: #5e5e5e;
+    text-align: left;
+}
+.tbl_lv3
+{
+    font-family: Tahoma;
+    font-size: 12px;
+    color: #00509F;
+    text-align: left;
+    font-weight: bold;
+}
+/*trang chủ thử nghiệm*/
+.tabmacdinh, .tabduocchon
+{
+    cursor: pointer; font-weight:normal; padding:5px 4px;
+    color:#5e5e5e; background: url(../images/menu_split.jpg) no-repeat center right;
+}
+.tabduocchon
+{
+  color:#d85600;  
+    }
+#ct1,#ct2,#ct3,#ct4,#ct5,#ct6,#ct7,#ct8{padding: 5px 0px 10px 0;}
+.info
+{
+    width:100%;
+    float:left;
+    margin-top:20px;
+    }
+.solieu_left
+{
+    width: 14%;
+    float: left;
+    display:block;
+    margin-top:-1px;
+    margin-left:10px;
+    text-align:right;
+}
+.content_sl
+{
+    width:68%;
+    float:left;
+    display:block;
+    border-left:5px solid #2872bd;
+    padding-left:10px;
+    text-align:justify;
+    color:#5e5e5e;
+}
+.sl_title
+{
+    font-family:Arial;
+    font-size:24px;
+    color:#2872bd;
+    text-align:right;
+    padding-right:20px;
+    }
+.mw_title
+{
+    font-family:Arial;
+    font-size:16px;
+    color:#7fa81e;
+    text-align:right;
+    padding-right:20px;
+    }
+.mywork
+{
+    width:100%;
+    float:left;
+    margin-top:10px;
+    text-align:right;
+    }
+.mywork_left
+{
+    width: 15%;
+    float: left;
+    display:block;
+    margin-left:36px;
+    }
+.mywork_right
+{
+    width:68%;
+    float:left;
+    display:block;
+    border-left:5px solid #7fa81e;
+    padding-left:10px;
+    text-align:justify;
+    height:100px;
+    overflow:scroll;
+    color:#5e5e5e;
+    }
+ul.lv1
+{
+    padding-left:10px;
+    }
+ul.lv1 li
+{
+    list-style-image:url(images/dot.jpg);
+    padding:3px 0;
+    cursor:pointer;
+    }
+ul.lv1 li:hover, ul.lv1 li:visited, ul.lv1 li:active
+{
+    color:inherit;
+    text-decoration:none;
+    }
+ul.lv1 li a
+{
+     cursor:pointer;
+    }
+ul.lv2
+{
+    padding-left:15px;
+    }
+ul.lv3
+{
+    padding-left:20px;
+    }
+.bc_title
+{
+    font-family:Arial;
+    font-size:24px;
+    color:#7fa81e;
+    text-align:right;
+    padding-right:20px;
+    }
+.kh_title
+{
+    font-family:Arial;
+    font-size:24px;
+    color:#0B7A74;
+    text-align:right;
+    padding-right:20px;
+    }
+.content_bc
+{
+    width:68%;
+    float:left;
+    display:block;
+    border-left:5px solid #7fa81e;
+    padding-left:10px;
+    text-align:justify;
+    color:#5e5e5e;  
+    }
+.content_kh
+{
+    width:68%;
+    float:left;
+    display:block;
+    border-left:5px solid #0B7A74;
+    padding-left:10px;
+    text-align:justify;
+    color:#5e5e5e;  
+    }
+.ht_title
+{
+    font-family:Arial;
+    font-size:24px;
+    color:#beaa00;
+    text-align:right;
+    padding-right:20px;
+    }
+.content_ht
+{
+    width:68%;
+    float:left;
+    display:block;
+    border-left:5px solid #efd606;
+    padding-left:10px;
+    text-align:justify;
+    color:#5e5e5e;  
+    }
+.bm_title
+{
+    font-family:Arial;
+    font-size:24px;
+    color:#ff6804;
+    text-align:right;
+    padding-right:20px;
+    }
+.content_bm
+{
+    width:68%;
+    float:left;
+    display:block;
+    border-left:5px solid #ff6804;
+    padding-left:10px;
+    text-align:justify;
+    color:#5e5e5e;  
+    }
+.footer_tc
+{
+     background:transparent url(images/dot_footer.png) no-repeat left top;
+     behavior: url("iepngfix.htc");
+     margin:10px;
+    }
+.footer_content
+{
+    padding:30px 0px 10px 0;
+    text-align:left;
+    font-size:11px;
+    }
+.ftimg
+{
+    padding:0 5px;
+    }
+/*login_bdt*/
+.login_bdt
+{
+    color:#FFFFFF;
+    font-size:12px;
+    padding:3px 10px 3px 10px;
+    float:right;
+    cursor:pointer;
+    background-color:#FF8F44;
+    -moz-border-radius: 5px;
+    margin:3px;
+    border:1px solid #FFFFFF;
+    }
+/*19.7.2011*/
+#header_2
+{
+    background: url(../images/banner_bg.jpg) repeat-x scroll left top transparent;
+    height: 111px;
+}
+.banner
+{
+    background: url(images/header_vnpt.jpg) no-repeat scroll left top transparent;
+    height: 111px;
+    margin: 0 auto;
+    position: relative;
+    width: 1000px;
+}
+.banner h2 {
+    color: #FFFFFF;
+    font-family: Arial,Helvetica,sans-serif;
+    font-size: 22px;
+    font-weight: normal;
+    left: 93px;
+    margin: 0;
+    position: absolute;
+    top: 48px;
+}
+p, h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+}
+.menu_right {
+    height: 27px;
+    float:right;
+    width:70%;
+    text-align:right;
+}
+p.sub
+{
+    margin:0;
+    }
+.markermenu ul li.Hiding
+{ display:none;
+    }
+.star {
+             padding-left:5px;
+             color:red;
+             font-size:12px;
+             line-height:inherit;
+        }
+.image-grid-cell
+{
+    width: 24px;
+    height: 24px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.css-label-message
+{
+    color: Red;
+    text-align: left;
+    padding-left: 10px;
+    font-family: arial;
+    font-size: 12px;
+    font-weight: bold;
+}
+.div-content-style
+{
+    border-style: solid solid none solid;
+    border-width: 0px;
+    border-color: #C0C0C0;
+    height: 400px;
+    overflow: auto;
+}
+
+.div-content-style-small
+{
+    border-style: solid solid none solid;
+    border-width: 0px;
+    border-color: #C0C0C0;
+    height: 320px;
+    overflow: auto;
+}
+.paging-css-small
+{
+    border: 1px solid #C0C0C0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
