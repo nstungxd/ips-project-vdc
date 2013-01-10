@@ -8,7 +8,7 @@ using System.Reflection;
 namespace UnitSettingLibrary
 {
     public class EnumHelper
-    {
+    {        
         public static string GetDescription<TEnum>(TEnum value)
         {
             FieldInfo fi = value.GetType().GetField(value.ToString());
@@ -16,7 +16,19 @@ namespace UnitSettingLibrary
 
             return (attributes.Length > 0) ? attributes[0].Description : value.ToString();
         }
-
+       
+        public static T GetEnumValueFromDescription<T>(string description)
+        {
+            var type = typeof(T);
+            if (!type.IsEnum)
+                throw new ArgumentException();
+            FieldInfo[] fields = type.GetFields();
+            var field = fields.SelectMany(f => f.GetCustomAttributes(typeof(DescriptionAttribute), false), (f, a) => new { Field = f, Att = a })
+                .SingleOrDefault(a => ((DescriptionAttribute)a.Att).Description == description);
+            if(field != null) return (T)field.Field.GetRawConstantValue();
+            throw new Exception("Không tồn tai enum có mô tả là " + description);
+        }
+        
         public static Hashtable GetEnumForBind(Type enumeration)
         {
             string[] names = Enum.GetNames(enumeration);
@@ -28,7 +40,7 @@ namespace UnitSettingLibrary
             }
             return ht;
         }
-
+        
         public static IEnumerable<UnitShortModel> GetDescriptionForBind<TEnum>(TEnum enumValue)
         {
             if (!typeof(TEnum).IsEnum) return null;
