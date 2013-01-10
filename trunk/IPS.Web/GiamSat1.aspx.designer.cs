@@ -19,7 +19,7 @@ namespace IPS.Web {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Interface.VdcDropDownList ddlNamKeHoach;
+        protected global::System.Web.UI.WebControls.DropDownList ddlNamKeHoach;
         
         /// <summary>
         /// btCapNhatKHV control.

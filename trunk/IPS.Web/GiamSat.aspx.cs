@@ -17,49 +17,66 @@ namespace IPS.Web
             if (!Page.IsPostBack)
             {
                 LoadGrid1();
-                LoadGrid2();
-                LoadGrid3();
+                //LoadGrid2();
+                //LoadGrid3();
                 LoadDropDownListLoaiNguonVon();
-                LoadDropDownListPhanCap();
+                //LoadDropDownListPhanCap();
             }
         }
 
 
         public void LoadGrid1()
         {
-            ListDuAnModelGridView result = GetValueSPS();
-            Grid1.DataSource = result.DuAnModelsGridView;
-            Grid1.DataBind();
+           // ListDuAnModelGridView result = GetValueSPS();
+            var result = giamsatService.DanhSachGiaiDoanKHV("", "", "", "56", 20111118624371, 2011);
+
+            //var result = giamsatService.DanhSachGiaiDoanKHV("", "", "", madonvi, idduan, namInt);
+            if (result != null)
+            {
+                foreach (var item in result)
+                {
+                    item.TenKetQuaGiamSat = EnumHelper.GetDescription(item.KetQuaGiamSat);
+                    if (item.GiaiDoanKHV != GiaiDoanKHV.KhongXacDinh)
+                        item.TenGiaiDoan = EnumHelper.GetDescription(item.GiaiDoanKHV) + " đợt " + item.Dot;
+
+                }
+            }
+            gridNamKeHoach.DataSource = result;
+            gridNamKeHoach.DataBind();
+            //Grid1.DataSource = result.DuAnModelsGridView;
+            //Grid1.DataBind();
         }
 
-        public void LoadGrid2()
+        //public void LoadGrid2()
+        //{
+        //    ListDuAnModelGridView result = GetValueSPS();
+        //    Grid2.DataSource = result.DuAnModelsGridView;
+        //    Grid2.DataBind();
+        //}
+        //public void LoadGrid3()
+        //{
+        //    ListDuAnModelGridView result = GetValueSPS();
+        //    Grid3.DataSource = result.DuAnModelsGridView;
+        //    Grid3.DataBind();
+        //}
+        public void LoadDropDownListLoaiNguonVon()
         {
-            ListDuAnModelGridView result = GetValueSPS();
-            Grid2.DataSource = result.DuAnModelsGridView;
-            Grid2.DataBind();
-        }
-        public void LoadGrid3()
-        {
-            ListDuAnModelGridView result = GetValueSPS();
-            Grid3.DataSource = result.DuAnModelsGridView;
-            Grid3.DataBind();
-        }
-        public void LoadDropDownListLoaiNguonVon() {
-            var loainv = EnumHelper.GetDescriptionForBind(LoaiNguonVon.KhongXacDinh);
-            ComboBoxEditor.DataSource = loainv;
+
+            var nhomda = EnumHelper.GetDescriptionForBind(KetQuaGiamSat.ChamDoGPMB);
+            ComboBoxEditor.DataSource = nhomda;
             ComboBoxEditor.DataTextField = "ValueString";
-            ComboBoxEditor.DataValueField = "ValueInt";
+            ComboBoxEditor.DataValueField = "name";
             ComboBoxEditor.DataBind();
         }
 
-        public void LoadDropDownListPhanCap()
-        {
-            var loaipc = EnumHelper.GetDescriptionForBind(LoaiPhanCap.KhongXacDinh);
-            ComboBoxEditor1.DataSource = loaipc;
-            ComboBoxEditor1.DataTextField = "ValueString";
-            ComboBoxEditor1.DataValueField = "ValueInt";
-            ComboBoxEditor1.DataBind();
-        }
+        //public void LoadDropDownListPhanCap()
+        //{
+        //    var loaipc = EnumHelper.GetDescriptionForBind(LoaiPhanCap.KhongXacDinh);
+        //    ComboBoxEditor1.DataSource = loaipc;
+        //    ComboBoxEditor1.DataTextField = "ValueString";
+        //    ComboBoxEditor1.DataValueField = "ValueInt";
+        //    ComboBoxEditor1.DataBind();
+        //}
         public ListDuAnModelGridView GetValueSPS()
         {
             SearchProjectSetting sps = new SearchProjectSetting();
