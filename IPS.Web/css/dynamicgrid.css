@@ -1,0 +1,99 @@
+﻿.table-style
+{
+    width: 750px;
+    margin-right: 50px;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-top: 1px solid #CCCCCC;
+}
+
+.div-main
+{
+    width: 770px;
+    height: 200px;
+    overflow: auto;
+}
+
+.tr-header
+{
+    width: 100%;
+    height: 27px;
+    background: url(../images/wbg.gif) repeat-x;
+    border-left: 1px solid #CCCCCC;
+    border-right: 1px solid #CCCCCC;
+    border-bottom: 2px solid #CCCCCC;
+}
+
+.tr-select
+{
+    background-color: #D9EBF5;
+}
+
+.tr-detail
+{
+    width: 100%;
+    height: 30px;
+}
+
+.td-select-name
+{
+    width: 150px;
+    font-size: .8em;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.td-operator-name
+{
+    border-left: 1px solid #CCCCCC;
+    padding-left: 15px;
+    border-bottom: 1px solid #CCCCCC;
+    width: 100px;
+}
+
+.td-content-name
+{
+    border-left: 1px solid #CCCCCC;
+    padding-left: 15px;
+    border-bottom: 1px solid #CCCCCC;
+    width: 300px;
+}
+
+.input-style-one
+{
+    width: 250px;
+}
+
+.input-style-two
+{
+    width: 130px;
+}
+
+.input-style-two-left
+{
+    width: 130px;
+    margin-left: 10px;
+}
+
+.td-condition-name
+{
+    border-left: 1px solid #CCCCCC;
+    padding-left: 15px;
+    border-bottom: 1px solid #CCCCCC;
+    width: 100px;
+}
+
+.img-action
+{
+    width: 20px;
+    height: 20px;
+    padding-left: 15px;
+}
+
+.column-name-header
+{
+    width: 100%;
+    text-align: center;
+}

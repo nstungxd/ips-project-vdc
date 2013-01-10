@@ -6,144 +6,140 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <table>
+    <table cellpadding="0" cellspacing="2" width="100%" class="data_tbl">
         <tr>
-            <td>
-                <table>
-                    <tr>
-                        <td><b>Mã dự án</b></td>
-                        <td><cc2:VdcTextBox ID="txtMaDuAn" runat="server">
-                            </cc2:VdcTextBox>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Loại dự án</b></td>
-                        <td>
-                            <cc2:VdcDropDownList ID="ddlLoaiDuAn" runat="server">
-                            </cc2:VdcDropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Nhóm dự án</b></td>
-                        <td><cc2:VdcDropDownList ID="ddlNhomDuAn" runat="server">
-                            </cc2:VdcDropDownList></td>
-                    </tr>
-                    <tr>
-                        <td><b>Loại nguồn vốn</b></td>
-                        <td><cc2:VdcDropDownList ID="ddlLoaiNguonVon" runat="server">
-                            </cc2:VdcDropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Phân cấp</b></td>
-                        <td><cc2:VdcDropDownList ID="ddlPhanCap" runat="server">
-                            </cc2:VdcDropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </table>
+            <td valign="top" align="left" style="padding-top: 3px;">
+                <h3 class="tbl_title">
+                    <img align="absmiddle" height="21px" width="20px" src="../../images/vnpt_ico.png"
+                        class="png" style="padding-top: 3px; padding-left: 4px;">
+                    <span class="css_tieude">Danh sách dự án</span>
+                </h3>
             </td>
-            <td>
-                <table>
+        </tr>
+        <tr>
+            <td align="left" class="C_out">
+                <table cellpadding="0" cellspacing="1" width="100%" class="C_in">
                     <tr>
-                        <td><b>Đơn vị quản lý ĐT</b></td>
-                        <td><cc2:VdcDropDownList ID="ddlDonViQuanLyDT" runat="server" Height="150">
-                            </cc2:VdcDropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Đơn vị chủ đầu tư</b></td>
-                        <td><cc2:VdcDropDownList ID="ddlDonViChuDT" runat="server" Height="150">
-                            </cc2:VdcDropDownList>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Tổng vốn đầu tư</b></td>
-                        <td>
-                            <table>
+                        <td align="left">
+                            <table cellpadding="0" cellspacing="1">
                                 <tr>
-                                    <td><cc2:VdcDropDownList ID="ddlTTTongVonDT" runat="server">
-                                        </cc2:VdcDropDownList>
-                                    </td>
-                                    <td>
-                                        <cc2:VdcTextBox ID="txtTongVonDT" runat="server">
+                                    <td align="left" class="css_gchu">Mã dự án</td>
+                                    <td align="left">
+                                        <cc2:VdcTextBox ID="txtMaDuAn" runat="server" FolderStyle="btstyles/premiere_blue/VdcTextBox" Width="300px">
                                         </cc2:VdcTextBox>
                                     </td>
                                 </tr>
+                                <tr>
+                                    <td align="left" class="css_gchu">Loại dự án</td>
+                                    <td align="left">
+                                        <cc2:VdcDropDownList ID="ddlLoaiDuAn" runat="server" Width="300px">
+                                        </cc2:VdcDropDownList>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" class="css_gchu">Nhóm dự án</td>
+                                    <td align="left">
+                                        <cc2:VdcDropDownList ID="ddlNhomDuAn" runat="server" Width="300px">
+                                        </cc2:VdcDropDownList></td>
+                                </tr>
+                                <tr>
+                                    <td align="left" class="css_gchu">Loại nguồn vốn</td>
+                                    <td align="left">
+                                        <cc2:VdcDropDownList ID="ddlLoaiNguonVon" runat="server" Width="300px">
+                                        </cc2:VdcDropDownList>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" class="css_gchu">Phân cấp</td>
+                                    <td align="left">
+                                        <cc2:VdcDropDownList ID="ddlPhanCap" runat="server" Width="300px">
+                                        </cc2:VdcDropDownList>
+                                    </td>
+                                </tr>
                             </table>
                         </td>
-                    </tr>
-                    <tr>
-                        <td><b>Thời gian phát sinh</b></td>
-                        <td>
+                        <td align="left">
                             <table>
                                 <tr>
-                                    <td><cc2:VdcDropDownList ID="ddlTTThoiGianPhatSinh" runat="server">
+                                    <td align="left" class="css_gchu">Đơn vị quản lý ĐT</td>
+                                    <td align="left">
+                                        <cc2:VdcDropDownList ID="ddlDonViQuanLyDT" runat="server" Width="300px">
                                         </cc2:VdcDropDownList>
                                     </td>
-                                    <td>
-                                        <%--<cc2:VdcTextBox ID="txtThoiGianPhatSinh" runat="server">
-                                        </cc2:VdcTextBox>--%>
-                                        <cc2:VdcDropDownList ID="ddlThoiGianPhatSinh" runat="server">
+                                </tr>
+                                <tr>
+                                    <td align="left" class="css_gchu">Đơn vị chủ đầu tư</td>
+                                    <td align="left">
+                                        <cc2:VdcDropDownList ID="ddlDonViChuDT" runat="server" Width="300px">
                                         </cc2:VdcDropDownList>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" class="css_gchu">Tổng vốn đầu tư</td>
+                                    <td align="left">
+                                        <cc2:VdcDropDownList ID="ddlTTTongVonDT" runat="server" Width="100px">
+                                        </cc2:VdcDropDownList>
+                                        <cc2:VdcTextBox ID="txtTongVonDT" runat="server" Width="200px">
+                                        </cc2:VdcTextBox>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" class="css_gchu">Thời gian phát sinh</td>
+                                    <td align="left">
+                                        <cc2:VdcDropDownList ID="ddlTTThoiGianPhatSinh" runat="server" Width="100px">
+                                        </cc2:VdcDropDownList>
+                                        <cc2:VdcDropDownList ID="ddlThoiGianPhatSinh" runat="server" Width="200px">
+                                        </cc2:VdcDropDownList>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" class="css_gchu">Thời gian kết thúc</td>
+                                    <td>
+                                        <cc2:VdcDropDownList ID="ddlTTThoiGianKetThuc" runat="server" Width="100px">
+                                        </cc2:VdcDropDownList>
+                                        <cc2:VdcDropDownList ID="ddlThoiGianKetThuc" runat="server" Width="200px">
+                                        </cc2:VdcDropDownList>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left">&nbsp;</td>
+                                    <td align="left">
+                                        <cc2:VdcButton ID="btTimKiem" runat="server" Text="Tìm kiếm" OnClick="btTimKiem_Click" FolderStyle="btstyles/premiere_blue/VdcButton"></cc2:VdcButton>
                                     </td>
                                 </tr>
                             </table>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><b>Thời gian kết thúc</b></td>
-                        <td><table>
-                                <tr>
-                                    <td><cc2:VdcDropDownList ID="ddlTTThoiGianKetThuc" runat="server">
-                                        </cc2:VdcDropDownList>
-                                    </td>
-                                    <td>
-                                        <cc2:VdcDropDownList ID="ddlThoiGianKetThuc" runat="server">
-                                        </cc2:VdcDropDownList>
-                                    </td>
-                                </tr>
-                            </table></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td>
-                            <cc2:VdcButton ID="btTimKiem" runat="server" Text="Tìm kiếm" OnClick="btTimKiem_Click"></cc2:VdcButton>
                         </td>
                     </tr>
                 </table>
             </td>
         </tr>
         <tr>
-            <td colspan="2">
-                <cc1:Grid ID="Grid1" runat="server" 
-                    CallbackMode="True" 
-                    Serialize="True" 
-                    AllowAddingRecords="False" 
-                    AllowPageSizeSelection="False" 
-                    AllowRecordSelection="False" 
-                    AllowSorting="False" 
+            <td align="left">
+                <cc1:Grid ID="Grid1" runat="server"
+                    CallbackMode="false"
+                    Serialize="false"
+                    AllowAddingRecords="False"
+                    AllowPageSizeSelection="False"
+                    AllowRecordSelection="False"
+                    AllowSorting="False"
                     AutoGenerateColumns="false"
-                    FolderStyle="styles/premiere_blue">
-<AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
-<ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
-<FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
-<MasterDetailSettings LoadingMode="OnCallback" State="Collapsed"></MasterDetailSettings>
-<PagingSettings PageSizeSelectorPosition="Bottom" Position="Bottom" ShowRecordsCount="False"></PagingSettings>
-<ScrollingSettings FixedColumnsPosition="Left"></ScrollingSettings>
+                    FolderStyle="styles/premiere_blue" Width="990px">
+                    <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
+                    <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
+                    <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
+                    <MasterDetailSettings LoadingMode="OnCallback" State="Collapsed"></MasterDetailSettings>
+                    <PagingSettings PageSizeSelectorPosition="Bottom" Position="Bottom" ShowRecordsCount="False"></PagingSettings>
+                    <ScrollingSettings FixedColumnsPosition="Left" ScrollWidth="990px"></ScrollingSettings>
                     <Columns>
-                        <cc1:Column DataField="MaDonVi" Visible="false" />
-                        <cc1:Column DataField="IdDuAn" Visible="false" />
-                        <cc1:Column DataField="TenDuAn" HeaderText="Tên dự án" />
-                        <cc1:Column DataField="TenLoaiNguonVon" HeaderText="Loại nguồn vốn" />
-                        <cc1:Column DataField="TenLoaiPhanCap" HeaderText="Phân cấp" />
-                        <cc1:Column DataField="TenNhomDuAn" HeaderText="Nhóm" />
-                        <cc1:Column DataField="NamBatDau" HeaderText="Ngày phát sinh" />
-                        <cc1:Column DataField="NamKetThuc" HeaderText="Ngày kết thúc" />
-                        <cc1:Column DataField="TongVonDauTu" HeaderText="Tổng vốn đầu tư" />
+                        <cc1:Column DataField="MaDonVi" Visible="false" Width="" />
+                        <cc1:Column DataField="IdDuAn" Visible="false" Width="" />
+                        <cc1:Column DataField="TenDuAn" HeaderText="Tên dự án" Width="" />
+                        <cc1:Column DataField="LoaiNguonVonValue" HeaderText="Loại nguồn vốn" Width="" />
+                        <cc1:Column DataField="LoaiPhanCap" HeaderText="Phân cấp" Width="80px" />
+                        <cc1:Column DataField="NhomDuAn" HeaderText="Nhóm" Width="80px" />
+                        <cc1:Column DataField="NamBatDau" HeaderText="Ngày phát sinh" Width="90px" />
+                        <cc1:Column DataField="NamKetThuc" HeaderText="Ngày kết thúc" Width="90px" />
+                        <cc1:Column DataField="TongVonDauTu" HeaderText="Tổng vốn đầu tư" Width="" />
                         <cc1:Column HeaderText="Giám sát tình trạng">
                             <TemplateSettings TemplateId="GiamSatTinhTrang" />
                         </cc1:Column>
@@ -151,7 +147,7 @@
                     <Templates>
                         <cc1:GridTemplate runat="server" ID="GiamSatTinhTrang">
                             <Template>
-                                <a href="GiamSat1.aspx?madonvi=<%# Container.DataItem["MaDonVi"] %>&idduan=<%# Container.DataItem["IdDuAn"] %>">Thông tin chi tiết</a>
+                                <a href="ThongTinChiTietDuAn.aspx?madonvi=<%# Container.DataItem["MaDonVi"] %>&idduan=<%# Container.DataItem["IdDuAn"] %>">Thông tin chi tiết</a>
                             </Template>
                         </cc1:GridTemplate>
                     </Templates>
