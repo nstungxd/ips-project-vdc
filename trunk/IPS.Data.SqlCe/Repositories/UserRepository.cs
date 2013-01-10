@@ -6,7 +6,7 @@ using UnitSettingLibrary;
 
 namespace IPS.Data.SqlCe.Repositories
 {
-    public class UserRepository :IUser
+    public class UserRepository :IUserDataTier
     {
         private OracleConnection _connectGs;
         private OracleDataAdapter _oracleAdapter;
@@ -73,15 +73,32 @@ namespace IPS.Data.SqlCe.Repositories
             throw new System.NotImplementedException();
         }
 
-        public ChangeResultSettings XoaNguoiDung(string mdv, string nsd, string pas, string maDonVi, long nhomNguoiDungId)
+        public ChangeResultSettings XoaNguoiDung(string mdv, string nsd, string pas, string maDonVi, long nguoiDungId)
         {
             var result = new ChangeResultSettings();
             try
             {
-                result.ChangeResult = ChangeResult.ThanhCong;
+                ConnectDB.CloseConnection(_connectGs);
+                _connectGs = new OracleConnection();
+                _connectGs = ConnectDB.GetOracleConnection(_connectGs);
+                var cm = _connectGs.CreateCommand();
+                cm.CommandText = "usp_user_delete";
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.Add(new OracleParameter("mdv", OracleDbType.Varchar2)).Value = "";
+                cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "";
+                cm.Parameters.Add(new OracleParameter("pas", OracleDbType.Varchar2)).Value = "";
+                cm.Parameters.Add(new OracleParameter("ma_dvi", OracleDbType.Varchar2)).Value = maDonVi;
+                cm.Parameters.Add(new OracleParameter("so_id_xoa", OracleDbType.Long)).Value = nguoiDungId;
+                var op = new OracleParameter("row_updated", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
+                cm.Parameters.Add(op);
+                cm.ExecuteNonQuery();
+                var rowUpdated = cm.Parameters["row_updated"].Value.ToString();
+                if (rowUpdated == "" || rowUpdated == "0")
+                    result.ChangeResult = ChangeResult.ThatBai;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                result.Message = "Có lỗi trong quá trình xóa người dùng. Vui lòng thử lại!";
                 result.ChangeResult = ChangeResult.ThatBai;
             }
             return result;
@@ -92,24 +109,67 @@ namespace IPS.Data.SqlCe.Repositories
             var result = new ChangeResultSettings();
             try
             {
-                result.ChangeResult = ChangeResult.ThanhCong;
+                ConnectDB.CloseConnection(_connectGs);
+                _connectGs = new OracleConnection();
+                _connectGs = ConnectDB.GetOracleConnection(_connectGs);
+                var cm = _connectGs.CreateCommand();
+                cm.CommandText = "usp_check_exists_user";
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.Add(new OracleParameter("ma_dvi_check", OracleDbType.Varchar2)).Value = maDonVi;
+                cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = tenNguoiDung;
+                var op = new OracleParameter("total_result", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
+                cm.Parameters.Add(op);
+                cm.ExecuteNonQuery();
+                var total = Convert.ToInt32(cm.Parameters["total_result"].Value.ToString());
+                switch (total)
+                {
+                    case 0:
+                        result.ChangeResult = ChangeResult.ThanhCong;
+                        break;
+                    default:
+                        result.ChangeResult = ChangeResult.ThatBai;
+                        break;
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                result.Message = "Có lỗi trong quá trình kiểm tra tên đăng nhập. Vui lòng thử lại!";
                 result.ChangeResult = ChangeResult.ThatBai;
             }
             return result;
         }
 
-        public ChangeResultSettings IsExistsUserGroupName(int moduleId, string maDonVi, string tenNhom)
+        public ChangeResultSettings IsExistsUserGroupName(string moduleId, string maDonVi, string maNhom)
         {
             var result = new ChangeResultSettings();
             try
             {
-                result.ChangeResult = ChangeResult.ThanhCong;
+                ConnectDB.CloseConnection(_connectGs);
+                _connectGs = new OracleConnection();
+                _connectGs = ConnectDB.GetOracleConnection(_connectGs);
+                var cm = _connectGs.CreateCommand();
+                cm.CommandText = "usp_check_exists_usergroup";
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.Add(new OracleParameter("moduleId", OracleDbType.Varchar2)).Value = moduleId;
+                cm.Parameters.Add(new OracleParameter("ma_dvi_check", OracleDbType.Varchar2)).Value = maDonVi;
+                cm.Parameters.Add(new OracleParameter("ma_nhom_check", OracleDbType.Varchar2)).Value = maNhom;
+                var op = new OracleParameter("total_result", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
+                cm.Parameters.Add(op);
+                cm.ExecuteNonQuery();
+                var total = Convert.ToInt32(cm.Parameters["total_result"].Value.ToString());
+                switch (total)
+                {
+                    case 0:
+                        result.ChangeResult = ChangeResult.ThanhCong;
+                        break;
+                    default:
+                        result.ChangeResult = ChangeResult.ThatBai;
+                        break;
+                }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                result.Message = "Có lỗi trong quá trình kiểm tra tên nhóm. Vui lòng thử lại!";
                 result.ChangeResult = ChangeResult.ThatBai;
             }
             return result;
@@ -125,7 +185,7 @@ namespace IPS.Data.SqlCe.Repositories
                 _connectGs = new OracleConnection();
                 _connectGs = ConnectDB.GetOracleConnection(_connectGs);
                 var cm = _connectGs.CreateCommand();
-                cm.CommandText = "usp_login";
+                cm.CommandText = "usp_check_login";
                 cm.CommandType = CommandType.StoredProcedure;
                 cm.Parameters.Add(new OracleParameter("mdv", OracleDbType.Varchar2)).Value = maDonVi;
                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = userName;
@@ -159,6 +219,41 @@ namespace IPS.Data.SqlCe.Repositories
             catch (Exception ex)
             {
                 result.Message = "Có lỗi trong quá trình đăng nhập. Vui lòng thử lại!";
+                result.ChangeResult = ChangeResult.ThatBai;
+            }
+            return result;
+        }
+
+
+        public ChangeResultSettings IsExistsEmail(string email)
+        {
+            var result = new ChangeResultSettings();
+            try
+            {
+                ConnectDB.CloseConnection(_connectGs);
+                _connectGs = new OracleConnection();
+                _connectGs = ConnectDB.GetOracleConnection(_connectGs);
+                var cm = _connectGs.CreateCommand();
+                cm.CommandText = "usp_check_exists_email";
+                cm.CommandType = CommandType.StoredProcedure;
+                cm.Parameters.Add(new OracleParameter("email_check", OracleDbType.Varchar2)).Value = email;
+                var op = new OracleParameter("total_result", OracleDbType.Long, 15) { Direction = ParameterDirection.Output };
+                cm.Parameters.Add(op);
+                cm.ExecuteNonQuery();
+                var total = Convert.ToInt32(cm.Parameters["total_result"].Value.ToString());                              
+                switch (total)
+                {                    
+                    case 0:
+                        result.ChangeResult = ChangeResult.ThanhCong;
+                        break;
+                    default:
+                        result.ChangeResult = ChangeResult.ThatBai;                       
+                        break;                    
+                }
+            }
+            catch (Exception ex)
+            {
+                result.Message = "Có lỗi trong quá trình kiểm tra email. Vui lòng thử lại!";
                 result.ChangeResult = ChangeResult.ThatBai;
             }
             return result;

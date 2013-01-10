@@ -115,6 +115,14 @@ namespace BusinessLogic.Services
         ChangeResultSettings IsExistsUserName(string maDonVi, string tenNguoiDung);
 
         /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="email"></param>
+        /// <returns></returns>
+        [OperationContract]
+        ChangeResultSettings IsExistsEmail(string email);
+
+        /// <summary>
         /// kiem tra ton tai ten nhom
         /// </summary>
         /// <param name="moduleId"></param>
