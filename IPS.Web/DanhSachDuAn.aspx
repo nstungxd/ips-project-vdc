@@ -134,9 +134,9 @@
                         <cc1:Column DataField="MaDonVi" Visible="false" Width="" />
                         <cc1:Column DataField="IdDuAn" Visible="false" Width="" />
                         <cc1:Column DataField="TenDuAn" HeaderText="Tên dự án" Width="" />
-                        <cc1:Column DataField="LoaiNguonVonValue" HeaderText="Loại nguồn vốn" Width="" />
-                        <cc1:Column DataField="LoaiPhanCap" HeaderText="Phân cấp" Width="80px" />
-                        <cc1:Column DataField="NhomDuAn" HeaderText="Nhóm" Width="80px" />
+                        <cc1:Column DataField="TenLoaiNguonVon" HeaderText="Loại nguồn vốn" Width="" />
+                        <cc1:Column DataField="TenLoaiPhanCap" HeaderText="Phân cấp" Width="80px" />
+                        <cc1:Column DataField="TenNhomDuAn" HeaderText="Nhóm" Width="80px" />
                         <cc1:Column DataField="NamBatDau" HeaderText="Ngày phát sinh" Width="90px" />
                         <cc1:Column DataField="NamKetThuc" HeaderText="Ngày kết thúc" Width="90px" />
                         <cc1:Column DataField="TongVonDauTu" HeaderText="Tổng vốn đầu tư" Width="" />

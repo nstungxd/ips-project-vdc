@@ -17,7 +17,7 @@ namespace IPS.Web
         {
             if (!Page.IsPostBack)
             {
-                LoadGrid();
+                //LoadGrid();
                 LoadKeHoachVon();
                 LoadGridNhaThau();
                 LoadGridHopDong();
@@ -86,11 +86,13 @@ namespace IPS.Web
 
         public void LoadGridHopDong()
         {
-
-            //if (MaDonVi != null && SoIdGoiThau != null)
-            //{
-                //var result = giamsatService.DanhSachHopDong("", "", "", MaDonVi, Int64.Parse(SoIdGoiThau),200, 1);
-                 var result = giamsatService.DanhSachHopDong("", "", "", "51", 20120921644556,200, 1);
+            string MaDonVi = (string)Session["MaDonVi"];
+            string SoIdGoiThau = (string)Session["SoIdGoiThau"];
+            ShowAlert(MaDonVi + "!!!!" + SoIdGoiThau);
+            if (MaDonVi != null && SoIdGoiThau != null)
+            {
+                var result = giamsatService.DanhSachHopDong("", "", "", MaDonVi, Int64.Parse(SoIdGoiThau),200, 1);
+                 //var result = giamsatService.DanhSachHopDong("", "", "", "51", 20120921644556,200, 1);
                 if (result.HopDongModelsGridView != null)
                 {
                     var listDes = EnumHelper.GetDescriptionForBind(KetQuaGiamSat.ChamDoGPMB);
@@ -101,12 +103,15 @@ namespace IPS.Web
                 }
                 gridHopDong.DataSource = result.HopDongModelsGridView;
                 gridHopDong.DataBind();
-            //}
-            //else
-            //{
-            //    gridHopDong.DataSource = null;
-            //    gridHopDong.DataBind();
-            //}
+                UpdatePanel("CallbackPanel1");
+                Session["MaDonVi"] = null;
+                Session["SoIdGoiThau"] = null;
+            }
+            else
+            {
+                gridHopDong.DataSource = null;
+                gridHopDong.DataBind();
+            }
         }
 
 
@@ -258,7 +263,12 @@ namespace IPS.Web
             Session["Nam"] = Nam;
             LoadKeHoachVon();
         }
-
+        public void AddDonVi(string MaDonVi, string SoIdGoiThau)
+        {
+            Session["MaDonVi"] = MaDonVi;
+            Session["SoIdGoiThau"] = SoIdGoiThau;
+            LoadGridHopDong();
+        }
         public string CapNhatLoaiNguonVon(string ma_don_vi, string so_id_don_vi, string trang_thai)
         {
             ChangeResultSettings result = giamsatService.CapNhatLoaiNguonVon("", "", "", ma_don_vi, Int64.Parse(so_id_don_vi), Int32.Parse(trang_thai));
@@ -272,34 +282,34 @@ namespace IPS.Web
                 return result.Message;
             }
         }
-        public void LoadGrid()
-        {
+        //public void LoadGrid()
+        //{
 
-            string madonvi = Request.QueryString["madonvi"];
-            long idduan = Int64.Parse(Request.QueryString["idduan"]);
+        //    string madonvi = Request.QueryString["madonvi"];
+        //    long idduan = Int64.Parse(Request.QueryString["idduan"]);
 
-            var duAn = giamsatService.ChiTietDuAn("", "", "", madonvi, idduan);
-            hfMaDonVi.Value = madonvi;
-            hfSoIdDonVi.Value = idduan.ToString(CultureInfo.InvariantCulture);
+        //    var duAn = giamsatService.ChiTietDuAn("", "", "", madonvi, idduan);
+        //    hfMaDonVi.Value = madonvi;
+        //    hfSoIdDonVi.Value = idduan.ToString(CultureInfo.InvariantCulture);
 
-            lbMaDuAn.InnerText = duAn.MaDuAn;
-            lbLoaiDuAn.InnerText = duAn.TenLoaiDuAn;
-            lbNhomDuAn.InnerText = EnumHelper.GetDescription(duAn.NhomDuAn);
-            lbSoQuyetDinh.InnerText = duAn.SoQuyetDinh;
-            lbPhanCap.InnerText = EnumHelper.GetDescription(duAn.LoaiPhanCap);
-            lbDonViQuanLyDT.InnerText = duAn.TenDonViQuanLy;
-            lbDonViChuDT.InnerText = duAn.TenDonViThucHien;
-            lbTongVonDT.InnerText = duAn.TongVonDauTu.ToString(CultureInfo.InvariantCulture);
-            lbThoiGianPhatSinh.InnerText = duAn.NamBatDau.ToString(CultureInfo.InvariantCulture);
-            lbThoiGianKetThuc.InnerText = duAn.NamKetThuc.ToString(CultureInfo.InvariantCulture);
+        //    lbMaDuAn.InnerText = duAn.MaDuAn;
+        //    lbLoaiDuAn.InnerText = duAn.TenLoaiDuAn;
+        //    lbNhomDuAn.InnerText = EnumHelper.GetDescription(duAn.NhomDuAn);
+        //    lbSoQuyetDinh.InnerText = duAn.SoQuyetDinh;
+        //    lbPhanCap.InnerText = EnumHelper.GetDescription(duAn.LoaiPhanCap);
+        //    lbDonViQuanLyDT.InnerText = duAn.TenDonViQuanLy;
+        //    lbDonViChuDT.InnerText = duAn.TenDonViThucHien;
+        //    lbTongVonDT.InnerText = duAn.TongVonDauTu.ToString(CultureInfo.InvariantCulture);
+        //    lbThoiGianPhatSinh.InnerText = duAn.NamBatDau.ToString(CultureInfo.InvariantCulture);
+        //    lbThoiGianKetThuc.InnerText = duAn.NamKetThuc.ToString(CultureInfo.InvariantCulture);
 
 
-            var loainv = EnumHelper.GetDescriptionForBind(LoaiNguonVon.KhongXacDinh);
-            ddlLoaiNguonVon.DataSource = loainv;
-            ddlLoaiNguonVon.DataTextField = "ValueString";
-            ddlLoaiNguonVon.DataValueField = "ValueInt";
-            ddlLoaiNguonVon.SelectedValue = Convert.ToString((int)duAn.LoaiNguonVon);
-            ddlLoaiNguonVon.DataBind();
-        }
+        //    var loainv = EnumHelper.GetDescriptionForBind(LoaiNguonVon.KhongXacDinh);
+        //    ddlLoaiNguonVon.DataSource = loainv;
+        //    ddlLoaiNguonVon.DataTextField = "ValueString";
+        //    ddlLoaiNguonVon.DataValueField = "ValueInt";
+        //    ddlLoaiNguonVon.SelectedValue = Convert.ToString((int)duAn.LoaiNguonVon);
+        //    ddlLoaiNguonVon.DataBind();
+        //}
     }
 }

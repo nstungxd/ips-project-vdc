@@ -205,6 +205,7 @@
     <Content Include="GiamSat.aspx" />
     <Content Include="GiamSat1.aspx" />
     <Content Include="GiamSatDuAn.aspx" />
+    <Content Include="images\loading_icon.gif" />
     <Content Include="images\1351759116_document_select.gif" />
     <Content Include="images\1354759975_tick.png" />
     <Content Include="images\Accept.png" />
