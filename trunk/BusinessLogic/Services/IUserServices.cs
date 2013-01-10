@@ -24,7 +24,7 @@ namespace BusinessLogic.Services
         ChangeResultSettings CapNhatNhomNguoiDung(string mdv, string nsd, string pas, NhomNguoiDungModel nhomNguoiDung);
 
         /// <summary>
-        /// 
+        /// danh sach nhom nguoi dung
         /// </summary>
         /// <param name="mdv"></param>
         /// <param name="nsd"></param>
@@ -36,7 +36,7 @@ namespace BusinessLogic.Services
         List<NhomNguoiDungModel> DanhSachNhomNguoiDung(string mdv, string nsd, string pas, int moduleId, string maDonVi);
 
         /// <summary>
-        /// 
+        /// chi tiet nhom nguoi dung
         /// </summary>
         /// <param name="mdv"></param>
         /// <param name="nsd"></param>
@@ -48,7 +48,7 @@ namespace BusinessLogic.Services
         NhomNguoiDungModel ChiTietNhomNguoiDung(string mdv, string nsd, string pas, string maDonVi, string maNhom);
 
         /// <summary>
-        /// 
+        /// xoa nhom nguoi dung
         /// </summary>
         /// <param name="mdv"></param>
         /// <param name="nsd"></param>
@@ -71,7 +71,7 @@ namespace BusinessLogic.Services
         ChangeResultSettings CapNhatNguoiDung(string mdv, string nsd, string pas, NguoiDungModel nguoiDung);
 
         /// <summary>
-        /// 
+        /// lay danh sach nguoi dung
         /// </summary>
         /// <param name="mdv"></param>
         /// <param name="nsd"></param>
@@ -82,7 +82,7 @@ namespace BusinessLogic.Services
         List<NhomNguoiDungModel> DanhSachNguoiDung(string mdv, string nsd, string pas, string maDonVi);
 
         /// <summary>
-        /// 
+        /// chi tiet nguoi dung
         /// </summary>
         /// <param name="mdv"></param>
         /// <param name="nsd"></param>
@@ -94,7 +94,7 @@ namespace BusinessLogic.Services
         List<NhomNguoiDungModel> ChitietNguoiDung(string mdv, string nsd, string pas, string maDonVi, long nguoiDungId);
 
         /// <summary>
-        /// 
+        /// xoa nguoi dung
         /// </summary>
         /// <param name="mdv"></param>
         /// <param name="nsd"></param>
@@ -106,7 +106,7 @@ namespace BusinessLogic.Services
         ChangeResultSettings XoaNguoiDung(string mdv, string nsd, string pas, string maDonVi, long nhomNguoiDungId);
 
         /// <summary>
-        /// 
+        /// kiem tra ton tai ten nguoi dung
         /// </summary>
         /// <param name="maDonVi"></param>
         /// <param name="tenNguoiDung"></param>
@@ -115,7 +115,7 @@ namespace BusinessLogic.Services
         ChangeResultSettings IsExistsUserName(string maDonVi, string tenNguoiDung);
 
         /// <summary>
-        /// 
+        /// kiem tra ton tai ten nhom
         /// </summary>
         /// <param name="moduleId"></param>
         /// <param name="maDonVi"></param>
@@ -123,5 +123,15 @@ namespace BusinessLogic.Services
         /// <returns></returns>
         [OperationContract]
         ChangeResultSettings IsExistsUserGroupName(int moduleId, string maDonVi, string tenNhom);
+
+        /// <summary>
+        /// dang nhap he thong
+        /// </summary>
+        /// <param name="maDonVi"></param>
+        /// <param name="userName"></param>
+        /// <param name="pass"></param>
+        /// <returns></returns>
+        [OperationContract]
+        ChangeResultSettings Login(string maDonVi, string userName, string pass);
     }
 }

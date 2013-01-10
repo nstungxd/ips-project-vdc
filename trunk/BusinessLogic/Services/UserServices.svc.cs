@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IPS.Data.SqlCe.Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
@@ -61,6 +62,25 @@ namespace BusinessLogic.Services
         public ChangeResultSettings IsExistsUserGroupName(int moduleId, string maDonVi, string tenNhom)
         {
             throw new NotImplementedException();
+        }
+
+
+        public ChangeResultSettings Login(string maDonVi, string userName, string pass)
+        {
+            try
+            {
+                var userDataTier = new UserRepository();
+                var resultlogin = userDataTier.Login(maDonVi,userName,pass);
+                return resultlogin;
+            }
+            catch (Exception)
+            {
+                return new ChangeResultSettings()
+                           {
+                               ChangeResult = ChangeResult.ThatBai,
+                               Message = "Có lỗi trong quá trình đăng nhập. Vui lòng thử lại!"
+                           };                
+            }
         }
     }
 }
