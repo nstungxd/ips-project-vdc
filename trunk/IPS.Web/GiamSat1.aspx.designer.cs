@@ -13,6 +13,15 @@ namespace IPS.Web {
     public partial class GiamSat1 {
         
         /// <summary>
+        /// ddlNamKeHoach control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Interface.VdcDropDownList ddlNamKeHoach;
+        
+        /// <summary>
         /// btCapNhatKHV control.
         /// </summary>
         /// <remarks>
@@ -38,6 +47,15 @@ namespace IPS.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField gridNamKeHoachExcelData;
+        
+        /// <summary>
+        /// CallbackPanel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::VdcInc.CallbackPanel CallbackPanel2;
         
         /// <summary>
         /// gridNamKeHoach control.
@@ -76,6 +94,33 @@ namespace IPS.Web {
         protected global::Vdc.Grid.GridTemplate ComboBoxEditTemplateGrid1;
         
         /// <summary>
+        /// btCapNhatNhaThau control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Interface.VdcButton btCapNhatNhaThau;
+        
+        /// <summary>
+        /// gridNhaThauExcelDeletedIds control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField gridNhaThauExcelDeletedIds;
+        
+        /// <summary>
+        /// gridNhaThauExcelData control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField gridNhaThauExcelData;
+        
+        /// <summary>
         /// gridNhaThau control.
         /// </summary>
         /// <remarks>
@@ -92,6 +137,42 @@ namespace IPS.Web {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::Vdc.Grid.GridTemplate LinkTenGoiThau;
+        
+        /// <summary>
+        /// ReadOnlyTemplateGrid2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate ReadOnlyTemplateGrid2;
+        
+        /// <summary>
+        /// MultiLineTextBoxEditTemplateGrid2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate MultiLineTextBoxEditTemplateGrid2;
+        
+        /// <summary>
+        /// ComboBoxEditTemplateGrid2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate ComboBoxEditTemplateGrid2;
+        
+        /// <summary>
+        /// btCapNhatHopDong control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Interface.VdcButton btCapNhatHopDong;
         
         /// <summary>
         /// gridHopDongExcelDeletedIds control.

@@ -20,22 +20,8 @@
         function CapNhatGrid1() {
             var gr = $("input[id$='Grid1ExcelData']").val();
         }
-        function persistFieldValue(field) {
-            if (focusedGrid != null && focusedGrid._lastEditedField != null) {
-                if (focusedGrid._lastEditedFieldEditor.type == 'text' || focusedGrid._lastEditedFieldEditor.type == 'textarea') {
-                    focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.value;
-                } else {
-                    focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.checked ? 'yes' : 'no';
-
-                }
-                var a = document.getElementById(focusedGrid._editorid + 'Container');
-                var b = document.getElementById('FieldEditorsContainer');
-                b.appendChild(a);
-                focusedGrid._lastEditedField.style.display = '';
-
-                focusedGrid._lastEditedField = null;
-                focusedGrid._lastEditedFieldEditor = null;
-            }
+        function ComboBox_Open(sender) {
+            focusedGrid._keyNavigationIsEnabled = false;
         }
         function navigateThroughCells(sender, key, forced) {
             if (forced && focusedGrid != null) {
@@ -113,8 +99,22 @@
 
             return true;
         }
-        function ComboBox_Open(sender) {
-            focusedGrid._keyNavigationIsEnabled = false;
+        function persistFieldValue(field) {
+            if (focusedGrid != null && focusedGrid._lastEditedField != null) {
+                if (focusedGrid._lastEditedFieldEditor.type == 'text' || focusedGrid._lastEditedFieldEditor.type == 'textarea') {
+                    focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.value;
+                } else {
+                    focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.checked ? 'yes' : 'no';
+
+                }
+                var a = document.getElementById(focusedGrid._editorid + 'Container');
+                var b = document.getElementById('FieldEditorsContainer');
+                b.appendChild(a);
+                focusedGrid._lastEditedField.style.display = '';
+
+                focusedGrid._lastEditedField = null;
+                focusedGrid._lastEditedFieldEditor = null;
+            }
         }
     </script>
 </asp:Content>
@@ -280,5 +280,5 @@
                 </cc3:ComboBox>
             </div>
     </div>
-    <script src="Script/excel-style.js" type="text/javascript"></script>
+    <script src="Script/excel-style2.js" type="text/javascript"></script>
 </asp:Content>

@@ -99,10 +99,10 @@ vdcGrid.prototype.removeRow = function (link) {
 
 
 
-vdcGrid.prototype.saveExcelChanges = function () {
+vdcGrid.prototype.saveExcelChanges = function (excelDataHiddenID) {
     var excelData = new Array();
     var rowsContainer = this.GridBodyContainer.firstChild.firstChild.childNodes[1];
-    //tungns
+    //tungns123
     for (var i = 0; i < rowsContainer.childNodes.length; i++) {
         var row = rowsContainer.childNodes[i];
         var rowData = new Array();
@@ -112,7 +112,7 @@ vdcGrid.prototype.saveExcelChanges = function () {
         }
         excelData.push(rowData.join('|*cell*|'));
     }
-
+    this.ExcelDataContainer = document.getElementById(excelDataHiddenID);
     this.ExcelDataContainer.value = excelData.join('|*row*|');
 
     return true;
