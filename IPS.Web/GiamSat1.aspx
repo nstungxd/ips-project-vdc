@@ -41,7 +41,6 @@
         //}
         function ddlNamKeHoachOnChange(ddlId) {
             var ControlName = document.getElementById(ddlId.id);
-
             ob_post.AddParam('Nam', ControlName.value);
             ob_post.post(null, "AddKeHoachVon", EndLoadKHV);
         }
@@ -202,6 +201,75 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Content/CSS/excel-style.css" type="text/css" rel="Stylesheet" />
+    <table>
+        <tr>
+            <td>
+                <table>
+                    <tr>
+                        <td><b>Mã dự án</b></td>
+                        <td><label runat="server" id="lbMaDuAn"></label></td>
+                    </tr>
+                    <tr>
+                        <td><b>Loại dự án</b></td>
+                        <td><label runat="server" id="lbLoaiDuAn"></label></td>
+                    </tr>
+                    <tr>
+                        <td><b>Nhóm dự án</b></td>
+                        <td><label runat="server" id="lbNhomDuAn"></label></td>
+                    </tr>
+                    <tr>
+                        <td><b>Số quyết định</b></td>
+                        <td><label runat="server" id="lbSoQuyetDinh"></label></td>
+                    </tr>
+                    <tr>
+                        <td><b>Phân cấp</b></td>
+                        <td><label runat="server" id="lbPhanCap"></label></td>
+                    </tr>
+                    <tr>
+                        <td><b>Loại nguồn vốn</b></td>
+                        <td>
+                            <cc2:VdcDropDownList ID="ddlLoaiNguonVon" runat="server"></cc2:VdcDropDownList>
+                            <%--<asp:DropDownList ID="ddlLoaiNguonVon" runat="server"></asp:DropDownList>--%>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+            <td>
+                <table>
+                    <tr>
+                        <td><b>Đơn vị quản lý ĐT</b></td>
+                        <td><label runat="server" id="lbDonViQuanLyDT"></label></td>
+                    </tr>
+                    <tr>
+                        <td><b>Đơn vị chủ đầu tư</b></td>
+                        <td><label runat="server" id="lbDonViChuDT"></label></td>
+                    </tr>
+                    <tr>
+                        <td><b>Tổng vốn đầu tư</b></td>
+                        <td><label runat="server" id="lbTongVonDT"></label></td>
+                    <tr>
+                        <td><b>Thời gian phát sinh</b></td>
+                        <td><label runat="server" id="lbThoiGianPhatSinh"></label></td>
+                    </tr>
+                    <tr>
+                        <td><b>Thời gian kết thúc</b></td>
+                        <td><label runat="server" id="lbThoiGianKetThuc"></label></td>
+                    </tr>
+                    <tr>
+                        <td><cc2:VdcButton ID="VdcButton1" runat="server" Text="Cập nhật" OnClientClick="CapNhatLoaiNguonVon(); return false;"></cc2:VdcButton></td>
+                        <td>
+                            <asp:HiddenField ID="hfMaDonVi" runat="server"/>
+                            <asp:HiddenField ID="hfSoIdDonVi" runat="server"/>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <br />
+
     <%--<cc2:VdcDropDownList runat="server" ID="ddlNamKeHoach">
         <ClientSideEvents OnSelectedIndexChanged="ddlNamKeHoachOnChange" />
     </cc2:VdcDropDownList>--%>

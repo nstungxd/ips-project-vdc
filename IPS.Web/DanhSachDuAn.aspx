@@ -151,7 +151,7 @@
                     <Templates>
                         <cc1:GridTemplate runat="server" ID="GiamSatTinhTrang">
                             <Template>
-                                <a href="ThongTinChiTietDuAn.aspx?madonvi=<%# Container.DataItem["MaDonVi"] %>&idduan=<%# Container.DataItem["IdDuAn"] %>">Thông tin chi tiết</a>
+                                <a href="GiamSat1.aspx?madonvi=<%# Container.DataItem["MaDonVi"] %>&idduan=<%# Container.DataItem["IdDuAn"] %>">Thông tin chi tiết</a>
                             </Template>
                         </cc1:GridTemplate>
                     </Templates>
