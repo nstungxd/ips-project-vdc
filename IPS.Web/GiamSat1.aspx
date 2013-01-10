@@ -1,5 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="GiamSat1.aspx.cs" Inherits="IPS.Web.GiamSat1" %>
 
+<%@ Register Assembly="vdc_AJAXPage" Namespace="VdcInc" TagPrefix="vajax" %>
+
 <%@ Register Assembly="vdc_ComboBox" Namespace="Vdc.ComboBox" TagPrefix="cc3" %>
 
 <%@ Register Assembly="vdc_Interface" Namespace="Vdc.Interface" TagPrefix="cc2" %>
@@ -7,25 +9,68 @@
 <%@ Register Assembly="vdc_Grid_NET" Namespace="Vdc.Grid" TagPrefix="cc1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <script type="text/javascript">
-    window.onload = function () {
-        gridNamKeHoach.convertToExcel(
-                ['ReadOnly', 'ReadOnly', 'DropDownList', 'MultiLineTextBox','ReadOnly'],
+        window.onload = function () {
+            gridNamKeHoach.convertToExcel(
+                    ['ReadOnly', 'ReadOnly', 'DropDownList', 'MultiLineTextBox', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly'],
+                    '<%=gridNamKeHoachExcelData.ClientID %>',
+                '<%=gridNamKeHoachExcelDeletedIds.ClientID %>'
+                );
+            gridHopDong.convertToExcel(
+                    ['ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'DropDownList', 'MultiLineTextBox', 'ReadOnly'],
+                    '<%=gridHopDongExcelData.ClientID %>',
+                '<%=gridHopDongExcelDeletedIds.ClientID %>'
+                );
+            gridNhaThau.convertToExcel(
+                ['ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'DropDownList', 'MultiLineTextBox', 'ReadOnly'],
+                '<%=gridNhaThauExcelData.ClientID %>',
+                '<%=gridNhaThauExcelDeletedIds.ClientID %>'
+                );
+        }
+        function saveGridKHV() {
+            gridNamKeHoach.saveExcelChanges('<%=gridNamKeHoachExcelData.ClientID %>');
+        }
+        function saveGridHopDong() {
+            gridHopDong.saveExcelChanges('<%=gridHopDongExcelData.ClientID %>');
+        }
+        function saveGridNhaThau() {
+            gridNhaThau.saveExcelNhaThauChanges('<%=gridNhaThauExcelData.ClientID %>');
+        }
+        function ddlNamKeHoachOnChange(sender, index) {
+            ob_post.AddParam('Nam', sender.options[index].text);
+            ob_post.post(null, "AddKeHoachVon", EndLoadKHV);
+        }
+
+        function EndLoadKHV() {
+            gridNamKeHoach.convertToExcel(
+                ['ReadOnly', 'ReadOnly', 'DropDownList', 'MultiLineTextBox', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly'],
                 '<%=gridNamKeHoachExcelData.ClientID %>',
                 '<%=gridNamKeHoachExcelDeletedIds.ClientID %>'
                 );
-        gridHopDong.convertToExcel(
-                ['ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'ReadOnly', 'DropDownList', 'MultiLineTextBox'],
-                '<%=gridHopDongExcelData.ClientID %>',
-                '<%=gridHopDongExcelDeletedIds.ClientID %>'
-                );
-    }
+        }
         function CapNhatGridKHV() {
             var gr = $("input[id$='gridNamKeHoachExcelData']").val();
+            var valueNam = $("input[id$='ddlNamKeHoach']").val();
             ob_post.AddParam('stringGridKHV', gr);
+            ob_post.AddParam('Nam', valueNam);
             ob_post.post(null, "CapNhatKeHoachVon", ResultCapNhatKHV);
         }
-        function ResultCapNhatKHV(result, ex)
-        {
+        function CapNhatGridHopDong() {
+            var gr = $("input[id$='gridHopDongExcelData']").val();
+            ob_post.AddParam('stringGridHopDong', gr);
+            ob_post.post(null, "CapNhatHopDong", ResultCapNhatHopDong);
+        }
+        function CapNhatGridNhaThau() {
+            var gr = $("input[id$='gridNhaThauExcelData']").val();
+            ob_post.AddParam('stringGridNhaThau', gr);
+            ob_post.post(null, "CapNhatNhaThau", ResultCapNhatNhaThau);
+        }
+        function ResultCapNhatKHV(result, ex) {
+            alert(result);
+        }
+        function ResultCapNhatHopDong(result, ex) {
+            alert(result);
+        }
+        function ResultCapNhatNhaThau(result, ex) {
             alert(result);
         }
         function persistFieldValue(field) {
@@ -124,72 +169,113 @@
         function ComboBox_Open(sender) {
             focusedGrid._keyNavigationIsEnabled = false;
         }
+        //function CapNhatLoaiNguonVon() {
+        //    var value = $("input[id$='ddlLoaiNguonVon']").val();
+        //    var hfMadv = $("input[id$='hfMaDonVi']").val();
+        //    var hfSoIdDv = $("input[id$='hfSoIdDonVi']").val();
+        //    ob_post.AddParam('ma_don_vi', hfMadv);
+        //    ob_post.AddParam('so_id_don_vi', hfSoIdDv);
+        //    ob_post.AddParam('trang_thai', value);
+        //    ob_post.post(null, "CapNhatLoaiNguonVon", ResultCapNhat);
+        //}
+        //function ResultCapNhat(result, ex) {
+        //    alert(result);
+        //}
 
+
+        function MyFunction(a, b) {
+            //ob_post.AddParam('MaDonVi', a);
+            //ob_post.AddParam('SoIdGoiThau', b);
+            //ob_post.post(null, "AddDonVi", EndLoadHopDong);
+            alert(a + b);
+
+        }
+        //function EndLoadHopDong() {
+        //}
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <link href="Content/CSS/excel-style.css" type="text/css"rel="Stylesheet" />
-    <cc2:VdcButton ID="btCapNhatKHV" runat="server" OnClientClick="gridNamKeHoach.saveExcelChanges(); CapNhatGridKHV(); return false;" Text="Cập nhật"></cc2:VdcButton>
+    <link href="Content/CSS/excel-style.css" type="text/css" rel="Stylesheet" />
+    <cc2:VdcDropDownList runat="server" ID="ddlNamKeHoach">
+        <ClientSideEvents OnSelectedIndexChanged="ddlNamKeHoachOnChange" />
+    </cc2:VdcDropDownList>
+    <cc2:VdcButton ID="btCapNhatKHV" runat="server" OnClientClick="saveGridKHV();CapNhatGridKHV(); return false;" Text="Cập nhật"></cc2:VdcButton>
     <asp:HiddenField runat="server" ID="gridNamKeHoachExcelDeletedIds" />
     <asp:HiddenField runat="server" ID="gridNamKeHoachExcelData" />
-    <cc1:Grid ID="gridNamKeHoach" runat="server" CallbackMode="true" Serialize="false"
-        AllowAddingRecords="False"
-        AllowPageSizeSelection="False"
-        AllowRecordSelection="False"
-        AllowSorting="False"
-        AutoGenerateColumns="false"
-        FolderStyle="styles/premiere_blue" PageSize="-1" ShowFooter="false">
-        <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
-        <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
-        <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
-        <MasterDetailSettings LoadingMode="OnCallback" State="Collapsed"></MasterDetailSettings>
-        <PagingSettings PageSizeSelectorPosition="Bottom" Position="Bottom" ShowRecordsCount="False"></PagingSettings>
-        <ScrollingSettings FixedColumnsPosition="Left"></ScrollingSettings>
-        <Columns>
-            
-            <cc1:Column DataField="TenGiaiDoan" HeaderText="Tiến trình">
-                <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
-            </cc1:Column>
-            <cc1:Column DataField="TrangThaiThucHien" HeaderText="Trạng thái thực hiện">
-                <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
-            </cc1:Column>
-            <cc1:Column DataField="TenKetQuaGiamSat" HeaderText="Trạng thái giám sát">
-                <TemplateSettings TemplateId="ComboBoxEditTemplateGrid1" />
-            </cc1:Column>
-            <cc1:Column DataField="GhiChuGiamSat" HeaderText="Ghi chú">
-                <TemplateSettings TemplateId="MultiLineTextBoxEditTemplateGrid1" />
-            </cc1:Column>
-            <%--<cc1:Column DataField="IdGiamSat" HeaderText="vissible">
-                <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
-            </cc1:Column>--%>
-        </Columns>
-        <Templates>
-            <cc1:GridTemplate runat="server" ID="ReadOnlyTemplateGrid1">
-                <Template>
-                    <input type="text" name="TextBox1" class="excel-textbox" value='<%# Container.Value %>' readonly="readonly" />
-                </Template>
-            </cc1:GridTemplate>
-            <cc1:GridTemplate runat="server" ID="MultiLineTextBoxEditTemplateGrid1">
-                <Template>
-                    <input type="text" name="TextBox1" class="excel-textbox" value='<%# Container.Value %>' readonly="readonly"
-                        onfocus="gridNamKeHoach.editWithMultiLineTextBox(this)" />
-                </Template>
-            </cc1:GridTemplate>
-            <cc1:GridTemplate runat="server" ID="ComboBoxEditTemplateGrid1">
-                <Template>
-                    <input type="text" name="TextBox1" class="excel-textbox" value='<%# Container.Value %>' readonly="readonly"
-                        onfocus="gridNamKeHoach.editWithComboBox(this,'ComboBoxEditor')" />
-                </Template>
-            </cc1:GridTemplate>
-        </Templates>
-    </cc1:Grid>
 
-    <br />
-    <br />
-    <br />
-    <br />
+    <vajax:CallbackPanel ID="CallbackPanel2" runat="server">
+        <Content>
 
-    <cc1:Grid ID="gridNhaThau" runat="server" CallbackMode="true" Serialize="false"
+            <cc1:Grid ID="gridNamKeHoach" runat="server" CallbackMode="true" Serialize="false"
+                AllowAddingRecords="False"
+                AllowPageSizeSelection="False"
+                AllowRecordSelection="False"
+                AllowSorting="False"
+                AutoGenerateColumns="false"
+                FolderStyle="styles/premiere_blue" PageSize="-1" ShowFooter="false">
+                <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
+                <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
+                <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
+                <MasterDetailSettings LoadingMode="OnCallback" State="Collapsed"></MasterDetailSettings>
+                <PagingSettings PageSizeSelectorPosition="Bottom" Position="Bottom" ShowRecordsCount="False"></PagingSettings>
+                <ScrollingSettings FixedColumnsPosition="Left"></ScrollingSettings>
+                <Columns>
+
+                    <cc1:Column DataField="TenGiaiDoan" HeaderText="Tiến trình">
+                        <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
+                    </cc1:Column>
+                    <cc1:Column DataField="TrangThaiThucHien" HeaderText="Trạng thái thực hiện">
+                        <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
+                    </cc1:Column>
+                    <cc1:Column DataField="TenKetQuaGiamSat" HeaderText="Trạng thái giám sát">
+                        <TemplateSettings TemplateId="ComboBoxEditTemplateGrid1" />
+                    </cc1:Column>
+                    <cc1:Column DataField="GhiChuGiamSat" HeaderText="Ghi chú">
+                        <TemplateSettings TemplateId="MultiLineTextBoxEditTemplateGrid1" />
+                    </cc1:Column>
+                    <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat" Visible="false">
+                        <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
+                    </cc1:Column>
+                    <cc1:Column DataField="Dot" HeaderText="Dot" Visible="false">
+                        <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
+                    </cc1:Column>
+                    <cc1:Column DataField="SoQuyetDinh" HeaderText="SoQuyetDinh" Visible="false">
+                        <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
+                    </cc1:Column>
+                    <cc1:Column DataField="GiaiDoanKHV" HeaderText="GiaiDoanKHV" Visible="false">
+                        <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
+                    </cc1:Column>
+                </Columns>
+                <Templates>
+                    <cc1:GridTemplate runat="server" ID="ReadOnlyTemplateGrid1">
+                        <Template>
+                            <input type="text" name="TextBox1" class="excel-textbox" value='<%# Container.Value %>' readonly="readonly" />
+                        </Template>
+                    </cc1:GridTemplate>
+                    <cc1:GridTemplate runat="server" ID="MultiLineTextBoxEditTemplateGrid1">
+                        <Template>
+                            <input type="text" name="TextBox1" class="excel-textbox" value='<%# Container.Value %>' readonly="readonly"
+                                onfocus="gridNamKeHoach.editWithMultiLineTextBox(this)" />
+                        </Template>
+                    </cc1:GridTemplate>
+                    <cc1:GridTemplate runat="server" ID="ComboBoxEditTemplateGrid1">
+                        <Template>
+                            <input type="text" name="TextBox1" class="excel-textbox" value='<%# Container.Value %>' readonly="readonly"
+                                onfocus="gridNamKeHoach.editWithComboBox(this,'ComboBoxEditor')" />
+                        </Template>
+                    </cc1:GridTemplate>
+                </Templates>
+            </cc1:Grid>
+        </Content>
+    </vajax:CallbackPanel>
+    <br />
+    <br />
+    <br />
+    <br />
+    <cc2:VdcButton ID="btCapNhatNhaThau" runat="server" OnClientClick="saveGridNhaThau();CapNhatGridNhaThau(); return false;" Text="Cập nhật"></cc2:VdcButton>
+    <asp:HiddenField runat="server" ID="gridNhaThauExcelDeletedIds" />
+    <asp:HiddenField runat="server" ID="gridNhaThauExcelData" />
+    <cc1:Grid ID="gridNhaThau" runat="server" CallbackMode="true" Serialize="true"
         AllowAddingRecords="False"
         AllowPageSizeSelection="False"
         AllowRecordSelection="false"
@@ -203,21 +289,55 @@
         <PagingSettings PageSizeSelectorPosition="Bottom" Position="Bottom" ShowRecordsCount="False"></PagingSettings>
         <ScrollingSettings FixedColumnsPosition="Left"></ScrollingSettings>
         <Columns>
-            <cc1:Column DataField="MaDonVi" Visible="false"></cc1:Column>
-            <cc1:Column DataField="IdGoiThau" Visible="false"></cc1:Column>
+            <cc1:Column DataField="MaDonVi" Visible="false">
+                <TemplateSettings TemplateId="ReadOnlyTemplateGrid2" />
+            </cc1:Column>
+            <cc1:Column DataField="IdGoiThau" Visible="false">
+                <TemplateSettings TemplateId="ReadOnlyTemplateGrid2" />
+            </cc1:Column>
             <cc1:Column DataField="TenGoiThau" HeaderText="Gói thầu">
                 <TemplateSettings TemplateId="LinkTenGoiThau" />
             </cc1:Column>
-            <cc1:Column DataField="HinhThucDauThau" HeaderText="Hình thức đấu thầu"></cc1:Column>
-            <cc1:Column DataField="TenGiaiDoan" HeaderText="Tiến trình"></cc1:Column>
-            <cc1:Column DataField="TrangThaiThucHien" HeaderText="Trạng thái thực hiện"></cc1:Column>
-            <cc1:Column DataField="TenKetQuaGiamSat" HeaderText="Trạng thái giám sát"></cc1:Column>
-            <cc1:Column DataField="GhiChuGiamSat" HeaderText="Ghi chú"></cc1:Column>
+            <cc1:Column DataField="HinhThucDauThau" HeaderText="Hình thức đấu thầu">
+                <TemplateSettings TemplateId="ReadOnlyTemplateGrid2" />
+            </cc1:Column>
+            <cc1:Column DataField="TenGiaiDoan" HeaderText="Tiến trình">
+                <TemplateSettings TemplateId="ReadOnlyTemplateGrid2" />
+            </cc1:Column>
+            <cc1:Column DataField="TrangThaiThucHien" HeaderText="Trạng thái thực hiện">
+                <TemplateSettings TemplateId="ReadOnlyTemplateGrid2" />
+            </cc1:Column>
+            <cc1:Column DataField="TenKetQuaGiamSat" HeaderText="Trạng thái giám sát">
+                <TemplateSettings TemplateId="ComboBoxEditTemplateGrid2" />
+            </cc1:Column>
+            <cc1:Column DataField="GhiChuGiamSat" HeaderText="Ghi chú">
+                <TemplateSettings TemplateId="MultiLineTextBoxEditTemplateGrid2" />
+            </cc1:Column>
+            <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat">
+                <TemplateSettings TemplateId="ReadOnlyTemplateGrid2" />
+            </cc1:Column>
         </Columns>
         <Templates>
             <cc1:GridTemplate runat="server" ID="LinkTenGoiThau">
                 <Template>
                     <a id="myLink" href="#" onclick="MyFunction('<%# Container.DataItem["MaDonVi"] %>','<%# Container.DataItem["IdGoiThau"] %>');return false;"><%# Container.DataItem["TenGoiThau"] %></a>
+                </Template>
+            </cc1:GridTemplate>
+            <cc1:GridTemplate runat="server" ID="ReadOnlyTemplateGrid2">
+                <Template>
+                    <input type="text" name="TextBox1" class="excel-textbox" value='<%# Container.Value %>' readonly="readonly" />
+                </Template>
+            </cc1:GridTemplate>
+            <cc1:GridTemplate runat="server" ID="MultiLineTextBoxEditTemplateGrid2">
+                <Template>
+                    <input type="text" name="TextBox1" class="excel-textbox" value='<%# Container.Value %>' readonly="readonly"
+                        onfocus="gridNhaThau.editWithMultiLineTextBox(this)" />
+                </Template>
+            </cc1:GridTemplate>
+            <cc1:GridTemplate runat="server" ID="ComboBoxEditTemplateGrid2">
+                <Template>
+                    <input type="text" name="TextBox1" class="excel-textbox" value='<%# Container.Value %>' readonly="readonly"
+                        onfocus="gridNhaThau.editWithComboBox(this,'ComboBoxEditor')" />
                 </Template>
             </cc1:GridTemplate>
         </Templates>
@@ -227,6 +347,7 @@
     <br />
     <br />
     <br />
+    <cc2:VdcButton ID="btCapNhatHopDong" runat="server" OnClientClick="saveGridHopDong();CapNhatGridHopDong(); return false;" Text="Cập nhật"></cc2:VdcButton>
     <asp:HiddenField runat="server" ID="gridHopDongExcelDeletedIds" />
     <asp:HiddenField runat="server" ID="gridHopDongExcelData" />
     <cc1:Grid ID="gridHopDong" runat="server" CallbackMode="true" Serialize="false"
@@ -235,7 +356,7 @@
         AllowRecordSelection="False"
         AllowSorting="False"
         AutoGenerateColumns="false"
-        FolderStyle="styles/premiere_blue" PageSize="7">
+        FolderStyle="styles/premiere_blue" PageSize="-1" ShowFooter="false">
         <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
         <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
         <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
@@ -266,6 +387,9 @@
             </cc1:Column>
             <cc1:Column DataField="GhiChuGiamSat" HeaderText="Ghi chú">
                 <TemplateSettings TemplateId="MultiLineTextBoxEditTemplateGrid3" />
+            </cc1:Column>
+            <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat" Visible="false">
+                <TemplateSettings TemplateId="ReadOnlyTemplateGrid3" />
             </cc1:Column>
         </Columns>
         <Templates>
@@ -302,5 +426,5 @@
             </cc3:ComboBox>
         </div>
     </div>
-    <script src="Script/excel-style.js" type="text/javascript"></script>
+    <script src="Script/excel3.js" type="text/javascript"></script>
 </asp:Content>
