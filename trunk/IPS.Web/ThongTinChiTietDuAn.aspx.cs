@@ -106,7 +106,7 @@ namespace IPS.Web
             }
             gridNamKeHoach.DataSource = result;
             gridNamKeHoach.DataBind();
-            UpdatePanel("CallbackPanel2");
+            //UpdatePanel("CallbackPanel2");
             Session["Nam"] = null;
 
         }
@@ -153,7 +153,7 @@ namespace IPS.Web
                 gridHopDong.DataSource = null;
                 gridHopDong.DataBind();
             }
-            UpdatePanel("CallbackPanel1");
+            //UpdatePanel("CallbackPanel1");
             Session["MaDonVi"] = null;
             Session["SoIdGoiThau"] = null;
         }

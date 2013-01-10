@@ -174,34 +174,33 @@
                 focusedGrid._lastEditedFieldEditor = null;
             }
         }
-        //function CapNhatLoaiNguonVon() {
-        //    var value = $("input[id$='ddlLoaiNguonVon']").val();
-        //    var hfMadv = $("input[id$='hfMaDonVi']").val();
-        //    var hfSoIdDv = $("input[id$='hfSoIdDonVi']").val();
-        //    ob_post.AddParam('ma_don_vi', hfMadv);
-        //    ob_post.AddParam('so_id_don_vi', hfSoIdDv);
-        //    ob_post.AddParam('trang_thai', value);
-        //    ob_post.post(null, "CapNhatLoaiNguonVon", ResultCapNhat);
-        //}
-        //function ResultCapNhat(result, ex) {
-        //    alert(result);
-        //}
+        function CapNhatLoaiNguonVon() {
+            var value = $("select[id$='ddlLoaiNguonVon'] option:selected").val();
+            var hfMadv = $("input[id$='hfMaDonVi']").val();
+            var hfSoIdDv = $("input[id$='hfSoIdDonVi']").val();
+            ob_post.AddParam('ma_don_vi', hfMadv);
+            ob_post.AddParam('so_id_don_vi', hfSoIdDv);
+            ob_post.AddParam('trang_thai', value);
+            ob_post.post(null, "CapNhatLoaiNguonVon", ResultCapNhat);
+        }
+        function ResultCapNhat(result, ex) {
+            alert(result);
+        }
 
 
         function MyFunction(a, b) {
-            //ob_post.AddParam('MaDonVi', a);
-            //ob_post.AddParam('SoIdGoiThau', b);
-            //ob_post.post(null, "AddDonVi", EndLoadHopDong);
-            alert(a + b);
+            ob_post.AddParam('MaDonVi', a);
+            ob_post.AddParam('SoIdGoiThau', b);
+            ob_post.post(null, "AddDonVi", EndLoadHopDong);
 
         }
-        //function EndLoadHopDong() {
-        //}
+        function EndLoadHopDong() {
+        }
     </script>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Content/CSS/excel-style.css" type="text/css" rel="Stylesheet" />
-    <table>
+   <%-- <table>
         <tr>
             <td>
                 <table>
@@ -228,8 +227,7 @@
                     <tr>
                         <td><b>Loại nguồn vốn</b></td>
                         <td>
-                            <cc2:VdcDropDownList ID="ddlLoaiNguonVon" runat="server"></cc2:VdcDropDownList>
-                            <%--<asp:DropDownList ID="ddlLoaiNguonVon" runat="server"></asp:DropDownList>--%>
+                            <asp:DropDownList ID="ddlLoaiNguonVon" runat="server"></asp:DropDownList>
                         </td>
                     </tr>
                 </table>
@@ -268,7 +266,7 @@
     </table>
     <br />
     <br />
-    <br />
+    <br />--%>
 
     <%--<cc2:VdcDropDownList runat="server" ID="ddlNamKeHoach">
         <ClientSideEvents OnSelectedIndexChanged="ddlNamKeHoachOnChange" />
@@ -356,7 +354,7 @@
         AllowRecordSelection="false"
         AllowSorting="False"
         AutoGenerateColumns="false"
-        FolderStyle="styles/premiere_blue" PageSize="7" AllowMultiRecordSelection="False">
+        FolderStyle="styles/premiere_blue" PageSize="9" AllowMultiRecordSelection="False">
         <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
         <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
         <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
@@ -388,7 +386,7 @@
             <cc1:Column DataField="GhiChuGiamSat" HeaderText="Ghi chú">
                 <TemplateSettings TemplateId="MultiLineTextBoxEditTemplateGrid2" />
             </cc1:Column>
-            <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat">
+            <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat" Visible="false">
                 <TemplateSettings TemplateId="ReadOnlyTemplateGrid2" />
             </cc1:Column>
         </Columns>
@@ -425,6 +423,8 @@
     <cc2:VdcButton ID="btCapNhatHopDong" runat="server" OnClientClick="saveGridHopDong();CapNhatGridHopDong(); return false;" Text="Cập nhật"></cc2:VdcButton>
     <asp:HiddenField runat="server" ID="gridHopDongExcelDeletedIds" />
     <asp:HiddenField runat="server" ID="gridHopDongExcelData" />
+    <vajax:CallbackPanel ID="CallbackPanel1" runat="server">
+        <Content>
     <cc1:Grid ID="gridHopDong" runat="server" CallbackMode="true" Serialize="false"
         AllowAddingRecords="False"
         AllowPageSizeSelection="False"
@@ -487,6 +487,8 @@
             </cc1:GridTemplate>
         </Templates>
     </cc1:Grid>
+            </Content>
+        </vajax:CallbackPanel>
 
 
     <div style="display: none;" id="FieldEditorsContainer">
