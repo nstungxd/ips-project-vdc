@@ -233,7 +233,8 @@ namespace BusinessLogic.Services
                         khv.IdDuAn = idDuAn;
                         khv.MaDonVi = maDonVi;
                         khv.NamKHV = nam;
-                        khv.Dot = id;                        
+                        khv.Dot = id;
+                        khv.SoQuyetDinh = soQuyetDinh;  
                         khv.GiaiDoanKHV = GiaiDoanKHV.ThamDinhKHV;
                         khv.TinhTrangXoa = xoa;
                         if (trangThai == "td" || trangThai == "pd") khv.TrangThaiThucHien = "Hoàn thành";
@@ -449,7 +450,7 @@ namespace BusinessLogic.Services
             var giamSatDataTier = new GiamSatRepository();           
             var objData = giamSatDataTier.GiamSat(mdv, nsd, pas, loaiGiamSat, listGiamSat);
             return objData;
-        }
+        }   
 
 
         public List<DonViShortModel> DanhSachDonVi(string mdv, string nsd, string pas, string valueFirst = null)
