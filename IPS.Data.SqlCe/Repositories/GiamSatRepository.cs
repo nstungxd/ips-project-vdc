@@ -396,6 +396,7 @@ namespace IPS.Data.SqlCe.Repositories
                 ConnectDB.CloseConnection(_connectGs);
                 _connectGs = new OracleConnection();
                 _connectGs = ConnectDB.GetOracleConnection(_connectGs);
+
                 var cm = _connectGs.CreateCommand();
                 cm.CommandType = CommandType.StoredProcedure;
                 switch (loaiGiamSat)
@@ -405,6 +406,8 @@ namespace IPS.Data.SqlCe.Repositories
                         {
                             if (gs.GiamSatID == 0)
                             {
+                                cm = _connectGs.CreateCommand();
+                                cm.CommandType = CommandType.StoredProcedure;
                                 cm.CommandText = "usp_GS_KHV_Insert";
                                 cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
                                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "hoa";
@@ -426,6 +429,8 @@ namespace IPS.Data.SqlCe.Repositories
                             }
                             else
                             {
+                                cm = _connectGs.CreateCommand();
+                                cm.CommandType = CommandType.StoredProcedure;
                                 cm.CommandText = "usp_GS_KHV_Update";
                                 cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
                                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "hoa";
@@ -448,6 +453,8 @@ namespace IPS.Data.SqlCe.Repositories
                         {
                             if (gs.GiamSatID == 0)
                             {
+                                cm = _connectGs.CreateCommand();
+                                cm.CommandType = CommandType.StoredProcedure;
                                 cm.CommandText = "usp_GS_HDO_Insert";
                                 cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
                                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "hoa";
@@ -467,6 +474,8 @@ namespace IPS.Data.SqlCe.Repositories
                             }
                             else
                             {
+                                cm = _connectGs.CreateCommand();
+                                cm.CommandType = CommandType.StoredProcedure;
                                 cm.CommandText = "usp_GS_HDO_Update";
                                 cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
                                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "hoa";
@@ -489,6 +498,8 @@ namespace IPS.Data.SqlCe.Repositories
                         {
                             if (gs.GiamSatID == 0)
                             {
+                                cm = _connectGs.CreateCommand();
+                                cm.CommandType = CommandType.StoredProcedure;
                                 cm.CommandText = "usp_GS_GThau_Insert";
                                 cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
                                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "hoa";
@@ -508,6 +519,8 @@ namespace IPS.Data.SqlCe.Repositories
                             }
                             else
                             {
+                                cm = _connectGs.CreateCommand();
+                                cm.CommandType = CommandType.StoredProcedure;
                                 cm.CommandText = "usp_GS_GThau_Update";
                                 cm.Parameters.Add(new OracleParameter("ma_donvi", OracleDbType.Varchar2)).Value = "";
                                 cm.Parameters.Add(new OracleParameter("nsd", OracleDbType.Varchar2)).Value = "hoa";
@@ -530,7 +543,6 @@ namespace IPS.Data.SqlCe.Repositories
             {
                 result.ChangeResult = ChangeResult.ThatBai;
                 result.Message = ex.Message;
-                throw;
             }
             return result;
         }
