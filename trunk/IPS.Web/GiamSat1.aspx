@@ -54,7 +54,7 @@
         }
         function CapNhatGridKHV() {
             var gr = $("input[id$='gridNamKeHoachExcelData']").val();
-            var valueNam = $("input[id$='ddlNamKeHoach']").val();
+            var valueNam = $("select[id$='ddlNamKeHoach'] option:selected").val();
             ob_post.AddParam('stringGridKHV', gr);
             ob_post.AddParam('Nam', valueNam);
             ob_post.post(null, "CapNhatKeHoachVon", ResultCapNhatKHV);
@@ -70,6 +70,7 @@
             ob_post.post(null, "CapNhatNhaThau", ResultCapNhatNhaThau);
         }
         function ResultCapNhatKHV(result, ex) {
+            //ob_post.UpdatePanel("CallbackPanel2");
             alert(result);
         }
         function ResultCapNhatHopDong(result, ex) {
@@ -354,7 +355,7 @@
         AllowRecordSelection="false"
         AllowSorting="False"
         AutoGenerateColumns="false"
-        FolderStyle="styles/premiere_blue" PageSize="9" AllowMultiRecordSelection="False">
+        FolderStyle="styles/premiere_blue" PageSize="3" AllowMultiRecordSelection="False">
         <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
         <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
         <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
@@ -464,6 +465,12 @@
                 <TemplateSettings TemplateId="MultiLineTextBoxEditTemplateGrid3" />
             </cc1:Column>
             <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat" Visible="false">
+                <TemplateSettings TemplateId="ReadOnlyTemplateGrid3" />
+            </cc1:Column>
+            <cc1:Column DataField="IdHopDong" HeaderText="IdHopDong" Visible="false">
+                <TemplateSettings TemplateId="ReadOnlyTemplateGrid3" />
+            </cc1:Column>
+            <cc1:Column DataField="IdGoiThau" HeaderText="IdGoiThau" Visible="false">
                 <TemplateSettings TemplateId="ReadOnlyTemplateGrid3" />
             </cc1:Column>
         </Columns>
