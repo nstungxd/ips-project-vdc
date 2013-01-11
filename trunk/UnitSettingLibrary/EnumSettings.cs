@@ -155,25 +155,37 @@ namespace UnitSettingLibrary
         VpThuTucQuyHoach = 0,
         [Description("Vi phạm thẩm quyền phê duyệt")]
         VpThuTucThamQuyenPheDuyet = 1,
+        [Description("Vi phạm thủ tục trình tự thẩm định")]
         VpThuTucTrinhTuThamDinh = 2,
+        [Description("Vi phạm quản lý chất lượng")]
         VpQuanLyChatLuong = 3,
-        [Description("Vi phạm hợp đồng")]
+        [Description("Vi phạm đấu thầu")]
         VpDauThau = 4,
         [Description("Vi phạm ký hợp đồng")]
         VpKyHd = 5,
+        [Description("Vi phạm quản lý đầu tư")]
         VpQuanLyDauTu = 6,
+        [Description("Vi phạm bảo vệ môi trường")]
         VpBaoVeMoiTruong = 7,
+        [Description("Vi phạm sử dụng đất đai")]
         VpSuDungDatDai = 8,
+        [Description("Vi phạm quản lý tài nguyên")]
         VpQuanLyTaiNguyen = 9,
 
         [Description("Chậm tiến độ do thủ tục")]
         ChamDoThuTuc = 100,
+        [Description("Chậm tiến độ do giải phóng mặt bằng")]
         ChamDoGPMB = 101,
+        [Description("Chậm tiến độ do năng lực")]
         ChamDoNangLuc = 102,
+        [Description("Chậm tiến độ do vốn")]
         ChamDoVon = 103,
+        [Description("Chậm tiến độ do lý do khác")]
         ChamDoKhac = 104,
 
+        [Description("Thất thoát lãng phí")]
         ThatThoatLangPhi = 200,
+        [Description("Sử dụng không hiệu quả")]
         SuDungKoHieuQua = 201
     }
 
