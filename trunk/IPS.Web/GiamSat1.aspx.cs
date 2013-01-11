@@ -133,7 +133,7 @@ namespace IPS.Web
             string[] cellSeparator = new string[] { "|*cell*|" };
             string[] dataRows = excelData.Split(rowSeparator, StringSplitOptions.None);
             string a = "";
-            
+            GiamSatSetting[] subjects = new GiamSatSetting[dataRows.Length];
             for (int i = 0; i < dataRows.Length; i++)
             {
                 string[] dataCells = dataRows[i].Split(cellSeparator, StringSplitOptions.None);
@@ -145,11 +145,11 @@ namespace IPS.Web
                 string GhiChu = dataCells[3];
                 string GiamSatId = dataCells[4];
                 string Dot = dataCells[5];
-                string SoQuyetDinh = " ";
+                string SoQuyetDinh = dataCells[6];
                 string GiaiDoanKHV = dataCells[7];
 
                 //if(GiamSatId != "0"){
-                GiamSatSetting[] subjects = new GiamSatSetting[1];
+                
                     GiamSatSetting gss = new GiamSatSetting();
                     gss.MaDonVi = madonvi;
                     gss.DuAnID = idduan;
@@ -158,23 +158,23 @@ namespace IPS.Web
                     gss.KetQuaGiamSat = EnumHelper.GetEnumValueFromDescription<KetQuaGiamSat>(TenKetQuaGiamSat);
                     gss.GhiChu = GhiChu;
                     gss.DotKHV = Convert.ToInt32(Dot);
-                    gss.SoQD = SoQuyetDinh;
+                    gss.SoQD = SoQuyetDinh =="" ? " ": SoQuyetDinh;
                     gss.GiamSatID = Int64.Parse(GiamSatId);
-                    subjects[0] = gss;
-                    ChangeResultSettings result = giamsatService.GiamSat("", "", "", (int)LoaiGiamSat.GiamSatKHV, subjects);
-                    if (result.ChangeResult == ChangeResult.ThanhCong)
-                    {
-                        a += "Cập nhật thành công |";
-                    }
-                    else
-                    {
-                        a += result.Message + " |";
-                    }
+                    subjects[i] = gss;
+                    
                     
                 //}
                 //else a += " khong insert";
             }
-            
+            ChangeResultSettings result = giamsatService.GiamSat("", "", "", (int)LoaiGiamSat.GiamSatKHV, subjects);
+            if (result.ChangeResult == ChangeResult.ThanhCong)
+            {
+                a += "Cập nhật thành công |";
+            }
+            else
+            {
+                a += result.Message + " |";
+            }
             return a;
         }
 

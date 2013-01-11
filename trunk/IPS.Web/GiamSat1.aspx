@@ -307,16 +307,16 @@
                     <cc1:Column DataField="GhiChuGiamSat" HeaderText="Ghi chú">
                         <TemplateSettings TemplateId="MultiLineTextBoxEditTemplateGrid1" />
                     </cc1:Column>
-                    <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat" Visible="false">
+                    <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat">
                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
                     </cc1:Column>
                     <cc1:Column DataField="Dot" HeaderText="Dot" Visible="false">
                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
                     </cc1:Column>
-                    <cc1:Column DataField="SoQuyetDinh" HeaderText="SoQuyetDinh" Visible="false">
+                    <cc1:Column DataField="SoQuyetDinh" HeaderText="SoQuyetDinh">
                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
                     </cc1:Column>
-                    <cc1:Column DataField="GiaiDoanKHV" HeaderText="GiaiDoanKHV" Visible="false">
+                    <cc1:Column DataField="GiaiDoanKHV" HeaderText="GiaiDoanKHV">
                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
                     </cc1:Column>
                 </Columns>
