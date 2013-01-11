@@ -133,6 +133,7 @@ namespace IPS.Web
             string[] cellSeparator = new string[] { "|*cell*|" };
             string[] dataRows = excelData.Split(rowSeparator, StringSplitOptions.None);
             string a = "";
+            
             for (int i = 0; i < dataRows.Length; i++)
             {
                 string[] dataCells = dataRows[i].Split(cellSeparator, StringSplitOptions.None);
@@ -144,20 +145,21 @@ namespace IPS.Web
                 string GhiChu = dataCells[3];
                 string GiamSatId = dataCells[4];
                 string Dot = dataCells[5];
-                string SoQuyetDinh = dataCells[6];
+                string SoQuyetDinh = " ";
                 string GiaiDoanKHV = dataCells[7];
 
-                if(GiamSatId != "0"){
-                    GiamSatSetting[] subjects = new GiamSatSetting[1];
+                //if(GiamSatId != "0"){
+                GiamSatSetting[] subjects = new GiamSatSetting[1];
                     GiamSatSetting gss = new GiamSatSetting();
-                    gss.GiamSatID = Int64.Parse(GiamSatId);
                     gss.MaDonVi = madonvi;
                     gss.DuAnID = idduan;
-                    gss.NamKHV = Int32.Parse(Nam);
+                    gss.NamKHV = Int32.Parse(Nam);                   
                     gss.GiaiDoanKHV = (GiaiDoanKHV)Convert.ToInt32(GiaiDoanKHV);
-                    gss.SoQD = SoQuyetDinh;
-                    gss.DotKHV = Convert.ToInt32(Dot);
+                    gss.KetQuaGiamSat = EnumHelper.GetEnumValueFromDescription<KetQuaGiamSat>(TenKetQuaGiamSat);
                     gss.GhiChu = GhiChu;
+                    gss.DotKHV = Convert.ToInt32(Dot);
+                    gss.SoQD = SoQuyetDinh;
+                    gss.GiamSatID = Int64.Parse(GiamSatId);
                     subjects[0] = gss;
                     ChangeResultSettings result = giamsatService.GiamSat("", "", "", (int)LoaiGiamSat.GiamSatKHV, subjects);
                     if (result.ChangeResult == ChangeResult.ThanhCong)
@@ -168,19 +170,24 @@ namespace IPS.Web
                     {
                         a += result.Message + " |";
                     }
-                }
-                else a += " khong insert";
+                    
+                //}
+                //else a += " khong insert";
             }
+            
             return a;
         }
 
         public string CapNhatHopDong(string stringGridHopDong)
         {
+            string madonvi = "56";
+            long idduan = 20111118624371;
             string excelData = stringGridHopDong;
             string[] rowSeparator = new string[] { "|*row*|" };
             string[] cellSeparator = new string[] { "|*cell*|" };
             string[] dataRows = excelData.Split(rowSeparator, StringSplitOptions.None);
             string a = "";
+            GiamSatSetting[] subjects = new GiamSatSetting[dataRows.Length];
             for (int i = 0; i < dataRows.Length; i++)
             {
                 string[] dataCells = dataRows[i].Split(cellSeparator, StringSplitOptions.None);
@@ -195,68 +202,88 @@ namespace IPS.Web
                 string Ttgiamsat = dataCells[6];
                 string Ghichu = dataCells[7];
                 string GiamSatId = dataCells[8];
+                string HopDongId = dataCells[9];
+                string GoiThauId = dataCells[10];
 
-                if (GiamSatId != "0")
-                {
-                    GiamSatSetting[] subjects = new GiamSatSetting[1];
+                //if (GiamSatId != "0")
+                //{
+                    
                     GiamSatSetting gss = new GiamSatSetting();
+                    gss.MaDonVi = madonvi;
+                    gss.DuAnID = idduan;
+                    gss.HopDongID = Int64.Parse(HopDongId);
                     gss.GiamSatID = Int64.Parse(GiamSatId);
+                    gss.GoiThauID = Int64.Parse(GoiThauId);
+                    gss.KetQuaGiamSat = EnumHelper.GetEnumValueFromDescription<KetQuaGiamSat>(Ttgiamsat);
                     gss.GhiChu = Ghichu;
-                    subjects[0] = gss;
-                    ChangeResultSettings result = giamsatService.GiamSat("", "", "", (int)LoaiGiamSat.GiamSatHopDong, subjects);
-                    if (result.ChangeResult == ChangeResult.ThanhCong)
-                    {
-                        a += "Cập nhật thành công |";
-                    }
-                    else
-                    {
-                        a += result.Message + " |";
-                    }
-                }
-                else a += "khong insert |";
+                    subjects[i] = gss;
+                    
+                //}
+                //else a += "khong insert |";
+            }
+            ChangeResultSettings result = giamsatService.GiamSat("", "", "", (int)LoaiGiamSat.GiamSatHopDong, subjects);
+            if (result.ChangeResult == ChangeResult.ThanhCong)
+            {
+                a += "Cập nhật thành công |";
+            }
+            else
+            {
+                a += result.Message + " |";
             }
             return a;
         }
 
         public string CapNhatNhaThau(string stringGridNhaThau)
         {
-            ShowAlert(stringGridNhaThau);
-            return stringGridNhaThau;
-            //string excelData = stringGridNhaThau;
-            //string[] rowSeparator = new string[] { "|*row*|" };
-            //string[] cellSeparator = new string[] { "|*cell*|" };
-            //string[] dataRows = excelData.Split(rowSeparator, StringSplitOptions.None);
-            //string a = "";
-            //for (int i = 0; i < dataRows.Length; i++)
-            //{
-            //    string[] dataCells = dataRows[i].Split(cellSeparator, StringSplitOptions.None);
+            string madonvi = "56";
+            long idduan = 20111118624371;
+            string excelData = stringGridNhaThau;
+            string[] rowSeparator = new string[] { "|*row*|" };
+            string[] cellSeparator = new string[] { "|*cell*|" };
+            string[] dataRows = excelData.Split(rowSeparator, StringSplitOptions.None);
+            string a = "";
+            GiamSatSetting[] subjects = new GiamSatSetting[dataRows.Length];
+            for (int i = 0; i < dataRows.Length; i++)
+            {
+                string[] dataCells = dataRows[i].Split(cellSeparator, StringSplitOptions.None);
 
-            //    string TenHopDong = dataCells[0];
-            //    string BenA = dataCells[1];
-            //    string BenB = dataCells[2];
-            //    string GiamSatId = dataCells[3];
-            //    string Ghichu = dataCells[7];
+                string MaDonVi = dataCells[0];
+                string IdGoiThau = dataCells[1];
+                string HinhThucDauThau = dataCells[2];
+                string TenGiaiDoan = dataCells[3];
+                string TrangThaiThucHien = dataCells[4];
+                string TenKetQuaGiamSat = dataCells[5];
+                string GhiChuGiamSat = dataCells[6];
+                string GiamSatId = dataCells[7];
 
-            //    if (GiamSatId != "0")
-            //    {
-            //        GiamSatSetting[] subjects = new GiamSatSetting[1];
-            //        GiamSatSetting gss = new GiamSatSetting();
-            //        gss.GiamSatID = Int64.Parse(GiamSatId);
-            //        gss.GhiChu = Ghichu;
-            //        subjects[0] = gss;
-            //        ChangeResultSettings result = giamsatService.GiamSat("", "", "", (int)LoaiGiamSat.GiamSatHopDong, subjects);
-            //        if (result.ChangeResult == ChangeResult.ThanhCong)
-            //        {
-            //            a += "Cập nhật thành công |";
-            //        }
-            //        else
-            //        {
-            //            a += result.Message + " |";
-            //        }
-            //    }
-            //    else a += "khong insert |";
-            //}
-            //return a;
+                //if (GiamSatId != "0")
+                //{
+                
+                    GiamSatSetting gss = new GiamSatSetting();
+                    gss.MaDonVi = madonvi;
+                    gss.DuAnID = idduan;
+                    gss.GoiThauID =Int64.Parse(IdGoiThau);
+                    gss.GiaiDoanChonNhaThau = EnumHelper.GetEnumValueFromDescription<GiaiDoanChonNhaThau>(TenGiaiDoan);
+                    gss.KetQuaGiamSat = EnumHelper.GetEnumValueFromDescription<KetQuaGiamSat>(TenKetQuaGiamSat);
+                    gss.GiamSatID = Int64.Parse(GiamSatId);
+                    gss.GhiChu = GhiChuGiamSat;
+                    subjects[i] = gss;
+
+                    
+                    
+                //}
+                //else a += "khong insert |";
+            }
+            ChangeResultSettings result = giamsatService.GiamSat("", "", "", (int)LoaiGiamSat.GiamSatChonNhaThau, subjects);
+            if (result.ChangeResult == ChangeResult.ThanhCong)
+            {
+                a += "Cập nhật thành công";
+            }
+            else
+            {
+                a += result.Message;
+            }
+            return a;
         }
         public void AddKeHoachVon(string Nam)
         {
