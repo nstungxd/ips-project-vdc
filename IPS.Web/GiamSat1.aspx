@@ -201,7 +201,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <link href="Content/CSS/excel-style.css" type="text/css" rel="Stylesheet" />
-   <%-- <table>
+    <table>
         <tr>
             <td>
                 <table>
@@ -267,7 +267,7 @@
     </table>
     <br />
     <br />
-    <br />--%>
+    <br />
 
     <%--<cc2:VdcDropDownList runat="server" ID="ddlNamKeHoach">
         <ClientSideEvents OnSelectedIndexChanged="ddlNamKeHoachOnChange" />
@@ -307,16 +307,16 @@
                     <cc1:Column DataField="GhiChuGiamSat" HeaderText="Ghi chú">
                         <TemplateSettings TemplateId="MultiLineTextBoxEditTemplateGrid1" />
                     </cc1:Column>
-                    <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat">
+                    <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat" Visible="false">
                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
                     </cc1:Column>
                     <cc1:Column DataField="Dot" HeaderText="Dot" Visible="false">
                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
                     </cc1:Column>
-                    <cc1:Column DataField="SoQuyetDinh" HeaderText="SoQuyetDinh">
+                    <cc1:Column DataField="SoQuyetDinh" HeaderText="SoQuyetDinh" Visible="false">
                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
                     </cc1:Column>
-                    <cc1:Column DataField="GiaiDoanKHV" HeaderText="GiaiDoanKHV">
+                    <cc1:Column DataField="GiaiDoanKHV" HeaderText="GiaiDoanKHV" Visible="false">
                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid1" />
                     </cc1:Column>
                 </Columns>
