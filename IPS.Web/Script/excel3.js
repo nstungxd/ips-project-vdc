@@ -191,6 +191,7 @@ vdcGrid.prototype.editCell = function (textbox, editorId) {
     }
     else {
         editor = document.getElementById(this.UniqueID.replace(this.ID, "") + editorId);
+        editor.onblur = persistFieldValue;  
     }
     var typee = editor.type;
     if (typee == 'text' || typee == 'textarea') {
