@@ -346,6 +346,7 @@
     <br />
     <br />
     <br />
+    
     <cc2:VdcButton ID="btCapNhatNhaThau" runat="server" OnClientClick="saveGridNhaThau();CapNhatGridNhaThau(); return false;" Text="Cập nhật"></cc2:VdcButton>
     <asp:HiddenField runat="server" ID="gridNhaThauExcelDeletedIds" />
     <asp:HiddenField runat="server" ID="gridNhaThauExcelData" />

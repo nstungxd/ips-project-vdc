@@ -80,6 +80,7 @@ namespace IPS.Web
             }
             gridNhaThau.DataSource = result.GoiThauModelsGridView;
             gridNhaThau.DataBind();
+            UpdatePanel("CallbackPanel3");
         }
 
         public void LoadGridHopDong()
@@ -163,7 +164,7 @@ namespace IPS.Web
             {
                 a += result.Message;
             }
-            //LoadKeHoachVon();
+            LoadKeHoachVon();
             return a;
         }
 
