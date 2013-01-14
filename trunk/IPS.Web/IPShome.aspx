@@ -1,23 +1,19 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="IPS.Web.Site" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="IPShome.aspx.cs" Inherits="IPS.Web.IPShome" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
-    <%--<script src="Scripts/jquery-1.8.2.min.js" type="text/javascript"></script>--%>
+    <title>Trang chủ hệ thống tổng hợp, giám sát đầu tư VNPT</title>
     <link href="css/s_font.css" rel="stylesheet" type="text/css" />
     <link href="css/login.css" rel="stylesheet" type="text/css" />
     <link href="css/style_vnpt.css" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
     <div>
-     
-            <table style="height: 100%; width: 100%;" id="container" cellpadding="0" cellspacing="0">
+       <table style="height: 100%; width: 100%;" id="container" cellpadding="0" cellspacing="0">
         <tr>
             <td valign="top">
                 <table cellpadding="0" cellspacing="0" width="100%">
@@ -53,19 +49,23 @@
             </td>
         </tr>
         <tr>
-            <td align="center" valign="top" bgcolor="#004892">
-                <div style="width:100%; float:left; min-height:600px;">
+            <td align="center" valign="top">
+                <div class="IPS_content">
                     <div class="IPS_wrap">
-                        <div class="IPS_wrap_content">   <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder></div>
+                        <div class="slide" align="center" style="padding:15px 39px 0 39px;"><img src="images/IPS_slide.png" width="870px" height="292px" /></div>
+                        <div class="function">
+                            <ul>
+                                <li class="ls_selected"><a href="#">PHÂN TÍCH VÀ QUẢN LÝ DỮ LIỆU KẾ HOẠCH</a></li>
+                                <li><a href="DanhSachDuAn.aspx">TỔNG HỢP, GIÁM SÁT THÔNG TIN DỰ ÁN ĐẦU TƯ</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </td>
         </tr>
         <tr>
-            <td align="left" width="100%">
-                <div id="footer"><div class="menu_area" style="padding:5px 5px 5px 0px;"><b>Copyrights 2012 by VNPT</b></div></div>
-                
-
+            <td align="left" id="footer">
+                <div class="menu_area" style="padding:5px 5px 5px 150px;"><b>Copyrights 2012 by VNPT</b></div>
             </td>
         </tr>
     </table>

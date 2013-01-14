@@ -1,33 +1,4 @@
-@charset "UTF-8";
-
-/** 
- * Default CSS Drop-Down Menu Theme
- *
- * @file		default.css
- * @name		Default
- * @version		0.1.1
- * @type		transitional
- * @browsers	Windows: IE5+, Opera7+, Firefox1+
- *				Mac OS: Safari2+, Firefox2+
- *
- * @link		http://www.lwis.net/
- * @copyright	2008 Live Web Institute. All Rights Reserved.
- *
- * Module Classes: *.dir {} *.on {} *.open {} li.hover {} li.first {} li.last {}
- * Expected directory tag - li
- *
- */
-
-
-/*-------------------------------------------------/
- * @section		Base Drop-Down Styling
- * @structure	ul (unordered list)
- *				ul li (list item)
- *				ul li a (links)
- *				/*\.class|(li|a):hover/
- * @level sep	ul
- */
-
+﻿@charset "UTF-8";
 
 ul.dropdown {
  font-weight: bold;

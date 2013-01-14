@@ -193,7 +193,7 @@ input.light_blue_butt_s {
 	background-color:#f2f2f2;
 	padding:5px;
 }
-h3.C_in_title {
+h3.C_in_title, span.C_in_title {
 	margin:0;
 	font-size:12px;
 	font-weight:bold;
@@ -521,3 +521,12 @@ function ul li a, function ul li a:hover, function ul li a:visited, function ul 
     {
 
     }
+.float_left
+{
+    float:left;
+}
+
+.float_right
+{
+    float:right;
+}

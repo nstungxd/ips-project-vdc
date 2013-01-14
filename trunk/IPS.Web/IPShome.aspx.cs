@@ -7,14 +7,11 @@ using System.Web.UI.WebControls;
 
 namespace IPS.Web
 {
-    public partial class Site : System.Web.UI.MasterPage
+    public partial class IPShome : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["nsd"] == null)
-            {
-                Response.Redirect("~/Login.aspx");
-            }
+
         }
     }
 }
