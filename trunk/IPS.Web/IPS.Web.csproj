@@ -254,6 +254,7 @@
     <Content Include="btstyles\grand_gray\VdcButton\images\Thumbs.db" />
     <Content Include="btstyles\grand_gray\VdcTextBox\images\Thumbs.db" />
     <Content Include="Properties\DataSources\UnitSettingLibrary.UnitShortModel.datasource" />
+    <Content Include="Properties\DataSources\UnitSettingLibrary.NhomNguoiDungModel3.datasource" />
     <None Include="Service References\BaoCaoServiceReference\BaoCaoServices.disco" />
     <None Include="Service References\BaoCaoServiceReference\configuration91.svcinfo" />
     <None Include="Service References\BaoCaoServiceReference\configuration.svcinfo" />
@@ -341,6 +342,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\UserServiceReference\UserServices.disco" />
+    <Content Include="Service References\UserServiceReference\configuration91.svcinfo" />
+    <Content Include="Service References\UserServiceReference\configuration.svcinfo" />
+    <Content Include="Service References\UserServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <Content Include="styles\black_glass\asc.gif" />
     <Content Include="styles\black_glass\desc.gif" />
     <Content Include="styles\black_glass\details_btn_close.gif" />
@@ -1687,6 +1695,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\UserServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -1740,6 +1753,16 @@
     <Content Include="styles\premiere_blue\Thumbs.db" />
     <Content Include="styles\style_4\Thumbs.db" />
     <Content Include="styles\style_6\Thumbs.db" />
+    <Content Include="Service References\UserServiceReference\UserServices.wsdl" />
+    <None Include="Service References\UserServiceReference\UserServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserServiceReference\UserServices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserServiceReference\UserServices2.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -1755,6 +1778,7 @@
     <WCFMetadataStorage Include="Service References\BaoCaoServiceReference\" />
     <WCFMetadataStorage Include="Service References\DongBoDBServiceReference\" />
     <WCFMetadataStorage Include="Service References\GiamSatServiceReference\" />
+    <WCFMetadataStorage Include="Service References\UserServiceReference\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnitSettingLibrary\UnitSettingLibrary.csproj">
