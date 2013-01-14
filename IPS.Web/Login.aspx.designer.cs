@@ -10,96 +10,105 @@
 namespace IPS.Web {
     
     
-    public partial class GiamSatDuAn {
+    public partial class Login {
         
         /// <summary>
-        /// ddlNamKeHoach control.
+        /// Head1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Interface.VdcDropDownList ddlNamKeHoach;
+        protected global::System.Web.UI.HtmlControls.HtmlHead Head1;
         
         /// <summary>
-        /// btCapNhatKHV control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Interface.VdcButton btCapNhatKHV;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// CallbackPanel2 control.
+        /// UPa_ct control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::VdcInc.CallbackPanel CallbackPanel2;
+        protected global::System.Web.UI.HtmlControls.HtmlTable UPa_ct;
         
         /// <summary>
-        /// gridNamKeHoach control.
+        /// loi_login control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.Grid gridNamKeHoach;
+        protected global::System.Web.UI.WebControls.Label loi_login;
         
         /// <summary>
-        /// btCapNhatNhaThau control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Interface.VdcButton btCapNhatNhaThau;
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// gridNhaThau control.
+        /// txtmadonvi control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.Grid gridNhaThau;
+        protected global::Vdc.Interface.VdcTextBox txtmadonvi;
         
         /// <summary>
-        /// LinkTenGoiThau control.
+        /// Label2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.GridTemplate LinkTenGoiThau;
+        protected global::System.Web.UI.WebControls.Label Label2;
         
         /// <summary>
-        /// btCapNhatHopDong control.
+        /// txtmansd control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Interface.VdcButton btCapNhatHopDong;
+        protected global::Vdc.Interface.VdcTextBox txtmansd;
         
         /// <summary>
-        /// CallbackPanel1 control.
+        /// Label8 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::VdcInc.CallbackPanel CallbackPanel1;
+        protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// gridHopDong control.
+        /// password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.Grid gridHopDong;
+        protected global::Vdc.Interface.VdcTextBox password;
+        
+        /// <summary>
+        /// VdcButton1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Interface.VdcButton VdcButton1;
     }
 }

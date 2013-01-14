@@ -7,90 +7,81 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace IPS.Web {
+namespace IPS.Web.Appforms.he_thong {
     
     
-    public partial class GiamSat {
+    public partial class ht_quanlynhomnguoidung {
         
         /// <summary>
-        /// gridNamKeHoachExcelDeletedIds control.
+        /// txtMaNhom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField gridNamKeHoachExcelDeletedIds;
+        protected global::Vdc.Interface.VdcTextBox txtMaNhom;
         
         /// <summary>
-        /// gridNamKeHoachExcelData control.
+        /// txtTenNhom control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField gridNamKeHoachExcelData;
+        protected global::Vdc.Interface.VdcTextBox txtTenNhom;
         
         /// <summary>
-        /// CallbackPanel1 control.
+        /// ddlModule control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::VdcInc.CallbackPanel CallbackPanel1;
+        protected global::Vdc.Interface.VdcDropDownList ddlModule;
         
         /// <summary>
-        /// gridNamKeHoach control.
+        /// dllMucDoTruyCap control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.Grid gridNamKeHoach;
+        protected global::Vdc.Interface.VdcDropDownList dllMucDoTruyCap;
         
         /// <summary>
-        /// ReadOnlyTemplateGrid1 control.
+        /// GRLKe1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.GridTemplate ReadOnlyTemplateGrid1;
+        protected global::Vdc.Grid.Grid GRLKe1;
         
         /// <summary>
-        /// MultiLineTextBoxEditTemplateGrid1 control.
+        /// VdcButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.GridTemplate MultiLineTextBoxEditTemplateGrid1;
+        protected global::Vdc.Interface.VdcButton VdcButton1;
         
         /// <summary>
-        /// ComboBoxEditTemplateGrid1 control.
+        /// VdcButton2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Grid.GridTemplate ComboBoxEditTemplateGrid1;
+        protected global::Vdc.Interface.VdcButton VdcButton2;
         
         /// <summary>
-        /// MultiLineTextBoxEditor control.
+        /// Grid1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::Vdc.Interface.VdcTextBox MultiLineTextBoxEditor;
-        
-        /// <summary>
-        /// ComboBoxEditor control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::Vdc.ComboBox.ComboBox ComboBoxEditor;
+        protected global::Vdc.Grid.Grid Grid1;
     }
 }

@@ -75,6 +75,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Appforms\giamsat\ChiTiet.aspx" />
+    <Content Include="Appforms\giamsat\ChiTietDuAn.aspx" />
+    <Content Include="Appforms\giamsat\DanhSach.aspx" />
+    <Content Include="Appforms\hethong\ht_quanlynhomnguoidung.aspx" />
     <Content Include="btstyles\black_glass\VdcButton\images\button.gif" />
     <Content Include="btstyles\black_glass\VdcButton\images\button.png" />
     <Content Include="btstyles\black_glass\VdcButton\images\overlay.gif" />
@@ -202,9 +206,7 @@
     <Content Include="css\style_vnpt.css" />
     <Content Include="css\s_font.css" />
     <Content Include="DanhSachDuAn.aspx" />
-    <Content Include="GiamSat.aspx" />
     <Content Include="GiamSat1.aspx" />
-    <Content Include="GiamSatDuAn.aspx" />
     <Content Include="images\loading_icon.gif" />
     <Content Include="images\1351759116_document_select.gif" />
     <Content Include="images\1354759975_tick.png" />
@@ -249,6 +251,8 @@
     <Content Include="images\VNPT_TC.png" />
     <Content Include="images\wbg.gif" />
     <Content Include="images\wrap_bg.jpg" />
+    <Content Include="IPShome.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <Content Include="Properties\DataSources\UnitSettingLibrary.ChangeResultSettings.datasource" />
     <Content Include="btstyles\grand_gray\VdcButton\images\Thumbs.db" />
@@ -1647,23 +1651,43 @@
     <Content Include="styles\style_9\record_group_header.gif" />
     <Content Include="styles\style_9\record_group_header2.gif" />
     <Content Include="styles\style_9\style.css" />
-    <Content Include="ThongTinChiTietDuAn.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appforms\giamsat\ChiTiet.aspx.cs">
+      <DependentUpon>ChiTiet.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appforms\giamsat\ChiTiet.aspx.designer.cs">
+      <DependentUpon>ChiTiet.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Appforms\giamsat\ChiTietDuAn.aspx.cs">
+      <DependentUpon>ChiTietDuAn.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appforms\giamsat\ChiTietDuAn.aspx.designer.cs">
+      <DependentUpon>ChiTietDuAn.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Appforms\giamsat\DanhSach.aspx.cs">
+      <DependentUpon>DanhSach.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appforms\giamsat\DanhSach.aspx.designer.cs">
+      <DependentUpon>DanhSach.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Appforms\hethong\ht_quanlynhomnguoidung.aspx.cs">
+      <DependentUpon>ht_quanlynhomnguoidung.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Appforms\hethong\ht_quanlynhomnguoidung.aspx.designer.cs">
+      <DependentUpon>ht_quanlynhomnguoidung.aspx</DependentUpon>
+    </Compile>
     <Compile Include="DanhSachDuAn.aspx.cs">
       <DependentUpon>DanhSachDuAn.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="DanhSachDuAn.aspx.designer.cs">
       <DependentUpon>DanhSachDuAn.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="GiamSat.aspx.cs">
-      <DependentUpon>GiamSat.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="GiamSat.aspx.designer.cs">
-      <DependentUpon>GiamSat.aspx</DependentUpon>
     </Compile>
     <Compile Include="GiamSat1.aspx.cs">
       <DependentUpon>GiamSat1.aspx</DependentUpon>
@@ -1672,12 +1696,19 @@
     <Compile Include="GiamSat1.aspx.designer.cs">
       <DependentUpon>GiamSat1.aspx</DependentUpon>
     </Compile>
-    <Compile Include="GiamSatDuAn.aspx.cs">
-      <DependentUpon>GiamSatDuAn.aspx</DependentUpon>
+    <Compile Include="IPShome.aspx.cs">
+      <DependentUpon>IPShome.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="GiamSatDuAn.aspx.designer.cs">
-      <DependentUpon>GiamSatDuAn.aspx</DependentUpon>
+    <Compile Include="IPShome.aspx.designer.cs">
+      <DependentUpon>IPShome.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\BaoCaoServiceReference\Reference.cs">
@@ -1706,13 +1737,6 @@
     </Compile>
     <Compile Include="Site.Master.designer.cs">
       <DependentUpon>Site.Master</DependentUpon>
-    </Compile>
-    <Compile Include="ThongTinChiTietDuAn.aspx.cs">
-      <DependentUpon>ThongTinChiTietDuAn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="ThongTinChiTietDuAn.aspx.designer.cs">
-      <DependentUpon>ThongTinChiTietDuAn.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

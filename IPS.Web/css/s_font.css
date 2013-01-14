@@ -7,13 +7,6 @@
 /*cap nhat khoi tao padding, margin 27.4.2011*/
 /*19.7.2011-cập nhật banner, menu như quản lý sự cố của TTĐHVT*/
 /*18.6.2012 cap nhat style grid view*/
-/*
-{
-    padding: 0;
-    margin-left: 0;
-    margin-right: 0;
-    margin-top: 0;
-}*/
 html,body {
    margin:0;
    padding:0;
@@ -58,7 +51,7 @@ p, h1, h2, h3, h4, h5, h6
 a, a:active, a:visited
 {
     color: inherit;
-    text-decoration: none;
+    text-decoration: underline;
 }
 a:hover
 {
@@ -479,7 +472,7 @@ a:hover
     -moz-border-radius-bottomright: 5px;
 }
 /*Horizontal tab selected*/
-.css_tab_ngang_ac
+.css_tabduocchon_ngang
 {
     background-color: #FFFFFF;
     border-left: 1px solid #b9b9b9;
@@ -498,7 +491,7 @@ a:hover
     -moz-border-radius-topleft: 5px;
 }
 /*Horizontal tab default*/
-.css_tab_ngang_de
+.css_tabmacdinh_ngang
 {
     background-color: #e8e8e8;
     border-left: 1px solid #b9b9b9;
