@@ -326,6 +326,8 @@ namespace BusinessLogic.Services
                             if (!isGiamSat)
                             {
 
+
+
                                 var goithau = new GoiThauShortModel();
                                 goithau.IdDuAn = idDuAn;
                                 goithau.MaDonVi = maDonVi;
