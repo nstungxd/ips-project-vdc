@@ -26,4 +26,14 @@ namespace UnitSettingLibrary
 
         public int ValueInt { get; set; }
     }
+
+    [DataContract]
+    public class TrungGian
+    {
+         [DataMember]
+        public long Id { get; set; }
+         [DataMember]
+        public int GiaiDoan { get; set; }
+    }
+
 }
