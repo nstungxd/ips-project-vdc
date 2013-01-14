@@ -116,8 +116,8 @@
         <tr>
             <td align="left">
                 <cc1:Grid ID="Grid1" runat="server"
-                    CallbackMode="false"
-                    Serialize="false"
+                    CallbackMode="true"
+                    Serialize="true"
                     AllowAddingRecords="False"
                     AllowPageSizeSelection="False"
                     AllowRecordSelection="False"
