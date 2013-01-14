@@ -45,7 +45,7 @@ namespace IPS.Web
             string Nam = (string)Session["Nam"];
             var namKHV = giamsatService.NamKeHoachVon("","","",madonvi, idduan);
             //var namKHV = giamsatService.NamKeHoachVon("", "", "", "56", 20111118624371);
-            var namInt = namKHV.First();
+            var namInt = namKHV.FirstOrDefault();
             if (Nam != null) namInt = Int32.Parse(Nam);
             //var result = giamsatService.DanhSachGiaiDoanKHV("", "", "", "56", 20111118624371, namInt);
             var result = giamsatService.DanhSachGiaiDoanKHV("", "", "", madonvi, idduan, namInt);
@@ -163,6 +163,7 @@ namespace IPS.Web
             {
                 a += result.Message;
             }
+            //LoadKeHoachVon();
             return a;
         }
 
@@ -255,6 +256,7 @@ namespace IPS.Web
             {
                 a += result.Message;
             }
+            LoadGridNhaThau();
             return a;
         }
         public void AddKeHoachVon(string Nam)

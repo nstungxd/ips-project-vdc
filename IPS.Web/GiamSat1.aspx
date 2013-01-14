@@ -280,7 +280,7 @@
     <vajax:CallbackPanel ID="CallbackPanel2" runat="server">
         <Content>
 
-            <cc1:Grid ID="gridNamKeHoach" runat="server" CallbackMode="true" Serialize="false"
+            <cc1:Grid ID="gridNamKeHoach" runat="server" CallbackMode="true" Serialize="true"
                 AllowAddingRecords="False"
                 AllowPageSizeSelection="False"
                 AllowRecordSelection="False"
@@ -349,13 +349,15 @@
     <cc2:VdcButton ID="btCapNhatNhaThau" runat="server" OnClientClick="saveGridNhaThau();CapNhatGridNhaThau(); return false;" Text="Cập nhật"></cc2:VdcButton>
     <asp:HiddenField runat="server" ID="gridNhaThauExcelDeletedIds" />
     <asp:HiddenField runat="server" ID="gridNhaThauExcelData" />
+    <vajax:CallbackPanel ID="CallbackPanel3" runat="server">
+        <Content>
     <cc1:Grid ID="gridNhaThau" runat="server" CallbackMode="true" Serialize="true"
         AllowAddingRecords="False"
         AllowPageSizeSelection="False"
         AllowRecordSelection="false"
         AllowSorting="False"
         AutoGenerateColumns="false"
-        FolderStyle="styles/premiere_blue" PageSize="3" AllowMultiRecordSelection="False">
+        FolderStyle="styles/premiere_blue" PageSize="9" AllowMultiRecordSelection="False">
         <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
         <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
         <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
@@ -416,7 +418,8 @@
             </cc1:GridTemplate>
         </Templates>
     </cc1:Grid>
-
+            </Content>
+        </vajax:CallbackPanel>
     <br />
     <br />
     <br />
