@@ -19,6 +19,7 @@ vdcGrid.prototype.convertToExcel = function (columnTypes, excelDataHiddenID, exc
 
 vdcGrid.prototype.addNewRow = function () {
     this.addRecord();
+
     this.insertTemporaryRecord(false, true);
 
     var row = this.GridBodyContainer.firstChild.firstChild.childNodes[1].lastChild;
@@ -99,10 +100,10 @@ vdcGrid.prototype.removeRow = function (link) {
 
 
 
-vdcGrid.prototype.saveExcelChanges = function (excelDataHiddenID) {
+vdcGrid.prototype.saveExcelChanges = function () {
     var excelData = new Array();
     var rowsContainer = this.GridBodyContainer.firstChild.firstChild.childNodes[1];
-    //tungns123
+
     for (var i = 0; i < rowsContainer.childNodes.length; i++) {
         var row = rowsContainer.childNodes[i];
         var rowData = new Array();
@@ -112,16 +113,16 @@ vdcGrid.prototype.saveExcelChanges = function (excelDataHiddenID) {
         }
         excelData.push(rowData.join('|*cell*|'));
     }
-    this.ExcelDataContainer = document.getElementById(excelDataHiddenID);
+
     this.ExcelDataContainer.value = excelData.join('|*row*|');
 
     return true;
 }
 
 
-//function ComboBox_Open(sender) {
-//   focusedGrid._keyNavigationIsEnabled = false;
-//}
+function ComboBox_Open(sender) {
+   focusedGrid._keyNavigationIsEnabled = false;
+}
 
 vdcGrid.prototype.editWithTextBox = function (textbox) {
     this.editCell(textbox, 'TextBoxEditor');
@@ -131,8 +132,8 @@ vdcGrid.prototype.editWithMultiLineTextBox = function (textbox) {
     this.editCell(textbox, 'MultiLineTextBoxEditor');
 }
 
-vdcGrid.prototype.editWithComboBox = function (textbox, editorId) {
-    this.editCell(textbox, editorId);
+vdcGrid.prototype.editWithComboBox = function (textbox) {
+    this.editCell(textbox, 'ComboBoxEditor');
 }
 vdcGrid.prototype.editWithCheckBox = function (textbox) {
     this.editCell(textbox, 'CheckBoxEditor');
@@ -157,8 +158,8 @@ vdcGrid.prototype.editCell = function (textbox, editorId) {
     var abc = document.getElementById(editorId + 'Container');
     textbox.parentNode.appendChild(abc);
     var hindden_editor = null;
-    var editor = null;
-    if (editorId == 'ComboBoxEditor' || editorId == 'ComboBoxEditor1') {
+    var editor = null;  
+    if (editorId == 'ComboBoxEditor') {
         editor = $("input[id$='TB']")[0];
     }
     else if (editorId == "CheckBoxEditor") {
@@ -166,6 +167,8 @@ vdcGrid.prototype.editCell = function (textbox, editorId) {
     }
     else {
         editor = document.getElementById(this.UniqueID.replace(this.ID, "") + editorId);
+        //editor = $("textarea[id$='MultiLineTextBoxEditor']")[0];
+        editor.onblur = persistFieldValue;
     }
     var typee = editor.type;
     if (typee == 'text' || typee == 'textarea') {
@@ -195,23 +198,23 @@ vdcGrid.prototype.selectLastFieldEditor = function () {
     //    }
 }
 
-//function persistFieldValue(field) {
-//    if (focusedGrid != null && focusedGrid._lastEditedField != null) {
-//        if (focusedGrid._lastEditedFieldEditor.type == 'text' || focusedGrid._lastEditedFieldEditor.type == 'textarea') {
-//            focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.value;
-//        } else {
-//            focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.checked ? 'yes' : 'no';
+function persistFieldValue(field) {
+    if (focusedGrid != null && focusedGrid._lastEditedField != null) {
+        if (focusedGrid._lastEditedFieldEditor.type == 'text' || focusedGrid._lastEditedFieldEditor.type == 'textarea') {
+            focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.value;
+        } else {
+            focusedGrid._lastEditedField.value = focusedGrid._lastEditedFieldEditor.checked ? 'yes' : 'no';
 
-//        }
-//        var a = document.getElementById(focusedGrid._editorid + 'Container');
-//        var b = document.getElementById('FieldEditorsContainer');
-//        b.appendChild(a);
-//        focusedGrid._lastEditedField.style.display = '';
+        }
+        var a = document.getElementById(focusedGrid._editorid + 'Container');
+        var b = document.getElementById('FieldEditorsContainer');
+        b.appendChild(a);
+        focusedGrid._lastEditedField.style.display = '';
 
-//        focusedGrid._lastEditedField = null;
-//        focusedGrid._lastEditedFieldEditor = null;
-//    }
-//}
+        focusedGrid._lastEditedField = null;
+        focusedGrid._lastEditedFieldEditor = null;
+    }
+}
 
 
 vdcGrid.prototype.restoreEditorValue = function () {
@@ -225,91 +228,83 @@ vdcGrid.prototype.restoreEditorValue = function () {
 
 
 
-//function navigateThroughCells(sender, key, forced) {
-//    if (forced && focusedGrid != null) {
-//        focusedGrid._keyNavigationIsEnabled = true;
-//    }
+function navigateThroughCells(sender, key, forced) {
+    if (forced && focusedGrid != null) {
+        focusedGrid._keyNavigationIsEnabled = true;
+    }
 
-//    if (focusedGrid._keyNavigationIsEnabled || forced) {
-//        var currentCell = focusedGrid._lastEditedField.parentNode.parentNode.parentNode;
-//        var currentCellIndex = 0;
-//        var tempCell = currentCell.previousSibling;
-//        while (tempCell) {
-//            currentCellIndex++;
-//            tempCell = tempCell.previousSibling;
-//        }
-//        var newCell = null;
-//        switch (key) {
-//            case 37:
-//                if (currentCell.previousSibling) {
-//                    newCell = currentCell.previousSibling;
-//                }
-//                break;
-//            case 38:
-//                if (currentCell.parentNode.previousSibling) {
-//                    newCell = currentCell.parentNode.previousSibling.childNodes[currentCellIndex];
-//                }
-//                break;
-//            case 39:
-//                if (currentCell.nextSibling) {
-//                    newCell = currentCell.nextSibling;
-//                }
-//                break;
-//            case 40:
-//                if (currentCell.parentNode.nextSibling) {
-//                    newCell = currentCell.parentNode.nextSibling.childNodes[currentCellIndex];
-//                }
-//                break;
-//            default:
-//                focusedGrid._keyNavigationIsEnabled = false;
-//                if (key == 13 || key == 27 || key == 113) {
-//                    if (focusedGrid._lastEditedFieldEditor.type == 'text' || focusedGrid._lastEditedFieldEditor.type == 'textarea') {
-//                        var previousValue = focusedGrid._lastEditedFieldEditor.value;
-//                        focusedGrid._lastEditedFieldEditor.value = '';
-//                        focusedGrid._lastEditedFieldEditor.value = previousValue;
-//                    }
-//                }
-//                break;
-//        }
+    if (focusedGrid._keyNavigationIsEnabled || forced) {
+        var currentCell = focusedGrid._lastEditedField.parentNode.parentNode.parentNode;
+        var currentCellIndex = 0;
+        var tempCell = currentCell.previousSibling;
+        while (tempCell) {
+            currentCellIndex++;
+            tempCell = tempCell.previousSibling;
+        }
+        var newCell = null;
+        switch (key) {
+            case 37:
+                if (currentCell.previousSibling) {
+                    newCell = currentCell.previousSibling;
+                }
+                break;
+            case 38:
+                if (currentCell.parentNode.previousSibling) {
+                    newCell = currentCell.parentNode.previousSibling.childNodes[currentCellIndex];
+                }
+                break;
+            case 39:
+                if (currentCell.nextSibling) {
+                    newCell = currentCell.nextSibling;
+                }
+                break;
+            case 40:
+                if (currentCell.parentNode.nextSibling) {
+                    newCell = currentCell.parentNode.nextSibling.childNodes[currentCellIndex];
+                }
+                break;
+            default:
+                focusedGrid._keyNavigationIsEnabled = false;
+                if (key == 13 || key == 27 || key == 113) {
+                    if (focusedGrid._lastEditedFieldEditor.type == 'text' || focusedGrid._lastEditedFieldEditor.type == 'textarea') {
+                        var previousValue = focusedGrid._lastEditedFieldEditor.value;
+                        focusedGrid._lastEditedFieldEditor.value = '';
+                        focusedGrid._lastEditedFieldEditor.value = previousValue;
+                    }
+                }
+                break;
+        }
 
-//        if (newCell) {
-//            var textboxes = newCell.firstChild.firstChild.getElementsByTagName('INPUT');
-//            if (textboxes.length) {
-//                textboxes[0].focus();
-//            }
-//        }
-//    } else {
-//        if (key == 13 || key == 27) {
-//            focusedGrid._keyNavigationIsEnabled = true;
-//            focusedGrid.selectLastFieldEditor();
+        if (newCell) {
+            var textboxes = newCell.firstChild.firstChild.getElementsByTagName('INPUT');
+            if (textboxes.length) {
+                textboxes[0].focus();
+            }
+        }
+    } else {
+        if (key == 13 || key == 27) {
+            focusedGrid._keyNavigationIsEnabled = true;
+            focusedGrid.selectLastFieldEditor();
 
-//            if (key == 13) {
-//                if (focusedGrid._lastEditedFieldEditor.type == 'text' || focusedGrid._lastEditedFieldEditor.type == 'textarea') {
-//                    focusedGrid._lastEditedFieldEditorValue = focusedGrid._lastEditedFieldEditor.value;
-//                } else {
-//                    focusedGrid._lastEditedFieldEditorValue = focusedGrid._lastEditedFieldEditor.checked();
-//                }
-//            } else if (focusedGrid != null && focusedGrid._lastEditedFieldEditorValue != null) {
-//                window.setTimeout(function () { focusedGrid.restoreEditorValue(); }, 10);
-//            }
-//        }
-//    }
+            if (key == 13) {
+                if (focusedGrid._lastEditedFieldEditor.type == 'text' || focusedGrid._lastEditedFieldEditor.type == 'textarea') {
+                    focusedGrid._lastEditedFieldEditorValue = focusedGrid._lastEditedFieldEditor.value;
+                } else {
+                    focusedGrid._lastEditedFieldEditorValue = focusedGrid._lastEditedFieldEditor.checked();
+                }
+            } else if (focusedGrid != null && focusedGrid._lastEditedFieldEditorValue != null) {
+                window.setTimeout(function () { focusedGrid.restoreEditorValue(); }, 10);
+            }
+        }
+    }
 
-//    if (key == 13 || key == 27) {
-//        return false;
-//    }
-
-//    return true;
-//}
-
-
-function checkKeydown(sender, key) {
-    debugger;
     if (key == 13 || key == 27) {
         return false;
     }
+
     return true;
 }
+
 
 
 
@@ -322,7 +317,7 @@ Vdc.Interface.VdcTextBox.prototype.applyCrossBrowserFixes = function () {
 Vdc.Interface.VdcTextBox.prototype._attachEventHandlers = Vdc.Interface.VdcTextBox.prototype.attachEventHandlers;
 Vdc.Interface.VdcTextBox.prototype.attachEventHandlers = function () {
     this._attachEventHandlers();
-
+    debugger;
     if (this.ID.indexOf('DatePicker') == -1) {
         var _blurHandler = this.TextBox.onblur;
         var _tempThis = this;
@@ -342,25 +337,18 @@ Vdc.Interface.VdcTextBox.prototype.focus = function () {
     }
 }
 
-Vdc.Interface.VdcDropDownList.prototype._handleTextKeyPress = Vdc.Interface.VdcDropDownList.prototype.handleTextKeyPress;
-Vdc.Interface.VdcDropDownList.prototype.handleTextKeyPress = function (e) {
-    //this._handleTextKeyPress(e);
-    var keyPressed = Vdc.Interface.VdcCore.getKeyPressed(e);
-    navigateThroughCells(this, keyPressed);
-}
-
-//Vdc.Interface.VdcButton.prototype._handleTextKeyPress = Vdc.Interface.VdcButton.prototype.handleTextKeyPress;
-//Vdc.Interface.VdcButton.prototype.handleTextKeyPress = function (e) {
+//Vdc.Interface.VdcDropDownList.prototype._handleTextKeyPress = Vdc.Interface.VdcDropDownList.prototype.handleTextKeyPress;
+//Vdc.Interface.VdcDropDownList.prototype.handleTextKeyPress = function (e) {
 //    //this._handleTextKeyPress(e);
-//    debugger;
 //    var keyPressed = Vdc.Interface.VdcCore.getKeyPressed(e);
-//    checkKeydown(this, keyPressed);
+//    navigateThroughCells(this, keyPressed);
 //}
 
-Vdc.ComboBox.prototype.__handleKeyDown = Vdc.ComboBox.prototype._handleKeyDown;
-Vdc.ComboBox.prototype._handleKeyDown = function (e) {
-    var keyPressed = Vdc.Interface.VdcCore.getKeyPressed(e);
-    navigateThroughCells(this, keyPressed);
+//Vdc.ComboBox.prototype.__handleKeyDown = Vdc.ComboBox.prototype._handleKeyDown;
+//Vdc.ComboBox.prototype._handleKeyDown = function (e) {
+//    var keyPressed = Vdc.Interface.VdcCore.getKeyPressed(e);
+//    navigateThroughCells(this, keyPressed);
+
 //    if ((keyPressed != 37 && keyPressed != 38 && keyPressed != 39 && keyPressed != 40) || !focusedGrid._keyNavigationIsEnabled) {
 //        this.__handleKeyDown(e);
 
@@ -381,7 +369,7 @@ Vdc.ComboBox.prototype._handleKeyDown = function (e) {
 //    }
 
  //   return true;
-}
+//}
 
 
 //Vdc.Interface.VdcCheckBox.prototype._attachEventHandlers = Vdc.Interface.VdcCheckBox.prototype.attachEventHandlers;
