@@ -523,28 +523,28 @@
                                 <PagingSettings PageSizeSelectorPosition="Bottom" Position="Bottom" ShowRecordsCount="False"></PagingSettings>
                                 <ScrollingSettings FixedColumnsPosition="Left" ScrollWidth="995px"></ScrollingSettings>
                                 <Columns>
-                                    <cc1:Column DataField="TenHopDong" HeaderText="Tên hợp đồng">
+                                    <cc1:Column DataField="TenHopDong" HeaderText="Tên hợp đồng" Width="150px">
                                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid3" />
                                     </cc1:Column>
-                                    <cc1:Column DataField="BenA" HeaderText="Bên A">
+                                    <cc1:Column DataField="BenA" HeaderText="Bên A" Width="150px">
                                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid3" />
                                     </cc1:Column>
-                                    <cc1:Column DataField="BenB" HeaderText="Bên B">
+                                    <cc1:Column DataField="BenB" HeaderText="Bên B" Width="150px">
                                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid3" />
                                     </cc1:Column>
-                                    <cc1:Column DataField="TienNoiTe" HeaderText="Tiền nội tệ">
+                                    <cc1:Column DataField="TienNoiTe" HeaderText="Tiền nội tệ" Width="100px">
                                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid3" />
                                     </cc1:Column>
-                                    <cc1:Column DataField="TienNgoaiTe" HeaderText="Tiền ngoại tệ">
+                                    <cc1:Column DataField="TienNgoaiTe" HeaderText="Tiền ngoại tệ" Width="100px">
                                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid3" />
                                     </cc1:Column>
-                                    <cc1:Column DataField="TinhTrangHopDong" HeaderText="Trạng thái thực hiện">
+                                    <cc1:Column DataField="TinhTrangHopDong" HeaderText="Trạng thái thực hiện" Width="125px">
                                         <TemplateSettings TemplateId="ReadOnlyTemplateGrid3" />
                                     </cc1:Column>
-                                    <cc1:Column DataField="TenKetQuaGiamSat" HeaderText="Trạng thái giám sát">
+                                    <cc1:Column DataField="TenKetQuaGiamSat" HeaderText="Trạng thái giám sát" Width="120px">
                                         <TemplateSettings TemplateId="ComboBoxEditTemplateGrid3" />
                                     </cc1:Column>
-                                    <cc1:Column DataField="GhiChuGiamSat" HeaderText="Ghi chú">
+                                    <cc1:Column DataField="GhiChuGiamSat" HeaderText="Ghi chú" Width="100px">
                                         <TemplateSettings TemplateId="MultiLineTextBoxEditTemplateGrid3" />
                                     </cc1:Column>
                                     <cc1:Column DataField="IdGiamSat" HeaderText="IdGiamSat" Visible="false">

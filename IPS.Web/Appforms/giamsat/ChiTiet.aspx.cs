@@ -290,27 +290,30 @@ namespace IPS.Web.Appforms.giamsat
             long idduan = Int64.Parse(Request.QueryString["idduan"]);
 
             var duAn = giamsatService.ChiTietDuAn("", "", "", madonvi, idduan);
-            hfMaDonVi.Value = madonvi;
-            hfSoIdDonVi.Value = idduan.ToString(CultureInfo.InvariantCulture);
+            if (duAn != null) {
+                hfMaDonVi.Value = madonvi;
+                hfSoIdDonVi.Value = idduan.ToString(CultureInfo.InvariantCulture);
 
-            lbMaDuAn.InnerText = duAn.MaDuAn;
-            lbLoaiDuAn.InnerText = duAn.TenLoaiDuAn;
-            lbNhomDuAn.InnerText = EnumHelper.GetDescription(duAn.NhomDuAn);
-            lbSoQuyetDinh.InnerText = duAn.SoQuyetDinh;
-            lbPhanCap.InnerText = EnumHelper.GetDescription(duAn.LoaiPhanCap);
-            lbDonViQuanLyDT.InnerText = duAn.TenDonViQuanLy;
-            lbDonViChuDT.InnerText = duAn.TenDonViThucHien;
-            lbTongVonDT.InnerText = duAn.TongVonDauTu.ToString(CultureInfo.InvariantCulture);
-            lbThoiGianPhatSinh.InnerText = duAn.NamBatDau.ToString(CultureInfo.InvariantCulture);
-            lbThoiGianKetThuc.InnerText = duAn.NamKetThuc.ToString(CultureInfo.InvariantCulture);
+                lbMaDuAn.InnerText = duAn.MaDuAn;
+                lbLoaiDuAn.InnerText = duAn.TenLoaiDuAn;
+                lbNhomDuAn.InnerText = EnumHelper.GetDescription(duAn.NhomDuAn);
+                lbSoQuyetDinh.InnerText = duAn.SoQuyetDinh;
+                lbPhanCap.InnerText = EnumHelper.GetDescription(duAn.LoaiPhanCap);
+                lbDonViQuanLyDT.InnerText = duAn.TenDonViQuanLy;
+                lbDonViChuDT.InnerText = duAn.TenDonViThucHien;
+                lbTongVonDT.InnerText = duAn.TongVonDauTu.ToString(CultureInfo.InvariantCulture);
+                lbThoiGianPhatSinh.InnerText = duAn.NamBatDau.ToString(CultureInfo.InvariantCulture);
+                lbThoiGianKetThuc.InnerText = duAn.NamKetThuc.ToString(CultureInfo.InvariantCulture);
 
 
-            var loainv = EnumHelper.GetDescriptionForBind(LoaiNguonVon.KhongXacDinh);
-            ddlLoaiNguonVon.DataSource = loainv;
-            ddlLoaiNguonVon.DataTextField = "ValueString";
-            ddlLoaiNguonVon.DataValueField = "ValueInt";
-            ddlLoaiNguonVon.SelectedValue = Convert.ToString((int)duAn.LoaiNguonVon);
-            ddlLoaiNguonVon.DataBind();
+                var loainv = EnumHelper.GetDescriptionForBind(LoaiNguonVon.KhongXacDinh);
+                ddlLoaiNguonVon.DataSource = loainv;
+                ddlLoaiNguonVon.DataTextField = "ValueString";
+                ddlLoaiNguonVon.DataValueField = "ValueInt";
+                ddlLoaiNguonVon.SelectedValue = Convert.ToString((int)duAn.LoaiNguonVon);
+                ddlLoaiNguonVon.DataBind();
+            }
+            
         }
     }
 }

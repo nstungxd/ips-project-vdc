@@ -252,7 +252,7 @@
     <Content Include="images\wbg.gif" />
     <Content Include="images\wrap_bg.jpg" />
     <Content Include="IPShome.aspx" />
-    <Content Include="Login.aspx" />
+    <Content Include="Default.aspx" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
     <Content Include="Properties\DataSources\UnitSettingLibrary.ChangeResultSettings.datasource" />
     <Content Include="btstyles\grand_gray\VdcButton\images\Thumbs.db" />
@@ -269,7 +269,7 @@
     <None Include="Service References\DongBoDBServiceReference\DongBoDBServices.disco" />
     <None Include="Service References\DongBoDBServiceReference\configuration91.svcinfo" />
     <None Include="Service References\DongBoDBServiceReference\configuration.svcinfo" />
-    <Content Include="Script\excel-style.js" />
+    <Content Include="Script\excel.js" />
     <Content Include="Script\excel3.js" />
     <Content Include="Script\jquery-1.8.2.min.js" />
     <None Include="Service References\DongBoDBServiceReference\Reference.svcmap">
@@ -1769,12 +1769,12 @@
     <Compile Include="IPShome.aspx.designer.cs">
       <DependentUpon>IPShome.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
-      <DependentUpon>Login.aspx</DependentUpon>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\BaoCaoServiceReference\Reference.cs">

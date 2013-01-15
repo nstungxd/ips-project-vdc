@@ -13,7 +13,7 @@ namespace IPS.Web
         {
             if (Session["nsd"] == null)
             {
-                Response.Redirect("~/Login.aspx");
+                Response.Redirect("~/Default.aspx");
             }
         }
     }
