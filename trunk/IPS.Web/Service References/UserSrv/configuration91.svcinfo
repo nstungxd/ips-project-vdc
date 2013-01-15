@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="nD5y0tDrYaoxL75K/1Zw26Lkg5g=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="bl0hjYTML1I0s6fmnex9m34tEZs=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_IUserServices1">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_IUserServices1" contract="UserSrv.IUserServices" bindingType="basicHttpBinding" address="http://203.162.130.201:1105/Services/UserServices.svc" bindingConfiguration="BasicHttpBinding_IUserServices1">
+    <endpoint name="BasicHttpBinding_IUserServices1" contract="UserSrv.IUserServices" bindingType="basicHttpBinding" address="http://203.162.130.201:1106/Services/UserServices.svc" bindingConfiguration="BasicHttpBinding_IUserServices1">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://203.162.130.201:1105/Services/UserServices.svc</serializedValue>
+          <serializedValue>http://203.162.130.201:1106/Services/UserServices.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />
