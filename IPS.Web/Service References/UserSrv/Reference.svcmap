@@ -19,14 +19,14 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://203.162.130.201:1106/Services/UserServices.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://203.162.130.201:1108/Services/UserServices.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="UserServices.xsd" MetadataType="Schema" ID="b5b775f2-9ede-49df-9f54-3ffdc7e374cc" SourceId="1" SourceUrl="http://203.162.130.201:1106/Services/UserServices.svc?xsd=xsd2" />
-    <MetadataFile FileName="UserServices.disco" MetadataType="Disco" ID="f2eae8e5-6330-4319-9725-0cbb375c943c" SourceId="1" SourceUrl="http://203.162.130.201:1106/Services/UserServices.svc?disco" />
-    <MetadataFile FileName="UserServices1.xsd" MetadataType="Schema" ID="a060232d-2184-47b0-9e65-19cb30cfe82d" SourceId="1" SourceUrl="http://203.162.130.201:1106/Services/UserServices.svc?xsd=xsd1" />
-    <MetadataFile FileName="UserServices.wsdl" MetadataType="Wsdl" ID="68190c62-e5c7-4926-8e68-9edc0a5fb97d" SourceId="1" SourceUrl="http://203.162.130.201:1106/Services/UserServices.svc?wsdl" />
-    <MetadataFile FileName="UserServices2.xsd" MetadataType="Schema" ID="965d1f8f-ecdb-4c02-a7e6-f792b145ba14" SourceId="1" SourceUrl="http://203.162.130.201:1106/Services/UserServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserServices1.wsdl" MetadataType="Wsdl" ID="9e682a58-9ff4-48d3-94e6-0b135c8fb8fb" SourceId="1" SourceUrl="http://203.162.130.201:1108/Services/UserServices.svc?wsdl" />
+    <MetadataFile FileName="UserServices3.xsd" MetadataType="Schema" ID="6208dd0c-ecaa-41e9-8b6d-b3c24a277588" SourceId="1" SourceUrl="http://203.162.130.201:1108/Services/UserServices.svc?xsd=xsd2" />
+    <MetadataFile FileName="UserServices31.xsd" MetadataType="Schema" ID="92fc4e2d-ef31-4d08-8482-8aa27bb69e04" SourceId="1" SourceUrl="http://203.162.130.201:1108/Services/UserServices.svc?xsd=xsd1" />
+    <MetadataFile FileName="UserServices32.xsd" MetadataType="Schema" ID="dde88b38-b7cd-4f1b-b371-4cd639e45f28" SourceId="1" SourceUrl="http://203.162.130.201:1108/Services/UserServices.svc?xsd=xsd0" />
+    <MetadataFile FileName="UserServices1.disco" MetadataType="Disco" ID="2671814b-7107-4e2f-992a-701bf6d303d2" SourceId="1" SourceUrl="http://203.162.130.201:1108/Services/UserServices.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

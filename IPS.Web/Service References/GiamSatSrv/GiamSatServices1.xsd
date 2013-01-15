@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/BusinessLogic.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://203.162.130.201:1108/Services/GiamSatServices.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" />
+  <xs:complexType name="KeHoachVonModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="KeHoachVonModel" nillable="true" type="tns:KeHoachVonModel" />
+  <xs:complexType name="ThongTinMoiThauModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ThongTinMoiThauModel" nillable="true" type="tns:ThongTinMoiThauModel" />
+  <xs:complexType name="ThongTinMoThauModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ThongTinMoThauModel" nillable="true" type="tns:ThongTinMoThauModel" />
+  <xs:complexType name="ThongTinXetThauModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="ThongTinXetThauModel" nillable="true" type="tns:ThongTinXetThauModel" />
+  <xs:complexType name="GoiThauModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="GoiThauModel" nillable="true" type="tns:GoiThauModel" />
+  <xs:complexType name="HopDongModel">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="HopDongModel" nillable="true" type="tns:HopDongModel" />
+  <xs:complexType name="DuAnShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="IdDuAn" type="xs:long" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="LoaiNguonVon" type="q1:LoaiNguonVon" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="LoaiPhanCap" type="q2:LoaiPhanCap" />
+      <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaDuAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaLoaiDuAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NamBatDau" type="xs:int" />
+      <xs:element minOccurs="0" name="NamKetThuc" type="xs:int" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="NhomDuAn" type="q3:NhomDuAn" />
+      <xs:element minOccurs="0" name="SoQuyetDinh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenDonViQuanLy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenDonViThucHien" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenDuAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenLoaiDuAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenLoaiNguonVon" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenLoaiPhanCap" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenNhomDuAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TongVonDauTu" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DuAnShortModel" nillable="true" type="tns:DuAnShortModel" />
+  <xs:complexType name="ListDuAnModelGridView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DuAnModelsGridView" nillable="true" type="tns:ArrayOfDuAnShortModel" />
+      <xs:element minOccurs="0" name="TotalPage" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListDuAnModelGridView" nillable="true" type="tns:ListDuAnModelGridView" />
+  <xs:complexType name="ArrayOfDuAnShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DuAnShortModel" nillable="true" type="tns:DuAnShortModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDuAnShortModel" nillable="true" type="tns:ArrayOfDuAnShortModel" />
+  <xs:complexType name="ArrayOfKeHoachVonShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="KeHoachVonShortModel" nillable="true" type="tns:KeHoachVonShortModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfKeHoachVonShortModel" nillable="true" type="tns:ArrayOfKeHoachVonShortModel" />
+  <xs:complexType name="KeHoachVonShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Dot" type="xs:int" />
+      <xs:element minOccurs="0" name="GhiChuGiamSat" nillable="true" type="xs:string" />
+      <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="GiaiDoanKHV" type="q4:GiaiDoanKHV" />
+      <xs:element minOccurs="0" name="IdDuAn" type="xs:long" />
+      <xs:element minOccurs="0" name="IdGiamSat" type="xs:long" />
+      <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="KetQuaGiamSat" type="q5:KetQuaGiamSat" />
+      <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NamKHV" type="xs:int" />
+      <xs:element minOccurs="0" name="SoQuyetDinh" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenGiaiDoan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenKetQuaGiamSat" nillable="true" type="xs:string" />
+      <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="TinhTrangXoa" type="q6:TinhTrangXoa" />
+      <xs:element minOccurs="0" name="TrangThaiThucHien" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="KeHoachVonShortModel" nillable="true" type="tns:KeHoachVonShortModel" />
+  <xs:complexType name="ListGoiThauModelGridView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GoiThauModelsGridView" nillable="true" type="tns:ArrayOfGoiThauShortModel" />
+      <xs:element minOccurs="0" name="TotalPage" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListGoiThauModelGridView" nillable="true" type="tns:ListGoiThauModelGridView" />
+  <xs:complexType name="ArrayOfGoiThauShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GoiThauShortModel" nillable="true" type="tns:GoiThauShortModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGoiThauShortModel" nillable="true" type="tns:ArrayOfGoiThauShortModel" />
+  <xs:complexType name="GoiThauShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="GhiChuGiamSat" nillable="true" type="xs:string" />
+      <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="GiaiDoanDauThau" type="q7:GiaiDoanChonNhaThau" />
+      <xs:element minOccurs="0" name="HinhThucDauThau" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdDuAn" type="xs:long" />
+      <xs:element minOccurs="0" name="IdGiamSat" type="xs:long" />
+      <xs:element minOccurs="0" name="IdGoiThau" type="xs:long" />
+      <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="KetQuaGiamSat" type="q8:KetQuaGiamSat" />
+      <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenGiaiDoan" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenGoiThau" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenKetQuaGiamSat" nillable="true" type="xs:string" />
+      <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="TinhTrangXoa" type="q9:TinhTrangXoa" />
+      <xs:element minOccurs="0" name="TrangThaiThucHien" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GoiThauShortModel" nillable="true" type="tns:GoiThauShortModel" />
+  <xs:complexType name="ListHopDongModelGridView">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="HopDongModelsGridView" nillable="true" type="tns:ArrayOfHopDongShortModel" />
+      <xs:element minOccurs="0" name="TotalPage" type="xs:long" />
+      <xs:element minOccurs="0" name="TotalRecords" type="xs:long" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ListHopDongModelGridView" nillable="true" type="tns:ListHopDongModelGridView" />
+  <xs:complexType name="ArrayOfHopDongShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="HopDongShortModel" nillable="true" type="tns:HopDongShortModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfHopDongShortModel" nillable="true" type="tns:ArrayOfHopDongShortModel" />
+  <xs:complexType name="HopDongShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="BenA" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="BenB" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GhiChuGiamSat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="IdGiamSat" type="xs:long" />
+      <xs:element minOccurs="0" name="IdGoiThau" type="xs:long" />
+      <xs:element minOccurs="0" name="IdHopDong" type="xs:long" />
+      <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="KetQuaGiamSat" type="q10:KetQuaGiamSat" />
+      <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenHopDong" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenKetQuaGiamSat" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TienNgoaiTe" type="xs:long" />
+      <xs:element minOccurs="0" name="TienNoiTe" type="xs:long" />
+      <xs:element minOccurs="0" name="TinhTrangHopDong" nillable="true" type="xs:string" />
+      <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="TinhTrangXoa" type="q11:TinhTrangXoa" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="HopDongShortModel" nillable="true" type="tns:HopDongShortModel" />
+  <xs:complexType name="ArrayOfDonViShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DonViShortModel" nillable="true" type="tns:DonViShortModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDonViShortModel" nillable="true" type="tns:ArrayOfDonViShortModel" />
+  <xs:complexType name="DonViShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="TenDonVi" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DonViShortModel" nillable="true" type="tns:DonViShortModel" />
+</xs:schema>
