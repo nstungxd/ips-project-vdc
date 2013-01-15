@@ -22,6 +22,16 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitLibrary", "UnitLibrary"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitSettingLibrary", "UnitSettingLibrary\UnitSettingLibrary.csproj", "{290FF5E1-7424-4C80-9BD9-443BB20ED1BB}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "dll", "dll", "{95CDFE6A-E1AA-46F7-9140-6707313582D3}"
+	ProjectSection(SolutionItems) = preProject
+		DLL\vdc_AJAXPage.dll = DLL\vdc_AJAXPage.dll
+		DLL\vdc_Calendar2_Net.dll = DLL\vdc_Calendar2_Net.dll
+		DLL\vdc_ComboBox.dll = DLL\vdc_ComboBox.dll
+		DLL\vdc_Grid_NET.dll = DLL\vdc_Grid_NET.dll
+		DLL\vdc_Interface.dll = DLL\vdc_Interface.dll
+		DLL\vdc_Window_NET.dll = DLL\vdc_Window_NET.dll
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
