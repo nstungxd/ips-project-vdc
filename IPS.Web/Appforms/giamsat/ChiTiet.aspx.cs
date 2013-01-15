@@ -123,8 +123,8 @@ namespace IPS.Web.Appforms.giamsat
         }
         public string CapNhatKeHoachVon(string stringGridKHV, string Nam)
         {
-            string madonvi = "56";
-            long idduan = 20111118624371;
+            string madonvi = Request.QueryString["madonvi"];
+            long idduan = Int64.Parse(Request.QueryString["idduan"]);
             string excelData = stringGridKHV;
             string[] rowSeparator = new string[] { "|*row*|" };
             string[] cellSeparator = new string[] { "|*cell*|" };
@@ -169,8 +169,8 @@ namespace IPS.Web.Appforms.giamsat
 
         public string CapNhatHopDong(string stringGridHopDong)
         {
-            string madonvi = "56";
-            long idduan = 20111118624371;
+            string madonvi = Request.QueryString["madonvi"];
+            long idduan = Int64.Parse(Request.QueryString["idduan"]);
             string excelData = stringGridHopDong;
             string[] rowSeparator = new string[] { "|*row*|" };
             string[] cellSeparator = new string[] { "|*cell*|" };
@@ -217,8 +217,8 @@ namespace IPS.Web.Appforms.giamsat
 
         public string CapNhatNhaThau(string stringGridNhaThau)
         {
-            string madonvi = "56";
-            long idduan = 20111118624371;
+            string madonvi = Request.QueryString["madonvi"];
+            long idduan = Int64.Parse(Request.QueryString["idduan"]);
             string excelData = stringGridNhaThau;
             string[] rowSeparator = new string[] { "|*row*|" };
             string[] cellSeparator = new string[] { "|*cell*|" };
