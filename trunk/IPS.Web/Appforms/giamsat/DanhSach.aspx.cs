@@ -1,4 +1,4 @@
-﻿using IPS.Web.GiamSatServiceReference;
+﻿using IPS.Web.GiamSatSrv;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +11,7 @@ namespace IPS.Web.Appforms.giamsat
 {
     public partial class DanhSach : System.Web.UI.Page
     {
-        GiamSatServiceReference.GiamSatServicesClient giamsatService = new GiamSatServiceReference.GiamSatServicesClient();
+        GiamSatSrv.GiamSatServicesClient giamsatService = new GiamSatSrv.GiamSatServicesClient();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
