@@ -46,6 +46,25 @@ namespace IPS.Web
                         }
                     }
                 }
+                using (var userSrv = new UserSrv.UserServicesClient())
+                {
+                    var result = userSrv.Login(txtmadonvi.Text, txtmansd.Text, Common.Md5Encrypte(password.Text));
+                    if (result.ChangeResult == ChangeResult.ThanhCong)
+                    {
+                        var nguoidung = new NguoiDungModel() { MaDonVi = txtmadonvi.Text, TenTruyCap = txtmansd.Text };
+                        Session["nsd"] = nguoidung;
+                        Response.Redirect("~/Appforms/giamsat/DanhSach.aspx");
+                    }
+                    else
+                    {
+                        if (!string.IsNullOrEmpty(result.Message))
+                            loi_login.Text = result.Message;
+                        else
+                        {
+                            loi_login.Text = "Tên hoặc mật khẩu không chính xác!";
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {

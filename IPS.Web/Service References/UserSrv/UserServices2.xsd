@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://203.162.130.201:1105/Services/UserServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" />
+  <xs:element name="CapNhatNhomNguoiDung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="nhomNguoiDung" nillable="true" type="q1:NhomNguoiDungModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapNhatNhomNguoiDungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="CapNhatNhomNguoiDungResult" nillable="true" type="q2:ChangeResultSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DanhSachNhomNguoiDung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="moduleId" type="xs:int" />
+        <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DanhSachNhomNguoiDungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="DanhSachNhomNguoiDungResult" nillable="true" type="q3:ArrayOfNhomNguoiDungModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChiTietNhomNguoiDung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maNhom" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChiTietNhomNguoiDungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="ChiTietNhomNguoiDungResult" nillable="true" type="q4:NhomNguoiDungModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaNhomNguoiDung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nhomId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaNhomNguoiDungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="XoaNhomNguoiDungResult" nillable="true" type="q5:ChangeResultSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapNhatNguoiDung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="nguoiDung" nillable="true" type="q6:NguoiDungModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CapNhatNguoiDungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="CapNhatNguoiDungResult" nillable="true" type="q7:ChangeResultSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DanhSachNguoiDung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DanhSachNguoiDungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="DanhSachNguoiDungResult" nillable="true" type="q8:ArrayOfNhomNguoiDungModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChitietNguoiDung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nguoiDungId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChitietNguoiDungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="ChitietNguoiDungResult" nillable="true" type="q9:ArrayOfNhomNguoiDungModel" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaNguoiDung">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="mdv" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nsd" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pas" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="nhomNguoiDungId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="XoaNguoiDungResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="XoaNguoiDungResult" nillable="true" type="q10:ChangeResultSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistsUserName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenNguoiDung" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistsUserNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="IsExistsUserNameResult" nillable="true" type="q11:ChangeResultSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistsEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistsEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="IsExistsEmailResult" nillable="true" type="q12:ChangeResultSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistsUserGroupName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="moduleId" type="xs:int" />
+        <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="tenNhom" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IsExistsUserGroupNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="IsExistsUserGroupNameResult" nillable="true" type="q13:ChangeResultSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Login">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="maDonVi" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="pass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoginResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" minOccurs="0" name="LoginResult" nillable="true" type="q14:ChangeResultSettings" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
