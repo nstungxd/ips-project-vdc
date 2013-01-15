@@ -346,10 +346,60 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="Service References\GiamSatSrv\GiamSatServices.disco" />
+    <Content Include="Service References\GiamSatSrv\configuration91.svcinfo" />
+    <Content Include="Service References\GiamSatSrv\configuration.svcinfo" />
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.DonViShortModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.DuAnShortModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.GoiThauModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.HopDongModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.KeHoachVonModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.KeHoachVonShortModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.ListDuAnModelGridView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.ListGoiThauModelGridView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.ListHopDongModelGridView.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.ThongTinMoiThauModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.ThongTinMoThauModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\IPS.Web.GiamSatSrv.ThongTinXetThauModel.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\GiamSatSrv\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
     <Content Include="Service References\UserServiceReference\UserServices.disco" />
     <Content Include="Service References\UserServiceReference\configuration91.svcinfo" />
     <Content Include="Service References\UserServiceReference\configuration.svcinfo" />
     <Content Include="Service References\UserServiceReference\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </Content>
+    <Content Include="Service References\UserSrv\UserServices.disco" />
+    <Content Include="Service References\UserSrv\configuration91.svcinfo" />
+    <Content Include="Service References\UserSrv\configuration.svcinfo" />
+    <Content Include="Service References\UserSrv\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
@@ -1726,7 +1776,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\GiamSatSrv\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\UserServiceReference\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\UserSrv\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -1778,6 +1838,22 @@
     <Content Include="styles\style_4\Thumbs.db" />
     <Content Include="styles\style_6\Thumbs.db" />
     <Content Include="Service References\UserServiceReference\UserServices.wsdl" />
+    <Content Include="Service References\GiamSatSrv\GiamSatServices.wsdl" />
+    <None Include="Service References\GiamSatSrv\GiamSatServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GiamSatSrv\GiamSatServices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GiamSatSrv\GiamSatServices2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GiamSatSrv\GiamSatServices3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\GiamSatSrv\GiamSatServices4.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\UserServiceReference\UserServices.xsd">
       <SubType>Designer</SubType>
     </None>
@@ -1785,6 +1861,16 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UserServiceReference\UserServices2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Service References\UserSrv\UserServices.wsdl" />
+    <None Include="Service References\UserSrv\UserServices.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSrv\UserServices1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserSrv\UserServices2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Web.Debug.config">
@@ -1802,7 +1888,9 @@
     <WCFMetadataStorage Include="Service References\BaoCaoServiceReference\" />
     <WCFMetadataStorage Include="Service References\DongBoDBServiceReference\" />
     <WCFMetadataStorage Include="Service References\GiamSatServiceReference\" />
+    <WCFMetadataStorage Include="Service References\GiamSatSrv\" />
     <WCFMetadataStorage Include="Service References\UserServiceReference\" />
+    <WCFMetadataStorage Include="Service References\UserSrv\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UnitSettingLibrary\UnitSettingLibrary.csproj">
