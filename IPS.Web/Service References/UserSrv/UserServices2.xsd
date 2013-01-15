@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://203.162.130.201:1105/Services/UserServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" />
+  <xs:import schemaLocation="http://203.162.130.201:1106/Services/UserServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" />
   <xs:element name="CapNhatNhomNguoiDung">
     <xs:complexType>
       <xs:sequence>

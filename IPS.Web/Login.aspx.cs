@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using IPS.Web.UserServiceReference;
+using IPS.Web.UserSrv;
 using UnitSettingLibrary;
 
 namespace IPS.Web
@@ -27,28 +28,9 @@ namespace IPS.Web
                     loi_login.Text = "Thông tin nhâp vào không đầy đủ!";
                     return;
                 }
-                using (var userService = new UserServicesClient())
+                using (var userService = new UserSrv.UserServicesClient())
                 {
                     var result = userService.Login(txtmadonvi.Text, txtmansd.Text, Common.Md5Encrypte(password.Text));
-                    if (result.ChangeResult == ChangeResult.ThanhCong)
-                    {
-                        var nguoidung = new NguoiDungModel() { MaDonVi = txtmadonvi.Text, TenTruyCap = txtmansd.Text };
-                        Session["nsd"] = nguoidung;
-                        Response.Redirect("~/Appforms/giamsat/DanhSach.aspx");
-                    }
-                    else
-                    {
-                        if(!string.IsNullOrEmpty(result.Message))
-                            loi_login.Text = result.Message;
-                        else
-                        {
-                            loi_login.Text = "Tên hoặc mật khẩu không chính xác!";
-                        }
-                    }
-                }
-                using (var userSrv = new UserSrv.UserServicesClient())
-                {
-                    var result = userSrv.Login(txtmadonvi.Text, txtmansd.Text, Common.Md5Encrypte(password.Text));
                     if (result.ChangeResult == ChangeResult.ThanhCong)
                     {
                         var nguoidung = new NguoiDungModel() { MaDonVi = txtmadonvi.Text, TenTruyCap = txtmansd.Text };
@@ -64,7 +46,26 @@ namespace IPS.Web
                             loi_login.Text = "Tên hoặc mật khẩu không chính xác!";
                         }
                     }
-                }
+                }     
+                //using (var userService = new UserServicesClient())
+                //{
+                //    var result = userService.Login(txtmadonvi.Text, txtmansd.Text, Common.Md5Encrypte(password.Text));
+                //    if (result.ChangeResult == ChangeResult.ThanhCong)
+                //    {
+                //        var nguoidung = new NguoiDungModel() { MaDonVi = txtmadonvi.Text, TenTruyCap = txtmansd.Text };
+                //        Session["nsd"] = nguoidung;
+                //        Response.Redirect("~/Appforms/giamsat/DanhSach.aspx");
+                //    }
+                //    else
+                //    {
+                //        if(!string.IsNullOrEmpty(result.Message))
+                //            loi_login.Text = result.Message;
+                //        else
+                //        {
+                //            loi_login.Text = "Tên hoặc mật khẩu không chính xác!";
+                //        }
+                //    }
+                //}               
             }
             catch (Exception ex)
             {
