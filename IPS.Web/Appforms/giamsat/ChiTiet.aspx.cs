@@ -11,7 +11,7 @@ namespace IPS.Web.Appforms.giamsat
 {
     public partial class ChiTiet : VdcInc.vdcAJAXPage
     {
-        GiamSatServiceReference.GiamSatServicesClient giamsatService = new GiamSatServiceReference.GiamSatServicesClient();
+        GiamSatSrv.GiamSatServicesClient giamsatService = new GiamSatSrv.GiamSatServicesClient();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
