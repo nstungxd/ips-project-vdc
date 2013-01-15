@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://203.162.130.201:1108/Services/GiamSatServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:simpleType name="LoaiNguonVon">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KhongXacDinh">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ChuaCapNhat">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VonNhaNuoc30">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VonKhac">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LoaiNguonVon" nillable="true" type="tns:LoaiNguonVon" />
+  <xs:simpleType name="LoaiPhanCap">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KhongXacDinh">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="P">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="T">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="LoaiPhanCap" nillable="true" type="tns:LoaiPhanCap" />
+  <xs:simpleType name="NhomDuAn">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KhongXacDinh">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="A">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="B">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="C">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="NhomDuAn" nillable="true" type="tns:NhomDuAn" />
+  <xs:complexType name="SearchProjectSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="LoaiDuAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="LoaiNguonVon" type="tns:LoaiNguonVon" />
+      <xs:element minOccurs="0" name="MaDonViQuanLy" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaDonViThucHien" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaDuAn" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NamBatDau" type="xs:int" />
+      <xs:element minOccurs="0" name="NamBatDauToanTu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NamKetThuc" type="xs:int" />
+      <xs:element minOccurs="0" name="NamKetThucToanTu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NhomDuAn" type="tns:NhomDuAn" />
+      <xs:element minOccurs="0" name="PhanCap" type="tns:LoaiPhanCap" />
+      <xs:element minOccurs="0" name="TongVonDauTu" type="xs:long" />
+      <xs:element minOccurs="0" name="TongVonDauTuToanTu" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SearchProjectSetting" nillable="true" type="tns:SearchProjectSetting" />
+  <xs:simpleType name="GiaiDoanKHV">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KhongXacDinh">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="DangKyKHV">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ThamDinhKHV">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="PheDuyetKHV">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GiaiDoanKHV" nillable="true" type="tns:GiaiDoanKHV" />
+  <xs:simpleType name="KetQuaGiamSat">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KhongXacDinh">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VpThuTucQuyHoach">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VpThuTucThamQuyenPheDuyet">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VpThuTucTrinhTuThamDinh">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VpQuanLyChatLuong">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">3</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VpDauThau">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">4</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VpKyHd">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">5</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VpQuanLyDauTu">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">6</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VpBaoVeMoiTruong">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">7</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VpSuDungDatDai">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">8</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="VpQuanLyTaiNguyen">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">9</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ChamDoThuTuc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">100</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ChamDoGPMB">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">101</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ChamDoNangLuc">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">102</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ChamDoVon">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">103</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ChamDoKhac">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">104</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="ThatThoatLangPhi">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">200</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="SuDungKoHieuQua">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">201</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="KetQuaGiamSat" nillable="true" type="tns:KetQuaGiamSat" />
+  <xs:simpleType name="TinhTrangXoa">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ChuaXoa" />
+      <xs:enumeration value="DaXoa" />
+      <xs:enumeration value="HuyThongBaoXoa" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TinhTrangXoa" nillable="true" type="tns:TinhTrangXoa" />
+  <xs:simpleType name="GiaiDoanChonNhaThau">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="KhongXacDinh">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">-1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MoiThau">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">0</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="MoThau">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">1</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+      <xs:enumeration value="XetThau">
+        <xs:annotation>
+          <xs:appinfo>
+            <EnumerationValue xmlns="http://schemas.microsoft.com/2003/10/Serialization/">2</EnumerationValue>
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:enumeration>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="GiaiDoanChonNhaThau" nillable="true" type="tns:GiaiDoanChonNhaThau" />
+  <xs:complexType name="ChangeResultSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChangeResult" type="tns:ChangeResult" />
+      <xs:element minOccurs="0" name="Message" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ChangeResultSettings" nillable="true" type="tns:ChangeResultSettings" />
+  <xs:simpleType name="ChangeResult">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ThatBai" />
+      <xs:enumeration value="ThanhCong" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ChangeResult" nillable="true" type="tns:ChangeResult" />
+  <xs:complexType name="ArrayOfGiamSatSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GiamSatSetting" nillable="true" type="tns:GiamSatSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGiamSatSetting" nillable="true" type="tns:ArrayOfGiamSatSetting" />
+  <xs:complexType name="GiamSatSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="DotKHV" type="xs:int" />
+      <xs:element minOccurs="0" name="DuAnID" type="xs:long" />
+      <xs:element minOccurs="0" name="GhiChu" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GiaiDoanChonNhaThau" type="tns:GiaiDoanChonNhaThau" />
+      <xs:element minOccurs="0" name="GiaiDoanKHV" type="tns:GiaiDoanKHV" />
+      <xs:element minOccurs="0" name="GiamSatID" type="xs:long" />
+      <xs:element minOccurs="0" name="GoiThauID" type="xs:long" />
+      <xs:element minOccurs="0" name="HopDongID" type="xs:long" />
+      <xs:element minOccurs="0" name="KeHoachVonID" type="xs:long" />
+      <xs:element minOccurs="0" name="KetQuaGiamSat" type="tns:KetQuaGiamSat" />
+      <xs:element minOccurs="0" name="MaDonVi" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="MaNguoiNhap" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="NamKHV" type="xs:int" />
+      <xs:element minOccurs="0" name="SoQD" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GiamSatSetting" nillable="true" type="tns:GiamSatSetting" />
+  <xs:complexType name="ArrayOfUnitShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="UnitShortModel" nillable="true" type="tns:UnitShortModel" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfUnitShortModel" nillable="true" type="tns:ArrayOfUnitShortModel" />
+  <xs:complexType name="UnitShortModel">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ValueInt" type="xs:int" />
+      <xs:element minOccurs="0" name="ValueString" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="UnitShortModel" nillable="true" type="tns:UnitShortModel" />
+</xs:schema>
