@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="UserServices" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://203.162.130.201:1108/Services/UserServices.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://203.162.130.201:1108/Services/UserServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://203.162.130.201:1108/Services/UserServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/UnitSettingLibrary" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IUserServices_CapNhatNhomNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatNhomNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_CapNhatNhomNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatNhomNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_DanhSachNhomNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachNhomNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_DanhSachNhomNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachNhomNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_ChiTietNhomNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChiTietNhomNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_ChiTietNhomNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChiTietNhomNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_XoaNhomNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaNhomNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_XoaNhomNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaNhomNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_CapNhatNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_CapNhatNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CapNhatNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_DanhSachNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_DanhSachNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DanhSachNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_ChitietNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChitietNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_ChitietNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChitietNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_XoaNguoiDung_InputMessage">
+    <wsdl:part name="parameters" element="tns:XoaNguoiDung" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_XoaNguoiDung_OutputMessage">
+    <wsdl:part name="parameters" element="tns:XoaNguoiDungResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_IsExistsUserName_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistsUserName" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_IsExistsUserName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistsUserNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_IsExistsEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistsEmail" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_IsExistsEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistsEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_IsExistsUserGroupName_InputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistsUserGroupName" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_IsExistsUserGroupName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:IsExistsUserGroupNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IUserServices">
+    <wsdl:operation name="CapNhatNhomNguoiDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/CapNhatNhomNguoiDung" message="tns:IUserServices_CapNhatNhomNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/CapNhatNhomNguoiDungResponse" message="tns:IUserServices_CapNhatNhomNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DanhSachNhomNguoiDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/DanhSachNhomNguoiDung" message="tns:IUserServices_DanhSachNhomNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/DanhSachNhomNguoiDungResponse" message="tns:IUserServices_DanhSachNhomNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChiTietNhomNguoiDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/ChiTietNhomNguoiDung" message="tns:IUserServices_ChiTietNhomNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/ChiTietNhomNguoiDungResponse" message="tns:IUserServices_ChiTietNhomNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaNhomNguoiDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/XoaNhomNguoiDung" message="tns:IUserServices_XoaNhomNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/XoaNhomNguoiDungResponse" message="tns:IUserServices_XoaNhomNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatNguoiDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/CapNhatNguoiDung" message="tns:IUserServices_CapNhatNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/CapNhatNguoiDungResponse" message="tns:IUserServices_CapNhatNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DanhSachNguoiDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/DanhSachNguoiDung" message="tns:IUserServices_DanhSachNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/DanhSachNguoiDungResponse" message="tns:IUserServices_DanhSachNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChitietNguoiDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/ChitietNguoiDung" message="tns:IUserServices_ChitietNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/ChitietNguoiDungResponse" message="tns:IUserServices_ChitietNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="XoaNguoiDung">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/XoaNguoiDung" message="tns:IUserServices_XoaNguoiDung_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/XoaNguoiDungResponse" message="tns:IUserServices_XoaNguoiDung_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistsUserName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/IsExistsUserName" message="tns:IUserServices_IsExistsUserName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/IsExistsUserNameResponse" message="tns:IUserServices_IsExistsUserName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistsEmail">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/IsExistsEmail" message="tns:IUserServices_IsExistsEmail_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/IsExistsEmailResponse" message="tns:IUserServices_IsExistsEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="IsExistsUserGroupName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/IsExistsUserGroupName" message="tns:IUserServices_IsExistsUserGroupName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/IsExistsUserGroupNameResponse" message="tns:IUserServices_IsExistsUserGroupName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/Login" message="tns:IUserServices_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/LoginResponse" message="tns:IUserServices_Login_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IUserServices" type="tns:IUserServices">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="CapNhatNhomNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/CapNhatNhomNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DanhSachNhomNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/DanhSachNhomNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChiTietNhomNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/ChiTietNhomNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaNhomNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/XoaNhomNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CapNhatNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/CapNhatNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DanhSachNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/DanhSachNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChitietNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/ChitietNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="XoaNguoiDung">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/XoaNguoiDung" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistsUserName">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/IsExistsUserName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistsEmail">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/IsExistsEmail" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="IsExistsUserGroupName">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/IsExistsUserGroupName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="UserServices">
+    <wsdl:port name="BasicHttpBinding_IUserServices" binding="tns:BasicHttpBinding_IUserServices">
+      <soap:address location="http://203.162.130.201:1108/Services/UserServices.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
