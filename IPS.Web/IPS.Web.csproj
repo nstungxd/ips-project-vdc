@@ -76,7 +76,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Appforms\giamsat\ChiTiet.aspx" />
-    <Content Include="Appforms\giamsat\ChiTietDuAn.aspx" />
     <Content Include="Appforms\giamsat\DanhSach.aspx" />
     <Content Include="Appforms\hethong\ht_quanlynhomnguoidung.aspx" />
     <Content Include="btstyles\black_glass\VdcButton\images\button.gif" />
@@ -1726,13 +1725,6 @@
     </Compile>
     <Compile Include="Appforms\giamsat\ChiTiet.aspx.designer.cs">
       <DependentUpon>ChiTiet.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Appforms\giamsat\ChiTietDuAn.aspx.cs">
-      <DependentUpon>ChiTietDuAn.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Appforms\giamsat\ChiTietDuAn.aspx.designer.cs">
-      <DependentUpon>ChiTietDuAn.aspx</DependentUpon>
     </Compile>
     <Compile Include="Appforms\giamsat\DanhSach.aspx.cs">
       <DependentUpon>DanhSach.aspx</DependentUpon>
