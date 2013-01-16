@@ -539,6 +539,14 @@ namespace IPS.Data.SqlCe.Repositories
                         break;
                 }
             }
+            catch (OracleException ex)
+            {
+                if (ex.Number == 20104)
+                {
+                    result.ChangeResult = ChangeResult.ThatBai;
+                    result.Message = "Bạn không có quyền thực hiện thao tác này!";
+                }                
+            }
             catch (Exception ex)
             {
                 result.ChangeResult = ChangeResult.ThatBai;
