@@ -1,4 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="DanhSach.aspx.cs" Inherits="IPS.Web.Appforms.giamsat.DanhSach" %>
+
 <%@ Register Assembly="vdc_Interface" Namespace="Vdc.Interface" TagPrefix="cc2" %>
 
 <%@ Register Assembly="vdc_Grid_NET" Namespace="Vdc.Grid" TagPrefix="cc1" %>
@@ -123,7 +124,8 @@
                     AllowSorting="False"
                     AutoGenerateColumns="false"
                     FolderStyle="~/styles/premiere_blue"
-                    Width="990px">
+                    Width="990px"
+                    AllowColumnResizing="true">
                     <AddEditDeleteSettings AddLinksPosition="Bottom" NewRecordPosition="Bottom"></AddEditDeleteSettings>
                     <ExportingSettings Encoding="Default" ExportedFilesTargetWindow="Current"></ExportingSettings>
                     <FilteringSettings FilterLinksPosition="Bottom" FilterPosition="Bottom" InitialState="Hidden" MatchingType="AllFilters"></FilteringSettings>
@@ -131,20 +133,27 @@
                     <PagingSettings PageSizeSelectorPosition="Bottom" Position="Bottom" ShowRecordsCount="False"></PagingSettings>
                     <ScrollingSettings FixedColumnsPosition="Left" ScrollWidth="990px"></ScrollingSettings>
                     <Columns>
-                        <cc1:Column DataField="MaDonVi" Visible="false" Width="" />
-                        <cc1:Column DataField="IdDuAn" Visible="false" Width="" />
-                        <cc1:Column DataField="TenDuAn" HeaderText="Tên dự án" Width="" />
-                        <cc1:Column DataField="TenLoaiNguonVon" HeaderText="Loại nguồn vốn" Width="" />
-                        <cc1:Column DataField="TenLoaiPhanCap" HeaderText="Phân cấp" Width="80px" />
-                        <cc1:Column DataField="TenNhomDuAn" HeaderText="Nhóm" Width="80px" />
-                        <cc1:Column DataField="NamBatDau" HeaderText="Ngày phát sinh" Width="90px" />
-                        <cc1:Column DataField="NamKetThuc" HeaderText="Ngày kết thúc" Width="90px" />
-                        <cc1:Column DataField="TongVonDauTu" HeaderText="Tổng vốn đầu tư" Width="" />
+                        <cc1:Column DataField="MaDonVi" Visible="false" />
+                        <cc1:Column DataField="IdDuAn" Visible="false" />
+                        <cc1:Column DataField="TenDuAn" HeaderText="Tên dự án" Width="180px" Wrap="true" />
+                        <cc1:Column DataField="TenLoaiNguonVon" HeaderText="Loại nguồn vốn" Width="190px" />
+                        <cc1:Column DataField="TenLoaiPhanCap" HeaderText="Phân cấp" Width="115px" />
+                        <cc1:Column DataField="TenNhomDuAn" HeaderText="Nhóm" Width="90px" />
+                        <cc1:Column DataField="NamBatDau" HeaderText="Ngày phát sinh" Width="115px" />
+                        <cc1:Column DataField="NamKetThuc" HeaderText="Ngày kết thúc" Width="125px" />
+                        <cc1:Column DataField="TongVonDauTu" HeaderText="Tổng vốn đầu tư" Width="140px">
+                            <TemplateSettings TemplateId="FormatNumber" />
+                        </cc1:Column>
                         <cc1:Column HeaderText="Giám sát tình trạng">
                             <TemplateSettings TemplateId="GiamSatTinhTrang" />
                         </cc1:Column>
                     </Columns>
                     <Templates>
+                        <cc1:GridTemplate runat="server" ID="FormatNumber">
+                            <Template>
+                                <%# UnitSettingLibrary.Common.GetValueFormatNumber(Container.DataItem["TongVonDauTu"].ToString()) %>
+                            </Template>
+                        </cc1:GridTemplate>
                         <cc1:GridTemplate runat="server" ID="GiamSatTinhTrang">
                             <Template>
                                 <a href="ChiTiet.aspx?madonvi=<%# Container.DataItem["MaDonVi"] %>&idduan=<%# Container.DataItem["IdDuAn"] %>">Thông tin chi tiết</a>

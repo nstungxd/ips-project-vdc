@@ -301,7 +301,7 @@ namespace IPS.Web.Appforms.giamsat
                 lbPhanCap.InnerText = EnumHelper.GetDescription(duAn.LoaiPhanCap);
                 lbDonViQuanLyDT.InnerText = duAn.TenDonViQuanLy;
                 lbDonViChuDT.InnerText = duAn.TenDonViThucHien;
-                lbTongVonDT.InnerText = duAn.TongVonDauTu.ToString(CultureInfo.InvariantCulture);
+                lbTongVonDT.InnerText = Common.GetValueFormatNumber(duAn.TongVonDauTu.ToString());
                 lbThoiGianPhatSinh.InnerText = duAn.NamBatDau.ToString(CultureInfo.InvariantCulture);
                 lbThoiGianKetThuc.InnerText = duAn.NamKetThuc.ToString(CultureInfo.InvariantCulture);
 
