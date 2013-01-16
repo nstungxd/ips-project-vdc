@@ -148,6 +148,15 @@ namespace IPS.Web.Appforms.giamsat {
         protected global::Vdc.Grid.Grid Grid1;
         
         /// <summary>
+        /// FormatNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::Vdc.Grid.GridTemplate FormatNumber;
+        
+        /// <summary>
         /// GiamSatTinhTrang control.
         /// </summary>
         /// <remarks>

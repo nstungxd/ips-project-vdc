@@ -401,8 +401,7 @@
                             </cc1:Grid>
                         </Content>
                     </vajax:CallbackPanel>
-                </div>
-
+                </div>                
             </td>
         </tr>
         <tr>

@@ -114,6 +114,14 @@ namespace IPS.Web.Appforms.giamsat
                 sps.NamKetThucToanTu = ddlTTThoiGianKetThuc.SelectedValue;
                 sps.NamKetThuc = Int32.Parse(ddlThoiGianKetThuc.SelectedValue);
                 ListDuAnModelGridView result = giamsatService.TimKiemDuAn("", "", "", sps, pageSize, 1);
+                //if (result.DuAnModelsGridView != null)
+                //{
+                //    foreach (var item in result.DuAnModelsGridView)
+                //    {
+                //        string a = "";
+                //        item.TongVonDauTu = Common.GetValueFormatNumber(a);
+                //    }
+                //}
                 Grid1.DataSource = result.DuAnModelsGridView;
                 Grid1.DataBind();
 
